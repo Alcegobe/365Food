@@ -534,16 +534,23 @@ $("#semaine-detail").addEventListener("change", (e) => {
   renderSemaine();
 });
 
+// Affiche brièvement un message dans le label d'un bouton (sans écraser l'icône).
+function flashBtn(btn, msg) {
+  const lbl = btn.querySelector(".btn-lbl") || btn;
+  if (!lbl.dataset.orig) lbl.dataset.orig = lbl.textContent;
+  lbl.textContent = msg;
+  setTimeout(() => {
+    lbl.textContent = lbl.dataset.orig;
+  }, 1800);
+}
+
 $("#semaine-copy").addEventListener("click", async () => {
-  const txt = semaineToText();
-  const btn = $("#semaine-copy");
   try {
-    await navigator.clipboard.writeText(txt);
-    btn.textContent = "✅ Copié !";
+    await navigator.clipboard.writeText(semaineToText());
+    flashBtn($("#semaine-copy"), "Copié ✓");
   } catch (e) {
-    btn.textContent = "⚠️ Copie impossible";
+    flashBtn($("#semaine-copy"), "Échec");
   }
-  setTimeout(() => (btn.textContent = "📋 Copier"), 1800);
 });
 
 /* ---------- Courses (liste auto depuis la semaine) ---------- */
@@ -610,9 +617,23 @@ function renderCourses() {
   const { items, detailed, missing, total } = aggregateCourses();
   const checked = getChecked();
 
+  const doneCount = () => items.filter((it) => getChecked().has(it.key)).length;
+  const refreshProgress = () => {
+    const done = doneCount();
+    const pct = items.length ? Math.round((done / items.length) * 100) : 0;
+    const bar = $("#courses-progress-fill");
+    const lbl = $("#courses-progress-lbl");
+    if (bar) bar.style.width = pct + "%";
+    if (lbl) lbl.textContent = `${done}/${items.length} dans le panier`;
+  };
+
   $("#courses-info").innerHTML =
     `<strong>Liste de courses</strong>` +
-    `<span class="semaine-sub">${detailed.length}/${total} repas détaillés · ${items.length} ingrédients</span>`;
+    `<span class="semaine-sub">${detailed.length}/${total} repas détaillés · ${items.length} ingrédients</span>` +
+    (items.length
+      ? `<div class="progress"><div class="progress-track"><div class="progress-fill" id="courses-progress-fill"></div></div>` +
+        `<span class="progress-lbl" id="courses-progress-lbl"></span></div>`
+      : "");
 
   const frag = document.createDocumentFragment();
 
@@ -653,6 +674,7 @@ function renderCourses() {
         else set.delete(it.key);
         saveChecked(set);
         row.classList.toggle("done", e.target.checked);
+        refreshProgress();
       });
       ul.appendChild(row);
     }
@@ -671,6 +693,7 @@ function renderCourses() {
   }
 
   root.replaceChildren(frag);
+  refreshProgress();
 }
 
 function coursesToText() {
@@ -694,14 +717,12 @@ function coursesToText() {
 }
 
 $("#courses-copy").addEventListener("click", async () => {
-  const btn = $("#courses-copy");
   try {
     await navigator.clipboard.writeText(coursesToText());
-    btn.textContent = "✅ Copié !";
+    flashBtn($("#courses-copy"), "Copié ✓");
   } catch (e) {
-    btn.textContent = "⚠️ Copie impossible";
+    flashBtn($("#courses-copy"), "Échec");
   }
-  setTimeout(() => (btn.textContent = "📋 Copier"), 1800);
 });
 
 $("#courses-reset").addEventListener("click", () => {

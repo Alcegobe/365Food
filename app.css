@@ -43,19 +43,34 @@ body {
 }
 
 .brand { display: flex; align-items: center; gap: 12px; }
-.brand-emoji {
-  width: 42px;
-  height: 42px;
+.brand-mark {
+  width: 40px;
+  height: 40px;
   flex: 0 0 auto;
   display: grid;
   place-items: center;
-  font-size: 22px;
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  color: #fff;
   border-radius: 11px;
   background: linear-gradient(160deg, #ffb43d, var(--accent));
-  box-shadow: 0 2px 6px rgba(255, 149, 0, 0.35);
+  box-shadow: 0 2px 8px rgba(255, 149, 0, 0.32);
 }
-.app-header h1 { margin: 0; font-size: 26px; font-weight: 700; letter-spacing: -0.5px; }
+.app-header h1 { margin: 0; font-size: 25px; font-weight: 700; letter-spacing: -0.5px; }
 .tagline { margin: 1px 0 0; font-size: 13px; color: var(--muted); }
+
+/* Icônes (line icons) */
+.ico {
+  width: 18px;
+  height: 18px;
+  flex: 0 0 auto;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
 
 /* Barre d'onglets en bas (façon app iOS) */
 .tabbar {
@@ -85,16 +100,28 @@ body {
   cursor: pointer;
   transition: color 0.15s;
 }
-.tab-ico { font-size: 22px; line-height: 1; filter: grayscale(0.4); opacity: 0.75; transition: 0.15s; }
+.tab .ico { width: 25px; height: 25px; stroke-width: 1.7; transition: transform 0.15s; }
 .tab-lbl { font-size: 10.5px; font-weight: 600; letter-spacing: -0.1px; }
 .tab[aria-selected="true"] { color: var(--accent); }
-.tab[aria-selected="true"] .tab-ico { filter: none; opacity: 1; transform: translateY(-1px); }
+.tab[aria-selected="true"] .ico { transform: translateY(-1px); }
+.tab:active .ico { transform: scale(0.9); }
 
-/* Barre de recherche (champ iOS) */
+/* Barre de recherche (champ iOS avec loupe) */
 .searchbar { padding: 12px 16px 4px; }
+.search-field { position: relative; }
+.search-ico {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 17px;
+  height: 17px;
+  color: var(--muted);
+  pointer-events: none;
+}
 .searchbar input {
   width: 100%;
-  padding: 11px 14px;
+  padding: 11px 14px 11px 38px;
   border: none;
   border-radius: 11px;
   font-size: 16px;
@@ -218,18 +245,22 @@ mark { background: rgba(255, 204, 0, 0.5); color: inherit; padding: 0 1px; borde
 
 /* Boutons iOS */
 .btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
   border: none;
   background: var(--accent);
   color: #fff;
   border-radius: 10px;
-  padding: 9px 15px;
+  padding: 9px 14px;
   font-weight: 600;
   font-size: 14px;
   letter-spacing: -0.2px;
   cursor: pointer;
-  transition: opacity 0.15s;
+  transition: opacity 0.15s, transform 0.1s;
 }
-.btn:active { opacity: 0.7; }
+.btn .ico { width: 16px; height: 16px; }
+.btn:active { opacity: 0.7; transform: scale(0.97); }
 .btn.ghost { background: var(--fill); color: var(--accent-press); }
 
 /* ---------- Vue Ma semaine ---------- */
@@ -237,6 +268,12 @@ mark { background: rgba(255, 204, 0, 0.5); color: inherit; padding: 0 1px; borde
 .semaine-info { display: flex; flex-direction: column; }
 .semaine-info strong { font-size: 17px; font-weight: 700; letter-spacing: -0.3px; }
 .semaine-sub { font-size: 12.5px; color: var(--muted); margin-top: 1px; }
+.toggles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 20px;
+  margin-top: 12px;
+}
 .semaine-actions {
   display: flex;
   flex-wrap: wrap;
@@ -253,7 +290,6 @@ mark { background: rgba(255, 204, 0, 0.5); color: inherit; padding: 0 1px; borde
   gap: 7px;
   cursor: pointer;
 }
-.seasonal-toggle:first-of-type { margin-right: auto; }
 .seasonal-toggle input {
   -webkit-appearance: none;
   appearance: none;
@@ -455,6 +491,39 @@ mark { background: rgba(255, 204, 0, 0.5); color: inherit; padding: 0 1px; borde
   color: var(--muted);
   margin: 16px 4px 0;
 }
+
+/* Barre de progression (courses) */
+.progress { display: flex; align-items: center; gap: 10px; margin-top: 10px; }
+.progress-track {
+  flex: 1;
+  height: 7px;
+  border-radius: 999px;
+  background: var(--fill-strong);
+  overflow: hidden;
+}
+.progress-fill {
+  height: 100%;
+  width: 0;
+  border-radius: 999px;
+  background: var(--green);
+  transition: width 0.3s ease;
+}
+.progress-lbl { font-size: 12px; color: var(--muted); font-weight: 600; white-space: nowrap; }
+
+/* Transition d'apparition des vues + états pressés */
+.view:not([hidden]) { animation: viewIn 0.26s ease both; }
+@keyframes viewIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .view:not([hidden]) { animation: none; }
+  .progress-fill { transition: none; }
+}
+.card { transition: transform 0.1s ease; }
+.card:active { transform: scale(0.985); }
+.chip:active { transform: scale(0.95); }
+.resto-card summary:active { opacity: 0.6; }
 
 /* ---------- Mode sombre automatique (iOS) ---------- */
 @media (prefers-color-scheme: dark) {

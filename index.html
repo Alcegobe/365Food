@@ -8,19 +8,31 @@
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="default" />
   <title>365Food — Mes repas sains & gourmands</title>
-  <meta name="description" content="Bibliothèque de recettes saines et gourmandes, adaptée à la Belgique et aux saisons, + assistant fast-food / resto." />
+  <meta name="description" content="Recettes saines et gourmandes adaptées à la Belgique et aux saisons, planning de la semaine, liste de courses et assistant fast-food / resto." />
   <link rel="manifest" href="./manifest.webmanifest" />
   <link rel="icon" href="./icon.svg" type="image/svg+xml" />
   <link rel="apple-touch-icon" href="./icon.svg" />
   <link rel="stylesheet" href="./app.css" />
 </head>
 <body>
+  <!-- Jeu d'icônes (line icons, style SF Symbols / Lucide) -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <symbol id="i-book" viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></symbol>
+    <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4"/><path d="M8 2v4"/><path d="M3 10h18"/></symbol>
+    <symbol id="i-cart" viewBox="0 0 24 24"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></symbol>
+    <symbol id="i-bag" viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></symbol>
+    <symbol id="i-shuffle" viewBox="0 0 24 24"><path d="M16 3h5v5"/><path d="M4 20 21 3"/><path d="M21 16v5h-5"/><path d="m15 15 6 6"/><path d="M4 4l5 5"/></symbol>
+    <symbol id="i-copy" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></symbol>
+    <symbol id="i-undo" viewBox="0 0 24 24"><path d="M1 4v6h6"/><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"/></symbol>
+  </svg>
+
   <header class="app-header">
     <div class="brand">
-      <span class="brand-emoji">🍔</span>
+      <span class="brand-mark">365</span>
       <div>
         <h1>365Food</h1>
-        <p class="tagline">Manger sain sans avoir l'impression de se priver</p>
+        <p class="tagline">Manger sain, sans se priver</p>
       </div>
     </div>
   </header>
@@ -28,7 +40,10 @@
   <!-- VUE RECETTES -->
   <div id="view-recettes" class="view">
     <div class="searchbar">
-      <input id="search" type="search" placeholder="Rechercher un plat, une sauce…" autocomplete="off" aria-label="Rechercher une recette" />
+      <div class="search-field">
+        <svg class="ico search-ico"><use href="#i-search" /></svg>
+        <input id="search" type="search" placeholder="Rechercher un plat, une sauce…" autocomplete="off" aria-label="Rechercher une recette" />
+      </div>
     </div>
     <nav class="filters" aria-label="Filtres">
       <div class="filter-group" id="repas-filter" role="group" aria-label="Type de repas"></div>
@@ -47,11 +62,13 @@
   <div id="view-semaine" class="view" hidden>
     <div class="semaine-bar">
       <div class="semaine-info" id="semaine-info"></div>
-      <div class="semaine-actions">
+      <div class="toggles">
         <label class="seasonal-toggle"><input type="checkbox" id="semaine-seasonal" checked /> De saison</label>
         <label class="seasonal-toggle"><input type="checkbox" id="semaine-detail" /> Recettes détaillées</label>
-        <button id="semaine-regen" class="btn" type="button">🎲 Régénérer</button>
-        <button id="semaine-copy" class="btn ghost" type="button">📋 Copier</button>
+      </div>
+      <div class="semaine-actions">
+        <button id="semaine-regen" class="btn" type="button"><svg class="ico"><use href="#i-shuffle" /></svg><span class="btn-lbl">Régénérer</span></button>
+        <button id="semaine-copy" class="btn ghost" type="button"><svg class="ico"><use href="#i-copy" /></svg><span class="btn-lbl">Copier</span></button>
       </div>
     </div>
     <main id="semaine" class="results"><p class="loading">Chargement…</p></main>
@@ -62,9 +79,8 @@
     <div class="semaine-bar">
       <div class="semaine-info" id="courses-info"></div>
       <div class="semaine-actions">
-        <span class="seasonal-toggle">Liste de la semaine en cours</span>
-        <button id="courses-copy" class="btn ghost" type="button">📋 Copier</button>
-        <button id="courses-reset" class="btn ghost" type="button">↺ Décocher</button>
+        <button id="courses-copy" class="btn ghost" type="button"><svg class="ico"><use href="#i-copy" /></svg><span class="btn-lbl">Copier</span></button>
+        <button id="courses-reset" class="btn ghost" type="button"><svg class="ico"><use href="#i-undo" /></svg><span class="btn-lbl">Décocher</span></button>
       </div>
     </div>
     <main id="courses" class="results"><p class="loading">Chargement…</p></main>
@@ -73,28 +89,31 @@
   <!-- VUE MANGER DEHORS -->
   <div id="view-resto" class="view" hidden>
     <div class="searchbar">
-      <input id="resto-search" type="search" placeholder="Burger King, kebab, sushi, italien…" autocomplete="off" aria-label="Rechercher une enseigne" />
+      <div class="search-field">
+        <svg class="ico search-ico"><use href="#i-search" /></svg>
+        <input id="resto-search" type="search" placeholder="Burger King, kebab, sushi, italien…" autocomplete="off" aria-label="Rechercher une enseigne" />
+      </div>
     </div>
     <main id="resto" class="results"><p class="loading">Chargement…</p></main>
   </div>
 
   <footer class="app-footer">
     <span id="install-hint"></span>
-    <span>Belgique 🇧🇪 · de saison · objectif athlétique</span>
+    <span>Belgique · de saison · objectif athlétique</span>
   </footer>
 
   <nav class="tabbar" role="tablist" aria-label="Navigation">
     <button class="tab" id="tab-recettes" data-view="recettes" role="tab" aria-selected="true">
-      <span class="tab-ico">🍳</span><span class="tab-lbl">Recettes</span>
+      <svg class="ico"><use href="#i-book" /></svg><span class="tab-lbl">Recettes</span>
     </button>
     <button class="tab" id="tab-semaine" data-view="semaine" role="tab" aria-selected="false">
-      <span class="tab-ico">📅</span><span class="tab-lbl">Semaine</span>
+      <svg class="ico"><use href="#i-calendar" /></svg><span class="tab-lbl">Semaine</span>
     </button>
     <button class="tab" id="tab-courses" data-view="courses" role="tab" aria-selected="false">
-      <span class="tab-ico">🛒</span><span class="tab-lbl">Courses</span>
+      <svg class="ico"><use href="#i-cart" /></svg><span class="tab-lbl">Courses</span>
     </button>
     <button class="tab" id="tab-resto" data-view="resto" role="tab" aria-selected="false">
-      <span class="tab-ico">🍔</span><span class="tab-lbl">Dehors</span>
+      <svg class="ico"><use href="#i-bag" /></svg><span class="tab-lbl">Dehors</span>
     </button>
   </nav>
 
