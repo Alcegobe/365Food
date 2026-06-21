@@ -44,8 +44,10 @@ function switchView(view) {
     tab.setAttribute("aria-selected", String(tab.dataset.view === view));
   }
   $("#view-recettes").hidden = view !== "recettes";
+  $("#view-semaine").hidden = view !== "semaine";
   $("#view-resto").hidden = view !== "resto";
   if (view === "resto" && RESTO === null) loadResto();
+  if (view === "semaine") renderSemaine();
 }
 for (const tab of document.querySelectorAll(".tab")) {
   tab.addEventListener("click", () => switchView(tab.dataset.view));
@@ -64,6 +66,7 @@ async function load() {
   buildRepasFilter();
   buildSeasonFilter();
   render();
+  if (pendingSemaine) renderSemaine();
 }
 
 function buildRepasFilter() {
@@ -266,6 +269,177 @@ function renderResto() {
 $("#resto-search").addEventListener("input", (e) => {
   state.restoQuery = e.target.value.trim();
   if (RESTO) renderResto();
+});
+
+/* ---------- Ma semaine (planificateur 7 jours) ---------- */
+const JOURS = ["Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi", "Dimanche"];
+let pendingSemaine = false;
+
+function mulberry32(a) {
+  return function () {
+    a |= 0;
+    a = (a + 0x6d2b79f5) | 0;
+    let t = Math.imul(a ^ (a >>> 15), 1 | a);
+    t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+  };
+}
+
+function isoWeekKey(d = new Date()) {
+  const t = new Date(Date.UTC(d.getFullYear(), d.getMonth(), d.getDate()));
+  const day = (t.getUTCDay() + 6) % 7;
+  t.setUTCDate(t.getUTCDate() - day + 3);
+  const firstThu = new Date(Date.UTC(t.getUTCFullYear(), 0, 4));
+  const week = 1 + Math.round(((t - firstThu) / 86400000 - 3 + ((firstThu.getUTCDay() + 6) % 7)) / 7);
+  return t.getUTCFullYear() * 100 + week;
+}
+
+function mondayOf(d = new Date()) {
+  const t = new Date(d);
+  const day = (t.getDay() + 6) % 7;
+  t.setDate(t.getDate() - day);
+  t.setHours(0, 0, 0, 0);
+  return t;
+}
+
+const dm = (d) => `${String(d.getDate()).padStart(2, "0")}/${String(d.getMonth() + 1).padStart(2, "0")}`;
+
+function shuffle(arr, rng) {
+  const a = arr.slice();
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(rng() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
+function poolFor(catSet, seasonalOnly) {
+  const cur = currentSeason();
+  return DATA.recipes.filter(
+    (r) => catSet.has(r.categorie) && (!seasonalOnly || r.saisons.includes("toute_annee") || r.saisons.includes(cur))
+  );
+}
+
+function buildWeek(salt, seasonalOnly) {
+  const dejCats = new Set(DATA.categories.filter((c) => c.repas.includes("dejeuner")).map((c) => c.id));
+  const mainCats = new Set(
+    DATA.categories.filter((c) => c.repas.includes("diner") || c.repas.includes("souper")).map((c) => c.id)
+  );
+  const rng = mulberry32((isoWeekKey() * 131 + salt * 977) >>> 0);
+  const dej = shuffle(poolFor(dejCats, seasonalOnly), rng);
+  const mains = shuffle(poolFor(mainCats, seasonalOnly), rng);
+  const days = [];
+  for (let i = 0; i < 7; i++) {
+    days.push({
+      dejeuner: dej.length ? dej[i % dej.length] : null,
+      diner: mains.length ? mains[(i * 2) % mains.length] : null,
+      souper: mains.length ? mains[(i * 2 + 1) % mains.length] : null,
+    });
+  }
+  return days;
+}
+
+function getSemaineState() {
+  let s = null;
+  try {
+    s = JSON.parse(localStorage.getItem("semaine365"));
+  } catch (e) {
+    /* ignore */
+  }
+  const wk = isoWeekKey();
+  if (!s || s.week !== wk) s = { week: wk, salt: 0, seasonal: true };
+  return s;
+}
+function saveSemaineState(s) {
+  try {
+    localStorage.setItem("semaine365", JSON.stringify(s));
+  } catch (e) {
+    /* ignore */
+  }
+}
+
+let SEMAINE_DAYS = null;
+
+function renderSemaine() {
+  const root = $("#semaine");
+  if (!DATA) {
+    pendingSemaine = true;
+    root.innerHTML = `<p class="loading">Chargement…</p>`;
+    return;
+  }
+  pendingSemaine = false;
+
+  const s = getSemaineState();
+  $("#semaine-seasonal").checked = s.seasonal;
+
+  const mon = mondayOf();
+  const sun = new Date(mon);
+  sun.setDate(sun.getDate() + 6);
+  $("#semaine-info").innerHTML =
+    `<strong>Semaine du ${dm(mon)} au ${dm(sun)}</strong>` +
+    `<span class="semaine-sub">${s.seasonal ? "🇧🇪 de saison" : "toutes saisons"} · 7 jours</span>`;
+
+  SEMAINE_DAYS = buildWeek(s.salt, s.seasonal);
+
+  const frag = document.createDocumentFragment();
+  SEMAINE_DAYS.forEach((day, i) => {
+    const d = new Date(mon);
+    d.setDate(d.getDate() + i);
+    const line = (ico, label, r) =>
+      `<div class="repas-line"><span class="repas-ico">${ico}</span>` +
+      `<span class="repas-txt"><span class="repas-label">${label}</span>${r ? esc(r.titre) : "—"}</span></div>`;
+    const sec = document.createElement("section");
+    sec.className = "jour";
+    sec.innerHTML =
+      `<h3 class="jour-titre">${JOURS[i]} <span class="jour-date">${dm(d)}</span></h3>` +
+      line("🍳", "Déjeuner", day.dejeuner) +
+      line("🍽️", "Dîner", day.diner) +
+      line("🌙", "Souper", day.souper);
+    frag.appendChild(sec);
+  });
+  root.replaceChildren(frag);
+}
+
+function semaineToText() {
+  if (!SEMAINE_DAYS) return "";
+  const mon = mondayOf();
+  const sun = new Date(mon);
+  sun.setDate(sun.getDate() + 6);
+  const lines = [`🍽️ Ma semaine 365Food (du ${dm(mon)} au ${dm(sun)})`, ""];
+  SEMAINE_DAYS.forEach((day, i) => {
+    lines.push(JOURS[i]);
+    lines.push(`  🍳 ${day.dejeuner ? day.dejeuner.titre : "—"}`);
+    lines.push(`  🍽️ ${day.diner ? day.diner.titre : "—"}`);
+    lines.push(`  🌙 ${day.souper ? day.souper.titre : "—"}`);
+    lines.push("");
+  });
+  return lines.join("\n").trim();
+}
+
+$("#semaine-regen").addEventListener("click", () => {
+  const s = getSemaineState();
+  s.salt = (s.salt + 1) % 100000;
+  saveSemaineState(s);
+  renderSemaine();
+});
+
+$("#semaine-seasonal").addEventListener("change", (e) => {
+  const s = getSemaineState();
+  s.seasonal = e.target.checked;
+  saveSemaineState(s);
+  renderSemaine();
+});
+
+$("#semaine-copy").addEventListener("click", async () => {
+  const txt = semaineToText();
+  const btn = $("#semaine-copy");
+  try {
+    await navigator.clipboard.writeText(txt);
+    btn.textContent = "✅ Copié !";
+  } catch (e) {
+    btn.textContent = "⚠️ Copie impossible";
+  }
+  setTimeout(() => (btn.textContent = "📋 Copier"), 1800);
 });
 
 /* ---------- Démarrage ---------- */

@@ -289,3 +289,73 @@ mark { background: #ffe08a; color: inherit; padding: 0 1px; border-radius: 3px; 
   font-style: italic;
   margin: 14px 4px 0;
 }
+
+/* ---------- Vue Ma semaine ---------- */
+.semaine-bar {
+  position: sticky;
+  top: 0;
+  z-index: 9;
+  background: var(--bg);
+  padding: 12px 16px 8px;
+  border-bottom: 1px solid var(--line);
+}
+.semaine-info { display: flex; flex-direction: column; }
+.semaine-info strong { font-size: 16px; }
+.semaine-sub { font-size: 12px; color: var(--muted); }
+.semaine-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-top: 10px;
+}
+.seasonal-toggle {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--muted);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-right: auto;
+}
+.btn {
+  border: 1.5px solid var(--accent);
+  background: var(--accent);
+  color: #fff;
+  border-radius: 999px;
+  padding: 8px 14px;
+  font-weight: 700;
+  font-size: 13px;
+  cursor: pointer;
+}
+.btn.ghost { background: var(--surface); color: var(--accent); }
+
+#semaine.results { display: grid; gap: 12px; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); }
+.jour {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 12px 14px;
+}
+.jour-titre {
+  margin: 0 0 8px;
+  font-size: 16px;
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 6px;
+}
+.jour-date { font-size: 12px; color: var(--muted); font-weight: 500; }
+.repas-line { display: flex; gap: 9px; padding: 6px 0; align-items: baseline; }
+.repas-ico { font-size: 15px; flex: 0 0 auto; }
+.repas-txt { font-size: 14px; }
+.repas-label {
+  display: block;
+  font-size: 10.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  color: var(--muted);
+  font-weight: 700;
+}

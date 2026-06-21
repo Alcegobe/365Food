@@ -21,8 +21,9 @@
       </div>
     </div>
     <nav class="tabs" role="tablist" aria-label="Vue">
-      <button class="tab" id="tab-recettes" data-view="recettes" role="tab" aria-selected="true">🍳 Recettes maison</button>
-      <button class="tab" id="tab-resto" data-view="resto" role="tab" aria-selected="false">🍔 Manger dehors</button>
+      <button class="tab" id="tab-recettes" data-view="recettes" role="tab" aria-selected="true">🍳 Recettes</button>
+      <button class="tab" id="tab-semaine" data-view="semaine" role="tab" aria-selected="false">📅 Ma semaine</button>
+      <button class="tab" id="tab-resto" data-view="resto" role="tab" aria-selected="false">🍔 Dehors</button>
     </nav>
   </header>
 
@@ -42,6 +43,19 @@
       </div>
     </nav>
     <main id="results" class="results"><p class="loading">Chargement des recettes…</p></main>
+  </div>
+
+  <!-- VUE MA SEMAINE -->
+  <div id="view-semaine" class="view" hidden>
+    <div class="semaine-bar">
+      <div class="semaine-info" id="semaine-info"></div>
+      <div class="semaine-actions">
+        <label class="seasonal-toggle"><input type="checkbox" id="semaine-seasonal" checked /> De saison</label>
+        <button id="semaine-regen" class="btn" type="button">🎲 Régénérer</button>
+        <button id="semaine-copy" class="btn ghost" type="button">📋 Copier</button>
+      </div>
+    </div>
+    <main id="semaine" class="results"><p class="loading">Chargement…</p></main>
   </div>
 
   <!-- VUE MANGER DEHORS -->
