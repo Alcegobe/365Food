@@ -2,7 +2,7 @@ name: Déployer la PWA sur GitHub Pages
 
 on:
   push:
-    branches: [main]
+    branches: [main, "claude/meal-planning-pwa-j947zv"]
   workflow_dispatch:
 
 permissions:
