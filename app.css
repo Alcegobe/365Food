@@ -1,0 +1,172 @@
+:root {
+  --bg: #fff7f0;
+  --surface: #ffffff;
+  --ink: #2a2018;
+  --muted: #8a7a6c;
+  --accent: #e8542a;
+  --accent-soft: #ffe6d8;
+  --green: #4a8b3a;
+  --green-soft: #e4f1dd;
+  --line: #f0e3d6;
+  --shadow: 0 2px 10px rgba(120, 70, 30, 0.08);
+  --radius: 16px;
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  line-height: 1.45;
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+.app-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: linear-gradient(135deg, var(--accent), #f4824f);
+  color: #fff;
+  padding: 16px 16px 14px;
+  padding-top: calc(16px + env(safe-area-inset-top));
+  box-shadow: var(--shadow);
+}
+
+.brand { display: flex; align-items: center; gap: 12px; }
+.brand-emoji { font-size: 30px; }
+.app-header h1 { margin: 0; font-size: 24px; letter-spacing: -0.5px; }
+.tagline { margin: 0; font-size: 13px; opacity: 0.92; }
+
+#search {
+  margin-top: 12px;
+  width: 100%;
+  padding: 12px 14px;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  background: rgba(255, 255, 255, 0.95);
+  color: var(--ink);
+}
+#search:focus { outline: 3px solid rgba(255, 255, 255, 0.6); }
+
+.filters {
+  position: sticky;
+  top: 0;
+  background: var(--bg);
+  padding: 12px 16px 8px;
+  border-bottom: 1px solid var(--line);
+}
+
+.filter-group {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding-bottom: 6px;
+  scrollbar-width: none;
+}
+.filter-group::-webkit-scrollbar { display: none; }
+
+.chip {
+  flex: 0 0 auto;
+  border: 1.5px solid var(--line);
+  background: var(--surface);
+  color: var(--ink);
+  padding: 7px 14px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.15s;
+}
+.chip:hover { border-color: var(--accent); }
+.chip[aria-pressed="true"] {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+
+.filter-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 8px;
+}
+.season-select { font-size: 13px; color: var(--muted); font-weight: 600; }
+.season-select select {
+  margin-left: 6px;
+  padding: 6px 10px;
+  border-radius: 10px;
+  border: 1.5px solid var(--line);
+  background: var(--surface);
+  color: var(--ink);
+  font-size: 14px;
+  font-weight: 600;
+}
+.count { font-size: 13px; color: var(--muted); }
+
+.results { padding: 12px 16px 32px; max-width: 980px; margin: 0 auto; }
+.loading, .empty { text-align: center; color: var(--muted); padding: 40px 0; }
+
+.cat-block { margin-bottom: 22px; }
+.cat-title {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin: 0 0 10px;
+  font-size: 17px;
+}
+.cat-title .n { font-size: 13px; color: var(--muted); font-weight: 500; }
+
+.cards { display: grid; gap: 10px; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); }
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 13px 14px;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.card-title { font-weight: 600; font-size: 15px; }
+
+.badges { display: flex; flex-wrap: wrap; gap: 6px; }
+.badge {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+.badge.season { background: var(--green-soft); color: var(--green); }
+
+mark { background: #ffe08a; color: inherit; padding: 0 1px; border-radius: 3px; }
+
+.app-footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 14px 16px calc(20px + env(safe-area-inset-bottom));
+  color: var(--muted);
+  font-size: 12px;
+  border-top: 1px solid var(--line);
+}
+#install-hint button {
+  border: 1.5px solid var(--accent);
+  background: var(--accent);
+  color: #fff;
+  border-radius: 999px;
+  padding: 5px 12px;
+  font-weight: 700;
+  font-size: 12px;
+  cursor: pointer;
+}

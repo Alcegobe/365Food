@@ -1,0 +1,15 @@
+{
+  "name": "365Food — Repas sains & gourmands",
+  "short_name": "365Food",
+  "description": "Recettes saines et gourmandes, adaptées à la Belgique et aux saisons.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#fff7f0",
+  "theme_color": "#e8542a",
+  "lang": "fr-BE",
+  "icons": [
+    { "src": "./icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" },
+    { "src": "./icon-maskable.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "maskable" }
+  ]
+}

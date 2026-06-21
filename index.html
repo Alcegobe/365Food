@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#e8542a" />
+  <title>365Food — Mes repas sains & gourmands</title>
+  <meta name="description" content="Bibliothèque de recettes saines et gourmandes, adaptée à la Belgique et aux saisons." />
+  <link rel="manifest" href="./manifest.webmanifest" />
+  <link rel="icon" href="./icon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="./icon.svg" />
+  <link rel="stylesheet" href="./app.css" />
+</head>
+<body>
+  <header class="app-header">
+    <div class="brand">
+      <span class="brand-emoji">🍔🥗</span>
+      <div>
+        <h1>365Food</h1>
+        <p class="tagline">Manger sain sans avoir l'impression de se priver</p>
+      </div>
+    </div>
+    <input id="search" type="search" placeholder="Rechercher un plat, une sauce…" autocomplete="off" aria-label="Rechercher" />
+  </header>
+
+  <nav class="filters" aria-label="Filtres">
+    <div class="filter-group" id="repas-filter" role="group" aria-label="Type de repas"></div>
+    <div class="filter-row">
+      <label class="season-select">
+        Saison
+        <select id="season-filter" aria-label="Saison"></select>
+      </label>
+      <span id="count" class="count" aria-live="polite"></span>
+    </div>
+  </nav>
+
+  <main id="results" class="results"><p class="loading">Chargement des recettes…</p></main>
+
+  <footer class="app-footer">
+    <span id="install-hint"></span>
+    <span>Belgique 🇧🇪 · de saison · objectif athlétique</span>
+  </footer>
+
+  <script src="./app.js" type="module"></script>
+</body>
+</html>
