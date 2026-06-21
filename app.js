@@ -45,9 +45,11 @@ function switchView(view) {
   }
   $("#view-recettes").hidden = view !== "recettes";
   $("#view-semaine").hidden = view !== "semaine";
+  $("#view-courses").hidden = view !== "courses";
   $("#view-resto").hidden = view !== "resto";
   if (view === "resto" && RESTO === null) loadResto();
   if (view === "semaine") renderSemaine();
+  if (view === "courses") renderCourses();
 }
 for (const tab of document.querySelectorAll(".tab")) {
   tab.addEventListener("click", () => switchView(tab.dataset.view));
@@ -163,10 +165,17 @@ function render() {
         : r.saisons
             .map((s) => `<span class="badge season">${SEASON_LABELS[s] ?? s}</span>`)
             .join("");
+      const c = r.composantes;
+      const comp = c
+        ? `<div class="card-comp">🥩 ${esc(c.proteine)} · 🥬 ${esc(c.legume)}` +
+          (c.feculent && c.feculent !== "—" ? ` · 🍚 ${esc(c.feculent)}` : "") +
+          `</div>`
+        : "";
       const card = document.createElement("article");
       card.className = "card";
       card.innerHTML =
         `<div class="card-title">${highlight(r.titre)}</div>` +
+        comp +
         (seasonBadges ? `<div class="badges">${seasonBadges}</div>` : "");
       cards.appendChild(card);
     }
@@ -313,27 +322,99 @@ function shuffle(arr, rng) {
   return a;
 }
 
-function poolFor(catSet, seasonalOnly) {
+const hasIngr = (r) => Array.isArray(r.ingredients) && r.ingredients.length > 0;
+
+// Catégories "plaisir" (fast-food revisité) que l'on espace dans la semaine.
+const PLAISIR_CATS = new Set(["burgers", "friterie", "kebab", "pizzas"]);
+const isPlaisir = (r) => PLAISIR_CATS.has(r.categorie);
+
+// Type de protéine, déduit de la catégorie + du titre (pour varier les repas).
+function proteinType(r) {
+  const t = norm(r.titre);
+  if (r.categorie === "poissons") return "poisson";
+  if (r.categorie === "crevettes-fruits-mer") return "fruits_mer";
+  if (/crevette|gambas|scampi|moule|fruits de mer/.test(t)) return "fruits_mer";
+  if (/saumon|cabillaud|thon|truite|colin|maquereau|sole|\bbar\b|lieu|poisson|fish/.test(t)) return "poisson";
+  if (/poulet|dinde|volaille|kebab|chicken/.test(t)) return "volaille";
+  if (/oeuf|œuf|omelette|frittata|shakshuka|quiche/.test(t)) return "oeuf";
+  if (/porc|lard|jambon|bacon|cordon/.test(t)) return "porc";
+  if (/boeuf|bœuf|steak|hache|haché|bolognaise|carbonnade|chili|burger|mijote|mijoté/.test(t)) return "boeuf";
+  if (/haricot|vege|végé|legume|légume|courgette|chou/.test(t)) return "vege";
+  if (r.categorie === "burgers") return "boeuf";
+  if (r.categorie === "kebab") return "volaille";
+  return "autre";
+}
+
+function poolFor(catSet, seasonalOnly, detailOnly) {
   const cur = currentSeason();
   return DATA.recipes.filter(
-    (r) => catSet.has(r.categorie) && (!seasonalOnly || r.saisons.includes("toute_annee") || r.saisons.includes(cur))
+    (r) =>
+      catSet.has(r.categorie) &&
+      (!seasonalOnly || r.saisons.includes("toute_annee") || r.saisons.includes(cur)) &&
+      (!detailOnly || hasIngr(r))
   );
 }
 
-function buildWeek(salt, seasonalOnly) {
+// Choisit dans le pool un plat respectant au mieux les contraintes (variété
+// protéines, plats "plaisir" espacés), sans répétition.
+function pickMain(pool, used, ctx) {
+  const candidates = pool.filter((r) => !used.has(r.id));
+  if (!candidates.length) return null;
+  const ok = (r, strict) => {
+    const pt = proteinType(r);
+    if (ctx.partnerType && pt === ctx.partnerType) return false; // même protéine le même jour
+    if (isPlaisir(r)) {
+      if (ctx.partnerPlaisir) return false; // pas 2 plaisirs le même jour
+      if (ctx.plaisirCount >= 5) return false; // ~5 max / semaine
+      if (strict && ctx.prevPlaisir) return false; // pas 2 plaisirs d'affilée
+    }
+    if (strict && ctx.prevType && pt === ctx.prevType) return false; // varier vs repas précédent
+    return true;
+  };
+  return candidates.find((r) => ok(r, true)) || candidates.find((r) => ok(r, false)) || candidates[0];
+}
+
+function buildWeek(salt, seasonalOnly, detailOnly) {
   const dejCats = new Set(DATA.categories.filter((c) => c.repas.includes("dejeuner")).map((c) => c.id));
   const mainCats = new Set(
     DATA.categories.filter((c) => c.repas.includes("diner") || c.repas.includes("souper")).map((c) => c.id)
   );
   const rng = mulberry32((isoWeekKey() * 131 + salt * 977) >>> 0);
-  const dej = shuffle(poolFor(dejCats, seasonalOnly), rng);
-  const mains = shuffle(poolFor(mainCats, seasonalOnly), rng);
+  const dej = shuffle(poolFor(dejCats, seasonalOnly, detailOnly), rng);
+  let mainsPool = shuffle(poolFor(mainCats, seasonalOnly, detailOnly), rng);
+  if (mainsPool.length < 14) mainsPool = shuffle(poolFor(mainCats, seasonalOnly, false), rng); // garde-fou
+
+  const usedMains = new Set();
+  let plaisirCount = 0;
+  let prevType = null;
+  let prevPlaisir = false;
+
   const days = [];
   for (let i = 0; i < 7; i++) {
+    const diner = pickMain(mainsPool, usedMains, { plaisirCount, prevType, prevPlaisir });
+    if (diner) {
+      usedMains.add(diner.id);
+      if (isPlaisir(diner)) plaisirCount++;
+      prevType = proteinType(diner);
+      prevPlaisir = isPlaisir(diner);
+    }
+    const souper = pickMain(mainsPool, usedMains, {
+      plaisirCount,
+      prevType,
+      prevPlaisir,
+      partnerType: diner ? proteinType(diner) : null,
+      partnerPlaisir: diner ? isPlaisir(diner) : false,
+    });
+    if (souper) {
+      usedMains.add(souper.id);
+      if (isPlaisir(souper)) plaisirCount++;
+      prevType = proteinType(souper);
+      prevPlaisir = isPlaisir(souper);
+    }
     days.push({
       dejeuner: dej.length ? dej[i % dej.length] : null,
-      diner: mains.length ? mains[(i * 2) % mains.length] : null,
-      souper: mains.length ? mains[(i * 2 + 1) % mains.length] : null,
+      diner: diner || null,
+      souper: souper || null,
     });
   }
   return days;
@@ -347,7 +428,8 @@ function getSemaineState() {
     /* ignore */
   }
   const wk = isoWeekKey();
-  if (!s || s.week !== wk) s = { week: wk, salt: 0, seasonal: true };
+  if (!s || s.week !== wk) s = { week: wk, salt: 0, seasonal: true, detail: false };
+  if (s.detail === undefined) s.detail = false;
   return s;
 }
 function saveSemaineState(s) {
@@ -359,10 +441,25 @@ function saveSemaineState(s) {
 }
 
 let SEMAINE_DAYS = null;
+let SEMAINE_SIG = null;
+const semaineSig = (s) => `${s.week}:${s.salt}:${s.seasonal}:${s.detail}`;
+
+// Construit (ou réutilise) la semaine pour l'état courant : garantit que
+// "Ma semaine" et "Courses" affichent exactement le même planning.
+function ensureWeek() {
+  if (!DATA) return false;
+  const s = getSemaineState();
+  const sig = semaineSig(s);
+  if (!SEMAINE_DAYS || SEMAINE_SIG !== sig) {
+    SEMAINE_DAYS = buildWeek(s.salt, s.seasonal, s.detail);
+    SEMAINE_SIG = sig;
+  }
+  return true;
+}
 
 function renderSemaine() {
   const root = $("#semaine");
-  if (!DATA) {
+  if (!ensureWeek()) {
     pendingSemaine = true;
     root.innerHTML = `<p class="loading">Chargement…</p>`;
     return;
@@ -371,15 +468,15 @@ function renderSemaine() {
 
   const s = getSemaineState();
   $("#semaine-seasonal").checked = s.seasonal;
+  const detailEl = $("#semaine-detail");
+  if (detailEl) detailEl.checked = s.detail;
 
   const mon = mondayOf();
   const sun = new Date(mon);
   sun.setDate(sun.getDate() + 6);
   $("#semaine-info").innerHTML =
     `<strong>Semaine du ${dm(mon)} au ${dm(sun)}</strong>` +
-    `<span class="semaine-sub">${s.seasonal ? "🇧🇪 de saison" : "toutes saisons"} · 7 jours</span>`;
-
-  SEMAINE_DAYS = buildWeek(s.salt, s.seasonal);
+    `<span class="semaine-sub">${s.seasonal ? "🇧🇪 de saison" : "toutes saisons"}${s.detail ? " · détaillées" : ""} · 7 jours</span>`;
 
   const frag = document.createDocumentFragment();
   SEMAINE_DAYS.forEach((day, i) => {
@@ -430,6 +527,13 @@ $("#semaine-seasonal").addEventListener("change", (e) => {
   renderSemaine();
 });
 
+$("#semaine-detail").addEventListener("change", (e) => {
+  const s = getSemaineState();
+  s.detail = e.target.checked;
+  saveSemaineState(s);
+  renderSemaine();
+});
+
 $("#semaine-copy").addEventListener("click", async () => {
   const txt = semaineToText();
   const btn = $("#semaine-copy");
@@ -440,6 +544,169 @@ $("#semaine-copy").addEventListener("click", async () => {
     btn.textContent = "⚠️ Copie impossible";
   }
   setTimeout(() => (btn.textContent = "📋 Copier"), 1800);
+});
+
+/* ---------- Courses (liste auto depuis la semaine) ---------- */
+const COURSES_RAYONS = [
+  "Fruits & légumes",
+  "Boucherie & volaille",
+  "Poissonnerie",
+  "Crémerie & œufs",
+  "Boulangerie",
+  "Épicerie",
+  "Sauces & condiments",
+  "Surgelés",
+  "Autre",
+];
+
+const fmtQty = (q) => (Number.isInteger(q) ? String(q) : String(Math.round(q * 100) / 100));
+
+function coursesKey() {
+  const s = getSemaineState();
+  return `courses365:${semaineSig(s)}`;
+}
+function getChecked() {
+  try {
+    return new Set(JSON.parse(localStorage.getItem(coursesKey())) || []);
+  } catch (e) {
+    return new Set();
+  }
+}
+function saveChecked(set) {
+  try {
+    localStorage.setItem(coursesKey(), JSON.stringify([...set]));
+  } catch (e) {
+    /* ignore */
+  }
+}
+
+// Agrège les ingrédients de la semaine en fusionnant les doublons.
+function aggregateCourses() {
+  const recipes = [];
+  for (const day of SEMAINE_DAYS) for (const m of [day.dejeuner, day.diner, day.souper]) if (m) recipes.push(m);
+  const detailed = recipes.filter(hasIngr);
+  const missing = recipes.filter((r) => !hasIngr(r));
+
+  const map = new Map();
+  for (const r of detailed) {
+    for (const ing of r.ingredients) {
+      const rayon = ing.rayon || "Autre";
+      const key = norm(ing.item) + "|" + (ing.unit || "") + "|" + rayon;
+      if (!map.has(key)) map.set(key, { key, item: ing.item, unit: ing.unit || "", rayon, qty: 0, hasQty: true });
+      const o = map.get(key);
+      if (typeof ing.qty === "number") o.qty += ing.qty;
+      else o.hasQty = false;
+    }
+  }
+  return { items: [...map.values()], detailed, missing, total: recipes.length };
+}
+
+function renderCourses() {
+  const root = $("#courses");
+  if (!ensureWeek()) {
+    root.innerHTML = `<p class="loading">Chargement…</p>`;
+    return;
+  }
+  const { items, detailed, missing, total } = aggregateCourses();
+  const checked = getChecked();
+
+  $("#courses-info").innerHTML =
+    `<strong>Liste de courses</strong>` +
+    `<span class="semaine-sub">${detailed.length}/${total} repas détaillés · ${items.length} ingrédients</span>`;
+
+  const frag = document.createDocumentFragment();
+
+  if (items.length === 0) {
+    const p = document.createElement("p");
+    p.className = "empty";
+    p.innerHTML =
+      "Aucun ingrédient détaillé dans cette semaine.<br>Active « Recettes détaillées » dans 📅 Ma semaine pour une liste complète.";
+    frag.appendChild(p);
+  }
+
+  const byRayon = new Map();
+  for (const it of items) {
+    if (!byRayon.has(it.rayon)) byRayon.set(it.rayon, []);
+    byRayon.get(it.rayon).push(it);
+  }
+  for (const rayon of COURSES_RAYONS) {
+    const list = byRayon.get(rayon);
+    if (!list) continue;
+    list.sort((a, b) => a.item.localeCompare(b.item, "fr"));
+    const block = document.createElement("section");
+    block.className = "rayon-block";
+    block.innerHTML = `<h3 class="rayon-titre">${esc(rayon)} <span class="n">${list.length}</span></h3>`;
+    const ul = document.createElement("div");
+    ul.className = "courses-list";
+    for (const it of list) {
+      const id = "c_" + btoa(unescape(encodeURIComponent(it.key))).replace(/=/g, "");
+      const isChecked = checked.has(it.key);
+      const qty = it.hasQty && it.qty ? `<span class="ing-qty">${fmtQty(it.qty)} ${esc(it.unit)}</span>` : "";
+      const row = document.createElement("label");
+      row.className = "course-item" + (isChecked ? " done" : "");
+      row.innerHTML =
+        `<input type="checkbox" id="${id}" ${isChecked ? "checked" : ""} />` +
+        `<span class="ing-name">${esc(it.item)}</span>${qty}`;
+      row.querySelector("input").addEventListener("change", (e) => {
+        const set = getChecked();
+        if (e.target.checked) set.add(it.key);
+        else set.delete(it.key);
+        saveChecked(set);
+        row.classList.toggle("done", e.target.checked);
+      });
+      ul.appendChild(row);
+    }
+    block.appendChild(ul);
+    frag.appendChild(block);
+  }
+
+  if (missing.length) {
+    const det = document.createElement("details");
+    det.className = "courses-missing";
+    const uniq = [...new Map(missing.map((r) => [r.id, r])).values()];
+    det.innerHTML =
+      `<summary>🧩 ${uniq.length} recette(s) à détailler (pas encore d'ingrédients)</summary>` +
+      `<ul>${uniq.map((r) => `<li>${esc(r.titre)}</li>`).join("")}</ul>`;
+    frag.appendChild(det);
+  }
+
+  root.replaceChildren(frag);
+}
+
+function coursesToText() {
+  const { items } = aggregateCourses();
+  const byRayon = new Map();
+  for (const it of items) {
+    if (!byRayon.has(it.rayon)) byRayon.set(it.rayon, []);
+    byRayon.get(it.rayon).push(it);
+  }
+  const lines = ["🛒 Liste de courses 365Food", ""];
+  for (const rayon of COURSES_RAYONS) {
+    const list = byRayon.get(rayon);
+    if (!list) continue;
+    lines.push(rayon.toUpperCase());
+    list
+      .sort((a, b) => a.item.localeCompare(b.item, "fr"))
+      .forEach((it) => lines.push(`  - ${it.item}${it.hasQty && it.qty ? ` : ${fmtQty(it.qty)} ${it.unit}` : ""}`));
+    lines.push("");
+  }
+  return lines.join("\n").trim();
+}
+
+$("#courses-copy").addEventListener("click", async () => {
+  const btn = $("#courses-copy");
+  try {
+    await navigator.clipboard.writeText(coursesToText());
+    btn.textContent = "✅ Copié !";
+  } catch (e) {
+    btn.textContent = "⚠️ Copie impossible";
+  }
+  setTimeout(() => (btn.textContent = "📋 Copier"), 1800);
+});
+
+$("#courses-reset").addEventListener("click", () => {
+  saveChecked(new Set());
+  renderCourses();
 });
 
 /* ---------- Démarrage ---------- */

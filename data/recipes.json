@@ -19,310 +19,3207 @@
     }
   },
   "saisons_belgique": {
-    "printemps": ["asperges", "radis", "épinards", "rhubarbe", "jeunes carottes", "oignons nouveaux", "cresson", "laitue", "petits pois", "fraises (fin)"],
-    "ete": ["tomates", "courgettes", "poivrons", "concombre", "haricots verts", "aubergines", "brocoli", "maïs", "fraises", "framboises", "myrtilles", "cerises", "groseilles", "pêches"],
-    "automne": ["potiron / courge", "champignons", "poireaux", "choux de Bruxelles", "chou kale", "chou rouge", "chicons", "betterave", "panais", "céleri-rave", "pommes", "poires", "raisin", "prunes"],
-    "hiver": ["chicons", "choux de Bruxelles", "chou kale", "poireaux", "carottes", "navets", "salsifis", "panais", "céleri-rave", "potiron", "pommes / poires de garde", "oranges (import)"],
+    "printemps": [
+      "asperges",
+      "radis",
+      "épinards",
+      "rhubarbe",
+      "jeunes carottes",
+      "oignons nouveaux",
+      "cresson",
+      "laitue",
+      "petits pois",
+      "fraises (fin)"
+    ],
+    "ete": [
+      "tomates",
+      "courgettes",
+      "poivrons",
+      "concombre",
+      "haricots verts",
+      "aubergines",
+      "brocoli",
+      "maïs",
+      "fraises",
+      "framboises",
+      "myrtilles",
+      "cerises",
+      "groseilles",
+      "pêches"
+    ],
+    "automne": [
+      "potiron / courge",
+      "champignons",
+      "poireaux",
+      "choux de Bruxelles",
+      "chou kale",
+      "chou rouge",
+      "chicons",
+      "betterave",
+      "panais",
+      "céleri-rave",
+      "pommes",
+      "poires",
+      "raisin",
+      "prunes"
+    ],
+    "hiver": [
+      "chicons",
+      "choux de Bruxelles",
+      "chou kale",
+      "poireaux",
+      "carottes",
+      "navets",
+      "salsifis",
+      "panais",
+      "céleri-rave",
+      "potiron",
+      "pommes / poires de garde",
+      "oranges (import)"
+    ],
     "note": "Les protéines (viande, volaille, poisson, œufs, crevettes) sont disponibles toute l'année. 'toute_annee' signifie réalisable sans contrainte saisonnière forte."
   },
   "categories": [
-    { "id": "dejeuner-avoine", "label": "Déjeuner — Flocons d'avoine & porridge", "repas": ["dejeuner"] },
-    { "id": "dejeuner-oeufs", "label": "Déjeuner — Œufs", "repas": ["dejeuner"] },
-    { "id": "dejeuner-laitages", "label": "Déjeuner — Skyr, yaourt & bowls", "repas": ["dejeuner"] },
-    { "id": "dejeuner-sale", "label": "Déjeuner — Salé & lard", "repas": ["dejeuner"] },
-    { "id": "burgers", "label": "Burgers (Burger King revisité)", "repas": ["diner", "souper"] },
-    { "id": "friterie", "label": "Friterie & air fryer", "repas": ["diner", "souper"] },
-    { "id": "kebab", "label": "Kebab & durum", "repas": ["diner", "souper"] },
-    { "id": "pizzas", "label": "Pizzas maison", "repas": ["diner", "souper"] },
-    { "id": "wok-asiatique", "label": "Wok, nouilles & asiatique", "repas": ["diner", "souper"] },
-    { "id": "pokebowl", "label": "Pokebowls", "repas": ["diner", "souper"] },
-    { "id": "quiches", "label": "Quiches & tartes salées", "repas": ["diner", "souper"] },
-    { "id": "rotis-four", "label": "Rôtis & plats au four", "repas": ["diner", "souper"] },
-    { "id": "cordon-escalopes", "label": "Cordons bleus & escalopes panées", "repas": ["diner", "souper"] },
-    { "id": "poissons", "label": "Poissons", "repas": ["diner", "souper"] },
-    { "id": "crevettes-fruits-mer", "label": "Crevettes & fruits de mer", "repas": ["diner", "souper"] },
-    { "id": "belge-traditionnel", "label": "Plats traditionnels belges (revisités)", "repas": ["diner", "souper"] },
-    { "id": "salades-bowls", "label": "Salades repas & bowls (meal prep)", "repas": ["diner", "souper"] },
-    { "id": "pates-feculents", "label": "Pâtes & féculents revisités", "repas": ["diner", "souper"] },
-    { "id": "viandes", "label": "Viandes & volaille mijotées/grillées", "repas": ["diner", "souper"] },
-    { "id": "sauces-blanches", "label": "Sauces froides base yaourt / skyr", "repas": ["sauce"] },
-    { "id": "sauces-avocat", "label": "Sauces à base d'avocat", "repas": ["sauce"] },
-    { "id": "sauces-tomate", "label": "Sauces tomate & chaudes", "repas": ["sauce"] },
-    { "id": "sauces-asiatiques", "label": "Sauces asiatiques", "repas": ["sauce"] },
-    { "id": "sauces-herbes", "label": "Sauces herbes & oléagineux", "repas": ["sauce"] },
-    { "id": "sauces-friterie", "label": "Sauces friterie belge revisitées", "repas": ["sauce"] },
-    { "id": "desserts-sable", "label": "Desserts base sablé / biscuit", "repas": ["dessert"] },
-    { "id": "desserts-fruits", "label": "Desserts aux fruits", "repas": ["dessert"] },
-    { "id": "desserts-cremeux", "label": "Desserts crémeux & protéinés", "repas": ["dessert"] },
-    { "id": "desserts-chocolat", "label": "Desserts chocolat", "repas": ["dessert"] },
-    { "id": "snacks", "label": "Petits creux & snacks", "repas": ["snack"] }
+    {
+      "id": "dejeuner-avoine",
+      "label": "Déjeuner — Flocons d'avoine & porridge",
+      "repas": [
+        "dejeuner"
+      ]
+    },
+    {
+      "id": "dejeuner-oeufs",
+      "label": "Déjeuner — Œufs",
+      "repas": [
+        "dejeuner"
+      ]
+    },
+    {
+      "id": "dejeuner-laitages",
+      "label": "Déjeuner — Skyr, yaourt & bowls",
+      "repas": [
+        "dejeuner"
+      ]
+    },
+    {
+      "id": "dejeuner-sale",
+      "label": "Déjeuner — Salé & lard",
+      "repas": [
+        "dejeuner"
+      ]
+    },
+    {
+      "id": "burgers",
+      "label": "Burgers (Burger King revisité)",
+      "repas": [
+        "diner",
+        "souper"
+      ]
+    },
+    {
+      "id": "friterie",
+      "label": "Friterie & air fryer",
+      "repas": [
+        "diner",
+        "souper"
+      ]
+    },
+    {
+      "id": "kebab",
+      "label": "Kebab & durum",
+      "repas": [
+        "diner",
+        "souper"
+      ]
+    },
+    {
+      "id": "pizzas",
+      "label": "Pizzas maison",
+      "repas": [
+        "diner",
+        "souper"
+      ]
+    },
+    {
+      "id": "wok-asiatique",
+      "label": "Wok, nouilles & asiatique",
+      "repas": [
+        "diner",
+        "souper"
+      ]
+    },
+    {
+      "id": "pokebowl",
+      "label": "Pokebowls",
+      "repas": [
+        "diner",
+        "souper"
+      ]
+    },
+    {
+      "id": "quiches",
+      "label": "Quiches & tartes salées",
+      "repas": [
+        "diner",
+        "souper"
+      ]
+    },
+    {
+      "id": "rotis-four",
+      "label": "Rôtis & plats au four",
+      "repas": [
+        "diner",
+        "souper"
+      ]
+    },
+    {
+      "id": "cordon-escalopes",
+      "label": "Cordons bleus & escalopes panées",
+      "repas": [
+        "diner",
+        "souper"
+      ]
+    },
+    {
+      "id": "poissons",
+      "label": "Poissons",
+      "repas": [
+        "diner",
+        "souper"
+      ]
+    },
+    {
+      "id": "crevettes-fruits-mer",
+      "label": "Crevettes & fruits de mer",
+      "repas": [
+        "diner",
+        "souper"
+      ]
+    },
+    {
+      "id": "belge-traditionnel",
+      "label": "Plats traditionnels belges (revisités)",
+      "repas": [
+        "diner",
+        "souper"
+      ]
+    },
+    {
+      "id": "salades-bowls",
+      "label": "Salades repas & bowls (meal prep)",
+      "repas": [
+        "diner",
+        "souper"
+      ]
+    },
+    {
+      "id": "pates-feculents",
+      "label": "Pâtes & féculents revisités",
+      "repas": [
+        "diner",
+        "souper"
+      ]
+    },
+    {
+      "id": "viandes",
+      "label": "Viandes & volaille mijotées/grillées",
+      "repas": [
+        "diner",
+        "souper"
+      ]
+    },
+    {
+      "id": "sauces-blanches",
+      "label": "Sauces froides base yaourt / skyr",
+      "repas": [
+        "sauce"
+      ]
+    },
+    {
+      "id": "sauces-avocat",
+      "label": "Sauces à base d'avocat",
+      "repas": [
+        "sauce"
+      ]
+    },
+    {
+      "id": "sauces-tomate",
+      "label": "Sauces tomate & chaudes",
+      "repas": [
+        "sauce"
+      ]
+    },
+    {
+      "id": "sauces-asiatiques",
+      "label": "Sauces asiatiques",
+      "repas": [
+        "sauce"
+      ]
+    },
+    {
+      "id": "sauces-herbes",
+      "label": "Sauces herbes & oléagineux",
+      "repas": [
+        "sauce"
+      ]
+    },
+    {
+      "id": "sauces-friterie",
+      "label": "Sauces friterie belge revisitées",
+      "repas": [
+        "sauce"
+      ]
+    },
+    {
+      "id": "desserts-sable",
+      "label": "Desserts base sablé / biscuit",
+      "repas": [
+        "dessert"
+      ]
+    },
+    {
+      "id": "desserts-fruits",
+      "label": "Desserts aux fruits",
+      "repas": [
+        "dessert"
+      ]
+    },
+    {
+      "id": "desserts-cremeux",
+      "label": "Desserts crémeux & protéinés",
+      "repas": [
+        "dessert"
+      ]
+    },
+    {
+      "id": "desserts-chocolat",
+      "label": "Desserts chocolat",
+      "repas": [
+        "dessert"
+      ]
+    },
+    {
+      "id": "snacks",
+      "label": "Petits creux & snacks",
+      "repas": [
+        "snack"
+      ]
+    }
   ],
   "recipes": [
-    { "id": "porridge-banane-cannelle", "titre": "Porridge protéiné banane-cannelle", "categorie": "dejeuner-avoine", "saisons": ["toute_annee"] },
-    { "id": "porridge-pomme-speculoos", "titre": "Porridge pomme-spéculoos allégé", "categorie": "dejeuner-avoine", "saisons": ["automne", "hiver"] },
-    { "id": "overnight-oats-myrtilles", "titre": "Overnight oats myrtilles", "categorie": "dejeuner-avoine", "saisons": ["ete"] },
-    { "id": "overnight-oats-cacahuete-cacao", "titre": "Overnight oats beurre de cacahuète-cacao", "categorie": "dejeuner-avoine", "saisons": ["toute_annee"] },
-    { "id": "porridge-poire-chocolat", "titre": "Porridge poire-chocolat noir", "categorie": "dejeuner-avoine", "saisons": ["automne", "hiver"] },
-    { "id": "porridge-sale-oeuf-lard", "titre": "Porridge salé œuf-lard", "categorie": "dejeuner-avoine", "saisons": ["toute_annee"] },
-    { "id": "pancakes-proteines-avoine", "titre": "Pancakes protéinés aux flocons d'avoine", "categorie": "dejeuner-avoine", "saisons": ["toute_annee"] },
-    { "id": "gaufres-proteinees", "titre": "Gaufres protéinées allégées", "categorie": "dejeuner-avoine", "saisons": ["toute_annee"] },
-    { "id": "crepes-proteinees", "titre": "Crêpes protéinées", "categorie": "dejeuner-avoine", "saisons": ["toute_annee"] },
-    { "id": "pain-perdu-proteine", "titre": "Pain perdu protéiné allégé", "categorie": "dejeuner-avoine", "saisons": ["toute_annee"] },
-    { "id": "chia-pudding-vanille", "titre": "Chia pudding vanille & fruits rouges", "categorie": "dejeuner-avoine", "saisons": ["ete"] },
-
-    { "id": "oeufs-plat-avocat-toast", "titre": "Œufs au plat, toast complet & avocat", "categorie": "dejeuner-oeufs", "saisons": ["toute_annee"] },
-    { "id": "oeufs-coque-mouillettes", "titre": "Œufs à la coque & mouillettes complètes", "categorie": "dejeuner-oeufs", "saisons": ["toute_annee"] },
-    { "id": "oeufs-brouilles-cottage", "titre": "Œufs brouillés crémeux au cottage cheese", "categorie": "dejeuner-oeufs", "saisons": ["toute_annee"] },
-    { "id": "omelette-jambon-champignons", "titre": "Omelette jambon-fromage-champignons", "categorie": "dejeuner-oeufs", "saisons": ["toute_annee"] },
-    { "id": "omelette-epinards-feta", "titre": "Omelette épinards & feta", "categorie": "dejeuner-oeufs", "saisons": ["printemps", "hiver"] },
-    { "id": "shakshuka-legere", "titre": "Shakshuka légère", "categorie": "dejeuner-oeufs", "saisons": ["ete", "automne"] },
-    { "id": "egg-muffins-jambon", "titre": "Egg muffins jambon-légumes", "categorie": "dejeuner-oeufs", "saisons": ["toute_annee"] },
-    { "id": "oeufs-cocotte-epinards", "titre": "Œufs cocotte aux épinards", "categorie": "dejeuner-oeufs", "saisons": ["printemps", "hiver"] },
-    { "id": "frittata-courgette-poivron", "titre": "Frittata courgette-poivron", "categorie": "dejeuner-oeufs", "saisons": ["ete"] },
-
-    { "id": "bowl-skyr-granola", "titre": "Bowl skyr, granola maison & fruits", "categorie": "dejeuner-laitages", "saisons": ["toute_annee"] },
-    { "id": "skyr-myrtilles-amandes", "titre": "Skyr myrtilles-amandes", "categorie": "dejeuner-laitages", "saisons": ["ete"] },
-    { "id": "fromage-blanc-miel-noix", "titre": "Fromage blanc miel-noix", "categorie": "dejeuner-laitages", "saisons": ["toute_annee"] },
-    { "id": "smoothie-bowl-fruits-rouges", "titre": "Smoothie bowl protéiné fruits rouges", "categorie": "dejeuner-laitages", "saisons": ["ete"] },
-
-    { "id": "bacon-dinde-air-fryer", "titre": "Bacon de dinde croustillant à l'air fryer", "categorie": "dejeuner-sale", "saisons": ["toute_annee"] },
-    { "id": "bowl-petitdej-sale-patate-douce", "titre": "Bowl petit-déj salé œuf-lard-patate douce", "categorie": "dejeuner-sale", "saisons": ["automne", "hiver"] },
-
-    { "id": "burger-boeuf-sauce-light", "titre": "Burger maison bœuf maigre & sauce burger light", "categorie": "burgers", "saisons": ["toute_annee"] },
-    { "id": "cheeseburger-frites-airfryer", "titre": "Cheeseburger light & frites d'air fryer", "categorie": "burgers", "saisons": ["toute_annee"] },
-    { "id": "chicken-burger-croustillant", "titre": "Chicken burger croustillant à l'air fryer (style King)", "categorie": "burgers", "saisons": ["toute_annee"] },
-    { "id": "double-burger-proteine", "titre": "Double burger protéiné", "categorie": "burgers", "saisons": ["toute_annee"] },
-    { "id": "bacon-burger-light", "titre": "Bacon burger light", "categorie": "burgers", "saisons": ["toute_annee"] },
-    { "id": "burger-dinde-guacamole", "titre": "Burger de dinde & guacamole", "categorie": "burgers", "saisons": ["toute_annee"] },
-    { "id": "burger-saumon-yaourt-aneth", "titre": "Burger de saumon & sauce yaourt-aneth", "categorie": "burgers", "saisons": ["toute_annee"] },
-    { "id": "burger-haricots-rouges", "titre": "Burger végé haricots rouges", "categorie": "burgers", "saisons": ["toute_annee"] },
-    { "id": "smash-burger-light", "titre": "Smash burger light", "categorie": "burgers", "saisons": ["toute_annee"] },
-    { "id": "whopper-maison-healthy", "titre": "Whopper maison healthy", "categorie": "burgers", "saisons": ["toute_annee"] },
-
-    { "id": "frites-maison-airfryer", "titre": "Frites maison à l'air fryer", "categorie": "friterie", "saisons": ["toute_annee"] },
-    { "id": "frites-patate-douce", "titre": "Frites de patate douce air fryer", "categorie": "friterie", "saisons": ["automne", "hiver"] },
-    { "id": "potatoes-epicees", "titre": "Potatoes épicées air fryer", "categorie": "friterie", "saisons": ["toute_annee"] },
-    { "id": "mitraillette-healthy", "titre": "Mitraillette healthy (baguette complète + frites air fryer)", "categorie": "friterie", "saisons": ["toute_annee"] },
-    { "id": "fricadelle-maison", "titre": "Fricadelle maison au four", "categorie": "friterie", "saisons": ["toute_annee"] },
-    { "id": "bicky-burger-light", "titre": "Bicky burger maison light", "categorie": "friterie", "saisons": ["toute_annee"] },
-    { "id": "nuggets-poulet-airfryer", "titre": "Nuggets de poulet maison air fryer", "categorie": "friterie", "saisons": ["toute_annee"] },
-    { "id": "croquettes-poulet-airfryer", "titre": "Croquettes de poulet panées air fryer", "categorie": "friterie", "saisons": ["toute_annee"] },
-
-    { "id": "kebab-poulet-sauce-blanche", "titre": "Kebab de poulet maison & sauce blanche light", "categorie": "kebab", "saisons": ["toute_annee"] },
-    { "id": "durum-poulet-yaourt-ail", "titre": "Durum poulet-légumes & sauce yaourt-ail", "categorie": "kebab", "saisons": ["toute_annee"] },
-    { "id": "bowl-kebab-poulet", "titre": "Bowl kebab poulet (sans pain)", "categorie": "kebab", "saisons": ["toute_annee"] },
-    { "id": "assiette-kebab-dinde", "titre": "Assiette kebab dinde & crudités", "categorie": "kebab", "saisons": ["toute_annee"] },
-    { "id": "pita-poulet-samourai", "titre": "Pita poulet mariné & sauce samouraï light", "categorie": "kebab", "saisons": ["toute_annee"] },
-
-    { "id": "pizza-margherita", "titre": "Pizza margherita maison (pâte light)", "categorie": "pizzas", "saisons": ["toute_annee"] },
-    { "id": "pizza-jambon-fromage", "titre": "Pizza jambon-fromage", "categorie": "pizzas", "saisons": ["toute_annee"] },
-    { "id": "pizza-fruits-de-mer", "titre": "Pizza fruits de mer", "categorie": "pizzas", "saisons": ["toute_annee"] },
-    { "id": "pizza-reine", "titre": "Pizza reine (jambon-champignons)", "categorie": "pizzas", "saisons": ["toute_annee"] },
-    { "id": "pizza-poulet-pesto", "titre": "Pizza poulet-pesto", "categorie": "pizzas", "saisons": ["toute_annee"] },
-    { "id": "pizza-thon-oignon", "titre": "Pizza thon-oignon", "categorie": "pizzas", "saisons": ["toute_annee"] },
-    { "id": "pizza-chevre-miel-epinards", "titre": "Pizza chèvre-miel-épinards", "categorie": "pizzas", "saisons": ["toute_annee"] },
-    { "id": "pizza-pepperoni-light", "titre": "Pizza pepperoni light", "categorie": "pizzas", "saisons": ["toute_annee"] },
-    { "id": "pizza-4-saisons", "titre": "Pizza 4 saisons", "categorie": "pizzas", "saisons": ["toute_annee"] },
-    { "id": "pizza-chou-fleur-lowcarb", "titre": "Pizza base chou-fleur (low carb)", "categorie": "pizzas", "saisons": ["automne", "hiver"] },
-    { "id": "pizza-tortilla-express", "titre": "Pizza tortilla express protéinée", "categorie": "pizzas", "saisons": ["toute_annee"] },
-    { "id": "calzone-jambon-ricotta", "titre": "Calzone jambon-ricotta light", "categorie": "pizzas", "saisons": ["toute_annee"] },
-
-    { "id": "wok-poulet-legumes", "titre": "Wok de poulet & légumes croquants", "categorie": "wok-asiatique", "saisons": ["toute_annee"] },
-    { "id": "wok-boeuf-soja-gingembre", "titre": "Wok de bœuf sauce soja-gingembre", "categorie": "wok-asiatique", "saisons": ["toute_annee"] },
-    { "id": "nouilles-sautees-poulet", "titre": "Nouilles chinoises sautées au poulet (style resto)", "categorie": "wok-asiatique", "saisons": ["toute_annee"] },
-    { "id": "nouilles-soba-boeuf-brocoli", "titre": "Nouilles soba bœuf-brocoli", "categorie": "wok-asiatique", "saisons": ["toute_annee"] },
-    { "id": "riz-cantonais-crevettes", "titre": "Riz cantonais light aux crevettes", "categorie": "wok-asiatique", "saisons": ["toute_annee"] },
-    { "id": "poulet-aigre-doux", "titre": "Poulet à l'aigre-doux maison (light)", "categorie": "wok-asiatique", "saisons": ["toute_annee"] },
-    { "id": "boeuf-aux-oignons", "titre": "Bœuf aux oignons sauté", "categorie": "wok-asiatique", "saisons": ["toute_annee"] },
-    { "id": "crevettes-ail-gingembre", "titre": "Crevettes sautées ail-gingembre", "categorie": "wok-asiatique", "saisons": ["toute_annee"] },
-    { "id": "pad-thai-poulet", "titre": "Pad thaï poulet allégé", "categorie": "wok-asiatique", "saisons": ["toute_annee"] },
-    { "id": "nouilles-legumes-oeuf", "titre": "Nouilles sautées légumes & œuf", "categorie": "wok-asiatique", "saisons": ["toute_annee"] },
-    { "id": "poulet-noix-cajou", "titre": "Poulet sauté aux noix de cajou", "categorie": "wok-asiatique", "saisons": ["toute_annee"] },
-    { "id": "bobun-boeuf", "titre": "Bo bun bœuf (vermicelles & crudités)", "categorie": "wok-asiatique", "saisons": ["ete"] },
-
-    { "id": "pokebowl-saumon", "titre": "Pokebowl saumon mariné", "categorie": "pokebowl", "saisons": ["toute_annee"] },
-    { "id": "pokebowl-thon-epice", "titre": "Pokebowl thon épicé", "categorie": "pokebowl", "saisons": ["toute_annee"] },
-    { "id": "pokebowl-poulet-teriyaki", "titre": "Pokebowl poulet teriyaki", "categorie": "pokebowl", "saisons": ["toute_annee"] },
-    { "id": "pokebowl-crevettes-avocat", "titre": "Pokebowl crevettes-avocat", "categorie": "pokebowl", "saisons": ["toute_annee"] },
-
-    { "id": "quiche-lorraine-legere", "titre": "Quiche lorraine légère", "categorie": "quiches", "saisons": ["toute_annee"] },
-    { "id": "quiche-saumon-epinards", "titre": "Quiche saumon-épinards", "categorie": "quiches", "saisons": ["printemps", "hiver"] },
-    { "id": "quiche-poireaux-jambon", "titre": "Quiche poireaux-jambon", "categorie": "quiches", "saisons": ["automne", "hiver"] },
-    { "id": "quiche-thon-tomate", "titre": "Quiche thon-tomate", "categorie": "quiches", "saisons": ["ete"] },
-    { "id": "tarte-courgette-chevre", "titre": "Tarte fine courgette-chèvre", "categorie": "quiches", "saisons": ["ete"] },
-    { "id": "quiche-sans-pate-brocoli", "titre": "Quiche sans pâte brocoli-jambon", "categorie": "quiches", "saisons": ["toute_annee"] },
-
-    { "id": "roti-porc-legumes", "titre": "Rôti de porc & légumes rôtis", "categorie": "rotis-four", "saisons": ["toute_annee"] },
-    { "id": "roti-dinde-farci", "titre": "Rôti de dinde farci", "categorie": "rotis-four", "saisons": ["toute_annee"] },
-    { "id": "pain-de-viande", "titre": "Pain de viande (rôti haché) maison", "categorie": "rotis-four", "saisons": ["toute_annee"] },
-    { "id": "roti-italien-porchetta", "titre": "Rôti italien (porchetta light)", "categorie": "rotis-four", "saisons": ["toute_annee"] },
-    { "id": "poulet-roti-legumes-racines", "titre": "Poulet rôti & légumes racines", "categorie": "rotis-four", "saisons": ["automne", "hiver"] },
-    { "id": "filet-poulet-ratatouille", "titre": "Filet de poulet au four & ratatouille", "categorie": "rotis-four", "saisons": ["ete"] },
-    { "id": "boulettes-sauce-tomate", "titre": "Boulettes sauce tomate maison", "categorie": "rotis-four", "saisons": ["toute_annee"] },
-    { "id": "boulettes-liegeoises", "titre": "Boulettes liégeoises light (sirop de Liège)", "categorie": "rotis-four", "saisons": ["automne", "hiver"] },
-
-    { "id": "cordon-bleu-poulet-airfryer", "titre": "Cordon bleu de poulet maison air fryer", "categorie": "cordon-escalopes", "saisons": ["toute_annee"] },
-    { "id": "escalope-dinde-panee", "titre": "Escalope de dinde panée air fryer", "categorie": "cordon-escalopes", "saisons": ["toute_annee"] },
-    { "id": "escalope-milanaise-light", "titre": "Escalope milanaise light", "categorie": "cordon-escalopes", "saisons": ["toute_annee"] },
-    { "id": "poulet-pane-panko", "titre": "Poulet pané croustillant (panko) air fryer", "categorie": "cordon-escalopes", "saisons": ["toute_annee"] },
-
-    { "id": "saumon-teriyaki-brocoli", "titre": "Saumon teriyaki & brocoli", "categorie": "poissons", "saisons": ["toute_annee"] },
-    { "id": "cabillaud-ecrase-pdt", "titre": "Dos de cabillaud & écrasé de pommes de terre", "categorie": "poissons", "saisons": ["toute_annee"] },
-    { "id": "saumon-papillote", "titre": "Filet de saumon en papillote", "categorie": "poissons", "saisons": ["toute_annee"] },
-    { "id": "saumon-croute-moutarde", "titre": "Pavé de saumon en croûte de moutarde", "categorie": "poissons", "saisons": ["toute_annee"] },
-    { "id": "cabillaud-pane-airfryer", "titre": "Cabillaud pané air fryer & frites", "categorie": "poissons", "saisons": ["toute_annee"] },
-    { "id": "truite-amandine", "titre": "Truite amandine light", "categorie": "poissons", "saisons": ["toute_annee"] },
-    { "id": "sole-meuniere-light", "titre": "Filet de sole meunière light", "categorie": "poissons", "saisons": ["toute_annee"] },
-    { "id": "colin-citron-aneth", "titre": "Colin sauce citron-aneth", "categorie": "poissons", "saisons": ["toute_annee"] },
-    { "id": "fish-and-chips-healthy", "titre": "Fish & chips healthy air fryer", "categorie": "poissons", "saisons": ["toute_annee"] },
-    { "id": "tartare-saumon", "titre": "Tartare de saumon", "categorie": "poissons", "saisons": ["toute_annee"] },
-    { "id": "brochettes-saumon-teriyaki", "titre": "Brochettes de saumon teriyaki", "categorie": "poissons", "saisons": ["ete"] },
-    { "id": "maquereau-grille-salade", "titre": "Maquereau grillé & salade", "categorie": "poissons", "saisons": ["ete"] },
-    { "id": "bar-grille-legumes", "titre": "Bar grillé & légumes", "categorie": "poissons", "saisons": ["toute_annee"] },
-    { "id": "lieu-sauce-vierge", "titre": "Lieu noir sauce vierge", "categorie": "poissons", "saisons": ["ete"] },
-
-    { "id": "crevettes-ail-persil", "titre": "Crevettes sautées ail-persil", "categorie": "crevettes-fruits-mer", "saisons": ["toute_annee"] },
-    { "id": "gambas-grillees-riz", "titre": "Gambas grillées & riz", "categorie": "crevettes-fruits-mer", "saisons": ["toute_annee"] },
-    { "id": "scampis-ail", "titre": "Scampis à l'ail (light)", "categorie": "crevettes-fruits-mer", "saisons": ["toute_annee"] },
-    { "id": "scampis-tomate-curry", "titre": "Scampis sauce tomate-curry", "categorie": "crevettes-fruits-mer", "saisons": ["toute_annee"] },
-    { "id": "moules-frites-airfryer", "titre": "Moules marinières & frites air fryer", "categorie": "crevettes-fruits-mer", "saisons": ["automne", "hiver"] },
-    { "id": "risotto-crevettes-leger", "titre": "Risotto crevettes léger", "categorie": "crevettes-fruits-mer", "saisons": ["toute_annee"] },
-
-    { "id": "carbonnade-flamande-allegee", "titre": "Carbonnade flamande allégée & purée", "categorie": "belge-traditionnel", "saisons": ["automne", "hiver"] },
-    { "id": "stoemp-carottes-saucisse", "titre": "Stoemp carottes & saucisse de volaille", "categorie": "belge-traditionnel", "saisons": ["automne", "hiver"] },
-    { "id": "stoemp-kale-lard", "titre": "Stoemp chou kale & lard", "categorie": "belge-traditionnel", "saisons": ["automne", "hiver"] },
-    { "id": "vol-au-vent-light", "titre": "Vol-au-vent de volaille light", "categorie": "belge-traditionnel", "saisons": ["toute_annee"] },
-    { "id": "chicons-gratin-jambon", "titre": "Chicons au gratin & jambon (light)", "categorie": "belge-traditionnel", "saisons": ["automne", "hiver"] },
-    { "id": "waterzooi-poulet", "titre": "Waterzooi de poulet", "categorie": "belge-traditionnel", "saisons": ["automne", "hiver"] },
-    { "id": "boulets-sauce-liege", "titre": "Boulets sauce liégeoise (sirop de Liège) light", "categorie": "belge-traditionnel", "saisons": ["automne", "hiver"] },
-    { "id": "potee-poireaux-pdt", "titre": "Potée aux poireaux & pommes de terre", "categorie": "belge-traditionnel", "saisons": ["automne", "hiver"] },
-    { "id": "hochepot-leger", "titre": "Hochepot léger", "categorie": "belge-traditionnel", "saisons": ["hiver"] },
-    { "id": "tomate-crevettes", "titre": "Tomate-crevettes grises light", "categorie": "belge-traditionnel", "saisons": ["ete"] },
-    { "id": "salade-liegeoise", "titre": "Salade liégeoise (haricots, pdt, lard)", "categorie": "belge-traditionnel", "saisons": ["ete"] },
-
-    { "id": "salade-cesar-poulet", "titre": "Salade César poulet light", "categorie": "salades-bowls", "saisons": ["toute_annee"] },
-    { "id": "bowl-poulet-riz-legumes", "titre": "Bowl poulet-riz-légumes (meal prep)", "categorie": "salades-bowls", "saisons": ["toute_annee"] },
-    { "id": "salade-poulet-avocat", "titre": "Salade poulet-avocat", "categorie": "salades-bowls", "saisons": ["toute_annee"] },
-    { "id": "buddha-bowl-proteine", "titre": "Buddha bowl protéiné (riz / patate douce)", "categorie": "salades-bowls", "saisons": ["toute_annee"] },
-    { "id": "salade-thon-haricots", "titre": "Salade thon-haricots", "categorie": "salades-bowls", "saisons": ["toute_annee"] },
-    { "id": "salade-pates-poulet-pesto", "titre": "Salade de pâtes complètes poulet-pesto", "categorie": "salades-bowls", "saisons": ["ete"] },
-    { "id": "salade-grecque-poulet", "titre": "Salade grecque & poulet grillé", "categorie": "salades-bowls", "saisons": ["ete"] },
-    { "id": "salade-nicoise-thon", "titre": "Salade niçoise au thon", "categorie": "salades-bowls", "saisons": ["ete"] },
-
-    { "id": "spaghetti-bolognaise", "titre": "Spaghetti bolognaise maison (bœuf maigre)", "categorie": "pates-feculents", "saisons": ["toute_annee"] },
-    { "id": "pates-thon-tomate", "titre": "Pâtes au thon & tomate", "categorie": "pates-feculents", "saisons": ["toute_annee"] },
-    { "id": "onepot-poulet-epinards", "titre": "One-pot pâtes poulet-épinards", "categorie": "pates-feculents", "saisons": ["toute_annee"] },
-    { "id": "lasagnes-light-legumes", "titre": "Lasagnes light bœuf-légumes", "categorie": "pates-feculents", "saisons": ["toute_annee"] },
-    { "id": "gratin-pates-jambon", "titre": "Gratin de pâtes light jambon", "categorie": "pates-feculents", "saisons": ["automne", "hiver"] },
-    { "id": "carbonara-light", "titre": "Spaghetti carbonara light (œuf, sans crème)", "categorie": "pates-feculents", "saisons": ["toute_annee"] },
-    { "id": "penne-tomate-poulet", "titre": "Penne sauce tomate-poulet", "categorie": "pates-feculents", "saisons": ["toute_annee"] },
-    { "id": "mac-and-cheese-proteine", "titre": "Mac & cheese protéiné light", "categorie": "pates-feculents", "saisons": ["toute_annee"] },
-    { "id": "risotto-champignons-light", "titre": "Risotto champignons light", "categorie": "pates-feculents", "saisons": ["automne"] },
-    { "id": "chili-con-carne-riz", "titre": "Chili con carne & riz", "categorie": "pates-feculents", "saisons": ["toute_annee"] },
-    { "id": "riz-saute-poulet-legumes", "titre": "Riz sauté poulet-légumes", "categorie": "pates-feculents", "saisons": ["toute_annee"] },
-
-    { "id": "brochettes-poulet-legumes", "titre": "Brochettes de poulet mariné & légumes grillés", "categorie": "viandes", "saisons": ["ete"] },
-    { "id": "emince-boeuf-legumes", "titre": "Émincé de bœuf & poêlée de légumes", "categorie": "viandes", "saisons": ["toute_annee"] },
-    { "id": "saute-dinde-curry-coco", "titre": "Sauté de dinde curry-coco light", "categorie": "viandes", "saisons": ["toute_annee"] },
-    { "id": "poulet-basquaise", "titre": "Poulet basquaise", "categorie": "viandes", "saisons": ["ete", "automne"] },
-    { "id": "blanquette-dinde-light", "titre": "Blanquette de dinde light", "categorie": "viandes", "saisons": ["automne", "hiver"] },
-    { "id": "poulet-roti-citron-thym", "titre": "Poulet rôti citron-thym", "categorie": "viandes", "saisons": ["toute_annee"] },
-    { "id": "steak-hache-haricots-verts", "titre": "Steak haché & haricots verts", "categorie": "viandes", "saisons": ["toute_annee"] },
-    { "id": "mijote-boeuf-carottes", "titre": "Mijoté de bœuf aux carottes", "categorie": "viandes", "saisons": ["automne", "hiver"] },
-
-    { "id": "sauce-blanche-kebab", "titre": "Sauce blanche kebab light (skyr-ail)", "categorie": "sauces-blanches", "saisons": ["toute_annee"] },
-    { "id": "tzatziki-light", "titre": "Sauce tzatziki light", "categorie": "sauces-blanches", "saisons": ["toute_annee"] },
-    { "id": "sauce-ail-fines-herbes", "titre": "Sauce ail & fines herbes light", "categorie": "sauces-blanches", "saisons": ["toute_annee"] },
-    { "id": "sauce-yaourt-aneth", "titre": "Sauce yaourt-aneth (poisson)", "categorie": "sauces-blanches", "saisons": ["toute_annee"] },
-    { "id": "sauce-ranch-light", "titre": "Sauce ranch light", "categorie": "sauces-blanches", "saisons": ["toute_annee"] },
-    { "id": "sauce-cesar-light", "titre": "Sauce césar light", "categorie": "sauces-blanches", "saisons": ["toute_annee"] },
-    { "id": "raita-concombre-menthe", "titre": "Sauce raïta concombre-menthe", "categorie": "sauces-blanches", "saisons": ["toute_annee"] },
-    { "id": "sauce-burger-light", "titre": "Sauce burger light (yaourt-ketchup-cornichon)", "categorie": "sauces-blanches", "saisons": ["toute_annee"] },
-    { "id": "sauce-tartare-light", "titre": "Sauce tartare light", "categorie": "sauces-blanches", "saisons": ["toute_annee"] },
-    { "id": "sauce-samourai-light", "titre": "Sauce samouraï light", "categorie": "sauces-blanches", "saisons": ["toute_annee"] },
-    { "id": "sauce-andalouse-light", "titre": "Sauce andalouse light", "categorie": "sauces-blanches", "saisons": ["toute_annee"] },
-    { "id": "sauce-curry-mayo-light", "titre": "Sauce curry-mayo light", "categorie": "sauces-blanches", "saisons": ["toute_annee"] },
-    { "id": "sauce-cocktail-light", "titre": "Sauce cocktail light", "categorie": "sauces-blanches", "saisons": ["toute_annee"] },
-    { "id": "sauce-poivre-light", "titre": "Sauce au poivre light (fromage blanc)", "categorie": "sauces-blanches", "saisons": ["toute_annee"] },
-
-    { "id": "guacamole-maison", "titre": "Guacamole maison", "categorie": "sauces-avocat", "saisons": ["toute_annee"] },
-    { "id": "creme-avocat-citron-vert", "titre": "Crème d'avocat-citron vert", "categorie": "sauces-avocat", "saisons": ["toute_annee"] },
-    { "id": "sauce-avocat-coriandre", "titre": "Sauce avocat-coriandre", "categorie": "sauces-avocat", "saisons": ["toute_annee"] },
-
-    { "id": "sauce-tomate-maison", "titre": "Sauce tomate maison (base pizza/pâtes)", "categorie": "sauces-tomate", "saisons": ["toute_annee"] },
-    { "id": "sauce-marinara", "titre": "Sauce marinara", "categorie": "sauces-tomate", "saisons": ["toute_annee"] },
-    { "id": "sauce-arrabiata-light", "titre": "Sauce arrabiata light", "categorie": "sauces-tomate", "saisons": ["toute_annee"] },
-    { "id": "sauce-bolognaise-maigre", "titre": "Sauce bolognaise maigre", "categorie": "sauces-tomate", "saisons": ["toute_annee"] },
-    { "id": "sauce-tomate-basilic", "titre": "Sauce tomate-basilic", "categorie": "sauces-tomate", "saisons": ["ete"] },
-    { "id": "ketchup-maison-light", "titre": "Ketchup maison light", "categorie": "sauces-tomate", "saisons": ["toute_annee"] },
-
-    { "id": "sauce-teriyaki-light", "titre": "Sauce teriyaki light", "categorie": "sauces-asiatiques", "saisons": ["toute_annee"] },
-    { "id": "sauce-soja-gingembre-ail", "titre": "Sauce soja-gingembre-ail", "categorie": "sauces-asiatiques", "saisons": ["toute_annee"] },
-    { "id": "sauce-aigre-douce-light", "titre": "Sauce aigre-douce light", "categorie": "sauces-asiatiques", "saisons": ["toute_annee"] },
-    { "id": "sauce-satay-cacahuete", "titre": "Sauce satay/cacahuète light", "categorie": "sauces-asiatiques", "saisons": ["toute_annee"] },
-    { "id": "sauce-sweet-chili-light", "titre": "Sauce sweet chili light", "categorie": "sauces-asiatiques", "saisons": ["toute_annee"] },
-    { "id": "sauce-wok-express", "titre": "Sauce wok express", "categorie": "sauces-asiatiques", "saisons": ["toute_annee"] },
-
-    { "id": "pesto-basilic-light", "titre": "Pesto basilic light", "categorie": "sauces-herbes", "saisons": ["ete"] },
-    { "id": "pesto-roquette-amandes", "titre": "Pesto roquette-amandes", "categorie": "sauces-herbes", "saisons": ["toute_annee"] },
-    { "id": "chimichurri", "titre": "Chimichurri", "categorie": "sauces-herbes", "saisons": ["toute_annee"] },
-    { "id": "sauce-vierge", "titre": "Sauce vierge (tomate-olive-herbes)", "categorie": "sauces-herbes", "saisons": ["ete"] },
-    { "id": "vinaigrette-moutarde-miel", "titre": "Vinaigrette moutarde-miel", "categorie": "sauces-herbes", "saisons": ["toute_annee"] },
-    { "id": "vinaigrette-balsamique", "titre": "Vinaigrette balsamique", "categorie": "sauces-herbes", "saisons": ["toute_annee"] },
-    { "id": "sauce-yaourt-curry", "titre": "Sauce yaourt-curry", "categorie": "sauces-herbes", "saisons": ["toute_annee"] },
-
-    { "id": "mayo-light-maison", "titre": "Mayo light maison", "categorie": "sauces-friterie", "saisons": ["toute_annee"] },
-    { "id": "sauce-pickles-light", "titre": "Sauce pickles light", "categorie": "sauces-friterie", "saisons": ["toute_annee"] },
-    { "id": "sauce-brasil-light", "titre": "Sauce brasil light", "categorie": "sauces-friterie", "saisons": ["toute_annee"] },
-    { "id": "sauce-hannibal-light", "titre": "Sauce hannibal light (épicée)", "categorie": "sauces-friterie", "saisons": ["toute_annee"] },
-
-    { "id": "cheesecake-light-sable", "titre": "Cheesecake light base sablé (skyr)", "categorie": "desserts-sable", "saisons": ["toute_annee"] },
-    { "id": "tarte-citron-meringuee-light", "titre": "Tarte au citron meringuée light base sablé", "categorie": "desserts-sable", "saisons": ["toute_annee"] },
-    { "id": "sables-proteines", "titre": "Sablés protéinés", "categorie": "desserts-sable", "saisons": ["toute_annee"] },
-    { "id": "fond-tarte-sable-fruits", "titre": "Fond de tarte sablé & fruits frais", "categorie": "desserts-sable", "saisons": ["ete"] },
-    { "id": "crumble-pomme-avoine", "titre": "Crumble pomme-flocons d'avoine", "categorie": "desserts-sable", "saisons": ["automne"] },
-    { "id": "cookies-proteines-avoine", "titre": "Cookies protéinés avoine-chocolat", "categorie": "desserts-sable", "saisons": ["toute_annee"] },
-    { "id": "speculoos-maison-allege", "titre": "Spéculoos maison allégé", "categorie": "desserts-sable", "saisons": ["automne", "hiver"] },
-
-    { "id": "salade-fruits-saison", "titre": "Salade de fruits de saison", "categorie": "desserts-fruits", "saisons": ["toute_annee"] },
-    { "id": "pommes-au-four-cannelle", "titre": "Pommes au four cannelle", "categorie": "desserts-fruits", "saisons": ["automne", "hiver"] },
-    { "id": "poires-pochees", "titre": "Poires pochées légères", "categorie": "desserts-fruits", "saisons": ["automne"] },
-    { "id": "brochettes-fruits-chocolat", "titre": "Brochettes de fruits & chocolat noir fondu", "categorie": "desserts-fruits", "saisons": ["ete"] },
-    { "id": "banane-rotie-airfryer", "titre": "Banane rôtie air fryer & cannelle", "categorie": "desserts-fruits", "saisons": ["toute_annee"] },
-    { "id": "fraises-chantilly-skyr", "titre": "Fraises & chantilly de skyr", "categorie": "desserts-fruits", "saisons": ["ete"] },
-
-    { "id": "mousse-chocolat-proteinee", "titre": "Mousse au chocolat protéinée", "categorie": "desserts-cremeux", "saisons": ["toute_annee"] },
-    { "id": "mug-cake-proteine", "titre": "Mug cake protéiné chocolat", "categorie": "desserts-cremeux", "saisons": ["toute_annee"] },
-    { "id": "fondant-chocolat-light", "titre": "Fondant chocolat light", "categorie": "desserts-cremeux", "saisons": ["toute_annee"] },
-    { "id": "panna-cotta-light", "titre": "Panna cotta light", "categorie": "desserts-cremeux", "saisons": ["toute_annee"] },
-    { "id": "riz-au-lait-leger", "titre": "Riz au lait léger", "categorie": "desserts-cremeux", "saisons": ["toute_annee"] },
-    { "id": "tiramisu-light-skyr", "titre": "Tiramisu light (skyr)", "categorie": "desserts-cremeux", "saisons": ["toute_annee"] },
-    { "id": "nice-cream-banane", "titre": "Glace banane \"nice cream\"", "categorie": "desserts-cremeux", "saisons": ["ete"] },
-    { "id": "yaourt-glace-fruits-rouges", "titre": "Yaourt glacé fruits rouges", "categorie": "desserts-cremeux", "saisons": ["ete"] },
-    { "id": "clafoutis-cerises-light", "titre": "Clafoutis cerises light", "categorie": "desserts-cremeux", "saisons": ["ete"] },
-    { "id": "gaufres-bruxelles-light", "titre": "Gaufres de Bruxelles light", "categorie": "desserts-cremeux", "saisons": ["toute_annee"] },
-    { "id": "crepes-sirop-liege", "titre": "Crêpes & sirop de Liège léger", "categorie": "desserts-cremeux", "saisons": ["toute_annee"] },
-
-    { "id": "energy-balls-dattes-cacao", "titre": "Energy balls dattes-cacao", "categorie": "desserts-chocolat", "saisons": ["toute_annee"] },
-    { "id": "carres-chocolat-amandes", "titre": "Carrés chocolat noir & amandes", "categorie": "desserts-chocolat", "saisons": ["toute_annee"] },
-    { "id": "fondue-chocolat-noir-fruits", "titre": "Fondue de chocolat noir & fruits", "categorie": "desserts-chocolat", "saisons": ["toute_annee"] },
-
-    { "id": "chips-pdt-airfryer", "titre": "Chips de pomme de terre air fryer", "categorie": "snacks", "saisons": ["toute_annee"] },
-    { "id": "chips-patate-douce", "titre": "Chips de patate douce air fryer", "categorie": "snacks", "saisons": ["automne", "hiver"] },
-    { "id": "chips-legumes", "titre": "Chips de légumes (betterave, carotte) air fryer", "categorie": "snacks", "saisons": ["automne", "hiver"] },
-    { "id": "chips-pois-chiches", "titre": "Chips de pois chiches épicés air fryer", "categorie": "snacks", "saisons": ["toute_annee"] },
-    { "id": "popcorn-maison-leger", "titre": "Pop-corn maison léger", "categorie": "snacks", "saisons": ["toute_annee"] },
-    { "id": "crackers-complets-maison", "titre": "Crackers complets maison", "categorie": "snacks", "saisons": ["toute_annee"] },
-    { "id": "houmous-crudites", "titre": "Houmous & crudités", "categorie": "snacks", "saisons": ["toute_annee"] },
-    { "id": "oeufs-durs-snack", "titre": "Œufs durs (snack protéiné)", "categorie": "snacks", "saisons": ["toute_annee"] },
-    { "id": "cottage-concombre", "titre": "Cottage cheese & concombre", "categorie": "snacks", "saisons": ["toute_annee"] },
-    { "id": "mix-noix-maison", "titre": "Mix de noix maison", "categorie": "snacks", "saisons": ["toute_annee"] },
-    { "id": "barres-avoine-maison", "titre": "Barres de céréales avoine maison", "categorie": "snacks", "saisons": ["toute_annee"] },
-    { "id": "galettes-riz-cacahuete", "titre": "Galettes de riz & beurre de cacahuète", "categorie": "snacks", "saisons": ["toute_annee"] },
-    { "id": "edamame-epices", "titre": "Edamame épicés", "categorie": "snacks", "saisons": ["toute_annee"] },
-    { "id": "batonnets-legumes-yaourt", "titre": "Bâtonnets de légumes & sauce yaourt", "categorie": "snacks", "saisons": ["toute_annee"] },
-    { "id": "dinde-roulee-fromage-frais", "titre": "Tranches de dinde roulées au fromage frais", "categorie": "snacks", "saisons": ["toute_annee"] },
-    { "id": "chips-wraps-airfryer", "titre": "Chips de wraps complets air fryer", "categorie": "snacks", "saisons": ["toute_annee"] },
-    { "id": "mini-brochettes-tomate-mozza", "titre": "Mini brochettes tomate-mozzarella light", "categorie": "snacks", "saisons": ["ete"] }
+    {
+      "id": "porridge-banane-cannelle",
+      "titre": "Porridge protéiné banane-cannelle",
+      "categorie": "dejeuner-avoine",
+      "saisons": [
+        "toute_annee"
+      ],
+      "composantes": {
+        "proteine": "Lait (+ whey)",
+        "legume": "—",
+        "feculent": "Flocons d'avoine"
+      },
+      "ingredients": [
+        {
+          "item": "Flocons d'avoine",
+          "qty": 80,
+          "unit": "g",
+          "rayon": "Épicerie"
+        },
+        {
+          "item": "Lait demi-écrémé",
+          "qty": 250,
+          "unit": "ml",
+          "rayon": "Crémerie & œufs"
+        },
+        {
+          "item": "Banane",
+          "qty": 1,
+          "unit": "pièce",
+          "rayon": "Fruits & légumes"
+        },
+        {
+          "item": "Cannelle",
+          "qty": 1,
+          "unit": "pincée",
+          "rayon": "Épicerie"
+        },
+        {
+          "item": "Whey vanille (option)",
+          "qty": 1,
+          "unit": "c.à.s",
+          "rayon": "Épicerie"
+        }
+      ]
+    },
+    {
+      "id": "porridge-pomme-speculoos",
+      "titre": "Porridge pomme-spéculoos allégé",
+      "categorie": "dejeuner-avoine",
+      "saisons": [
+        "automne",
+        "hiver"
+      ]
+    },
+    {
+      "id": "overnight-oats-myrtilles",
+      "titre": "Overnight oats myrtilles",
+      "categorie": "dejeuner-avoine",
+      "saisons": [
+        "ete"
+      ]
+    },
+    {
+      "id": "overnight-oats-cacahuete-cacao",
+      "titre": "Overnight oats beurre de cacahuète-cacao",
+      "categorie": "dejeuner-avoine",
+      "saisons": [
+        "toute_annee"
+      ],
+      "composantes": {
+        "proteine": "Lait, yaourt grec",
+        "legume": "—",
+        "feculent": "Flocons d'avoine"
+      },
+      "ingredients": [
+        {
+          "item": "Flocons d'avoine",
+          "qty": 80,
+          "unit": "g",
+          "rayon": "Épicerie"
+        },
+        {
+          "item": "Lait demi-écrémé",
+          "qty": 200,
+          "unit": "ml",
+          "rayon": "Crémerie & œufs"
+        },
+        {
+          "item": "Beurre de cacahuète",
+          "qty": 1,
+          "unit": "c.à.s",
+          "rayon": "Épicerie"
+        },
+        {
+          "item": "Cacao maigre",
+          "qty": 1,
+          "unit": "c.à.c",
+          "rayon": "Épicerie"
+        },
+        {
+          "item": "Yaourt grec 0%",
+          "qty": 2,
+          "unit": "c.à.s",
+          "rayon": "Crémerie & œufs"
+        }
+      ]
+    },
+    {
+      "id": "porridge-poire-chocolat",
+      "titre": "Porridge poire-chocolat noir",
+      "categorie": "dejeuner-avoine",
+      "saisons": [
+        "automne",
+        "hiver"
+      ]
+    },
+    {
+      "id": "porridge-sale-oeuf-lard",
+      "titre": "Porridge salé œuf-lard",
+      "categorie": "dejeuner-avoine",
+      "saisons": [
+        "toute_annee"
+      ]
+    },
+    {
+      "id": "pancakes-proteines-avoine",
+      "titre": "Pancakes protéinés aux flocons d'avoine",
+      "categorie": "dejeuner-avoine",
+      "saisons": [
+        "toute_annee"
+      ],
+      "composantes": {
+        "proteine": "Œufs, whey",
+        "legume": "—",
+        "feculent": "Flocons d'avoine"
+      },
+      "ingredients": [
+        {
+          "item": "Flocons d'avoine",
+          "qty": 60,
+          "unit": "g",
+          "rayon": "Épicerie"
+        },
+        {
+          "item": "Œuf",
+          "qty": 2,
+          "unit": "pièce",
+          "rayon": "Crémerie & œufs"
+        },
+        {
+          "item": "Banane",
+          "qty": 1,
+          "unit": "pièce",
+          "rayon": "Fruits & légumes"
+        },
+        {
+          "item": "Whey",
+          "qty": 1,
+          "unit": "dose",
+          "rayon": "Épicerie"
+        },
+        {
+          "item": "Lait demi-écrémé",
+          "qty": 50,
+          "unit": "ml",
+          "rayon": "Crémerie & œufs"
+        }
+      ]
+    },
+    {
+      "id": "gaufres-proteinees",
+      "titre": "Gaufres protéinées allégées",
+      "categorie": "dejeuner-avoine",
+      "saisons": [
+        "toute_annee"
+      ]
+    },
+    {
+      "id": "crepes-proteinees",
+      "titre": "Crêpes protéinées",
+      "categorie": "dejeuner-avoine",
+      "saisons": [
+        "toute_annee"
+      ]
+    },
+    {
+      "id": "pain-perdu-proteine",
+      "titre": "Pain perdu protéiné allégé",
+      "categorie": "dejeuner-avoine",
+      "saisons": [
+        "toute_annee"
+      ]
+    },
+    {
+      "id": "chia-pudding-vanille",
+      "titre": "Chia pudding vanille & fruits rouges",
+      "categorie": "dejeuner-avoine",
+      "saisons": [
+        "ete"
+      ]
+    },
+    {
+      "id": "oeufs-plat-avocat-toast",
+      "titre": "Œufs au plat, toast complet & avocat",
+      "categorie": "dejeuner-oeufs",
+      "saisons": [
+        "toute_annee"
+      ],
+      "composantes": {
+        "proteine": "Œufs",
+        "legume": "Avocat",
+        "feculent": "Pain complet"
+      },
+      "ingredients": [
+        {
+          "item": "Œuf",
+          "qty": 4,
+          "unit": "pièce",
+          "rayon": "Crémerie & œufs"
+        },
+        {
+          "item": "Pain complet",
+          "qty": 2,
+          "unit": "tranche",
+          "rayon": "Boulangerie"
+        },
+        {
+          "item": "Avocat",
+          "qty": 1,
+          "unit": "pièce",
+          "rayon": "Fruits & légumes"
+        },
+        {
+          "item": "Huile d'olive",
+          "qty": 1,
+          "unit": "c.à.c",
+          "rayon": "Épicerie"
+        }
+      ]
+    },
+    {
+      "id": "oeufs-coque-mouillettes",
+      "titre": "Œufs à la coque & mouillettes complètes",
+      "categorie": "dejeuner-oeufs",
+      "saisons": [
+        "toute_annee"
+      ]
+    },
+    {
+      "id": "oeufs-brouilles-cottage",
+      "titre": "Œufs brouillés crémeux au cottage cheese",
+      "categorie": "dejeuner-oeufs",
+      "saisons": [
+        "toute_annee"
+      ],
+      "composantes": {
+        "proteine": "Œufs, cottage cheese",
+        "legume": "Ciboulette",
+        "feculent": "Pain complet"
+      },
+      "ingredients": [
+        {
+          "item": "Œuf",
+          "qty": 4,
+          "unit": "pièce",
+          "rayon": "Crémerie & œufs"
+        },
+        {
+          "item": "Cottage cheese",
+          "qty": 100,
+          "unit": "g",
+          "rayon": "Crémerie & œufs"
+        },
+        {
+          "item": "Ciboulette",
+          "qty": 1,
+          "unit": "pincée",
+          "rayon": "Fruits & légumes"
+        },
+        {
+          "item": "Pain complet",
+          "qty": 2,
+          "unit": "tranche",
+          "rayon": "Boulangerie"
+        }
+      ]
+    },
+    {
+      "id": "omelette-jambon-champignons",
+      "titre": "Omelette jambon-fromage-champignons",
+      "categorie": "dejeuner-oeufs",
+      "saisons": [
+        "toute_annee"
+      ],
+      "composantes": {
+        "proteine": "Œufs, jambon",
+        "legume": "Champignons",
+        "feculent": "—"
+      },
+      "ingredients": [
+        {
+          "item": "Œuf",
+          "qty": 4,
+          "unit": "pièce",
+          "rayon": "Crémerie & œufs"
+        },
+        {
+          "item": "Jambon",
+          "qty": 2,
+          "unit": "tranche",
+          "rayon": "Boucherie & volaille"
+        },
+        {
+          "item": "Champignons",
+          "qty": 100,
+          "unit": "g",
+          "rayon": "Fruits & légumes"
+        },
+        {
+          "item": "Emmental",
+          "qty": 20,
+          "unit": "g",
+          "rayon": "Crémerie & œufs"
+        }
+      ]
+    },
+    {
+      "id": "omelette-epinards-feta",
+      "titre": "Omelette épinards & feta",
+      "categorie": "dejeuner-oeufs",
+      "saisons": [
+        "printemps",
+        "hiver"
+      ]
+    },
+    {
+      "id": "shakshuka-legere",
+      "titre": "Shakshuka légère",
+      "categorie": "dejeuner-oeufs",
+      "saisons": [
+        "ete",
+        "automne"
+      ]
+    },
+    {
+      "id": "egg-muffins-jambon",
+      "titre": "Egg muffins jambon-légumes",
+      "categorie": "dejeuner-oeufs",
+      "saisons": [
+        "toute_annee"
+      ],
+      "composantes": {
+        "proteine": "Œufs, jambon",
+        "legume": "Poivron",
+        "feculent": "—"
+      },
+      "ingredients": [
+        {
+          "item": "Œuf",
+          "qty": 4,
+          "unit": "pièce",
+          "rayon": "Crémerie & œufs"
+        },
+        {
+          "item": "Jambon",
+          "qty": 2,
+          "unit": "tranche",
+          "rayon": "Boucherie & volaille"
+        },
+        {
+          "item": "Poivron",
+          "qty": 0.5,
+          "unit": "pièce",
+          "rayon": "Fruits & légumes"
+        },
+        {
+          "item": "Emmental",
+          "qty": 20,
+          "unit": "g",
+          "rayon": "Crémerie & œufs"
+        }
+      ]
+    },
+    {
+      "id": "oeufs-cocotte-epinards",
+      "titre": "Œufs cocotte aux épinards",
+      "categorie": "dejeuner-oeufs",
+      "saisons": [
+        "printemps",
+        "hiver"
+      ]
+    },
+    {
+      "id": "frittata-courgette-poivron",
+      "titre": "Frittata courgette-poivron",
+      "categorie": "dejeuner-oeufs",
+      "saisons": [
+        "ete"
+      ]
+    },
+    {
+      "id": "bowl-skyr-granola",
+      "titre": "Bowl skyr, granola maison & fruits",
+      "categorie": "dejeuner-laitages",
+      "saisons": [
+        "toute_annee"
+      ],
+      "composantes": {
+        "proteine": "Skyr",
+        "legume": "Fruits rouges",
+        "feculent": "Granola"
+      },
+      "ingredients": [
+        {
+          "item": "Skyr",
+          "qty": 300,
+          "unit": "g",
+          "rayon": "Crémerie & œufs"
+        },
+        {
+          "item": "Granola",
+          "qty": 50,
+          "unit": "g",
+          "rayon": "Épicerie"
+        },
+        {
+          "item": "Fruits rouges",
+          "qty": 100,
+          "unit": "g",
+          "rayon": "Fruits & légumes"
+        },
+        {
+          "item": "Miel",
+          "qty": 1,
+          "unit": "c.à.c",
+          "rayon": "Épicerie"
+        }
+      ]
+    },
+    {
+      "id": "skyr-myrtilles-amandes",
+      "titre": "Skyr myrtilles-amandes",
+      "categorie": "dejeuner-laitages",
+      "saisons": [
+        "ete"
+      ]
+    },
+    {
+      "id": "fromage-blanc-miel-noix",
+      "titre": "Fromage blanc miel-noix",
+      "categorie": "dejeuner-laitages",
+      "saisons": [
+        "toute_annee"
+      ]
+    },
+    {
+      "id": "smoothie-bowl-fruits-rouges",
+      "titre": "Smoothie bowl protéiné fruits rouges",
+      "categorie": "dejeuner-laitages",
+      "saisons": [
+        "ete"
+      ]
+    },
+    {
+      "id": "bacon-dinde-air-fryer",
+      "titre": "Bacon de dinde croustillant à l'air fryer",
+      "categorie": "dejeuner-sale",
+      "saisons": [
+        "toute_annee"
+      ]
+    },
+    {
+      "id": "bowl-petitdej-sale-patate-douce",
+      "titre": "Bowl petit-déj salé œuf-lard-patate douce",
+      "categorie": "dejeuner-sale",
+      "saisons": [
+        "automne",
+        "hiver"
+      ]
+    },
+    {
+      "id": "burger-boeuf-sauce-light",
+      "titre": "Burger maison bœuf maigre & sauce burger light",
+      "categorie": "burgers",
+      "saisons": [
+        "toute_annee"
+      ],
+      "composantes": {
+        "proteine": "Bœuf haché maigre",
+        "legume": "Salade, tomate, oignon",
+        "feculent": "Pain à burger complet"
+      },
+      "ingredients": [
+        {
+          "item": "Bœuf haché 5%",
+          "qty": 250,
+          "unit": "g",
+          "rayon": "Boucherie & volaille"
+        },
+        {
+          "item": "Pain à burger complet",
+          "qty": 2,
+          "unit": "pièce",
+          "rayon": "Boulangerie"
+        },
+        {
+          "item": "Tomate",
+          "qty": 1,
+          "unit": "pièce",
+          "rayon": "Fruits & légumes"
+        },
+        {
+          "item": "Oignon rouge",
+          "qty": 0.5,
+          "unit": "pièce",
+          "rayon": "Fruits & légumes"
+        },
+        {
+          "item": "Salade (feuilles)",
+          "qty": 4,
+          "unit": "feuille",
+          "rayon": "Fruits & légumes"
+        },
+        {
+          "item": "Cheddar",
+          "qty": 2,
+          "unit": "tranche",
+          "rayon": "Crémerie & œufs"
+        },
+        {
+          "item": "Yaourt grec 0%",
+          "qty": 2,
+          "unit": "c.à.s",
+          "rayon": "Crémerie & œufs"
+        },
+        {
+          "item": "Ketchup",
+          "qty": 1,
+          "unit": "c.à.s",
+          "rayon": "Sauces & condiments"
+        }
+      ]
+    },
+    {
+      "id": "cheeseburger-frites-airfryer",
+      "titre": "Cheeseburger light & frites d'air fryer",
+      "categorie": "burgers",
+      "saisons": [
+        "toute_annee"
+      ],
+      "composantes": {
+        "proteine": "Bœuf haché maigre",
+        "legume": "Salade, tomate",
+        "feculent": "Pain + pommes de terre"
+      },
+      "ingredients": [
+        {
+          "item": "Bœuf haché 5%",
+          "qty": 250,
+          "unit": "g",
+          "rayon": "Boucherie & volaille"
+        },
+        {
+          "item": "Pain à burger complet",
+          "qty": 2,
+          "unit": "pièce",
+          "rayon": "Boulangerie"
+        },
+        {
+          "item": "Cheddar",
+          "qty": 2,
+          "unit": "tranche",
+          "rayon": "Crémerie & œufs"
+        },
+        {
+          "item": "Pommes de terre",
+          "qty": 400,
+          "unit": "g",
+          "rayon": "Fruits & légumes"
+        },
+        {
+          "item": "Huile d'olive",
+          "qty": 1,
+          "unit": "c.à.s",
+          "rayon": "Épicerie"
+        },
+        {
+          "item": "Cornichon",
+          "qty": 4,
+          "unit": "pièce",
+          "rayon": "Sauces & condiments"
+        }
+      ]
+    },
+    {
+      "id": "chicken-burger-croustillant",
+      "titre": "Chicken burger croustillant à l'air fryer (style King)",
+      "categorie": "burgers",
+      "saisons": [
+        "toute_annee"
+      ]
+    },
+    {
+      "id": "double-burger-proteine",
+      "titre": "Double burger protéiné",
+      "categorie": "burgers",
+      "saisons": [
+        "toute_annee"
+      ]
+    },
+    {
+      "id": "bacon-burger-light",
+      "titre": "Bacon burger light",
+      "categorie": "burgers",
+      "saisons": [
+        "toute_annee"
+      ]
+    },
+    {
+      "id": "burger-dinde-guacamole",
+      "titre": "Burger de dinde & guacamole",
+      "categorie": "burgers",
+      "saisons": [
+        "toute_annee"
+      ]
+    },
+    {
+      "id": "burger-saumon-yaourt-aneth",
+      "titre": "Burger de saumon & sauce yaourt-aneth",
+      "categorie": "burgers",
+      "saisons": [
+        "toute_annee"
+      ]
+    },
+    {
+      "id": "burger-haricots-rouges",
+      "titre": "Burger végé haricots rouges",
+      "categorie": "burgers",
+      "saisons": [
+        "toute_annee"
+      ]
+    },
+    {
+      "id": "smash-burger-light",
+      "titre": "Smash burger light",
+      "categorie": "burgers",
+      "saisons": [
+        "toute_annee"
+      ]
+    },
+    {
+      "id": "whopper-maison-healthy",
+      "titre": "Whopper maison healthy",
+      "categorie": "burgers",
+      "saisons": [
+        "toute_annee"
+      ]
+    },
+    {
+      "id": "frites-maison-airfryer",
+      "titre": "Frites maison à l'air fryer",
+      "categorie": "friterie",
+      "saisons": [
+        "toute_annee"
+      ]
+    },
+    {
+      "id": "frites-patate-douce",
+      "titre": "Frites de patate douce air fryer",
+      "categorie": "friterie",
+      "saisons": [
+        "automne",
+        "hiver"
+      ]
+    },
+    {
+      "id": "potatoes-epicees",
+      "titre": "Potatoes épicées air fryer",
+      "categorie": "friterie",
+      "saisons": [
+        "toute_annee"
+      ]
+    },
+    {
+      "id": "mitraillette-healthy",
+      "titre": "Mitraillette healthy (baguette complète + frites air fryer)",
+      "categorie": "friterie",
+      "saisons": [
+        "toute_annee"
+      ]
+    },
+    {
+      "id": "fricadelle-maison",
+      "titre": "Fricadelle maison au four",
+      "categorie": "friterie",
+      "saisons": [
+        "toute_annee"
+      ]
+    },
+    {
+      "id": "bicky-burger-light",
+      "titre": "Bicky burger maison light",
+      "categorie": "friterie",
+      "saisons": [
+        "toute_annee"
+      ]
+    },
+    {
+      "id": "nuggets-poulet-airfryer",
+      "titre": "Nuggets de poulet maison air fryer",
+      "categorie": "friterie",
+      "saisons": [
+        "toute_annee"
+      ]
+    },
+    {
+      "id": "croquettes-poulet-airfryer",
+      "titre": "Croquettes de poulet panées air fryer",
+      "categorie": "friterie",
+      "saisons": [
+        "toute_annee"
+      ]
+    },
+    {
+      "id": "kebab-poulet-sauce-blanche",
+      "titre": "Kebab de poulet maison & sauce blanche light",
+      "categorie": "kebab",
+      "saisons": [
+        "toute_annee"
+      ],
+      "composantes": {
+        "proteine": "Poulet mariné",
+        "legume": "Crudités",
+        "feculent": "Pain pita complet"
+      },
+      "ingredients": [
+        {
+          "item": "Filet de poulet",
+          "qty": 300,
+          "unit": "g",
+          "rayon": "Boucherie & volaille"
+        },
+        {
+          "item": "Pain pita complet",
+          "qty": 2,
+          "unit": "pièce",
+          "rayon": "Boulangerie"
+        },
+        {
+          "item": "Tomate",
+          "qty": 1,
+          "unit": "pièce",
+          "rayon": "Fruits & légumes"
+        },
+        {
+          "item": "Oignon",
+          "qty": 0.5,
+          "unit": "pièce",
+          "rayon": "Fruits & légumes"
+        },
+        {
+          "item": "Salade (feuilles)",
+          "qty": 4,
+          "unit": "feuille",
+          "rayon": "Fruits & légumes"
+        },
+        {
+          "item": "Yaourt grec 0%",
+          "qty": 3,
+          "unit": "c.à.s",
+          "rayon": "Crémerie & œufs"
+        },
+        {
+          "item": "Ail",
+          "qty": 1,
+          "unit": "gousse",
+          "rayon": "Fruits & légumes"
+        },
+        {
+          "item": "Épices kebab (cumin, paprika)",
+          "qty": 1,
+          "unit": "c.à.c",
+          "rayon": "Épicerie"
+        }
+      ]
+    },
+    {
+      "id": "durum-poulet-yaourt-ail",
+      "titre": "Durum poulet-légumes & sauce yaourt-ail",
+      "categorie": "kebab",
+      "saisons": [
+        "toute_annee"
+      ]
+    },
+    {
+      "id": "bowl-kebab-poulet",
+      "titre": "Bowl kebab poulet (sans pain)",
+      "categorie": "kebab",
+      "saisons": [
+        "toute_annee"
+      ]
+    },
+    {
+      "id": "assiette-kebab-dinde",
+      "titre": "Assiette kebab dinde & crudités",
+      "categorie": "kebab",
+      "saisons": [
+        "toute_annee"
+      ]
+    },
+    {
+      "id": "pita-poulet-samourai",
+      "titre": "Pita poulet mariné & sauce samouraï light",
+      "categorie": "kebab",
+      "saisons": [
+        "toute_annee"
+      ]
+    },
+    {
+      "id": "pizza-margherita",
+      "titre": "Pizza margherita maison (pâte light)",
+      "categorie": "pizzas",
+      "saisons": [
+        "toute_annee"
+      ],
+      "composantes": {
+        "proteine": "Mozzarella",
+        "legume": "Tomate, basilic",
+        "feculent": "Pâte à pizza"
+      },
+      "ingredients": [
+        {
+          "item": "Pâte à pizza",
+          "qty": 1,
+          "unit": "pièce",
+          "rayon": "Boulangerie"
+        },
+        {
+          "item": "Sauce tomate",
+          "qty": 100,
+          "unit": "g",
+          "rayon": "Sauces & condiments"
+        },
+        {
+          "item": "Mozzarella",
+          "qty": 125,
+          "unit": "g",
+          "rayon": "Crémerie & œufs"
+        },
+        {
+          "item": "Basilic frais",
+          "qty": 1,
+          "unit": "pincée",
+          "rayon": "Fruits & légumes"
+        },
+        {
+          "item": "Huile d'olive",
+          "qty": 1,
+          "unit": "c.à.s",
+          "rayon": "Épicerie"
+        }
+      ]
+    },
+    {
+      "id": "pizza-jambon-fromage",
+      "titre": "Pizza jambon-fromage",
+      "categorie": "pizzas",
+      "saisons": [
+        "toute_annee"
+      ]
+    },
+    {
+      "id": "pizza-fruits-de-mer",
+      "titre": "Pizza fruits de mer",
+      "categorie": "pizzas",
+      "saisons": [
+        "toute_annee"
+      ]
+    },
+    {
+      "id": "pizza-reine",
+      "titre": "Pizza reine (jambon-champignons)",
+      "categorie": "pizzas",
+      "saisons": [
+        "toute_annee"
+      ]
+    },
+    {
+      "id": "pizza-poulet-pesto",
+      "titre": "Pizza poulet-pesto",
+      "categorie": "pizzas",
+      "saisons": [
+        "toute_annee"
+      ]
+    },
+    {
+      "id": "pizza-thon-oignon",
+      "titre": "Pizza thon-oignon",
+      "categorie": "pizzas",
+      "saisons": [
+        "toute_annee"
+      ]
+    },
+    {
+      "id": "pizza-chevre-miel-epinards",
+      "titre": "Pizza chèvre-miel-épinards",
+      "categorie": "pizzas",
+      "saisons": [
+        "toute_annee"
+      ]
+    },
+    {
+      "id": "pizza-pepperoni-light",
+      "titre": "Pizza pepperoni light",
+      "categorie": "pizzas",
+      "saisons": [
+        "toute_annee"
+      ]
+    },
+    {
+      "id": "pizza-4-saisons",
+      "titre": "Pizza 4 saisons",
+      "categorie": "pizzas",
+      "saisons": [
+        "toute_annee"
+      ]
+    },
+    {
+      "id": "pizza-chou-fleur-lowcarb",
+      "titre": "Pizza base chou-fleur (low carb)",
+      "categorie": "pizzas",
+      "saisons": [
+        "automne",
+        "hiver"
+      ]
+    },
+    {
+      "id": "pizza-tortilla-express",
+      "titre": "Pizza tortilla express protéinée",
+      "categorie": "pizzas",
+      "saisons": [
+        "toute_annee"
+      ]
+    },
+    {
+      "id": "calzone-jambon-ricotta",
+      "titre": "Calzone jambon-ricotta light",
+      "categorie": "pizzas",
+      "saisons": [
+        "toute_annee"
+      ]
+    },
+    {
+      "id": "wok-poulet-legumes",
+      "titre": "Wok de poulet & légumes croquants",
+      "categorie": "wok-asiatique",
+      "saisons": [
+        "toute_annee"
+      ],
+      "composantes": {
+        "proteine": "Poulet",
+        "legume": "Légumes wok",
+        "feculent": "Riz"
+      },
+      "ingredients": [
+        {
+          "item": "Filet de poulet",
+          "qty": 300,
+          "unit": "g",
+          "rayon": "Boucherie & volaille"
+        },
+        {
+          "item": "Mélange de légumes wok",
+          "qty": 400,
+          "unit": "g",
+          "rayon": "Fruits & légumes"
+        },
+        {
+          "item": "Riz",
+          "qty": 150,
+          "unit": "g",
+          "rayon": "Épicerie"
+        },
+        {
+          "item": "Sauce soja",
+          "qty": 2,
+          "unit": "c.à.s",
+          "rayon": "Sauces & condiments"
+        },
+        {
+          "item": "Gingembre",
+          "qty": 1,
+          "unit": "c.à.c",
+          "rayon": "Fruits & légumes"
+        },
+        {
+          "item": "Ail",
+          "qty": 1,
+          "unit": "gousse",
+          "rayon": "Fruits & légumes"
+        },
+        {
+          "item": "Huile de sésame",
+          "qty": 1,
+          "unit": "c.à.c",
+          "rayon": "Épicerie"
+        }
+      ]
+    },
+    {
+      "id": "wok-boeuf-soja-gingembre",
+      "titre": "Wok de bœuf sauce soja-gingembre",
+      "categorie": "wok-asiatique",
+      "saisons": [
+        "toute_annee"
+      ]
+    },
+    {
+      "id": "nouilles-sautees-poulet",
+      "titre": "Nouilles chinoises sautées au poulet (style resto)",
+      "categorie": "wok-asiatique",
+      "saisons": [
+        "toute_annee"
+      ],
+      "composantes": {
+        "proteine": "Poulet",
+        "legume": "Légumes wok",
+        "feculent": "Nouilles"
+      },
+      "ingredients": [
+        {
+          "item": "Filet de poulet",
+          "qty": 250,
+          "unit": "g",
+          "rayon": "Boucherie & volaille"
+        },
+        {
+          "item": "Nouilles chinoises",
+          "qty": 180,
+          "unit": "g",
+          "rayon": "Épicerie"
+        },
+        {
+          "item": "Mélange de légumes wok",
+          "qty": 300,
+          "unit": "g",
+          "rayon": "Fruits & légumes"
+        },
+        {
+          "item": "Sauce soja",
+          "qty": 2,
+          "unit": "c.à.s",
+          "rayon": "Sauces & condiments"
+        },
+        {
+          "item": "Gingembre",
+          "qty": 1,
+          "unit": "c.à.c",
+          "rayon": "Fruits & légumes"
+        },
+        {
+          "item": "Ail",
+          "qty": 1,
+          "unit": "gousse",
+          "rayon": "Fruits & légumes"
+        }
+      ]
+    },
+    {
+      "id": "nouilles-soba-boeuf-brocoli",
+      "titre": "Nouilles soba bœuf-brocoli",
+      "categorie": "wok-asiatique",
+      "saisons": [
+        "toute_annee"
+      ]
+    },
+    {
+      "id": "riz-cantonais-crevettes",
+      "titre": "Riz cantonais light aux crevettes",
+      "categorie": "wok-asiatique",
+      "saisons": [
+        "toute_annee"
+      ]
+    },
+    {
+      "id": "poulet-aigre-doux",
+      "titre": "Poulet à l'aigre-doux maison (light)",
+      "categorie": "wok-asiatique",
+      "saisons": [
+        "toute_annee"
+      ]
+    },
+    {
+      "id": "boeuf-aux-oignons",
+      "titre": "Bœuf aux oignons sauté",
+      "categorie": "wok-asiatique",
+      "saisons": [
+        "toute_annee"
+      ]
+    },
+    {
+      "id": "crevettes-ail-gingembre",
+      "titre": "Crevettes sautées ail-gingembre",
+      "categorie": "wok-asiatique",
+      "saisons": [
+        "toute_annee"
+      ]
+    },
+    {
+      "id": "pad-thai-poulet",
+      "titre": "Pad thaï poulet allégé",
+      "categorie": "wok-asiatique",
+      "saisons": [
+        "toute_annee"
+      ]
+    },
+    {
+      "id": "nouilles-legumes-oeuf",
+      "titre": "Nouilles sautées légumes & œuf",
+      "categorie": "wok-asiatique",
+      "saisons": [
+        "toute_annee"
+      ]
+    },
+    {
+      "id": "poulet-noix-cajou",
+      "titre": "Poulet sauté aux noix de cajou",
+      "categorie": "wok-asiatique",
+      "saisons": [
+        "toute_annee"
+      ]
+    },
+    {
+      "id": "bobun-boeuf",
+      "titre": "Bo bun bœuf (vermicelles & crudités)",
+      "categorie": "wok-asiatique",
+      "saisons": [
+        "ete"
+      ]
+    },
+    {
+      "id": "pokebowl-saumon",
+      "titre": "Pokebowl saumon mariné",
+      "categorie": "pokebowl",
+      "saisons": [
+        "toute_annee"
+      ],
+      "composantes": {
+        "proteine": "Saumon cru",
+        "legume": "Avocat, concombre, edamame",
+        "feculent": "Riz à sushi"
+      },
+      "ingredients": [
+        {
+          "item": "Saumon frais (qualité sashimi)",
+          "qty": 200,
+          "unit": "g",
+          "rayon": "Poissonnerie"
+        },
+        {
+          "item": "Riz à sushi",
+          "qty": 150,
+          "unit": "g",
+          "rayon": "Épicerie"
+        },
+        {
+          "item": "Avocat",
+          "qty": 1,
+          "unit": "pièce",
+          "rayon": "Fruits & légumes"
+        },
+        {
+          "item": "Concombre",
+          "qty": 0.5,
+          "unit": "pièce",
+          "rayon": "Fruits & légumes"
+        },
+        {
+          "item": "Edamame",
+          "qty": 100,
+          "unit": "g",
+          "rayon": "Surgelés"
+        },
+        {
+          "item": "Sauce soja",
+          "qty": 2,
+          "unit": "c.à.s",
+          "rayon": "Sauces & condiments"
+        },
+        {
+          "item": "Graines de sésame",
+          "qty": 1,
+          "unit": "c.à.c",
+          "rayon": "Épicerie"
+        }
+      ]
+    },
+    {
+      "id": "pokebowl-thon-epice",
+      "titre": "Pokebowl thon épicé",
+      "categorie": "pokebowl",
+      "saisons": [
+        "toute_annee"
+      ]
+    },
+    {
+      "id": "pokebowl-poulet-teriyaki",
+      "titre": "Pokebowl poulet teriyaki",
+      "categorie": "pokebowl",
+      "saisons": [
+        "toute_annee"
+      ]
+    },
+    {
+      "id": "pokebowl-crevettes-avocat",
+      "titre": "Pokebowl crevettes-avocat",
+      "categorie": "pokebowl",
+      "saisons": [
+        "toute_annee"
+      ]
+    },
+    {
+      "id": "quiche-lorraine-legere",
+      "titre": "Quiche lorraine légère",
+      "categorie": "quiches",
+      "saisons": [
+        "toute_annee"
+      ]
+    },
+    {
+      "id": "quiche-saumon-epinards",
+      "titre": "Quiche saumon-épinards",
+      "categorie": "quiches",
+      "saisons": [
+        "printemps",
+        "hiver"
+      ]
+    },
+    {
+      "id": "quiche-poireaux-jambon",
+      "titre": "Quiche poireaux-jambon",
+      "categorie": "quiches",
+      "saisons": [
+        "automne",
+        "hiver"
+      ]
+    },
+    {
+      "id": "quiche-thon-tomate",
+      "titre": "Quiche thon-tomate",
+      "categorie": "quiches",
+      "saisons": [
+        "ete"
+      ]
+    },
+    {
+      "id": "tarte-courgette-chevre",
+      "titre": "Tarte fine courgette-chèvre",
+      "categorie": "quiches",
+      "saisons": [
+        "ete"
+      ]
+    },
+    {
+      "id": "quiche-sans-pate-brocoli",
+      "titre": "Quiche sans pâte brocoli-jambon",
+      "categorie": "quiches",
+      "saisons": [
+        "toute_annee"
+      ]
+    },
+    {
+      "id": "roti-porc-legumes",
+      "titre": "Rôti de porc & légumes rôtis",
+      "categorie": "rotis-four",
+      "saisons": [
+        "toute_annee"
+      ]
+    },
+    {
+      "id": "roti-dinde-farci",
+      "titre": "Rôti de dinde farci",
+      "categorie": "rotis-four",
+      "saisons": [
+        "toute_annee"
+      ]
+    },
+    {
+      "id": "pain-de-viande",
+      "titre": "Pain de viande (rôti haché) maison",
+      "categorie": "rotis-four",
+      "saisons": [
+        "toute_annee"
+      ]
+    },
+    {
+      "id": "roti-italien-porchetta",
+      "titre": "Rôti italien (porchetta light)",
+      "categorie": "rotis-four",
+      "saisons": [
+        "toute_annee"
+      ]
+    },
+    {
+      "id": "poulet-roti-legumes-racines",
+      "titre": "Poulet rôti & légumes racines",
+      "categorie": "rotis-four",
+      "saisons": [
+        "automne",
+        "hiver"
+      ]
+    },
+    {
+      "id": "filet-poulet-ratatouille",
+      "titre": "Filet de poulet au four & ratatouille",
+      "categorie": "rotis-four",
+      "saisons": [
+        "ete"
+      ]
+    },
+    {
+      "id": "boulettes-sauce-tomate",
+      "titre": "Boulettes sauce tomate maison",
+      "categorie": "rotis-four",
+      "saisons": [
+        "toute_annee"
+      ]
+    },
+    {
+      "id": "boulettes-liegeoises",
+      "titre": "Boulettes liégeoises light (sirop de Liège)",
+      "categorie": "rotis-four",
+      "saisons": [
+        "automne",
+        "hiver"
+      ]
+    },
+    {
+      "id": "cordon-bleu-poulet-airfryer",
+      "titre": "Cordon bleu de poulet maison air fryer",
+      "categorie": "cordon-escalopes",
+      "saisons": [
+        "toute_annee"
+      ],
+      "composantes": {
+        "proteine": "Poulet, jambon",
+        "legume": "—",
+        "feculent": "Chapelure"
+      },
+      "ingredients": [
+        {
+          "item": "Escalope de poulet",
+          "qty": 2,
+          "unit": "pièce",
+          "rayon": "Boucherie & volaille"
+        },
+        {
+          "item": "Jambon",
+          "qty": 2,
+          "unit": "tranche",
+          "rayon": "Boucherie & volaille"
+        },
+        {
+          "item": "Emmental",
+          "qty": 2,
+          "unit": "tranche",
+          "rayon": "Crémerie & œufs"
+        },
+        {
+          "item": "Chapelure (panko)",
+          "qty": 60,
+          "unit": "g",
+          "rayon": "Épicerie"
+        },
+        {
+          "item": "Œuf",
+          "qty": 1,
+          "unit": "pièce",
+          "rayon": "Crémerie & œufs"
+        },
+        {
+          "item": "Farine",
+          "qty": 30,
+          "unit": "g",
+          "rayon": "Épicerie"
+        }
+      ]
+    },
+    {
+      "id": "escalope-dinde-panee",
+      "titre": "Escalope de dinde panée air fryer",
+      "categorie": "cordon-escalopes",
+      "saisons": [
+        "toute_annee"
+      ]
+    },
+    {
+      "id": "escalope-milanaise-light",
+      "titre": "Escalope milanaise light",
+      "categorie": "cordon-escalopes",
+      "saisons": [
+        "toute_annee"
+      ]
+    },
+    {
+      "id": "poulet-pane-panko",
+      "titre": "Poulet pané croustillant (panko) air fryer",
+      "categorie": "cordon-escalopes",
+      "saisons": [
+        "toute_annee"
+      ]
+    },
+    {
+      "id": "saumon-teriyaki-brocoli",
+      "titre": "Saumon teriyaki & brocoli",
+      "categorie": "poissons",
+      "saisons": [
+        "toute_annee"
+      ],
+      "composantes": {
+        "proteine": "Saumon",
+        "legume": "Brocoli",
+        "feculent": "Riz"
+      },
+      "ingredients": [
+        {
+          "item": "Pavé de saumon",
+          "qty": 2,
+          "unit": "pièce",
+          "rayon": "Poissonnerie"
+        },
+        {
+          "item": "Brocoli",
+          "qty": 400,
+          "unit": "g",
+          "rayon": "Fruits & légumes"
+        },
+        {
+          "item": "Riz",
+          "qty": 150,
+          "unit": "g",
+          "rayon": "Épicerie"
+        },
+        {
+          "item": "Sauce soja",
+          "qty": 2,
+          "unit": "c.à.s",
+          "rayon": "Sauces & condiments"
+        },
+        {
+          "item": "Miel",
+          "qty": 1,
+          "unit": "c.à.c",
+          "rayon": "Épicerie"
+        },
+        {
+          "item": "Graines de sésame",
+          "qty": 1,
+          "unit": "c.à.c",
+          "rayon": "Épicerie"
+        }
+      ]
+    },
+    {
+      "id": "cabillaud-ecrase-pdt",
+      "titre": "Dos de cabillaud & écrasé de pommes de terre",
+      "categorie": "poissons",
+      "saisons": [
+        "toute_annee"
+      ],
+      "composantes": {
+        "proteine": "Cabillaud",
+        "legume": "Persil, citron",
+        "feculent": "Pommes de terre"
+      },
+      "ingredients": [
+        {
+          "item": "Dos de cabillaud",
+          "qty": 2,
+          "unit": "pièce",
+          "rayon": "Poissonnerie"
+        },
+        {
+          "item": "Pommes de terre",
+          "qty": 400,
+          "unit": "g",
+          "rayon": "Fruits & légumes"
+        },
+        {
+          "item": "Lait demi-écrémé",
+          "qty": 50,
+          "unit": "ml",
+          "rayon": "Crémerie & œufs"
+        },
+        {
+          "item": "Citron",
+          "qty": 0.5,
+          "unit": "pièce",
+          "rayon": "Fruits & légumes"
+        },
+        {
+          "item": "Persil",
+          "qty": 1,
+          "unit": "pincée",
+          "rayon": "Fruits & légumes"
+        },
+        {
+          "item": "Huile d'olive",
+          "qty": 1,
+          "unit": "c.à.s",
+          "rayon": "Épicerie"
+        }
+      ]
+    },
+    {
+      "id": "saumon-papillote",
+      "titre": "Filet de saumon en papillote",
+      "categorie": "poissons",
+      "saisons": [
+        "toute_annee"
+      ]
+    },
+    {
+      "id": "saumon-croute-moutarde",
+      "titre": "Pavé de saumon en croûte de moutarde",
+      "categorie": "poissons",
+      "saisons": [
+        "toute_annee"
+      ]
+    },
+    {
+      "id": "cabillaud-pane-airfryer",
+      "titre": "Cabillaud pané air fryer & frites",
+      "categorie": "poissons",
+      "saisons": [
+        "toute_annee"
+      ]
+    },
+    {
+      "id": "truite-amandine",
+      "titre": "Truite amandine light",
+      "categorie": "poissons",
+      "saisons": [
+        "toute_annee"
+      ]
+    },
+    {
+      "id": "sole-meuniere-light",
+      "titre": "Filet de sole meunière light",
+      "categorie": "poissons",
+      "saisons": [
+        "toute_annee"
+      ]
+    },
+    {
+      "id": "colin-citron-aneth",
+      "titre": "Colin sauce citron-aneth",
+      "categorie": "poissons",
+      "saisons": [
+        "toute_annee"
+      ]
+    },
+    {
+      "id": "fish-and-chips-healthy",
+      "titre": "Fish & chips healthy air fryer",
+      "categorie": "poissons",
+      "saisons": [
+        "toute_annee"
+      ]
+    },
+    {
+      "id": "tartare-saumon",
+      "titre": "Tartare de saumon",
+      "categorie": "poissons",
+      "saisons": [
+        "toute_annee"
+      ]
+    },
+    {
+      "id": "brochettes-saumon-teriyaki",
+      "titre": "Brochettes de saumon teriyaki",
+      "categorie": "poissons",
+      "saisons": [
+        "ete"
+      ]
+    },
+    {
+      "id": "maquereau-grille-salade",
+      "titre": "Maquereau grillé & salade",
+      "categorie": "poissons",
+      "saisons": [
+        "ete"
+      ]
+    },
+    {
+      "id": "bar-grille-legumes",
+      "titre": "Bar grillé & légumes",
+      "categorie": "poissons",
+      "saisons": [
+        "toute_annee"
+      ]
+    },
+    {
+      "id": "lieu-sauce-vierge",
+      "titre": "Lieu noir sauce vierge",
+      "categorie": "poissons",
+      "saisons": [
+        "ete"
+      ]
+    },
+    {
+      "id": "crevettes-ail-persil",
+      "titre": "Crevettes sautées ail-persil",
+      "categorie": "crevettes-fruits-mer",
+      "saisons": [
+        "toute_annee"
+      ],
+      "composantes": {
+        "proteine": "Crevettes",
+        "legume": "Ail, persil, citron",
+        "feculent": "Riz"
+      },
+      "ingredients": [
+        {
+          "item": "Crevettes décortiquées",
+          "qty": 300,
+          "unit": "g",
+          "rayon": "Poissonnerie"
+        },
+        {
+          "item": "Riz",
+          "qty": 150,
+          "unit": "g",
+          "rayon": "Épicerie"
+        },
+        {
+          "item": "Ail",
+          "qty": 2,
+          "unit": "gousse",
+          "rayon": "Fruits & légumes"
+        },
+        {
+          "item": "Persil",
+          "qty": 1,
+          "unit": "pincée",
+          "rayon": "Fruits & légumes"
+        },
+        {
+          "item": "Citron",
+          "qty": 0.5,
+          "unit": "pièce",
+          "rayon": "Fruits & légumes"
+        },
+        {
+          "item": "Huile d'olive",
+          "qty": 1,
+          "unit": "c.à.s",
+          "rayon": "Épicerie"
+        }
+      ]
+    },
+    {
+      "id": "gambas-grillees-riz",
+      "titre": "Gambas grillées & riz",
+      "categorie": "crevettes-fruits-mer",
+      "saisons": [
+        "toute_annee"
+      ]
+    },
+    {
+      "id": "scampis-ail",
+      "titre": "Scampis à l'ail (light)",
+      "categorie": "crevettes-fruits-mer",
+      "saisons": [
+        "toute_annee"
+      ]
+    },
+    {
+      "id": "scampis-tomate-curry",
+      "titre": "Scampis sauce tomate-curry",
+      "categorie": "crevettes-fruits-mer",
+      "saisons": [
+        "toute_annee"
+      ]
+    },
+    {
+      "id": "moules-frites-airfryer",
+      "titre": "Moules marinières & frites air fryer",
+      "categorie": "crevettes-fruits-mer",
+      "saisons": [
+        "automne",
+        "hiver"
+      ]
+    },
+    {
+      "id": "risotto-crevettes-leger",
+      "titre": "Risotto crevettes léger",
+      "categorie": "crevettes-fruits-mer",
+      "saisons": [
+        "toute_annee"
+      ]
+    },
+    {
+      "id": "carbonnade-flamande-allegee",
+      "titre": "Carbonnade flamande allégée & purée",
+      "categorie": "belge-traditionnel",
+      "saisons": [
+        "automne",
+        "hiver"
+      ]
+    },
+    {
+      "id": "stoemp-carottes-saucisse",
+      "titre": "Stoemp carottes & saucisse de volaille",
+      "categorie": "belge-traditionnel",
+      "saisons": [
+        "automne",
+        "hiver"
+      ]
+    },
+    {
+      "id": "stoemp-kale-lard",
+      "titre": "Stoemp chou kale & lard",
+      "categorie": "belge-traditionnel",
+      "saisons": [
+        "automne",
+        "hiver"
+      ]
+    },
+    {
+      "id": "vol-au-vent-light",
+      "titre": "Vol-au-vent de volaille light",
+      "categorie": "belge-traditionnel",
+      "saisons": [
+        "toute_annee"
+      ]
+    },
+    {
+      "id": "chicons-gratin-jambon",
+      "titre": "Chicons au gratin & jambon (light)",
+      "categorie": "belge-traditionnel",
+      "saisons": [
+        "automne",
+        "hiver"
+      ]
+    },
+    {
+      "id": "waterzooi-poulet",
+      "titre": "Waterzooi de poulet",
+      "categorie": "belge-traditionnel",
+      "saisons": [
+        "automne",
+        "hiver"
+      ]
+    },
+    {
+      "id": "boulets-sauce-liege",
+      "titre": "Boulets sauce liégeoise (sirop de Liège) light",
+      "categorie": "belge-traditionnel",
+      "saisons": [
+        "automne",
+        "hiver"
+      ]
+    },
+    {
+      "id": "potee-poireaux-pdt",
+      "titre": "Potée aux poireaux & pommes de terre",
+      "categorie": "belge-traditionnel",
+      "saisons": [
+        "automne",
+        "hiver"
+      ]
+    },
+    {
+      "id": "hochepot-leger",
+      "titre": "Hochepot léger",
+      "categorie": "belge-traditionnel",
+      "saisons": [
+        "hiver"
+      ]
+    },
+    {
+      "id": "tomate-crevettes",
+      "titre": "Tomate-crevettes grises light",
+      "categorie": "belge-traditionnel",
+      "saisons": [
+        "ete"
+      ]
+    },
+    {
+      "id": "salade-liegeoise",
+      "titre": "Salade liégeoise (haricots, pdt, lard)",
+      "categorie": "belge-traditionnel",
+      "saisons": [
+        "ete"
+      ]
+    },
+    {
+      "id": "salade-cesar-poulet",
+      "titre": "Salade César poulet light",
+      "categorie": "salades-bowls",
+      "saisons": [
+        "toute_annee"
+      ]
+    },
+    {
+      "id": "bowl-poulet-riz-legumes",
+      "titre": "Bowl poulet-riz-légumes (meal prep)",
+      "categorie": "salades-bowls",
+      "saisons": [
+        "toute_annee"
+      ]
+    },
+    {
+      "id": "salade-poulet-avocat",
+      "titre": "Salade poulet-avocat",
+      "categorie": "salades-bowls",
+      "saisons": [
+        "toute_annee"
+      ]
+    },
+    {
+      "id": "buddha-bowl-proteine",
+      "titre": "Buddha bowl protéiné (riz / patate douce)",
+      "categorie": "salades-bowls",
+      "saisons": [
+        "toute_annee"
+      ]
+    },
+    {
+      "id": "salade-thon-haricots",
+      "titre": "Salade thon-haricots",
+      "categorie": "salades-bowls",
+      "saisons": [
+        "toute_annee"
+      ]
+    },
+    {
+      "id": "salade-pates-poulet-pesto",
+      "titre": "Salade de pâtes complètes poulet-pesto",
+      "categorie": "salades-bowls",
+      "saisons": [
+        "ete"
+      ]
+    },
+    {
+      "id": "salade-grecque-poulet",
+      "titre": "Salade grecque & poulet grillé",
+      "categorie": "salades-bowls",
+      "saisons": [
+        "ete"
+      ]
+    },
+    {
+      "id": "salade-nicoise-thon",
+      "titre": "Salade niçoise au thon",
+      "categorie": "salades-bowls",
+      "saisons": [
+        "ete"
+      ]
+    },
+    {
+      "id": "spaghetti-bolognaise",
+      "titre": "Spaghetti bolognaise maison (bœuf maigre)",
+      "categorie": "pates-feculents",
+      "saisons": [
+        "toute_annee"
+      ],
+      "composantes": {
+        "proteine": "Bœuf haché maigre",
+        "legume": "Tomate, carotte, oignon",
+        "feculent": "Spaghetti"
+      },
+      "ingredients": [
+        {
+          "item": "Bœuf haché 5%",
+          "qty": 250,
+          "unit": "g",
+          "rayon": "Boucherie & volaille"
+        },
+        {
+          "item": "Spaghetti",
+          "qty": 180,
+          "unit": "g",
+          "rayon": "Épicerie"
+        },
+        {
+          "item": "Tomates concassées",
+          "qty": 400,
+          "unit": "g",
+          "rayon": "Épicerie"
+        },
+        {
+          "item": "Oignon",
+          "qty": 1,
+          "unit": "pièce",
+          "rayon": "Fruits & légumes"
+        },
+        {
+          "item": "Carotte",
+          "qty": 1,
+          "unit": "pièce",
+          "rayon": "Fruits & légumes"
+        },
+        {
+          "item": "Ail",
+          "qty": 1,
+          "unit": "gousse",
+          "rayon": "Fruits & légumes"
+        },
+        {
+          "item": "Parmesan",
+          "qty": 20,
+          "unit": "g",
+          "rayon": "Crémerie & œufs"
+        }
+      ]
+    },
+    {
+      "id": "pates-thon-tomate",
+      "titre": "Pâtes au thon & tomate",
+      "categorie": "pates-feculents",
+      "saisons": [
+        "toute_annee"
+      ]
+    },
+    {
+      "id": "onepot-poulet-epinards",
+      "titre": "One-pot pâtes poulet-épinards",
+      "categorie": "pates-feculents",
+      "saisons": [
+        "toute_annee"
+      ]
+    },
+    {
+      "id": "lasagnes-light-legumes",
+      "titre": "Lasagnes light bœuf-légumes",
+      "categorie": "pates-feculents",
+      "saisons": [
+        "toute_annee"
+      ]
+    },
+    {
+      "id": "gratin-pates-jambon",
+      "titre": "Gratin de pâtes light jambon",
+      "categorie": "pates-feculents",
+      "saisons": [
+        "automne",
+        "hiver"
+      ]
+    },
+    {
+      "id": "carbonara-light",
+      "titre": "Spaghetti carbonara light (œuf, sans crème)",
+      "categorie": "pates-feculents",
+      "saisons": [
+        "toute_annee"
+      ]
+    },
+    {
+      "id": "penne-tomate-poulet",
+      "titre": "Penne sauce tomate-poulet",
+      "categorie": "pates-feculents",
+      "saisons": [
+        "toute_annee"
+      ]
+    },
+    {
+      "id": "mac-and-cheese-proteine",
+      "titre": "Mac & cheese protéiné light",
+      "categorie": "pates-feculents",
+      "saisons": [
+        "toute_annee"
+      ]
+    },
+    {
+      "id": "risotto-champignons-light",
+      "titre": "Risotto champignons light",
+      "categorie": "pates-feculents",
+      "saisons": [
+        "automne"
+      ]
+    },
+    {
+      "id": "chili-con-carne-riz",
+      "titre": "Chili con carne & riz",
+      "categorie": "pates-feculents",
+      "saisons": [
+        "toute_annee"
+      ],
+      "composantes": {
+        "proteine": "Bœuf haché + haricots",
+        "legume": "Poivron, oignon, tomate",
+        "feculent": "Riz"
+      },
+      "ingredients": [
+        {
+          "item": "Bœuf haché 5%",
+          "qty": 250,
+          "unit": "g",
+          "rayon": "Boucherie & volaille"
+        },
+        {
+          "item": "Haricots rouges",
+          "qty": 240,
+          "unit": "g",
+          "rayon": "Épicerie"
+        },
+        {
+          "item": "Tomates concassées",
+          "qty": 400,
+          "unit": "g",
+          "rayon": "Épicerie"
+        },
+        {
+          "item": "Oignon",
+          "qty": 1,
+          "unit": "pièce",
+          "rayon": "Fruits & légumes"
+        },
+        {
+          "item": "Poivron",
+          "qty": 1,
+          "unit": "pièce",
+          "rayon": "Fruits & légumes"
+        },
+        {
+          "item": "Riz",
+          "qty": 150,
+          "unit": "g",
+          "rayon": "Épicerie"
+        },
+        {
+          "item": "Cumin & paprika",
+          "qty": 1,
+          "unit": "c.à.c",
+          "rayon": "Épicerie"
+        }
+      ]
+    },
+    {
+      "id": "riz-saute-poulet-legumes",
+      "titre": "Riz sauté poulet-légumes",
+      "categorie": "pates-feculents",
+      "saisons": [
+        "toute_annee"
+      ],
+      "composantes": {
+        "proteine": "Poulet, œuf",
+        "legume": "Légumes",
+        "feculent": "Riz"
+      },
+      "ingredients": [
+        {
+          "item": "Filet de poulet",
+          "qty": 250,
+          "unit": "g",
+          "rayon": "Boucherie & volaille"
+        },
+        {
+          "item": "Riz",
+          "qty": 150,
+          "unit": "g",
+          "rayon": "Épicerie"
+        },
+        {
+          "item": "Mélange de légumes",
+          "qty": 300,
+          "unit": "g",
+          "rayon": "Fruits & légumes"
+        },
+        {
+          "item": "Œuf",
+          "qty": 1,
+          "unit": "pièce",
+          "rayon": "Crémerie & œufs"
+        },
+        {
+          "item": "Sauce soja",
+          "qty": 2,
+          "unit": "c.à.s",
+          "rayon": "Sauces & condiments"
+        },
+        {
+          "item": "Ail",
+          "qty": 1,
+          "unit": "gousse",
+          "rayon": "Fruits & légumes"
+        }
+      ]
+    },
+    {
+      "id": "brochettes-poulet-legumes",
+      "titre": "Brochettes de poulet mariné & légumes grillés",
+      "categorie": "viandes",
+      "saisons": [
+        "ete"
+      ]
+    },
+    {
+      "id": "emince-boeuf-legumes",
+      "titre": "Émincé de bœuf & poêlée de légumes",
+      "categorie": "viandes",
+      "saisons": [
+        "toute_annee"
+      ]
+    },
+    {
+      "id": "saute-dinde-curry-coco",
+      "titre": "Sauté de dinde curry-coco light",
+      "categorie": "viandes",
+      "saisons": [
+        "toute_annee"
+      ]
+    },
+    {
+      "id": "poulet-basquaise",
+      "titre": "Poulet basquaise",
+      "categorie": "viandes",
+      "saisons": [
+        "ete",
+        "automne"
+      ]
+    },
+    {
+      "id": "blanquette-dinde-light",
+      "titre": "Blanquette de dinde light",
+      "categorie": "viandes",
+      "saisons": [
+        "automne",
+        "hiver"
+      ]
+    },
+    {
+      "id": "poulet-roti-citron-thym",
+      "titre": "Poulet rôti citron-thym",
+      "categorie": "viandes",
+      "saisons": [
+        "toute_annee"
+      ],
+      "composantes": {
+        "proteine": "Poulet",
+        "legume": "Ail, thym, citron",
+        "feculent": "Pommes de terre"
+      },
+      "ingredients": [
+        {
+          "item": "Cuisses de poulet",
+          "qty": 400,
+          "unit": "g",
+          "rayon": "Boucherie & volaille"
+        },
+        {
+          "item": "Citron",
+          "qty": 1,
+          "unit": "pièce",
+          "rayon": "Fruits & légumes"
+        },
+        {
+          "item": "Thym",
+          "qty": 1,
+          "unit": "pincée",
+          "rayon": "Fruits & légumes"
+        },
+        {
+          "item": "Ail",
+          "qty": 2,
+          "unit": "gousse",
+          "rayon": "Fruits & légumes"
+        },
+        {
+          "item": "Pommes de terre",
+          "qty": 400,
+          "unit": "g",
+          "rayon": "Fruits & légumes"
+        },
+        {
+          "item": "Huile d'olive",
+          "qty": 1,
+          "unit": "c.à.s",
+          "rayon": "Épicerie"
+        }
+      ]
+    },
+    {
+      "id": "steak-hache-haricots-verts",
+      "titre": "Steak haché & haricots verts",
+      "categorie": "viandes",
+      "saisons": [
+        "toute_annee"
+      ],
+      "composantes": {
+        "proteine": "Bœuf haché",
+        "legume": "Haricots verts",
+        "feculent": "Pommes de terre"
+      },
+      "ingredients": [
+        {
+          "item": "Steak haché 5%",
+          "qty": 2,
+          "unit": "pièce",
+          "rayon": "Boucherie & volaille"
+        },
+        {
+          "item": "Haricots verts",
+          "qty": 300,
+          "unit": "g",
+          "rayon": "Fruits & légumes"
+        },
+        {
+          "item": "Pommes de terre",
+          "qty": 300,
+          "unit": "g",
+          "rayon": "Fruits & légumes"
+        },
+        {
+          "item": "Ail",
+          "qty": 1,
+          "unit": "gousse",
+          "rayon": "Fruits & légumes"
+        },
+        {
+          "item": "Huile d'olive",
+          "qty": 1,
+          "unit": "c.à.s",
+          "rayon": "Épicerie"
+        }
+      ]
+    },
+    {
+      "id": "mijote-boeuf-carottes",
+      "titre": "Mijoté de bœuf aux carottes",
+      "categorie": "viandes",
+      "saisons": [
+        "automne",
+        "hiver"
+      ]
+    },
+    {
+      "id": "sauce-blanche-kebab",
+      "titre": "Sauce blanche kebab light (skyr-ail)",
+      "categorie": "sauces-blanches",
+      "saisons": [
+        "toute_annee"
+      ]
+    },
+    {
+      "id": "tzatziki-light",
+      "titre": "Sauce tzatziki light",
+      "categorie": "sauces-blanches",
+      "saisons": [
+        "toute_annee"
+      ]
+    },
+    {
+      "id": "sauce-ail-fines-herbes",
+      "titre": "Sauce ail & fines herbes light",
+      "categorie": "sauces-blanches",
+      "saisons": [
+        "toute_annee"
+      ]
+    },
+    {
+      "id": "sauce-yaourt-aneth",
+      "titre": "Sauce yaourt-aneth (poisson)",
+      "categorie": "sauces-blanches",
+      "saisons": [
+        "toute_annee"
+      ]
+    },
+    {
+      "id": "sauce-ranch-light",
+      "titre": "Sauce ranch light",
+      "categorie": "sauces-blanches",
+      "saisons": [
+        "toute_annee"
+      ]
+    },
+    {
+      "id": "sauce-cesar-light",
+      "titre": "Sauce césar light",
+      "categorie": "sauces-blanches",
+      "saisons": [
+        "toute_annee"
+      ]
+    },
+    {
+      "id": "raita-concombre-menthe",
+      "titre": "Sauce raïta concombre-menthe",
+      "categorie": "sauces-blanches",
+      "saisons": [
+        "toute_annee"
+      ]
+    },
+    {
+      "id": "sauce-burger-light",
+      "titre": "Sauce burger light (yaourt-ketchup-cornichon)",
+      "categorie": "sauces-blanches",
+      "saisons": [
+        "toute_annee"
+      ]
+    },
+    {
+      "id": "sauce-tartare-light",
+      "titre": "Sauce tartare light",
+      "categorie": "sauces-blanches",
+      "saisons": [
+        "toute_annee"
+      ]
+    },
+    {
+      "id": "sauce-samourai-light",
+      "titre": "Sauce samouraï light",
+      "categorie": "sauces-blanches",
+      "saisons": [
+        "toute_annee"
+      ]
+    },
+    {
+      "id": "sauce-andalouse-light",
+      "titre": "Sauce andalouse light",
+      "categorie": "sauces-blanches",
+      "saisons": [
+        "toute_annee"
+      ]
+    },
+    {
+      "id": "sauce-curry-mayo-light",
+      "titre": "Sauce curry-mayo light",
+      "categorie": "sauces-blanches",
+      "saisons": [
+        "toute_annee"
+      ]
+    },
+    {
+      "id": "sauce-cocktail-light",
+      "titre": "Sauce cocktail light",
+      "categorie": "sauces-blanches",
+      "saisons": [
+        "toute_annee"
+      ]
+    },
+    {
+      "id": "sauce-poivre-light",
+      "titre": "Sauce au poivre light (fromage blanc)",
+      "categorie": "sauces-blanches",
+      "saisons": [
+        "toute_annee"
+      ]
+    },
+    {
+      "id": "guacamole-maison",
+      "titre": "Guacamole maison",
+      "categorie": "sauces-avocat",
+      "saisons": [
+        "toute_annee"
+      ]
+    },
+    {
+      "id": "creme-avocat-citron-vert",
+      "titre": "Crème d'avocat-citron vert",
+      "categorie": "sauces-avocat",
+      "saisons": [
+        "toute_annee"
+      ]
+    },
+    {
+      "id": "sauce-avocat-coriandre",
+      "titre": "Sauce avocat-coriandre",
+      "categorie": "sauces-avocat",
+      "saisons": [
+        "toute_annee"
+      ]
+    },
+    {
+      "id": "sauce-tomate-maison",
+      "titre": "Sauce tomate maison (base pizza/pâtes)",
+      "categorie": "sauces-tomate",
+      "saisons": [
+        "toute_annee"
+      ]
+    },
+    {
+      "id": "sauce-marinara",
+      "titre": "Sauce marinara",
+      "categorie": "sauces-tomate",
+      "saisons": [
+        "toute_annee"
+      ]
+    },
+    {
+      "id": "sauce-arrabiata-light",
+      "titre": "Sauce arrabiata light",
+      "categorie": "sauces-tomate",
+      "saisons": [
+        "toute_annee"
+      ]
+    },
+    {
+      "id": "sauce-bolognaise-maigre",
+      "titre": "Sauce bolognaise maigre",
+      "categorie": "sauces-tomate",
+      "saisons": [
+        "toute_annee"
+      ]
+    },
+    {
+      "id": "sauce-tomate-basilic",
+      "titre": "Sauce tomate-basilic",
+      "categorie": "sauces-tomate",
+      "saisons": [
+        "ete"
+      ]
+    },
+    {
+      "id": "ketchup-maison-light",
+      "titre": "Ketchup maison light",
+      "categorie": "sauces-tomate",
+      "saisons": [
+        "toute_annee"
+      ]
+    },
+    {
+      "id": "sauce-teriyaki-light",
+      "titre": "Sauce teriyaki light",
+      "categorie": "sauces-asiatiques",
+      "saisons": [
+        "toute_annee"
+      ]
+    },
+    {
+      "id": "sauce-soja-gingembre-ail",
+      "titre": "Sauce soja-gingembre-ail",
+      "categorie": "sauces-asiatiques",
+      "saisons": [
+        "toute_annee"
+      ]
+    },
+    {
+      "id": "sauce-aigre-douce-light",
+      "titre": "Sauce aigre-douce light",
+      "categorie": "sauces-asiatiques",
+      "saisons": [
+        "toute_annee"
+      ]
+    },
+    {
+      "id": "sauce-satay-cacahuete",
+      "titre": "Sauce satay/cacahuète light",
+      "categorie": "sauces-asiatiques",
+      "saisons": [
+        "toute_annee"
+      ]
+    },
+    {
+      "id": "sauce-sweet-chili-light",
+      "titre": "Sauce sweet chili light",
+      "categorie": "sauces-asiatiques",
+      "saisons": [
+        "toute_annee"
+      ]
+    },
+    {
+      "id": "sauce-wok-express",
+      "titre": "Sauce wok express",
+      "categorie": "sauces-asiatiques",
+      "saisons": [
+        "toute_annee"
+      ]
+    },
+    {
+      "id": "pesto-basilic-light",
+      "titre": "Pesto basilic light",
+      "categorie": "sauces-herbes",
+      "saisons": [
+        "ete"
+      ]
+    },
+    {
+      "id": "pesto-roquette-amandes",
+      "titre": "Pesto roquette-amandes",
+      "categorie": "sauces-herbes",
+      "saisons": [
+        "toute_annee"
+      ]
+    },
+    {
+      "id": "chimichurri",
+      "titre": "Chimichurri",
+      "categorie": "sauces-herbes",
+      "saisons": [
+        "toute_annee"
+      ]
+    },
+    {
+      "id": "sauce-vierge",
+      "titre": "Sauce vierge (tomate-olive-herbes)",
+      "categorie": "sauces-herbes",
+      "saisons": [
+        "ete"
+      ]
+    },
+    {
+      "id": "vinaigrette-moutarde-miel",
+      "titre": "Vinaigrette moutarde-miel",
+      "categorie": "sauces-herbes",
+      "saisons": [
+        "toute_annee"
+      ]
+    },
+    {
+      "id": "vinaigrette-balsamique",
+      "titre": "Vinaigrette balsamique",
+      "categorie": "sauces-herbes",
+      "saisons": [
+        "toute_annee"
+      ]
+    },
+    {
+      "id": "sauce-yaourt-curry",
+      "titre": "Sauce yaourt-curry",
+      "categorie": "sauces-herbes",
+      "saisons": [
+        "toute_annee"
+      ]
+    },
+    {
+      "id": "mayo-light-maison",
+      "titre": "Mayo light maison",
+      "categorie": "sauces-friterie",
+      "saisons": [
+        "toute_annee"
+      ]
+    },
+    {
+      "id": "sauce-pickles-light",
+      "titre": "Sauce pickles light",
+      "categorie": "sauces-friterie",
+      "saisons": [
+        "toute_annee"
+      ]
+    },
+    {
+      "id": "sauce-brasil-light",
+      "titre": "Sauce brasil light",
+      "categorie": "sauces-friterie",
+      "saisons": [
+        "toute_annee"
+      ]
+    },
+    {
+      "id": "sauce-hannibal-light",
+      "titre": "Sauce hannibal light (épicée)",
+      "categorie": "sauces-friterie",
+      "saisons": [
+        "toute_annee"
+      ]
+    },
+    {
+      "id": "cheesecake-light-sable",
+      "titre": "Cheesecake light base sablé (skyr)",
+      "categorie": "desserts-sable",
+      "saisons": [
+        "toute_annee"
+      ]
+    },
+    {
+      "id": "tarte-citron-meringuee-light",
+      "titre": "Tarte au citron meringuée light base sablé",
+      "categorie": "desserts-sable",
+      "saisons": [
+        "toute_annee"
+      ]
+    },
+    {
+      "id": "sables-proteines",
+      "titre": "Sablés protéinés",
+      "categorie": "desserts-sable",
+      "saisons": [
+        "toute_annee"
+      ]
+    },
+    {
+      "id": "fond-tarte-sable-fruits",
+      "titre": "Fond de tarte sablé & fruits frais",
+      "categorie": "desserts-sable",
+      "saisons": [
+        "ete"
+      ]
+    },
+    {
+      "id": "crumble-pomme-avoine",
+      "titre": "Crumble pomme-flocons d'avoine",
+      "categorie": "desserts-sable",
+      "saisons": [
+        "automne"
+      ]
+    },
+    {
+      "id": "cookies-proteines-avoine",
+      "titre": "Cookies protéinés avoine-chocolat",
+      "categorie": "desserts-sable",
+      "saisons": [
+        "toute_annee"
+      ]
+    },
+    {
+      "id": "speculoos-maison-allege",
+      "titre": "Spéculoos maison allégé",
+      "categorie": "desserts-sable",
+      "saisons": [
+        "automne",
+        "hiver"
+      ]
+    },
+    {
+      "id": "salade-fruits-saison",
+      "titre": "Salade de fruits de saison",
+      "categorie": "desserts-fruits",
+      "saisons": [
+        "toute_annee"
+      ]
+    },
+    {
+      "id": "pommes-au-four-cannelle",
+      "titre": "Pommes au four cannelle",
+      "categorie": "desserts-fruits",
+      "saisons": [
+        "automne",
+        "hiver"
+      ]
+    },
+    {
+      "id": "poires-pochees",
+      "titre": "Poires pochées légères",
+      "categorie": "desserts-fruits",
+      "saisons": [
+        "automne"
+      ]
+    },
+    {
+      "id": "brochettes-fruits-chocolat",
+      "titre": "Brochettes de fruits & chocolat noir fondu",
+      "categorie": "desserts-fruits",
+      "saisons": [
+        "ete"
+      ]
+    },
+    {
+      "id": "banane-rotie-airfryer",
+      "titre": "Banane rôtie air fryer & cannelle",
+      "categorie": "desserts-fruits",
+      "saisons": [
+        "toute_annee"
+      ]
+    },
+    {
+      "id": "fraises-chantilly-skyr",
+      "titre": "Fraises & chantilly de skyr",
+      "categorie": "desserts-fruits",
+      "saisons": [
+        "ete"
+      ]
+    },
+    {
+      "id": "mousse-chocolat-proteinee",
+      "titre": "Mousse au chocolat protéinée",
+      "categorie": "desserts-cremeux",
+      "saisons": [
+        "toute_annee"
+      ]
+    },
+    {
+      "id": "mug-cake-proteine",
+      "titre": "Mug cake protéiné chocolat",
+      "categorie": "desserts-cremeux",
+      "saisons": [
+        "toute_annee"
+      ]
+    },
+    {
+      "id": "fondant-chocolat-light",
+      "titre": "Fondant chocolat light",
+      "categorie": "desserts-cremeux",
+      "saisons": [
+        "toute_annee"
+      ]
+    },
+    {
+      "id": "panna-cotta-light",
+      "titre": "Panna cotta light",
+      "categorie": "desserts-cremeux",
+      "saisons": [
+        "toute_annee"
+      ]
+    },
+    {
+      "id": "riz-au-lait-leger",
+      "titre": "Riz au lait léger",
+      "categorie": "desserts-cremeux",
+      "saisons": [
+        "toute_annee"
+      ]
+    },
+    {
+      "id": "tiramisu-light-skyr",
+      "titre": "Tiramisu light (skyr)",
+      "categorie": "desserts-cremeux",
+      "saisons": [
+        "toute_annee"
+      ]
+    },
+    {
+      "id": "nice-cream-banane",
+      "titre": "Glace banane \"nice cream\"",
+      "categorie": "desserts-cremeux",
+      "saisons": [
+        "ete"
+      ]
+    },
+    {
+      "id": "yaourt-glace-fruits-rouges",
+      "titre": "Yaourt glacé fruits rouges",
+      "categorie": "desserts-cremeux",
+      "saisons": [
+        "ete"
+      ]
+    },
+    {
+      "id": "clafoutis-cerises-light",
+      "titre": "Clafoutis cerises light",
+      "categorie": "desserts-cremeux",
+      "saisons": [
+        "ete"
+      ]
+    },
+    {
+      "id": "gaufres-bruxelles-light",
+      "titre": "Gaufres de Bruxelles light",
+      "categorie": "desserts-cremeux",
+      "saisons": [
+        "toute_annee"
+      ]
+    },
+    {
+      "id": "crepes-sirop-liege",
+      "titre": "Crêpes & sirop de Liège léger",
+      "categorie": "desserts-cremeux",
+      "saisons": [
+        "toute_annee"
+      ]
+    },
+    {
+      "id": "energy-balls-dattes-cacao",
+      "titre": "Energy balls dattes-cacao",
+      "categorie": "desserts-chocolat",
+      "saisons": [
+        "toute_annee"
+      ]
+    },
+    {
+      "id": "carres-chocolat-amandes",
+      "titre": "Carrés chocolat noir & amandes",
+      "categorie": "desserts-chocolat",
+      "saisons": [
+        "toute_annee"
+      ]
+    },
+    {
+      "id": "fondue-chocolat-noir-fruits",
+      "titre": "Fondue de chocolat noir & fruits",
+      "categorie": "desserts-chocolat",
+      "saisons": [
+        "toute_annee"
+      ]
+    },
+    {
+      "id": "chips-pdt-airfryer",
+      "titre": "Chips de pomme de terre air fryer",
+      "categorie": "snacks",
+      "saisons": [
+        "toute_annee"
+      ]
+    },
+    {
+      "id": "chips-patate-douce",
+      "titre": "Chips de patate douce air fryer",
+      "categorie": "snacks",
+      "saisons": [
+        "automne",
+        "hiver"
+      ]
+    },
+    {
+      "id": "chips-legumes",
+      "titre": "Chips de légumes (betterave, carotte) air fryer",
+      "categorie": "snacks",
+      "saisons": [
+        "automne",
+        "hiver"
+      ]
+    },
+    {
+      "id": "chips-pois-chiches",
+      "titre": "Chips de pois chiches épicés air fryer",
+      "categorie": "snacks",
+      "saisons": [
+        "toute_annee"
+      ]
+    },
+    {
+      "id": "popcorn-maison-leger",
+      "titre": "Pop-corn maison léger",
+      "categorie": "snacks",
+      "saisons": [
+        "toute_annee"
+      ]
+    },
+    {
+      "id": "crackers-complets-maison",
+      "titre": "Crackers complets maison",
+      "categorie": "snacks",
+      "saisons": [
+        "toute_annee"
+      ]
+    },
+    {
+      "id": "houmous-crudites",
+      "titre": "Houmous & crudités",
+      "categorie": "snacks",
+      "saisons": [
+        "toute_annee"
+      ]
+    },
+    {
+      "id": "oeufs-durs-snack",
+      "titre": "Œufs durs (snack protéiné)",
+      "categorie": "snacks",
+      "saisons": [
+        "toute_annee"
+      ]
+    },
+    {
+      "id": "cottage-concombre",
+      "titre": "Cottage cheese & concombre",
+      "categorie": "snacks",
+      "saisons": [
+        "toute_annee"
+      ]
+    },
+    {
+      "id": "mix-noix-maison",
+      "titre": "Mix de noix maison",
+      "categorie": "snacks",
+      "saisons": [
+        "toute_annee"
+      ]
+    },
+    {
+      "id": "barres-avoine-maison",
+      "titre": "Barres de céréales avoine maison",
+      "categorie": "snacks",
+      "saisons": [
+        "toute_annee"
+      ]
+    },
+    {
+      "id": "galettes-riz-cacahuete",
+      "titre": "Galettes de riz & beurre de cacahuète",
+      "categorie": "snacks",
+      "saisons": [
+        "toute_annee"
+      ]
+    },
+    {
+      "id": "edamame-epices",
+      "titre": "Edamame épicés",
+      "categorie": "snacks",
+      "saisons": [
+        "toute_annee"
+      ]
+    },
+    {
+      "id": "batonnets-legumes-yaourt",
+      "titre": "Bâtonnets de légumes & sauce yaourt",
+      "categorie": "snacks",
+      "saisons": [
+        "toute_annee"
+      ]
+    },
+    {
+      "id": "dinde-roulee-fromage-frais",
+      "titre": "Tranches de dinde roulées au fromage frais",
+      "categorie": "snacks",
+      "saisons": [
+        "toute_annee"
+      ]
+    },
+    {
+      "id": "chips-wraps-airfryer",
+      "titre": "Chips de wraps complets air fryer",
+      "categorie": "snacks",
+      "saisons": [
+        "toute_annee"
+      ]
+    },
+    {
+      "id": "mini-brochettes-tomate-mozza",
+      "titre": "Mini brochettes tomate-mozzarella light",
+      "categorie": "snacks",
+      "saisons": [
+        "ete"
+      ]
+    }
   ]
 }

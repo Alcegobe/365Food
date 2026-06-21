@@ -49,15 +49,19 @@ body {
 }
 .tab {
   flex: 1;
-  padding: 10px 8px;
+  min-width: 0;
+  padding: 9px 4px;
   border: none;
   border-radius: 11px 11px 0 0;
-  font-size: 14px;
+  font-size: 12.5px;
   font-weight: 700;
   cursor: pointer;
   background: rgba(255, 255, 255, 0.22);
   color: #fff;
   transition: background 0.15s;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .tab[aria-selected="true"] {
   background: var(--bg);
@@ -359,3 +363,52 @@ mark { background: #ffe08a; color: inherit; padding: 0 1px; border-radius: 3px; 
   color: var(--muted);
   font-weight: 700;
 }
+
+/* Composantes sur les cartes recette */
+.card-comp { font-size: 12px; color: var(--muted); line-height: 1.35; }
+
+/* ---------- Vue Courses ---------- */
+.rayon-block { margin-bottom: 18px; }
+.rayon-titre {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin: 0 0 8px;
+  font-size: 15px;
+  color: var(--accent);
+}
+.rayon-titre .n { font-size: 12px; color: var(--muted); font-weight: 500; }
+.courses-list {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+.course-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 11px 13px;
+  border-bottom: 1px solid var(--line);
+  cursor: pointer;
+  font-size: 14.5px;
+}
+.course-item:last-child { border-bottom: none; }
+.course-item input { width: 18px; height: 18px; accent-color: var(--accent); flex: 0 0 auto; }
+.course-item .ing-name { flex: 1; }
+.course-item .ing-qty { font-size: 13px; color: var(--muted); font-weight: 600; }
+.course-item.done .ing-name { text-decoration: line-through; color: var(--muted); }
+.course-item.done { opacity: 0.6; }
+
+.courses-missing {
+  margin-top: 14px;
+  background: #fff7e8;
+  border: 1px solid #f3e2bf;
+  border-radius: 12px;
+  padding: 10px 13px;
+  font-size: 13.5px;
+}
+.courses-missing summary { cursor: pointer; font-weight: 600; }
+.courses-missing ul { margin: 8px 0 2px; padding-left: 20px; color: var(--muted); }
+.courses-missing li { margin: 2px 0; }
