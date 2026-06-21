@@ -41,23 +41,51 @@ body {
 .app-header h1 { margin: 0; font-size: 24px; letter-spacing: -0.5px; }
 .tagline { margin: 0; font-size: 13px; opacity: 0.92; }
 
-#search {
-  margin-top: 12px;
-  width: 100%;
-  padding: 12px 14px;
-  border: none;
-  border-radius: 12px;
-  font-size: 16px;
-  background: rgba(255, 255, 255, 0.95);
-  color: var(--ink);
+/* Onglets */
+.tabs {
+  display: flex;
+  gap: 8px;
+  margin-top: 14px;
 }
-#search:focus { outline: 3px solid rgba(255, 255, 255, 0.6); }
+.tab {
+  flex: 1;
+  padding: 10px 8px;
+  border: none;
+  border-radius: 11px 11px 0 0;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.22);
+  color: #fff;
+  transition: background 0.15s;
+}
+.tab[aria-selected="true"] {
+  background: var(--bg);
+  color: var(--accent);
+}
 
-.filters {
+/* Barre de recherche */
+.searchbar {
   position: sticky;
   top: 0;
+  z-index: 9;
   background: var(--bg);
-  padding: 12px 16px 8px;
+  padding: 12px 16px 4px;
+}
+.searchbar input {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1.5px solid var(--line);
+  border-radius: 12px;
+  font-size: 16px;
+  background: var(--surface);
+  color: var(--ink);
+}
+.searchbar input:focus { outline: 3px solid var(--accent-soft); border-color: var(--accent); }
+
+.filters {
+  background: var(--bg);
+  padding: 4px 16px 8px;
   border-bottom: 1px solid var(--line);
 }
 
@@ -169,4 +197,95 @@ mark { background: #ffe08a; color: inherit; padding: 0 1px; border-radius: 3px; 
   font-weight: 700;
   font-size: 12px;
   cursor: pointer;
+}
+
+/* ---------- Vue Manger dehors ---------- */
+.resto-intro {
+  background: linear-gradient(135deg, var(--green-soft), #f2f9ee);
+  border: 1px solid #d8ebcd;
+  border-radius: var(--radius);
+  padding: 14px 16px;
+  margin-bottom: 14px;
+}
+.resto-intro-lead { margin: 0 0 8px; font-weight: 600; }
+.resto-principes { margin: 0; padding-left: 18px; font-size: 13.5px; color: #43603a; }
+.resto-principes li { margin: 3px 0; }
+
+.resto-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+.resto-card summary {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px;
+  font-size: 17px;
+  font-weight: 700;
+  cursor: pointer;
+  list-style: none;
+}
+.resto-card summary::-webkit-details-marker { display: none; }
+.resto-card summary::after {
+  content: "▾";
+  margin-left: auto;
+  color: var(--muted);
+  transition: transform 0.2s;
+}
+.resto-card[open] summary::after { transform: rotate(180deg); }
+.resto-emoji { font-size: 22px; }
+
+.resto-body { padding: 0 14px 14px; display: flex; flex-direction: column; gap: 10px; }
+
+.pick {
+  border-radius: 12px;
+  padding: 11px 12px;
+  border: 1px solid var(--line);
+}
+.pick.optimal { background: var(--green-soft); border-color: #cfe7c2; }
+.pick.alt { background: #f7f1ea; }
+.pick-label { font-size: 12px; font-weight: 800; letter-spacing: 0.2px; }
+.pick-nom { font-weight: 600; margin: 4px 0 8px; }
+.pick-why { margin: 0; font-size: 13px; color: var(--muted); }
+
+.macros { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 8px; }
+.macro {
+  font-size: 12px;
+  font-weight: 700;
+  padding: 3px 9px;
+  border-radius: 999px;
+  background: #fff;
+  border: 1px solid var(--line);
+}
+.macro.kcal { background: var(--accent-soft); color: var(--accent); border-color: var(--accent-soft); }
+.macro.p { color: #2f7d23; }
+.macro.g { color: #b5760c; }
+.macro.l { color: #9a5bd0; }
+
+.astuce {
+  margin: 0;
+  font-size: 13.5px;
+  background: #fff7e8;
+  border: 1px solid #f3e2bf;
+  border-radius: 10px;
+  padding: 9px 11px;
+}
+.vigilance {
+  margin: 0;
+  font-size: 13px;
+  color: #8a4b3a;
+  background: #fdeee9;
+  border: 1px solid #f3d3c7;
+  border-radius: 10px;
+  padding: 9px 11px;
+}
+.resto-disclaimer {
+  font-size: 11.5px;
+  color: var(--muted);
+  font-style: italic;
+  margin: 14px 4px 0;
 }

@@ -1,4 +1,4 @@
-// 365Food — PWA statique. Lit data/recipes.json et affiche / filtre les recettes.
+// 365Food — PWA statique. Recettes maison + assistant "Manger dehors".
 
 const REPAS_LABELS = {
   all: "Tout",
@@ -19,13 +19,16 @@ const SEASON_LABELS = {
   hiver: "❄️ Hiver",
 };
 
-const state = { repas: "all", saison: "toutes", query: "" };
+const state = { repas: "all", saison: "toutes", query: "", restoQuery: "" };
 let DATA = null;
 let CAT_BY_ID = new Map();
+let RESTO = null;
 
 const $ = (sel) => document.querySelector(sel);
 const norm = (s) =>
   s.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+const esc = (s) =>
+  s.replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
 
 function currentSeason(date = new Date()) {
   const m = date.getMonth() + 1;
@@ -35,6 +38,20 @@ function currentSeason(date = new Date()) {
   return "hiver";
 }
 
+/* ---------- Onglets ---------- */
+function switchView(view) {
+  for (const tab of document.querySelectorAll(".tab")) {
+    tab.setAttribute("aria-selected", String(tab.dataset.view === view));
+  }
+  $("#view-recettes").hidden = view !== "recettes";
+  $("#view-resto").hidden = view !== "resto";
+  if (view === "resto" && RESTO === null) loadResto();
+}
+for (const tab of document.querySelectorAll(".tab")) {
+  tab.addEventListener("click", () => switchView(tab.dataset.view));
+}
+
+/* ---------- Recettes ---------- */
 async function load() {
   try {
     const res = await fetch("./data/recipes.json", { cache: "no-cache" });
@@ -99,13 +116,13 @@ function matches(recipe) {
 }
 
 function highlight(text) {
-  if (!state.query) return text;
+  if (!state.query) return esc(text);
   const q = norm(state.query);
   const n = norm(text);
   const i = n.indexOf(q);
-  if (i < 0) return text;
+  if (i < 0) return esc(text);
   return (
-    text.slice(0, i) + "<mark>" + text.slice(i, i + state.query.length) + "</mark>" + text.slice(i + state.query.length)
+    esc(text.slice(0, i)) + "<mark>" + esc(text.slice(i, i + state.query.length)) + "</mark>" + esc(text.slice(i + state.query.length))
   );
 }
 
@@ -133,7 +150,7 @@ function render() {
 
     const block = document.createElement("section");
     block.className = "cat-block";
-    block.innerHTML = `<h2 class="cat-title">${cat.label} <span class="n">${items.length}</span></h2>`;
+    block.innerHTML = `<h2 class="cat-title">${esc(cat.label)} <span class="n">${items.length}</span></h2>`;
 
     const cards = document.createElement("div");
     cards.className = "cards";
@@ -161,6 +178,97 @@ $("#search").addEventListener("input", (e) => {
   render();
 });
 
+/* ---------- Manger dehors ---------- */
+async function loadResto() {
+  try {
+    const res = await fetch("./data/resto.json", { cache: "no-cache" });
+    RESTO = await res.json();
+  } catch (e) {
+    $("#resto").innerHTML = `<p class="empty">Impossible de charger le guide. ${e}</p>`;
+    return;
+  }
+  renderResto();
+}
+
+function macrosRow(m) {
+  return (
+    `<div class="macros">` +
+    `<span class="macro kcal">${m.kcal} kcal</span>` +
+    `<span class="macro p">P ${m.proteines} g</span>` +
+    `<span class="macro g">G ${m.glucides} g</span>` +
+    `<span class="macro l">L ${m.lipides} g</span>` +
+    `</div>`
+  );
+}
+
+function pickBlock(cls, label, pick) {
+  return (
+    `<div class="pick ${cls}">` +
+    `<span class="pick-label">${label}</span>` +
+    `<div class="pick-nom">${esc(pick.nom)}</div>` +
+    macrosRow(pick.macros) +
+    `<p class="pick-why">${esc(pick.pourquoi)}</p>` +
+    `</div>`
+  );
+}
+
+function renderResto() {
+  const root = $("#resto");
+  const q = norm(state.restoQuery);
+  const list = RESTO.enseignes.filter(
+    (e) => !q || norm(e.nom).includes(q) || (e.tags || []).some((t) => norm(t).includes(q))
+  );
+
+  const frag = document.createDocumentFragment();
+
+  // Bandeau philosophie (visible seulement sans recherche).
+  if (!q) {
+    const intro = document.createElement("section");
+    intro.className = "resto-intro";
+    intro.innerHTML =
+      `<p class="resto-intro-lead">${esc(RESTO.meta.intro)}</p>` +
+      `<ul class="resto-principes">${RESTO.meta.principes.map((p) => `<li>${esc(p)}</li>`).join("")}</ul>`;
+    frag.appendChild(intro);
+  }
+
+  if (list.length === 0) {
+    const p = document.createElement("p");
+    p.className = "empty";
+    p.textContent = "Enseigne pas encore listée — applique les principes du haut : protéine + un peu de vert, sauce à part, soda zéro. 😉";
+    frag.appendChild(p);
+  }
+
+  for (const e of list) {
+    const card = document.createElement("details");
+    card.className = "resto-card";
+    if (q) card.open = true;
+    card.innerHTML =
+      `<summary><span class="resto-emoji">${e.emoji ?? "🍽️"}</span><span class="resto-nom">${esc(e.nom)}</span></summary>` +
+      `<div class="resto-body">` +
+      pickBlock("optimal", "✅ Choix optimal", e.optimal) +
+      pickBlock("alt", "🔁 Alternative", e.alternative) +
+      `<p class="astuce">⬆️ <strong>Upgrade :</strong> ${esc(e.astuce)}</p>` +
+      (e.vigilance ? `<p class="vigilance">⚠️ <strong>À éviter :</strong> ${esc(e.vigilance)}</p>` : "") +
+      `</div>`;
+    frag.appendChild(card);
+  }
+
+  if (RESTO.meta.disclaimer) {
+    const d = document.createElement("p");
+    d.className = "resto-disclaimer";
+    d.textContent = RESTO.meta.disclaimer;
+    frag.appendChild(d);
+  }
+
+  root.replaceChildren(frag);
+}
+
+$("#resto-search").addEventListener("input", (e) => {
+  state.restoQuery = e.target.value.trim();
+  if (RESTO) renderResto();
+});
+
+/* ---------- Démarrage ---------- */
 // Démarre sur la saison actuelle pour coller au contexte belge.
 state.saison = currentSeason();
 

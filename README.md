@@ -26,6 +26,11 @@ Petite **PWA** pour gérer mes repas sur l'année : manger sainement **sans avoi
 - **[`RECETTES.md`](./RECETTES.md)** — listing lisible (généré automatiquement). **C'est le fichier à parcourir.**
 - **[`data/recipes.json`](./data/recipes.json)** — source de données (vérité unique) : 237 recettes, 30 catégories.
 - **[`scripts/generate-listing.mjs`](./scripts/generate-listing.mjs)** — régénère `RECETTES.md` depuis le JSON.
+- **[`data/resto.json`](./data/resto.json)** — assistant « Manger dehors » : pour chaque enseigne (Burger King, kebab, sushi, italien…), 1 choix optimal + 1 alternative, macros estimées, astuce upgrade et piège à éviter. Zéro culpabilisation.
+
+### App (PWA) — 2 onglets
+- **🍳 Recettes maison** : recherche + filtres repas/saison sur les 237 recettes.
+- **🍔 Manger dehors** : tu es au fast-food / resto → l'app te donne le meilleur compromis goût/objectif (menus France, valeurs estimées).
 
 Catégories : déjeuners (avoine, œufs, laitages, salé), burgers, friterie/air fryer, kebab, **pizzas (8+ variantes)**, wok & nouilles, pokebowls, quiches, rôtis, cordons bleus, poissons, crevettes & fruits de mer, **plats belges traditionnels revisités**, salades/bowls meal-prep, pâtes, viandes, **sauces healthy catégorisées** (blanches, avocat, tomate, asiatiques, herbes, friterie), desserts (sablé, fruits, crémeux, chocolat) et snacks/petits creux.
 

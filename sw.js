@@ -1,11 +1,12 @@
 // Service worker 365Food — app shell offline + données.
-const CACHE = "365food-v1";
+const CACHE = "365food-v2";
 const ASSETS = [
   "./",
   "./index.html",
   "./app.css",
   "./app.js",
   "./data/recipes.json",
+  "./data/resto.json",
   "./manifest.webmanifest",
   "./icon.svg",
   "./icon-maskable.svg",

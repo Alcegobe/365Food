@@ -1,0 +1,249 @@
+{
+  "meta": {
+    "intro": "Tu manges dehors ? Zéro culpabilisation. On vise juste le meilleur compromis goût/objectif, et au pire on compense en douceur au repas suivant.",
+    "principes": [
+      "Un repas plaisir ne ruine rien : pas de stress.",
+      "Vise une protéine + un peu de vert, et coupe le \"vide\" (soda sucré, sauces sucrées, suppléments inutiles).",
+      "Sauce à part = c'est toi qui doses.",
+      "Soda zéro ou eau pétillante à la place du sucré : autant de goût, zéro calorie vide.",
+      "Vraie soirée plaisir ? Profite à fond, on allège juste le repas suivant (plus de légumes + protéines)."
+    ],
+    "disclaimer": "Macros estimées d'après les menus actuels (France), à la portion conseillée. Valeurs indicatives pour t'aider à choisir, pas une pesée au gramme."
+  },
+  "enseignes": [
+    {
+      "id": "burger-king",
+      "nom": "Burger King",
+      "emoji": "🍔",
+      "tags": ["burger", "fast-food", "bk"],
+      "optimal": {
+        "nom": "Whopper, sauce à part + accompagnement salade (ou petite frite)",
+        "macros": { "kcal": 600, "proteines": 31, "glucides": 48, "lipides": 33 },
+        "pourquoi": "Bon steak de bœuf, plein de crudités, et tu contrôles la sauce. Rassasiant pour des calories raisonnables."
+      },
+      "alternative": {
+        "nom": "Burger poulet grillé (type King grillé) + eau",
+        "macros": { "kcal": 450, "proteines": 30, "glucides": 40, "lipides": 18 },
+        "pourquoi": "Poulet grillé plutôt que pané : encore plus léger en gras, beaucoup de protéines."
+      },
+      "astuce": "Double steak (+~25 g de protéines pour quasi pas de glucides), Coca Zéro, sauce à part, petite frite OU option salade.",
+      "vigilance": "Le menu XXL + milkshake + sauces à tremper sucrées : c'est là que la facture calorique explose."
+    },
+    {
+      "id": "mcdonalds",
+      "nom": "McDonald's",
+      "emoji": "🍟",
+      "tags": ["burger", "fast-food", "mcdo", "macdo"],
+      "optimal": {
+        "nom": "Double Cheeseburger (ou un burger bœuf 'Signature') + Coca Zéro + une salade",
+        "macros": { "kcal": 520, "proteines": 30, "glucides": 40, "lipides": 26 },
+        "pourquoi": "Beaucoup de protéines, format maîtrisé, et la salade cale sans alourdir."
+      },
+      "alternative": {
+        "nom": "Filet-O-Fish + un Cheeseburger",
+        "macros": { "kcal": 600, "proteines": 28, "glucides": 55, "lipides": 27 },
+        "pourquoi": "Combo qui rassasie avec un poisson et un peu de bœuf, sans tomber dans le maxi menu."
+      },
+      "astuce": "Choisis un burger bœuf simple riche en protéine, frite moyenne MAX, soda zéro, et zéro sauce à tremper sucrée.",
+      "vigilance": "McFlurry / sundae + grande frite + boisson sucrée : le trio qui double le repas en sucre/gras."
+    },
+    {
+      "id": "kfc",
+      "nom": "KFC",
+      "emoji": "🍗",
+      "tags": ["poulet", "fast-food", "fried chicken"],
+      "optimal": {
+        "nom": "Poulet Original Recipe (2 pièces) en retirant un peu de panure + épi de maïs",
+        "macros": { "kcal": 500, "proteines": 40, "glucides": 20, "lipides": 28 },
+        "pourquoi": "Les pièces de poulet = max de protéines. Enlever une partie de la panure coupe pas mal de gras."
+      },
+      "alternative": {
+        "nom": "Box Tenders (filets) sauce à part, sans frite ou petite",
+        "macros": { "kcal": 480, "proteines": 38, "glucides": 30, "lipides": 22 },
+        "pourquoi": "Des filets, plus de protéine et moins d'os/peau ; tu gardes la main sur la sauce."
+      },
+      "astuce": "Privilégie les pièces/filets de poulet (protéine) plutôt que les burgers noyés de sauce ; soda zéro ; enlève un peu de panure.",
+      "vigilance": "Le bucket à partager qui finit tout seul + frites + sauces : addition de gras très rapide."
+    },
+    {
+      "id": "kebab",
+      "nom": "Kebab / Durum",
+      "emoji": "🥙",
+      "tags": ["kebab", "durum", "pita", "turc"],
+      "optimal": {
+        "nom": "Assiette kebab : viande + grosse salade + petite portion de frites, sauce blanche light à part",
+        "macros": { "kcal": 600, "proteines": 42, "glucides": 45, "lipides": 28 },
+        "pourquoi": "Format assiette = plus de viande et de crudités, moins de pain. Excellent ratio protéines."
+      },
+      "alternative": {
+        "nom": "Durum poulet salade (peu de sauce), sans frites",
+        "macros": { "kcal": 520, "proteines": 38, "glucides": 48, "lipides": 18 },
+        "pourquoi": "Galette fine, poulet maigre et un max de légumes : léger et qui tient au corps."
+      },
+      "astuce": "Demande la viande poulet, un max de crudités, la sauce à part, pain complet si possible, et un soda zéro.",
+      "vigilance": "Le tout-frites + sauce blanche/algérienne noyée + grande taille : le piège classique du soir."
+    },
+    {
+      "id": "friterie-belge",
+      "nom": "Friterie / Snack belge",
+      "emoji": "🍟",
+      "tags": ["friterie", "fritkot", "snack", "belge", "mitraillette"],
+      "optimal": {
+        "nom": "Brochette ou poulet grillé + petite (ou demi) frite + crudités, sauce à part",
+        "macros": { "kcal": 650, "proteines": 35, "glucides": 55, "lipides": 30 },
+        "pourquoi": "Une vraie protéine grillée à côté de la frite, et la sauce dosée par toi : le plaisir frite sans la cata."
+      },
+      "alternative": {
+        "nom": "Boulettes sauce tomate + petite salade",
+        "macros": { "kcal": 520, "proteines": 30, "glucides": 35, "lipides": 26 },
+        "pourquoi": "Sauce tomate plutôt que mayo/grasse, des boulettes pour la protéine."
+      },
+      "astuce": "Viande grillée (brochette, poulet) plutôt que fricadelle panée, petite frite, sauce à part, soda zéro.",
+      "vigilance": "Mitraillette + grande frite + sauce généreuse = un des repas les plus caloriques qui soient."
+    },
+    {
+      "id": "pizzeria",
+      "nom": "Pizzeria / Domino's",
+      "emoji": "🍕",
+      "tags": ["pizza", "italien", "dominos", "pizza hut"],
+      "optimal": {
+        "nom": "Pizza base tomate jambon/poulet + légumes (Reine, Regina), taille medium, bord normal",
+        "macros": { "kcal": 520, "proteines": 28, "glucides": 58, "lipides": 18 },
+        "pourquoi": "Base tomate (pas crème), une protéine maigre et des légumes : la pizza la plus 'propre'. (≈ la moitié d'une medium)"
+      },
+      "alternative": {
+        "nom": "Pizza Reine + une grande salade en entrée",
+        "macros": { "kcal": 600, "proteines": 30, "glucides": 60, "lipides": 22 },
+        "pourquoi": "La salade cale en premier → tu manges naturellement moins de pizza."
+      },
+      "astuce": "Base tomate plutôt que crème, ajoute du poulet, entrée salade pour caler, et de l'eau.",
+      "vigilance": "4 fromages / base crème + bord fourré + suppléments : la pizza double facilement en gras."
+    },
+    {
+      "id": "tacos",
+      "nom": "O'Tacos / French tacos",
+      "emoji": "🌯",
+      "tags": ["tacos", "otacos", "fast-food"],
+      "optimal": {
+        "nom": "Tacos taille M, 1 viande (poulet), sans frites dedans, sauce fromagère légère ou à part, salade à côté",
+        "macros": { "kcal": 800, "proteines": 35, "glucides": 70, "lipides": 40 },
+        "pourquoi": "Honnêtement c'est riche, mais en M / 1 viande / sans frites dedans, tu limites bien la casse tout en te régalant."
+      },
+      "alternative": {
+        "nom": "Format assiette (viande + frites séparées) pour mieux doser",
+        "macros": { "kcal": 700, "proteines": 38, "glucides": 55, "lipides": 35 },
+        "pourquoi": "Tout est séparé : tu vois ce que tu manges et tu peux laisser une partie des frites."
+      },
+      "astuce": "Taille M (pas L/XL/Giga), 1 seule viande, pas de frites à l'intérieur, sauces non sucrées à part, soda zéro.",
+      "vigilance": "XL multi-viandes + double sauce fromagère : c'est le repas le plus calorique de toute cette liste."
+    },
+    {
+      "id": "subway",
+      "nom": "Subway",
+      "emoji": "🥖",
+      "tags": ["sandwich", "sub", "subway"],
+      "optimal": {
+        "nom": "Sub 15 cm poulet (ou blanc de dinde), pain complet, max légumes, sauce moutarde-miel/sweet onion en filet",
+        "macros": { "kcal": 400, "proteines": 30, "glucides": 48, "lipides": 9 },
+        "pourquoi": "Un des meilleurs choix fast-food : protéine maigre, beaucoup de légumes, très peu de gras."
+      },
+      "alternative": {
+        "nom": "Salade Subway poulet (pain à part)",
+        "macros": { "kcal": 300, "proteines": 30, "glucides": 18, "lipides": 10 },
+        "pourquoi": "Encore plus léger en glucides si tu veux couper, tout en gardant la protéine."
+      },
+      "astuce": "Double la viande, pain complet, sauces light ou à part, et zéro cookie/menu sucré.",
+      "vigilance": "Pain fromage + double sauce mayo + cookies + soda : ça transforme le 'healthy' Subway en bombe."
+    },
+    {
+      "id": "sushi",
+      "nom": "Sushi / Japonais",
+      "emoji": "🍣",
+      "tags": ["sushi", "japonais", "sashimi", "maki", "poisson"],
+      "optimal": {
+        "nom": "Sashimi saumon/thon (12 pièces) + edamame + 6 makis concombre/avocat",
+        "macros": { "kcal": 500, "proteines": 40, "glucides": 35, "lipides": 18 },
+        "pourquoi": "Le sashimi, c'est de la protéine quasi pure. Edamame = légume + fibres. Top ratio."
+      },
+      "alternative": {
+        "nom": "Chirashi saumon (bol poisson sur riz)",
+        "macros": { "kcal": 550, "proteines": 38, "glucides": 60, "lipides": 12 },
+        "pourquoi": "Beaucoup de poisson, peu de gras ; le riz apporte l'énergie."
+      },
+      "astuce": "Plus de sashimi (protéine), riz modéré, évite california frits / tempura / sauces sucrées ; sauce soja salée à part.",
+      "vigilance": "Rolls frits, spicy mayo et plateaux 100% riz : beaucoup de calories pour peu de protéines."
+    },
+    {
+      "id": "chinois-wok",
+      "nom": "Chinois / Wok",
+      "emoji": "🥡",
+      "tags": ["chinois", "wok", "asiatique", "nouilles", "riz"],
+      "optimal": {
+        "nom": "Bœuf ou poulet sauté aux légumes + riz nature (pas cantonais) + 1-2 nems max",
+        "macros": { "kcal": 600, "proteines": 35, "glucides": 55, "lipides": 22 },
+        "pourquoi": "Sauté de viande + légumes + riz nature : équilibré, protéiné, et tu te fais plaisir avec un nem."
+      },
+      "alternative": {
+        "nom": "Crevettes sautées ou bobun bœuf",
+        "macros": { "kcal": 520, "proteines": 32, "glucides": 50, "lipides": 16 },
+        "pourquoi": "Crevettes/bœuf maigres, vermicelles et crudités : frais et léger."
+      },
+      "astuce": "Vapeur ou sauté plutôt que frit, riz nature plutôt que cantonais, sauce à part, et charge en légumes.",
+      "vigilance": "Porc laqué + riz cantonais + beignets + sauce sucrée à volonté : sucre et gras cachés partout."
+    },
+    {
+      "id": "italien-pates",
+      "nom": "Italien (pâtes)",
+      "emoji": "🍝",
+      "tags": ["italien", "pates", "pasta", "restaurant"],
+      "optimal": {
+        "nom": "Pâtes sauce tomate-bolognaise ou poulet-légumes (sans crème) + entrée jambon/mozza",
+        "macros": { "kcal": 650, "proteines": 35, "glucides": 70, "lipides": 20 },
+        "pourquoi": "Sauce rouge = bien moins de gras que les sauces crème, et la bolo/poulet apporte la protéine."
+      },
+      "alternative": {
+        "nom": "Escalope milanaise + légumes ou salade",
+        "macros": { "kcal": 600, "proteines": 45, "glucides": 35, "lipides": 28 },
+        "pourquoi": "Grosse dose de protéines si tu veux limiter les glucides ce soir-là."
+      },
+      "astuce": "Sauce rouge > sauce crème, ajoute une protéine (poulet/bœuf), pain en modération.",
+      "vigilance": "Carbonara crème / 4 fromages + pain à volonté + tiramisu : l'addition gras+sucre grimpe vite."
+    },
+    {
+      "id": "mexicain-burrito",
+      "nom": "Mexicain / Burrito",
+      "emoji": "🌮",
+      "tags": ["mexicain", "burrito", "bowl", "chipotle", "fresh burritos"],
+      "optimal": {
+        "nom": "Bowl (sans tortilla) poulet + riz + haricots + légumes + salsa, peu de fromage/crème",
+        "macros": { "kcal": 600, "proteines": 40, "glucides": 55, "lipides": 20 },
+        "pourquoi": "Le bowl évite la tortilla géante ; poulet + haricots = protéine et fibres ; la salsa donne le goût sans gras."
+      },
+      "alternative": {
+        "nom": "Burrito poulet (taille normale)",
+        "macros": { "kcal": 700, "proteines": 40, "glucides": 70, "lipides": 24 },
+        "pourquoi": "Même garniture, juste un peu plus de glucides avec la galette."
+      },
+      "astuce": "Bowl plutôt que tortilla, double poulet, salsa plutôt que crème/guacamole généreux, soda zéro.",
+      "vigilance": "Tortilla XXL + double fromage + crème + chips nachos : le 'healthy' mexicain s'alourdit vite."
+    },
+    {
+      "id": "brasserie",
+      "nom": "Brasserie / Resto classique",
+      "emoji": "🍽️",
+      "tags": ["brasserie", "restaurant", "grill", "viande", "poisson"],
+      "optimal": {
+        "nom": "Viande ou poisson grillé + légumes (et/ou frites), sauce à part ; entrée carpaccio/crevettes/salade",
+        "macros": { "kcal": 600, "proteines": 45, "glucides": 35, "lipides": 25 },
+        "pourquoi": "Grillé + sauce à part = le repas resto le plus aligné avec un objectif athlétique, sans frustration."
+      },
+      "alternative": {
+        "nom": "Tartare de bœuf + salade (frites à part)",
+        "macros": { "kcal": 550, "proteines": 40, "glucides": 25, "lipides": 30 },
+        "pourquoi": "Beaucoup de protéines, peu de glucides ; tu piques quelques frites sans en faire un plat."
+      },
+      "astuce": "Grillé plutôt qu'en sauce, sauce à part, légumes en accompagnement, et partage le dessert.",
+      "vigilance": "Plat en sauce crème + apéro + pain + dessert entier : c'est le cumul qui pèse, pas un seul élément."
+    }
+  ]
+}
