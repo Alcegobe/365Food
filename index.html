@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <meta name="theme-color" content="#f2f2f7" />
+  <meta name="theme-color" content="#f2f2f7" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="default" />
   <title>365Food — Mes repas sains & gourmands</title>
@@ -22,12 +23,6 @@
         <p class="tagline">Manger sain sans avoir l'impression de se priver</p>
       </div>
     </div>
-    <nav class="tabs" role="tablist" aria-label="Vue">
-      <button class="tab" id="tab-recettes" data-view="recettes" role="tab" aria-selected="true">🍳 Recettes</button>
-      <button class="tab" id="tab-semaine" data-view="semaine" role="tab" aria-selected="false">📅 Semaine</button>
-      <button class="tab" id="tab-courses" data-view="courses" role="tab" aria-selected="false">🛒 Courses</button>
-      <button class="tab" id="tab-resto" data-view="resto" role="tab" aria-selected="false">🍔 Dehors</button>
-    </nav>
   </header>
 
   <!-- VUE RECETTES -->
@@ -87,6 +82,21 @@
     <span id="install-hint"></span>
     <span>Belgique 🇧🇪 · de saison · objectif athlétique</span>
   </footer>
+
+  <nav class="tabbar" role="tablist" aria-label="Navigation">
+    <button class="tab" id="tab-recettes" data-view="recettes" role="tab" aria-selected="true">
+      <span class="tab-ico">🍳</span><span class="tab-lbl">Recettes</span>
+    </button>
+    <button class="tab" id="tab-semaine" data-view="semaine" role="tab" aria-selected="false">
+      <span class="tab-ico">📅</span><span class="tab-lbl">Semaine</span>
+    </button>
+    <button class="tab" id="tab-courses" data-view="courses" role="tab" aria-selected="false">
+      <span class="tab-ico">🛒</span><span class="tab-lbl">Courses</span>
+    </button>
+    <button class="tab" id="tab-resto" data-view="resto" role="tab" aria-selected="false">
+      <span class="tab-ico">🍔</span><span class="tab-lbl">Dehors</span>
+    </button>
+  </nav>
 
   <script src="./app.js" type="module"></script>
 </body>
