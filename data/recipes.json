@@ -350,7 +350,13 @@
           "unit": "c.à.s",
           "rayon": "Épicerie"
         }
-      ]
+      ],
+      "macros": {
+        "kcal": 380,
+        "proteines": 22,
+        "glucides": 55,
+        "lipides": 8
+      }
     },
     {
       "id": "porridge-pomme-speculoos",
@@ -412,7 +418,13 @@
           "unit": "c.à.s",
           "rayon": "Crémerie & œufs"
         }
-      ]
+      ],
+      "macros": {
+        "kcal": 420,
+        "proteines": 24,
+        "glucides": 48,
+        "lipides": 14
+      }
     },
     {
       "id": "porridge-poire-chocolat",
@@ -474,7 +486,13 @@
           "unit": "ml",
           "rayon": "Crémerie & œufs"
         }
-      ]
+      ],
+      "macros": {
+        "kcal": 380,
+        "proteines": 28,
+        "glucides": 42,
+        "lipides": 10
+      }
     },
     {
       "id": "gaufres-proteinees",
@@ -545,7 +563,13 @@
           "unit": "c.à.c",
           "rayon": "Épicerie"
         }
-      ]
+      ],
+      "macros": {
+        "kcal": 420,
+        "proteines": 22,
+        "glucides": 26,
+        "lipides": 26
+      }
     },
     {
       "id": "oeufs-coque-mouillettes",
@@ -592,7 +616,13 @@
           "unit": "tranche",
           "rayon": "Boulangerie"
         }
-      ]
+      ],
+      "macros": {
+        "kcal": 330,
+        "proteines": 30,
+        "glucides": 18,
+        "lipides": 16
+      }
     },
     {
       "id": "omelette-jambon-champignons",
@@ -631,7 +661,13 @@
           "unit": "g",
           "rayon": "Crémerie & œufs"
         }
-      ]
+      ],
+      "macros": {
+        "kcal": 320,
+        "proteines": 28,
+        "glucides": 6,
+        "lipides": 20
+      }
     },
     {
       "id": "omelette-epinards-feta",
@@ -649,7 +685,56 @@
       "saisons": [
         "ete",
         "automne"
-      ]
+      ],
+      "composantes": {
+        "proteine": "Œufs",
+        "legume": "Poivron, tomate, oignon",
+        "feculent": "—"
+      },
+      "ingredients": [
+        {
+          "item": "Œuf",
+          "qty": 4,
+          "unit": "pièce",
+          "rayon": "Crémerie & œufs"
+        },
+        {
+          "item": "Tomates concassées",
+          "qty": 400,
+          "unit": "g",
+          "rayon": "Épicerie"
+        },
+        {
+          "item": "Poivron",
+          "qty": 1,
+          "unit": "pièce",
+          "rayon": "Fruits & légumes"
+        },
+        {
+          "item": "Oignon",
+          "qty": 1,
+          "unit": "pièce",
+          "rayon": "Fruits & légumes"
+        },
+        {
+          "item": "Ail",
+          "qty": 1,
+          "unit": "gousse",
+          "rayon": "Fruits & légumes"
+        },
+        {
+          "item": "Cumin & paprika",
+          "qty": 1,
+          "unit": "c.à.c",
+          "rayon": "Épicerie"
+        }
+      ],
+      "macros": {
+        "kcal": 280,
+        "proteines": 20,
+        "glucides": 18,
+        "lipides": 14
+      }
     },
     {
       "id": "egg-muffins-jambon",
@@ -688,7 +773,13 @@
           "unit": "g",
           "rayon": "Crémerie & œufs"
         }
-      ]
+      ],
+      "macros": {
+        "kcal": 260,
+        "proteines": 24,
+        "glucides": 6,
+        "lipides": 16
+      }
     },
     {
       "id": "oeufs-cocotte-epinards",
@@ -744,7 +835,13 @@
           "unit": "c.à.c",
           "rayon": "Épicerie"
         }
-      ]
+      ],
+      "macros": {
+        "kcal": 360,
+        "proteines": 28,
+        "glucides": 45,
+        "lipides": 8
+      }
     },
     {
       "id": "skyr-myrtilles-amandes",
@@ -760,7 +857,38 @@
       "categorie": "dejeuner-laitages",
       "saisons": [
         "toute_annee"
-      ]
+      ],
+      "composantes": {
+        "proteine": "Fromage blanc",
+        "legume": "—",
+        "feculent": "—"
+      },
+      "ingredients": [
+        {
+          "item": "Fromage blanc 0%",
+          "qty": 300,
+          "unit": "g",
+          "rayon": "Crémerie & œufs"
+        },
+        {
+          "item": "Miel",
+          "qty": 1,
+          "unit": "c.à.s",
+          "rayon": "Épicerie"
+        },
+        {
+          "item": "Noix",
+          "qty": 30,
+          "unit": "g",
+          "rayon": "Épicerie"
+        }
+      ],
+      "macros": {
+        "kcal": 240,
+        "proteines": 26,
+        "glucides": 18,
+        "lipides": 8
+      }
     },
     {
       "id": "smoothie-bowl-fruits-rouges",
@@ -848,7 +976,13 @@
           "unit": "c.à.s",
           "rayon": "Sauces & condiments"
         }
-      ]
+      ],
+      "macros": {
+        "kcal": 520,
+        "proteines": 38,
+        "glucides": 38,
+        "lipides": 22
+      }
     },
     {
       "id": "cheeseburger-frites-airfryer",
@@ -899,7 +1033,13 @@
           "unit": "pièce",
           "rayon": "Sauces & condiments"
         }
-      ]
+      ],
+      "macros": {
+        "kcal": 620,
+        "proteines": 34,
+        "glucides": 55,
+        "lipides": 28
+      }
     },
     {
       "id": "chicken-burger-croustillant",
@@ -1091,7 +1231,13 @@
           "unit": "c.à.c",
           "rayon": "Épicerie"
         }
-      ]
+      ],
+      "macros": {
+        "kcal": 560,
+        "proteines": 45,
+        "glucides": 50,
+        "lipides": 18
+      }
     },
     {
       "id": "durum-poulet-yaourt-ail",
@@ -1099,7 +1245,62 @@
       "categorie": "kebab",
       "saisons": [
         "toute_annee"
-      ]
+      ],
+      "composantes": {
+        "proteine": "Poulet",
+        "legume": "Crudités",
+        "feculent": "Galette à durum"
+      },
+      "ingredients": [
+        {
+          "item": "Filet de poulet",
+          "qty": 300,
+          "unit": "g",
+          "rayon": "Boucherie & volaille"
+        },
+        {
+          "item": "Galette à durum",
+          "qty": 2,
+          "unit": "pièce",
+          "rayon": "Boulangerie"
+        },
+        {
+          "item": "Tomate",
+          "qty": 1,
+          "unit": "pièce",
+          "rayon": "Fruits & légumes"
+        },
+        {
+          "item": "Salade (feuilles)",
+          "qty": 4,
+          "unit": "feuille",
+          "rayon": "Fruits & légumes"
+        },
+        {
+          "item": "Oignon",
+          "qty": 0.5,
+          "unit": "pièce",
+          "rayon": "Fruits & légumes"
+        },
+        {
+          "item": "Yaourt grec 0%",
+          "qty": 3,
+          "unit": "c.à.s",
+          "rayon": "Crémerie & œufs"
+        },
+        {
+          "item": "Ail",
+          "qty": 1,
+          "unit": "gousse",
+          "rayon": "Fruits & légumes"
+        }
+      ],
+      "macros": {
+        "kcal": 560,
+        "proteines": 44,
+        "glucides": 52,
+        "lipides": 16
+      }
     },
     {
       "id": "bowl-kebab-poulet",
@@ -1168,7 +1369,13 @@
           "unit": "c.à.s",
           "rayon": "Épicerie"
         }
-      ]
+      ],
+      "macros": {
+        "kcal": 600,
+        "proteines": 26,
+        "glucides": 70,
+        "lipides": 22
+      }
     },
     {
       "id": "pizza-jambon-fromage",
@@ -1192,7 +1399,56 @@
       "categorie": "pizzas",
       "saisons": [
         "toute_annee"
-      ]
+      ],
+      "composantes": {
+        "proteine": "Jambon",
+        "legume": "Champignons",
+        "feculent": "Pâte à pizza"
+      },
+      "ingredients": [
+        {
+          "item": "Pâte à pizza",
+          "qty": 1,
+          "unit": "pièce",
+          "rayon": "Boulangerie"
+        },
+        {
+          "item": "Sauce tomate",
+          "qty": 100,
+          "unit": "g",
+          "rayon": "Sauces & condiments"
+        },
+        {
+          "item": "Mozzarella",
+          "qty": 125,
+          "unit": "g",
+          "rayon": "Crémerie & œufs"
+        },
+        {
+          "item": "Jambon",
+          "qty": 2,
+          "unit": "tranche",
+          "rayon": "Boucherie & volaille"
+        },
+        {
+          "item": "Champignons",
+          "qty": 100,
+          "unit": "g",
+          "rayon": "Fruits & légumes"
+        },
+        {
+          "item": "Origan",
+          "qty": 1,
+          "unit": "pincée",
+          "rayon": "Épicerie"
+        }
+      ],
+      "macros": {
+        "kcal": 600,
+        "proteines": 30,
+        "glucides": 68,
+        "lipides": 20
+      }
     },
     {
       "id": "pizza-poulet-pesto",
@@ -1200,7 +1456,50 @@
       "categorie": "pizzas",
       "saisons": [
         "toute_annee"
-      ]
+      ],
+      "composantes": {
+        "proteine": "Poulet",
+        "legume": "Roquette",
+        "feculent": "Pâte à pizza"
+      },
+      "ingredients": [
+        {
+          "item": "Pâte à pizza",
+          "qty": 1,
+          "unit": "pièce",
+          "rayon": "Boulangerie"
+        },
+        {
+          "item": "Pesto",
+          "qty": 2,
+          "unit": "c.à.s",
+          "rayon": "Sauces & condiments"
+        },
+        {
+          "item": "Mozzarella",
+          "qty": 100,
+          "unit": "g",
+          "rayon": "Crémerie & œufs"
+        },
+        {
+          "item": "Filet de poulet",
+          "qty": 150,
+          "unit": "g",
+          "rayon": "Boucherie & volaille"
+        },
+        {
+          "item": "Roquette",
+          "qty": 1,
+          "unit": "poignée",
+          "rayon": "Fruits & légumes"
+        }
+      ],
+      "macros": {
+        "kcal": 620,
+        "proteines": 36,
+        "glucides": 62,
+        "lipides": 22
+      }
     },
     {
       "id": "pizza-thon-oignon",
@@ -1314,7 +1613,13 @@
           "unit": "c.à.c",
           "rayon": "Épicerie"
         }
-      ]
+      ],
+      "macros": {
+        "kcal": 480,
+        "proteines": 40,
+        "glucides": 45,
+        "lipides": 14
+      }
     },
     {
       "id": "wok-boeuf-soja-gingembre",
@@ -1373,7 +1678,13 @@
           "unit": "gousse",
           "rayon": "Fruits & légumes"
         }
-      ]
+      ],
+      "macros": {
+        "kcal": 540,
+        "proteines": 38,
+        "glucides": 58,
+        "lipides": 14
+      }
     },
     {
       "id": "nouilles-soba-boeuf-brocoli",
@@ -1502,7 +1813,13 @@
           "unit": "c.à.c",
           "rayon": "Épicerie"
         }
-      ]
+      ],
+      "macros": {
+        "kcal": 560,
+        "proteines": 34,
+        "glucides": 60,
+        "lipides": 20
+      }
     },
     {
       "id": "pokebowl-thon-epice",
@@ -1518,7 +1835,62 @@
       "categorie": "pokebowl",
       "saisons": [
         "toute_annee"
-      ]
+      ],
+      "composantes": {
+        "proteine": "Poulet",
+        "legume": "Edamame, carotte, avocat",
+        "feculent": "Riz"
+      },
+      "ingredients": [
+        {
+          "item": "Filet de poulet",
+          "qty": 300,
+          "unit": "g",
+          "rayon": "Boucherie & volaille"
+        },
+        {
+          "item": "Riz",
+          "qty": 150,
+          "unit": "g",
+          "rayon": "Épicerie"
+        },
+        {
+          "item": "Edamame",
+          "qty": 100,
+          "unit": "g",
+          "rayon": "Surgelés"
+        },
+        {
+          "item": "Carotte",
+          "qty": 1,
+          "unit": "pièce",
+          "rayon": "Fruits & légumes"
+        },
+        {
+          "item": "Avocat",
+          "qty": 0.5,
+          "unit": "pièce",
+          "rayon": "Fruits & légumes"
+        },
+        {
+          "item": "Sauce teriyaki",
+          "qty": 2,
+          "unit": "c.à.s",
+          "rayon": "Sauces & condiments"
+        },
+        {
+          "item": "Graines de sésame",
+          "qty": 1,
+          "unit": "c.à.c",
+          "rayon": "Épicerie"
+        }
+      ],
+      "macros": {
+        "kcal": 600,
+        "proteines": 42,
+        "glucides": 62,
+        "lipides": 16
+      }
     },
     {
       "id": "pokebowl-crevettes-avocat",
@@ -1693,7 +2065,13 @@
           "unit": "g",
           "rayon": "Épicerie"
         }
-      ]
+      ],
+      "macros": {
+        "kcal": 540,
+        "proteines": 48,
+        "glucides": 28,
+        "lipides": 26
+      }
     },
     {
       "id": "escalope-dinde-panee",
@@ -1768,7 +2146,13 @@
           "unit": "c.à.c",
           "rayon": "Épicerie"
         }
-      ]
+      ],
+      "macros": {
+        "kcal": 520,
+        "proteines": 40,
+        "glucides": 35,
+        "lipides": 22
+      }
     },
     {
       "id": "cabillaud-ecrase-pdt",
@@ -1819,7 +2203,13 @@
           "unit": "c.à.s",
           "rayon": "Épicerie"
         }
-      ]
+      ],
+      "macros": {
+        "kcal": 430,
+        "proteines": 38,
+        "glucides": 40,
+        "lipides": 12
+      }
     },
     {
       "id": "saumon-papillote",
@@ -1827,7 +2217,56 @@
       "categorie": "poissons",
       "saisons": [
         "toute_annee"
-      ]
+      ],
+      "composantes": {
+        "proteine": "Saumon",
+        "legume": "Courgette, tomate",
+        "feculent": "—"
+      },
+      "ingredients": [
+        {
+          "item": "Pavé de saumon",
+          "qty": 2,
+          "unit": "pièce",
+          "rayon": "Poissonnerie"
+        },
+        {
+          "item": "Courgette",
+          "qty": 1,
+          "unit": "pièce",
+          "rayon": "Fruits & légumes"
+        },
+        {
+          "item": "Tomate cerise",
+          "qty": 100,
+          "unit": "g",
+          "rayon": "Fruits & légumes"
+        },
+        {
+          "item": "Citron",
+          "qty": 0.5,
+          "unit": "pièce",
+          "rayon": "Fruits & légumes"
+        },
+        {
+          "item": "Aneth",
+          "qty": 1,
+          "unit": "pincée",
+          "rayon": "Fruits & légumes"
+        },
+        {
+          "item": "Huile d'olive",
+          "qty": 1,
+          "unit": "c.à.s",
+          "rayon": "Épicerie"
+        }
+      ],
+      "macros": {
+        "kcal": 420,
+        "proteines": 38,
+        "glucides": 8,
+        "lipides": 26
+      }
     },
     {
       "id": "saumon-croute-moutarde",
@@ -1875,7 +2314,56 @@
       "categorie": "poissons",
       "saisons": [
         "toute_annee"
-      ]
+      ],
+      "composantes": {
+        "proteine": "Cabillaud",
+        "legume": "Petits pois",
+        "feculent": "Pommes de terre"
+      },
+      "ingredients": [
+        {
+          "item": "Dos de cabillaud",
+          "qty": 2,
+          "unit": "pièce",
+          "rayon": "Poissonnerie"
+        },
+        {
+          "item": "Chapelure (panko)",
+          "qty": 60,
+          "unit": "g",
+          "rayon": "Épicerie"
+        },
+        {
+          "item": "Œuf",
+          "qty": 1,
+          "unit": "pièce",
+          "rayon": "Crémerie & œufs"
+        },
+        {
+          "item": "Pommes de terre",
+          "qty": 400,
+          "unit": "g",
+          "rayon": "Fruits & légumes"
+        },
+        {
+          "item": "Petits pois",
+          "qty": 150,
+          "unit": "g",
+          "rayon": "Surgelés"
+        },
+        {
+          "item": "Citron",
+          "qty": 0.5,
+          "unit": "pièce",
+          "rayon": "Fruits & légumes"
+        }
+      ],
+      "macros": {
+        "kcal": 520,
+        "proteines": 40,
+        "glucides": 50,
+        "lipides": 14
+      }
     },
     {
       "id": "tartare-saumon",
@@ -1966,7 +2454,13 @@
           "unit": "c.à.s",
           "rayon": "Épicerie"
         }
-      ]
+      ],
+      "macros": {
+        "kcal": 420,
+        "proteines": 34,
+        "glucides": 42,
+        "lipides": 10
+      }
     },
     {
       "id": "gambas-grillees-riz",
@@ -2051,7 +2545,50 @@
       "saisons": [
         "automne",
         "hiver"
-      ]
+      ],
+      "composantes": {
+        "proteine": "Jambon",
+        "legume": "Chicons",
+        "feculent": "—"
+      },
+      "ingredients": [
+        {
+          "item": "Chicons",
+          "qty": 4,
+          "unit": "pièce",
+          "rayon": "Fruits & légumes"
+        },
+        {
+          "item": "Jambon",
+          "qty": 4,
+          "unit": "tranche",
+          "rayon": "Boucherie & volaille"
+        },
+        {
+          "item": "Emmental râpé",
+          "qty": 60,
+          "unit": "g",
+          "rayon": "Crémerie & œufs"
+        },
+        {
+          "item": "Lait demi-écrémé",
+          "qty": 250,
+          "unit": "ml",
+          "rayon": "Crémerie & œufs"
+        },
+        {
+          "item": "Muscade",
+          "qty": 1,
+          "unit": "pincée",
+          "rayon": "Épicerie"
+        }
+      ],
+      "macros": {
+        "kcal": 380,
+        "proteines": 34,
+        "glucides": 16,
+        "lipides": 20
+      }
     },
     {
       "id": "waterzooi-poulet",
@@ -2110,7 +2647,62 @@
       "categorie": "salades-bowls",
       "saisons": [
         "toute_annee"
-      ]
+      ],
+      "composantes": {
+        "proteine": "Poulet",
+        "legume": "Laitue romaine",
+        "feculent": "Croûtons"
+      },
+      "ingredients": [
+        {
+          "item": "Filet de poulet",
+          "qty": 300,
+          "unit": "g",
+          "rayon": "Boucherie & volaille"
+        },
+        {
+          "item": "Laitue romaine",
+          "qty": 1,
+          "unit": "pièce",
+          "rayon": "Fruits & légumes"
+        },
+        {
+          "item": "Parmesan",
+          "qty": 30,
+          "unit": "g",
+          "rayon": "Crémerie & œufs"
+        },
+        {
+          "item": "Croûtons",
+          "qty": 40,
+          "unit": "g",
+          "rayon": "Boulangerie"
+        },
+        {
+          "item": "Yaourt grec 0%",
+          "qty": 3,
+          "unit": "c.à.s",
+          "rayon": "Crémerie & œufs"
+        },
+        {
+          "item": "Ail",
+          "qty": 1,
+          "unit": "gousse",
+          "rayon": "Fruits & légumes"
+        },
+        {
+          "item": "Moutarde",
+          "qty": 1,
+          "unit": "c.à.c",
+          "rayon": "Sauces & condiments"
+        }
+      ],
+      "macros": {
+        "kcal": 420,
+        "proteines": 42,
+        "glucides": 20,
+        "lipides": 18
+      }
     },
     {
       "id": "bowl-poulet-riz-legumes",
@@ -2223,7 +2815,13 @@
           "unit": "g",
           "rayon": "Crémerie & œufs"
         }
-      ]
+      ],
+      "macros": {
+        "kcal": 560,
+        "proteines": 34,
+        "glucides": 68,
+        "lipides": 14
+      }
     },
     {
       "id": "pates-thon-tomate",
@@ -2247,7 +2845,62 @@
       "categorie": "pates-feculents",
       "saisons": [
         "toute_annee"
-      ]
+      ],
+      "composantes": {
+        "proteine": "Bœuf haché",
+        "legume": "Courgette, tomate",
+        "feculent": "Pâtes à lasagne"
+      },
+      "ingredients": [
+        {
+          "item": "Bœuf haché 5%",
+          "qty": 250,
+          "unit": "g",
+          "rayon": "Boucherie & volaille"
+        },
+        {
+          "item": "Pâtes à lasagne",
+          "qty": 6,
+          "unit": "feuille",
+          "rayon": "Épicerie"
+        },
+        {
+          "item": "Tomates concassées",
+          "qty": 400,
+          "unit": "g",
+          "rayon": "Épicerie"
+        },
+        {
+          "item": "Courgette",
+          "qty": 1,
+          "unit": "pièce",
+          "rayon": "Fruits & légumes"
+        },
+        {
+          "item": "Oignon",
+          "qty": 1,
+          "unit": "pièce",
+          "rayon": "Fruits & légumes"
+        },
+        {
+          "item": "Lait demi-écrémé",
+          "qty": 200,
+          "unit": "ml",
+          "rayon": "Crémerie & œufs"
+        },
+        {
+          "item": "Parmesan",
+          "qty": 30,
+          "unit": "g",
+          "rayon": "Crémerie & œufs"
+        }
+      ],
+      "macros": {
+        "kcal": 560,
+        "proteines": 38,
+        "glucides": 50,
+        "lipides": 20
+      }
     },
     {
       "id": "gratin-pates-jambon",
@@ -2264,7 +2917,50 @@
       "categorie": "pates-feculents",
       "saisons": [
         "toute_annee"
-      ]
+      ],
+      "composantes": {
+        "proteine": "Œufs, dinde fumée",
+        "legume": "—",
+        "feculent": "Spaghetti"
+      },
+      "ingredients": [
+        {
+          "item": "Spaghetti",
+          "qty": 180,
+          "unit": "g",
+          "rayon": "Épicerie"
+        },
+        {
+          "item": "Œuf",
+          "qty": 3,
+          "unit": "pièce",
+          "rayon": "Crémerie & œufs"
+        },
+        {
+          "item": "Allumettes de dinde fumée",
+          "qty": 120,
+          "unit": "g",
+          "rayon": "Boucherie & volaille"
+        },
+        {
+          "item": "Parmesan",
+          "qty": 30,
+          "unit": "g",
+          "rayon": "Crémerie & œufs"
+        },
+        {
+          "item": "Ail",
+          "qty": 1,
+          "unit": "gousse",
+          "rayon": "Fruits & légumes"
+        }
+      ],
+      "macros": {
+        "kcal": 560,
+        "proteines": 34,
+        "glucides": 62,
+        "lipides": 18
+      }
     },
     {
       "id": "penne-tomate-poulet",
@@ -2345,7 +3041,13 @@
           "unit": "c.à.c",
           "rayon": "Épicerie"
         }
-      ]
+      ],
+      "macros": {
+        "kcal": 560,
+        "proteines": 38,
+        "glucides": 62,
+        "lipides": 14
+      }
     },
     {
       "id": "riz-saute-poulet-legumes",
@@ -2396,7 +3098,13 @@
           "unit": "gousse",
           "rayon": "Fruits & légumes"
         }
-      ]
+      ],
+      "macros": {
+        "kcal": 520,
+        "proteines": 36,
+        "glucides": 60,
+        "lipides": 12
+      }
     },
     {
       "id": "brochettes-poulet-legumes",
@@ -2489,7 +3197,13 @@
           "unit": "c.à.s",
           "rayon": "Épicerie"
         }
-      ]
+      ],
+      "macros": {
+        "kcal": 520,
+        "proteines": 42,
+        "glucides": 35,
+        "lipides": 20
+      }
     },
     {
       "id": "steak-hache-haricots-verts",
@@ -2534,7 +3248,13 @@
           "unit": "c.à.s",
           "rayon": "Épicerie"
         }
-      ]
+      ],
+      "macros": {
+        "kcal": 430,
+        "proteines": 40,
+        "glucides": 22,
+        "lipides": 20
+      }
     },
     {
       "id": "mijote-boeuf-carottes",

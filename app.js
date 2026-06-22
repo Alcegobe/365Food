@@ -176,6 +176,7 @@ function render() {
       card.innerHTML =
         `<div class="card-title">${highlight(r.titre)}</div>` +
         comp +
+        (r.macros ? macrosRow(r.macros) : "") +
         (seasonBadges ? `<div class="badges">${seasonBadges}</div>` : "");
       cards.appendChild(card);
     }
@@ -485,13 +486,29 @@ function renderSemaine() {
     const line = (ico, label, r) =>
       `<div class="repas-line"><span class="repas-ico">${ico}</span>` +
       `<span class="repas-txt"><span class="repas-label">${label}</span>${r ? esc(r.titre) : "—"}</span></div>`;
+
+    const meals = [day.dejeuner, day.diner, day.souper];
+    let kcal = 0, prot = 0, withMacros = 0;
+    for (const r of meals) {
+      if (r && r.macros) {
+        kcal += r.macros.kcal;
+        prot += r.macros.proteines;
+        withMacros++;
+      }
+    }
+    const total =
+      withMacros > 0
+        ? `<div class="jour-total">≈ ${kcal} kcal · ${prot} g protéines${withMacros < 3 ? " <span class=\"jour-total-note\">(repas détaillés)</span>" : ""}</div>`
+        : "";
+
     const sec = document.createElement("section");
     sec.className = "jour";
     sec.innerHTML =
       `<h3 class="jour-titre">${JOURS[i]} <span class="jour-date">${dm(d)}</span></h3>` +
       line("🍳", "Déjeuner", day.dejeuner) +
       line("🍽️", "Dîner", day.diner) +
-      line("🌙", "Souper", day.souper);
+      line("🌙", "Souper", day.souper) +
+      total;
     frag.appendChild(sec);
   });
   root.replaceChildren(frag);

@@ -525,6 +525,19 @@ mark { background: rgba(255, 204, 0, 0.5); color: inherit; padding: 0 1px; borde
 .chip:active { transform: scale(0.95); }
 .resto-card summary:active { opacity: 0.6; }
 
+/* Macros sur les cartes recette + total du jour */
+.card .macros { margin: 3px 0 0; gap: 5px; }
+.card .macro { font-size: 11px; padding: 2px 8px; }
+.jour-total {
+  margin-top: 9px;
+  padding-top: 9px;
+  border-top: 0.5px solid var(--sep);
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--ink);
+}
+.jour-total-note { color: var(--muted); font-weight: 500; }
+
 /* ---------- Mode sombre automatique (iOS) ---------- */
 @media (prefers-color-scheme: dark) {
   :root {
