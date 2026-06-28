@@ -770,9 +770,20 @@ window.addEventListener("beforeinstallprompt", (e) => {
 });
 
 if ("serviceWorker" in navigator) {
-  window.addEventListener("load", () =>
-    navigator.serviceWorker.register("./sw.js").catch(() => {})
-  );
+  // Recharge automatiquement une fois quand une nouvelle version prend la main,
+  // pour que les mises à jour s'appliquent sans vidage de cache manuel.
+  const hadController = !!navigator.serviceWorker.controller;
+  let reloaded = false;
+  navigator.serviceWorker.addEventListener("controllerchange", () => {
+    if (!hadController || reloaded) return; // pas de reload au tout premier install
+    reloaded = true;
+    window.location.reload();
+  });
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("./sw.js").then((reg) => {
+      reg.update().catch(() => {}); // vérifie une mise à jour à chaque ouverture
+    }).catch(() => {});
+  });
 }
 
 load();
