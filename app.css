@@ -1,19 +1,19 @@
 :root {
-  /* Palette inspirée iOS (system colors) */
-  --bg: #f2f2f7;            /* systemGroupedBackground */
-  --surface: #ffffff;       /* secondarySystemGroupedBackground */
-  --fill: rgba(118, 118, 128, 0.12); /* tertiarySystemFill */
-  --fill-strong: rgba(118, 118, 128, 0.2);
-  --ink: #1c1c1e;           /* label */
-  --muted: #8e8e93;         /* secondaryLabel */
-  --sep: rgba(60, 60, 67, 0.29); /* separator */
-  --accent: #ff9500;        /* systemOrange */
+  /* Palette blanc minimaliste — surfaces blanches, hairlines fines, un seul accent */
+  --bg: #ffffff;            /* fond pur blanc */
+  --surface: #ffffff;       /* cartes blanches, séparées par hairline */
+  --fill: #f3f3f5;          /* champs / chips : gris très clair */
+  --fill-strong: #e7e7ea;
+  --ink: #1d1d1f;           /* texte quasi noir */
+  --muted: #86868b;         /* texte secondaire */
+  --sep: rgba(0, 0, 0, 0.08); /* séparateur */
+  --accent: #ff9500;        /* accent unique (brand 365) */
   --accent-press: #d97e00;
-  --accent-soft: rgba(255, 149, 0, 0.14);
-  --green: #34c759;         /* systemGreen */
+  --accent-soft: rgba(255, 149, 0, 0.12);
+  --green: #34c759;
   --purple: #af52de;
-  --hairline: rgba(60, 60, 67, 0.08);
-  --shadow: 0 1px 2px rgba(0, 0, 0, 0.04), 0 2px 12px rgba(0, 0, 0, 0.04);
+  --hairline: rgba(0, 0, 0, 0.07);
+  --shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
   --radius: 16px;
   --radius-lg: 22px;
 }
@@ -36,10 +36,10 @@ body {
   position: sticky;
   top: 0;
   z-index: 10;
-  background: rgba(242, 242, 247, 0.82);
+  background: rgba(255, 255, 255, 0.82);
   -webkit-backdrop-filter: saturate(180%) blur(20px);
   backdrop-filter: saturate(180%) blur(20px);
-  border-bottom: 0.5px solid var(--sep);
+  border-bottom: 0.5px solid var(--hairline);
   padding: 12px 16px 10px;
   padding-top: calc(10px + env(safe-area-inset-top));
 }
@@ -79,10 +79,10 @@ body {
   bottom: 0;
   z-index: 20;
   display: flex;
-  background: rgba(242, 242, 247, 0.86);
+  background: rgba(255, 255, 255, 0.88);
   -webkit-backdrop-filter: saturate(180%) blur(20px);
   backdrop-filter: saturate(180%) blur(20px);
-  border-top: 0.5px solid var(--sep);
+  border-top: 0.5px solid var(--hairline);
   padding-bottom: env(safe-area-inset-bottom);
 }
 .tab {
@@ -557,29 +557,4 @@ mark { background: rgba(255, 204, 0, 0.5); color: inherit; padding: 0 1px; borde
 }
 .jour-total-note { color: var(--muted); font-weight: 500; }
 
-/* ---------- Mode sombre automatique (iOS) ---------- */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg: #000000;
-    --surface: #1c1c1e;
-    --fill: rgba(118, 118, 128, 0.24);
-    --fill-strong: rgba(118, 118, 128, 0.36);
-    --ink: #ffffff;
-    --muted: #98989f;
-    --sep: rgba(84, 84, 88, 0.6);
-    --hairline: rgba(255, 255, 255, 0.09);
-    --accent-soft: rgba(255, 149, 0, 0.22);
-    --shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
-  }
-  .app-header { background: rgba(0, 0, 0, 0.7); }
-  .tabbar { background: rgba(0, 0, 0, 0.72); }
-  .searchbar input:focus { outline-color: rgba(255, 149, 0, 0.55); }
-  .badge { background: rgba(255, 149, 0, 0.22); color: #ffb340; }
-  .badge.season { background: rgba(52, 199, 89, 0.22); color: #5be07a; }
-  .macro.kcal { color: #ffb340; }
-  .macro.p { color: #5be07a; }
-  .macro.g { color: #ffd426; }
-  .macro.l { color: #d08cf0; }
-  .vigilance { color: #ff8a80; }
-  mark { background: rgba(255, 214, 10, 0.35); }
-}
+/* Thème blanc minimaliste unique (pas de bascule sombre automatique). */
