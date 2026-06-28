@@ -9,11 +9,13 @@
   --sep: rgba(60, 60, 67, 0.29); /* separator */
   --accent: #ff9500;        /* systemOrange */
   --accent-press: #d97e00;
+  --accent-soft: rgba(255, 149, 0, 0.14);
   --green: #34c759;         /* systemGreen */
   --purple: #af52de;
-  --shadow: 0 1px 2px rgba(0, 0, 0, 0.06), 0 4px 16px rgba(0, 0, 0, 0.05);
-  --radius: 14px;
-  --radius-lg: 20px;
+  --hairline: rgba(60, 60, 67, 0.08);
+  --shadow: 0 1px 2px rgba(0, 0, 0, 0.04), 0 2px 12px rgba(0, 0, 0, 0.04);
+  --radius: 16px;
+  --radius-lg: 22px;
 }
 
 * { box-sizing: border-box; }
@@ -60,16 +62,13 @@ body {
 .app-header h1 { margin: 0; font-size: 25px; font-weight: 700; letter-spacing: -0.5px; }
 .tagline { margin: 1px 0 0; font-size: 13px; color: var(--muted); }
 
-/* Icônes (line icons) */
+/* Icônes (Google Material Symbols, filled) */
 .ico {
-  width: 18px;
-  height: 18px;
+  width: 20px;
+  height: 20px;
   flex: 0 0 auto;
-  fill: none;
-  stroke: currentColor;
-  stroke-width: 1.8;
-  stroke-linecap: round;
-  stroke-linejoin: round;
+  fill: currentColor;
+  stroke: none;
 }
 
 /* Barre d'onglets en bas (façon app iOS) */
@@ -87,24 +86,39 @@ body {
   padding-bottom: env(safe-area-inset-bottom);
 }
 .tab {
+  position: relative;
   flex: 1;
   min-width: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2px;
-  padding: 8px 2px 6px;
+  gap: 4px;
+  padding: 10px 2px 8px;
   border: none;
   background: transparent;
   color: var(--muted);
   cursor: pointer;
-  transition: color 0.15s;
+  transition: color 0.18s ease;
 }
-.tab .ico { width: 25px; height: 25px; stroke-width: 1.7; transition: transform 0.15s; }
-.tab-lbl { font-size: 10.5px; font-weight: 600; letter-spacing: -0.1px; }
+/* Indicateur "pilule" actif façon Material 3 */
+.tab::before {
+  content: "";
+  position: absolute;
+  top: 7px;
+  left: 50%;
+  width: 56px;
+  height: 30px;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  transform: translateX(-50%) scale(0.6);
+  opacity: 0;
+  transition: transform 0.22s cubic-bezier(0.2, 0, 0, 1), opacity 0.18s ease;
+}
+.tab .ico { position: relative; width: 24px; height: 24px; transition: transform 0.18s ease; }
+.tab-lbl { font-size: 11px; font-weight: 600; letter-spacing: 0.1px; }
 .tab[aria-selected="true"] { color: var(--accent); }
-.tab[aria-selected="true"] .ico { transform: translateY(-1px); }
-.tab:active .ico { transform: scale(0.9); }
+.tab[aria-selected="true"]::before { transform: translateX(-50%) scale(1); opacity: 1; }
+.tab:active .ico { transform: scale(0.88); }
 
 /* Barre de recherche (champ iOS avec loupe) */
 .searchbar { padding: 12px 16px 4px; }
@@ -200,7 +214,8 @@ body {
 .card {
   background: var(--surface);
   border-radius: var(--radius);
-  padding: 13px 15px;
+  border: 0.5px solid var(--hairline);
+  padding: 14px 16px;
   box-shadow: var(--shadow);
   display: flex;
   flex-direction: column;
@@ -321,6 +336,7 @@ mark { background: rgba(255, 204, 0, 0.5); color: inherit; padding: 0 1px; borde
 .jour {
   background: var(--surface);
   border-radius: var(--radius);
+  border: 0.5px solid var(--hairline);
   box-shadow: var(--shadow);
   padding: 12px 15px;
 }
@@ -365,6 +381,7 @@ mark { background: rgba(255, 204, 0, 0.5); color: inherit; padding: 0 1px; borde
 .courses-list {
   background: var(--surface);
   border-radius: var(--radius);
+  border: 0.5px solid var(--hairline);
   box-shadow: var(--shadow);
   overflow: hidden;
 }
@@ -408,6 +425,7 @@ mark { background: rgba(255, 204, 0, 0.5); color: inherit; padding: 0 1px; borde
 .resto-intro {
   background: var(--surface);
   border-radius: var(--radius);
+  border: 0.5px solid var(--hairline);
   padding: 15px 16px;
   margin-bottom: 14px;
   box-shadow: var(--shadow);
@@ -419,6 +437,7 @@ mark { background: rgba(255, 204, 0, 0.5); color: inherit; padding: 0 1px; borde
 .resto-card {
   background: var(--surface);
   border-radius: var(--radius);
+  border: 0.5px solid var(--hairline);
   box-shadow: var(--shadow);
   margin-bottom: 11px;
   overflow: hidden;
@@ -548,6 +567,8 @@ mark { background: rgba(255, 204, 0, 0.5); color: inherit; padding: 0 1px; borde
     --ink: #ffffff;
     --muted: #98989f;
     --sep: rgba(84, 84, 88, 0.6);
+    --hairline: rgba(255, 255, 255, 0.09);
+    --accent-soft: rgba(255, 149, 0, 0.22);
     --shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
   }
   .app-header { background: rgba(0, 0, 0, 0.7); }
