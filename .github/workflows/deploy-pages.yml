@@ -1,8 +1,12 @@
 name: Déployer la PWA sur GitHub Pages
 
+# Le déploiement GitHub Pages n'est autorisé que depuis la branche par défaut
+# du dépôt. On ne déclenche donc le workflow que sur cette branche, sinon les
+# autres branches (ex. main) produisent des runs rejetés par la gate
+# d'environnement « github-pages ».
 on:
   push:
-    branches: [main, "claude/meal-planning-pwa-j947zv"]
+    branches: ["claude/meal-planning-pwa-j947zv"]
   workflow_dispatch:
 
 permissions:
