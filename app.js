@@ -22,6 +22,7 @@ const SEASON_LABELS = {
 const state = { repas: "all", saison: "toutes", query: "", restoQuery: "" };
 let DATA = null;
 let CAT_BY_ID = new Map();
+let RECIPE_BY_ID = new Map();
 let RESTO = null;
 
 const $ = (sel) => document.querySelector(sel);
@@ -65,6 +66,7 @@ async function load() {
     return;
   }
   CAT_BY_ID = new Map(DATA.categories.map((c) => [c.id, c]));
+  RECIPE_BY_ID = new Map(DATA.recipes.map((r) => [r.id, r]));
   buildRepasFilter();
   buildSeasonFilter();
   render();
@@ -165,15 +167,17 @@ function render() {
         : r.saisons
             .map((s) => `<span class="badge season">${SEASON_LABELS[s] ?? s}</span>`)
             .join("");
-      const c = r.composantes;
-      const comp = c
-        ? `<div class="card-comp">🥩 ${esc(c.proteine)} · 🥬 ${esc(c.legume)}` +
-          (c.feculent && c.feculent !== "—" ? ` · 🍚 ${esc(c.feculent)}` : "") +
-          `</div>`
+      const comp = r.composantes
+        ? `<div class="card-comp">${compLabels(r.composantes)}</div>`
         : "";
       const card = document.createElement("article");
-      card.className = "card";
+      card.className = "card card-link";
+      card.dataset.id = r.id;
+      card.setAttribute("role", "button");
+      card.setAttribute("tabindex", "0");
+      card.setAttribute("aria-label", `Voir la recette : ${r.titre}`);
       card.innerHTML =
+        `<svg class="ico card-chevron" aria-hidden="true"><use href="#i-chevron" /></svg>` +
         `<div class="card-title">${highlight(r.titre)}</div>` +
         comp +
         (r.macros ? macrosRow(r.macros) : "") +
@@ -189,6 +193,111 @@ function render() {
 $("#search").addEventListener("input", (e) => {
   state.query = e.target.value.trim();
   render();
+});
+
+/* ---------- Composantes (étiquettes texte) ---------- */
+function compLabels(c) {
+  const parts = [];
+  if (c.proteine && c.proteine !== "—")
+    parts.push(`<span class="comp-k">Protéine</span> ${esc(c.proteine)}`);
+  if (c.legume && c.legume !== "—")
+    parts.push(`<span class="comp-k">Légume</span> ${esc(c.legume)}`);
+  if (c.feculent && c.feculent !== "—")
+    parts.push(`<span class="comp-k">Féculent</span> ${esc(c.feculent)}`);
+  return parts.join(" · ");
+}
+
+/* ---------- Fiche recette (au clic) ---------- */
+let sheetEl = null;
+let sheetPrevFocus = null;
+
+function searchUrl(titre) {
+  return "https://www.google.com/search?q=" + encodeURIComponent("recette " + titre);
+}
+
+function recipeSheetHTML(r) {
+  let h = "";
+  if (r.composantes) h += `<div class="sheet-comp">${compLabels(r.composantes)}</div>`;
+  if (r.macros) h += macrosRow(r.macros);
+  if (r.ingredients && r.ingredients.length) {
+    h +=
+      `<h3 class="sheet-h">Ingrédients <span class="sheet-sub">pour 1 personne</span></h3>` +
+      `<ul class="sheet-ingr">` +
+      r.ingredients
+        .map(
+          (i) =>
+            `<li><span class="ing-name">${esc(i.item)}</span>` +
+            `<span class="ing-qty">${i.qty} ${esc(i.unit || "")}</span></li>`
+        )
+        .join("") +
+      `</ul>`;
+  }
+  if (r.etapes && r.etapes.length) {
+    h +=
+      `<h3 class="sheet-h">Préparation</h3>` +
+      `<ol class="sheet-steps">` +
+      r.etapes.map((s) => `<li>${esc(s)}</li>`).join("") +
+      `</ol>`;
+  } else {
+    h += `<p class="sheet-todo">Recette détaillée bientôt disponible — en attendant, ouvre la recherche ci-dessous. 👇</p>`;
+  }
+  h +=
+    `<a class="btn sheet-search" href="${searchUrl(r.titre)}" target="_blank" rel="noopener">` +
+    `<svg class="ico"><use href="#i-search" /></svg><span class="btn-lbl">Chercher la recette sur le web</span></a>`;
+  return h;
+}
+
+function openRecipe(id) {
+  const r = RECIPE_BY_ID.get(id);
+  if (!r) return;
+  if (!sheetEl) {
+    sheetEl = document.createElement("div");
+    sheetEl.className = "sheet-backdrop";
+    sheetEl.hidden = true;
+    sheetEl.addEventListener("click", (e) => {
+      if (e.target === sheetEl) closeRecipe();
+    });
+    document.body.appendChild(sheetEl);
+  }
+  sheetPrevFocus = document.activeElement;
+  sheetEl.innerHTML =
+    `<div class="sheet" role="dialog" aria-modal="true" aria-labelledby="sheet-title">` +
+    `<header class="sheet-head">` +
+    `<h2 id="sheet-title">${esc(r.titre)}</h2>` +
+    `<button class="sheet-close" type="button" aria-label="Fermer"><svg class="ico"><use href="#i-close" /></svg></button>` +
+    `</header>` +
+    `<div class="sheet-body">${recipeSheetHTML(r)}</div>` +
+    `</div>`;
+  sheetEl.hidden = false;
+  document.body.style.overflow = "hidden";
+  const closeBtn = sheetEl.querySelector(".sheet-close");
+  closeBtn.addEventListener("click", closeRecipe);
+  closeBtn.focus();
+}
+
+function closeRecipe() {
+  if (!sheetEl || sheetEl.hidden) return;
+  sheetEl.hidden = true;
+  document.body.style.overflow = "";
+  if (sheetPrevFocus && sheetPrevFocus.focus) sheetPrevFocus.focus();
+}
+
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") closeRecipe();
+});
+
+// Délégation clic / clavier sur les cartes recette.
+$("#results").addEventListener("click", (e) => {
+  const card = e.target.closest(".card-link");
+  if (card) openRecipe(card.dataset.id);
+});
+$("#results").addEventListener("keydown", (e) => {
+  if (e.key !== "Enter" && e.key !== " ") return;
+  const card = e.target.closest(".card-link");
+  if (card) {
+    e.preventDefault();
+    openRecipe(card.dataset.id);
+  }
 });
 
 /* ---------- Manger dehors ---------- */
