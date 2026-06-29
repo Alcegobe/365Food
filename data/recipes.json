@@ -365,6 +365,61 @@
       "saisons": [
         "automne",
         "hiver"
+      ],
+      "composantes": {
+        "proteine": "Lait + whey",
+        "legume": "—",
+        "feculent": "Flocons d'avoine"
+      },
+      "ingredients": [
+        {
+          "item": "Flocons d'avoine",
+          "qty": 60,
+          "unit": "g",
+          "rayon": "Épicerie"
+        },
+        {
+          "item": "Lait demi-écrémé",
+          "qty": 250,
+          "unit": "ml",
+          "rayon": "Crémerie & œufs"
+        },
+        {
+          "item": "Pomme",
+          "qty": 1,
+          "unit": "pièce",
+          "rayon": "Fruits & légumes"
+        },
+        {
+          "item": "Whey vanille",
+          "qty": 1,
+          "unit": "c.à.s",
+          "rayon": "Épicerie"
+        },
+        {
+          "item": "Cannelle",
+          "qty": 1,
+          "unit": "pincée",
+          "rayon": "Épicerie"
+        },
+        {
+          "item": "Spéculoos",
+          "qty": 1,
+          "unit": "pièce",
+          "rayon": "Épicerie"
+        }
+      ],
+      "macros": {
+        "kcal": 350,
+        "proteines": 24,
+        "glucides": 52,
+        "lipides": 7
+      },
+      "etapes": [
+        "Verser les flocons et le lait dans une casserole, cuire 4-5 min à feu doux en remuant.",
+        "Râper la pomme et l'ajouter avec la cannelle.",
+        "Hors du feu, incorporer la whey.",
+        "Verser dans un bol et émietter le spéculoos par-dessus."
       ]
     },
     {
@@ -508,6 +563,61 @@
       "categorie": "dejeuner-avoine",
       "saisons": [
         "toute_annee"
+      ],
+      "composantes": {
+        "proteine": "Œufs + whey",
+        "legume": "—",
+        "feculent": "Flocons d'avoine"
+      },
+      "ingredients": [
+        {
+          "item": "Flocons d'avoine",
+          "qty": 50,
+          "unit": "g",
+          "rayon": "Épicerie"
+        },
+        {
+          "item": "Œuf",
+          "qty": 1,
+          "unit": "pièce",
+          "rayon": "Crémerie & œufs"
+        },
+        {
+          "item": "Blanc d'œuf",
+          "qty": 1,
+          "unit": "pièce",
+          "rayon": "Crémerie & œufs"
+        },
+        {
+          "item": "Lait demi-écrémé",
+          "qty": 100,
+          "unit": "ml",
+          "rayon": "Crémerie & œufs"
+        },
+        {
+          "item": "Whey vanille",
+          "qty": 1,
+          "unit": "c.à.s",
+          "rayon": "Épicerie"
+        },
+        {
+          "item": "Levure chimique",
+          "qty": 1,
+          "unit": "pincée",
+          "rayon": "Épicerie"
+        }
+      ],
+      "macros": {
+        "kcal": 340,
+        "proteines": 30,
+        "glucides": 38,
+        "lipides": 9
+      },
+      "etapes": [
+        "Mixer les flocons en farine.",
+        "Ajouter œuf, blanc, lait, whey et levure, mixer jusqu'à une pâte lisse.",
+        "Cuire de petites crêpes 1-2 min par face dans une poêle antiadhésive.",
+        "Garnir au choix (fruits rouges, skyr…)."
       ]
     },
     {
@@ -676,6 +786,55 @@
       "saisons": [
         "printemps",
         "hiver"
+      ],
+      "composantes": {
+        "proteine": "Œufs + feta",
+        "legume": "Épinards",
+        "feculent": "—"
+      },
+      "ingredients": [
+        {
+          "item": "Œuf",
+          "qty": 3,
+          "unit": "pièce",
+          "rayon": "Crémerie & œufs"
+        },
+        {
+          "item": "Épinards frais",
+          "qty": 1,
+          "unit": "poignée",
+          "rayon": "Fruits & légumes"
+        },
+        {
+          "item": "Feta",
+          "qty": 30,
+          "unit": "g",
+          "rayon": "Crémerie & œufs"
+        },
+        {
+          "item": "Huile d'olive",
+          "qty": 1,
+          "unit": "c.à.c",
+          "rayon": "Épicerie"
+        },
+        {
+          "item": "Sel & poivre",
+          "qty": 1,
+          "unit": "pincée",
+          "rayon": "Épicerie"
+        }
+      ],
+      "macros": {
+        "kcal": 320,
+        "proteines": 26,
+        "glucides": 4,
+        "lipides": 22
+      },
+      "etapes": [
+        "Battre les œufs avec sel et poivre.",
+        "Faire tomber les épinards 1 min dans la poêle huilée.",
+        "Verser les œufs et émietter la feta.",
+        "Cuire à feu moyen puis plier l'omelette."
       ]
     },
     {
@@ -849,6 +1008,48 @@
       "categorie": "dejeuner-laitages",
       "saisons": [
         "ete"
+      ],
+      "composantes": {
+        "proteine": "Skyr",
+        "legume": "—",
+        "feculent": "—"
+      },
+      "ingredients": [
+        {
+          "item": "Skyr nature",
+          "qty": 200,
+          "unit": "g",
+          "rayon": "Crémerie & œufs"
+        },
+        {
+          "item": "Myrtilles",
+          "qty": 80,
+          "unit": "g",
+          "rayon": "Fruits & légumes"
+        },
+        {
+          "item": "Amandes effilées",
+          "qty": 15,
+          "unit": "g",
+          "rayon": "Épicerie"
+        },
+        {
+          "item": "Miel",
+          "qty": 1,
+          "unit": "c.à.c",
+          "rayon": "Épicerie"
+        }
+      ],
+      "macros": {
+        "kcal": 260,
+        "proteines": 24,
+        "glucides": 24,
+        "lipides": 8
+      },
+      "etapes": [
+        "Verser le skyr dans un bol.",
+        "Ajouter les myrtilles et les amandes.",
+        "Terminer par un filet de miel."
       ]
     },
     {
@@ -1047,6 +1248,67 @@
       "categorie": "burgers",
       "saisons": [
         "toute_annee"
+      ],
+      "composantes": {
+        "proteine": "Poulet pané",
+        "legume": "Salade + tomate",
+        "feculent": "Pain burger complet"
+      },
+      "ingredients": [
+        {
+          "item": "Filet de poulet",
+          "qty": 130,
+          "unit": "g",
+          "rayon": "Boucherie & volaille"
+        },
+        {
+          "item": "Pain burger complet",
+          "qty": 1,
+          "unit": "pièce",
+          "rayon": "Boulangerie"
+        },
+        {
+          "item": "Chapelure panko",
+          "qty": 30,
+          "unit": "g",
+          "rayon": "Épicerie"
+        },
+        {
+          "item": "Œuf",
+          "qty": 1,
+          "unit": "pièce",
+          "rayon": "Crémerie & œufs"
+        },
+        {
+          "item": "Salade",
+          "qty": 2,
+          "unit": "feuille",
+          "rayon": "Fruits & légumes"
+        },
+        {
+          "item": "Tomate",
+          "qty": 2,
+          "unit": "tranche",
+          "rayon": "Fruits & légumes"
+        },
+        {
+          "item": "Sauce burger light",
+          "qty": 1,
+          "unit": "c.à.s",
+          "rayon": "Sauces & condiments"
+        }
+      ],
+      "macros": {
+        "kcal": 480,
+        "proteines": 45,
+        "glucides": 42,
+        "lipides": 14
+      },
+      "etapes": [
+        "Aplatir le poulet, le passer dans l'œuf battu puis la chapelure.",
+        "Cuire à l'air fryer 12-14 min à 200°C en retournant à mi-cuisson.",
+        "Toaster le pain.",
+        "Monter : sauce, salade, tomate, poulet."
       ]
     },
     {
@@ -1111,6 +1373,42 @@
       "categorie": "friterie",
       "saisons": [
         "toute_annee"
+      ],
+      "composantes": {
+        "proteine": "—",
+        "legume": "—",
+        "feculent": "Pommes de terre"
+      },
+      "ingredients": [
+        {
+          "item": "Pommes de terre",
+          "qty": 250,
+          "unit": "g",
+          "rayon": "Fruits & légumes"
+        },
+        {
+          "item": "Huile d'olive",
+          "qty": 1,
+          "unit": "c.à.s",
+          "rayon": "Épicerie"
+        },
+        {
+          "item": "Sel",
+          "qty": 1,
+          "unit": "pincée",
+          "rayon": "Épicerie"
+        }
+      ],
+      "macros": {
+        "kcal": 280,
+        "proteines": 6,
+        "glucides": 50,
+        "lipides": 7
+      },
+      "etapes": [
+        "Tailler les pommes de terre en frites, rincer et bien sécher.",
+        "Enrober d'huile et de sel.",
+        "Air fryer 22-25 min à 200°C en secouant 2-3 fois."
       ]
     },
     {
@@ -1308,6 +1606,67 @@
       "categorie": "kebab",
       "saisons": [
         "toute_annee"
+      ],
+      "composantes": {
+        "proteine": "Poulet mariné",
+        "legume": "Crudités",
+        "feculent": "Riz"
+      },
+      "ingredients": [
+        {
+          "item": "Filet de poulet",
+          "qty": 130,
+          "unit": "g",
+          "rayon": "Boucherie & volaille"
+        },
+        {
+          "item": "Riz",
+          "qty": 60,
+          "unit": "g",
+          "rayon": "Épicerie"
+        },
+        {
+          "item": "Salade",
+          "qty": 1,
+          "unit": "poignée",
+          "rayon": "Fruits & légumes"
+        },
+        {
+          "item": "Tomate",
+          "qty": 1,
+          "unit": "pièce",
+          "rayon": "Fruits & légumes"
+        },
+        {
+          "item": "Oignon rouge",
+          "qty": 0.25,
+          "unit": "pièce",
+          "rayon": "Fruits & légumes"
+        },
+        {
+          "item": "Yaourt grec",
+          "qty": 2,
+          "unit": "c.à.s",
+          "rayon": "Crémerie & œufs"
+        },
+        {
+          "item": "Épices kebab",
+          "qty": 1,
+          "unit": "c.à.c",
+          "rayon": "Épicerie"
+        }
+      ],
+      "macros": {
+        "kcal": 470,
+        "proteines": 44,
+        "glucides": 52,
+        "lipides": 9
+      },
+      "etapes": [
+        "Mariner le poulet aux épices, cuire et émincer.",
+        "Cuire le riz.",
+        "Couper les crudités.",
+        "Dresser en bowl avec une sauce blanche au yaourt grec."
       ]
     },
     {
@@ -1383,6 +1742,55 @@
       "categorie": "pizzas",
       "saisons": [
         "toute_annee"
+      ],
+      "composantes": {
+        "proteine": "Jambon + mozzarella",
+        "legume": "—",
+        "feculent": "Pâte à pizza"
+      },
+      "ingredients": [
+        {
+          "item": "Pâte à pizza fine",
+          "qty": 1,
+          "unit": "pièce",
+          "rayon": "Boulangerie"
+        },
+        {
+          "item": "Sauce tomate",
+          "qty": 80,
+          "unit": "g",
+          "rayon": "Sauces & condiments"
+        },
+        {
+          "item": "Jambon",
+          "qty": 2,
+          "unit": "tranche",
+          "rayon": "Boucherie & volaille"
+        },
+        {
+          "item": "Mozzarella light",
+          "qty": 60,
+          "unit": "g",
+          "rayon": "Crémerie & œufs"
+        },
+        {
+          "item": "Origan",
+          "qty": 1,
+          "unit": "pincée",
+          "rayon": "Épicerie"
+        }
+      ],
+      "macros": {
+        "kcal": 520,
+        "proteines": 34,
+        "glucides": 60,
+        "lipides": 16
+      },
+      "etapes": [
+        "Étaler la pâte et napper de sauce tomate.",
+        "Répartir le jambon et la mozzarella.",
+        "Four 10-12 min à 240°C.",
+        "Parsemer d'origan à la sortie."
       ]
     },
     {
@@ -1627,6 +2035,68 @@
       "categorie": "wok-asiatique",
       "saisons": [
         "toute_annee"
+      ],
+      "composantes": {
+        "proteine": "Bœuf",
+        "legume": "Poivron + brocoli",
+        "feculent": "Riz"
+      },
+      "ingredients": [
+        {
+          "item": "Émincé de bœuf",
+          "qty": 120,
+          "unit": "g",
+          "rayon": "Boucherie & volaille"
+        },
+        {
+          "item": "Poivron",
+          "qty": 0.5,
+          "unit": "pièce",
+          "rayon": "Fruits & légumes"
+        },
+        {
+          "item": "Brocoli",
+          "qty": 100,
+          "unit": "g",
+          "rayon": "Fruits & légumes"
+        },
+        {
+          "item": "Sauce soja",
+          "qty": 1,
+          "unit": "c.à.s",
+          "rayon": "Sauces & condiments"
+        },
+        {
+          "item": "Gingembre",
+          "qty": 1,
+          "unit": "c.à.c",
+          "rayon": "Fruits & légumes"
+        },
+        {
+          "item": "Ail",
+          "qty": 1,
+          "unit": "gousse",
+          "rayon": "Fruits & légumes"
+        },
+        {
+          "item": "Riz basmati",
+          "qty": 60,
+          "unit": "g",
+          "rayon": "Épicerie"
+        }
+      ],
+      "macros": {
+        "kcal": 470,
+        "proteines": 38,
+        "glucides": 55,
+        "lipides": 11
+      },
+      "etapes": [
+        "Cuire le riz.",
+        "Saisir le bœuf à feu vif 2 min, réserver.",
+        "Faire sauter poivron, brocoli, ail et gingembre 4-5 min.",
+        "Remettre le bœuf, déglacer à la sauce soja.",
+        "Servir sur le riz."
       ]
     },
     {
@@ -1708,6 +2178,68 @@
       "categorie": "wok-asiatique",
       "saisons": [
         "toute_annee"
+      ],
+      "composantes": {
+        "proteine": "Poulet",
+        "legume": "Poivron + ananas",
+        "feculent": "Riz"
+      },
+      "ingredients": [
+        {
+          "item": "Filet de poulet",
+          "qty": 130,
+          "unit": "g",
+          "rayon": "Boucherie & volaille"
+        },
+        {
+          "item": "Poivron",
+          "qty": 0.5,
+          "unit": "pièce",
+          "rayon": "Fruits & légumes"
+        },
+        {
+          "item": "Ananas",
+          "qty": 60,
+          "unit": "g",
+          "rayon": "Fruits & légumes"
+        },
+        {
+          "item": "Ketchup",
+          "qty": 1,
+          "unit": "c.à.s",
+          "rayon": "Sauces & condiments"
+        },
+        {
+          "item": "Vinaigre",
+          "qty": 1,
+          "unit": "c.à.c",
+          "rayon": "Épicerie"
+        },
+        {
+          "item": "Sauce soja",
+          "qty": 1,
+          "unit": "c.à.c",
+          "rayon": "Sauces & condiments"
+        },
+        {
+          "item": "Riz",
+          "qty": 60,
+          "unit": "g",
+          "rayon": "Épicerie"
+        }
+      ],
+      "macros": {
+        "kcal": 460,
+        "proteines": 40,
+        "glucides": 58,
+        "lipides": 7
+      },
+      "etapes": [
+        "Cuire le riz.",
+        "Saisir le poulet en dés.",
+        "Ajouter poivron et ananas, sauter 3 min.",
+        "Mélanger ketchup, vinaigre et soja, verser et laisser épaissir 2 min.",
+        "Servir sur le riz."
       ]
     },
     {
@@ -2274,6 +2806,61 @@
       "categorie": "poissons",
       "saisons": [
         "toute_annee"
+      ],
+      "composantes": {
+        "proteine": "Saumon",
+        "legume": "Brocoli",
+        "feculent": "—"
+      },
+      "ingredients": [
+        {
+          "item": "Pavé de saumon",
+          "qty": 130,
+          "unit": "g",
+          "rayon": "Poissonnerie"
+        },
+        {
+          "item": "Moutarde",
+          "qty": 1,
+          "unit": "c.à.s",
+          "rayon": "Sauces & condiments"
+        },
+        {
+          "item": "Chapelure",
+          "qty": 15,
+          "unit": "g",
+          "rayon": "Épicerie"
+        },
+        {
+          "item": "Aneth",
+          "qty": 1,
+          "unit": "pincée",
+          "rayon": "Fruits & légumes"
+        },
+        {
+          "item": "Brocoli",
+          "qty": 150,
+          "unit": "g",
+          "rayon": "Fruits & légumes"
+        },
+        {
+          "item": "Citron",
+          "qty": 0.5,
+          "unit": "pièce",
+          "rayon": "Fruits & légumes"
+        }
+      ],
+      "macros": {
+        "kcal": 380,
+        "proteines": 34,
+        "glucides": 10,
+        "lipides": 22
+      },
+      "etapes": [
+        "Tartiner le saumon de moutarde puis presser la chapelure et l'aneth dessus.",
+        "Cuire au four ou à l'air fryer 12-15 min à 190°C.",
+        "Cuire le brocoli à la vapeur 6-8 min.",
+        "Servir avec le citron."
       ]
     },
     {
@@ -2282,6 +2869,61 @@
       "categorie": "poissons",
       "saisons": [
         "toute_annee"
+      ],
+      "composantes": {
+        "proteine": "Cabillaud pané",
+        "legume": "—",
+        "feculent": "Frites maison"
+      },
+      "ingredients": [
+        {
+          "item": "Dos de cabillaud",
+          "qty": 140,
+          "unit": "g",
+          "rayon": "Poissonnerie"
+        },
+        {
+          "item": "Chapelure panko",
+          "qty": 30,
+          "unit": "g",
+          "rayon": "Épicerie"
+        },
+        {
+          "item": "Œuf",
+          "qty": 1,
+          "unit": "pièce",
+          "rayon": "Crémerie & œufs"
+        },
+        {
+          "item": "Farine",
+          "qty": 1,
+          "unit": "c.à.s",
+          "rayon": "Épicerie"
+        },
+        {
+          "item": "Pommes de terre",
+          "qty": 200,
+          "unit": "g",
+          "rayon": "Fruits & légumes"
+        },
+        {
+          "item": "Huile d'olive",
+          "qty": 1,
+          "unit": "c.à.c",
+          "rayon": "Épicerie"
+        }
+      ],
+      "macros": {
+        "kcal": 430,
+        "proteines": 38,
+        "glucides": 48,
+        "lipides": 10
+      },
+      "etapes": [
+        "Tailler les pommes de terre en frites, enrober d'huile, air fryer 18-20 min à 200°C.",
+        "Paner le cabillaud : farine, œuf battu, chapelure.",
+        "Air fryer 10-12 min à 190°C.",
+        "Servir avec une sauce tartare light."
       ]
     },
     {
@@ -2510,6 +3152,68 @@
       "saisons": [
         "automne",
         "hiver"
+      ],
+      "composantes": {
+        "proteine": "Bœuf",
+        "legume": "Oignons",
+        "feculent": "Purée"
+      },
+      "ingredients": [
+        {
+          "item": "Bœuf à mijoter maigre",
+          "qty": 130,
+          "unit": "g",
+          "rayon": "Boucherie & volaille"
+        },
+        {
+          "item": "Oignon",
+          "qty": 1,
+          "unit": "pièce",
+          "rayon": "Fruits & légumes"
+        },
+        {
+          "item": "Bière brune",
+          "qty": 100,
+          "unit": "ml",
+          "rayon": "Épicerie"
+        },
+        {
+          "item": "Moutarde",
+          "qty": 1,
+          "unit": "c.à.c",
+          "rayon": "Sauces & condiments"
+        },
+        {
+          "item": "Pain d'épices",
+          "qty": 1,
+          "unit": "tranche",
+          "rayon": "Boulangerie"
+        },
+        {
+          "item": "Pommes de terre",
+          "qty": 200,
+          "unit": "g",
+          "rayon": "Fruits & légumes"
+        },
+        {
+          "item": "Lait demi-écrémé",
+          "qty": 30,
+          "unit": "ml",
+          "rayon": "Crémerie & œufs"
+        }
+      ],
+      "macros": {
+        "kcal": 480,
+        "proteines": 38,
+        "glucides": 52,
+        "lipides": 12
+      },
+      "etapes": [
+        "Saisir le bœuf, réserver.",
+        "Faire fondre les oignons.",
+        "Déglacer à la bière, ajouter bœuf, moutarde et pain d'épices.",
+        "Mijoter 2 h à couvert à feu doux.",
+        "Servir avec la purée (pommes de terre écrasées au lait)."
       ]
     },
     {
@@ -2519,6 +3223,61 @@
       "saisons": [
         "automne",
         "hiver"
+      ],
+      "composantes": {
+        "proteine": "Saucisse de volaille",
+        "legume": "Carottes",
+        "feculent": "Pommes de terre"
+      },
+      "ingredients": [
+        {
+          "item": "Saucisse de volaille",
+          "qty": 1,
+          "unit": "pièce",
+          "rayon": "Boucherie & volaille"
+        },
+        {
+          "item": "Pommes de terre",
+          "qty": 200,
+          "unit": "g",
+          "rayon": "Fruits & légumes"
+        },
+        {
+          "item": "Carotte",
+          "qty": 2,
+          "unit": "pièce",
+          "rayon": "Fruits & légumes"
+        },
+        {
+          "item": "Oignon",
+          "qty": 0.5,
+          "unit": "pièce",
+          "rayon": "Fruits & légumes"
+        },
+        {
+          "item": "Lait demi-écrémé",
+          "qty": 30,
+          "unit": "ml",
+          "rayon": "Crémerie & œufs"
+        },
+        {
+          "item": "Muscade",
+          "qty": 1,
+          "unit": "pincée",
+          "rayon": "Épicerie"
+        }
+      ],
+      "macros": {
+        "kcal": 450,
+        "proteines": 28,
+        "glucides": 50,
+        "lipides": 16
+      },
+      "etapes": [
+        "Cuire pommes de terre et carottes 20 min à l'eau.",
+        "Faire revenir l'oignon et griller la saucisse.",
+        "Écraser pommes de terre et carottes avec le lait et la muscade.",
+        "Servir le stoemp avec la saucisse."
       ]
     },
     {
@@ -2710,6 +3469,67 @@
       "categorie": "salades-bowls",
       "saisons": [
         "toute_annee"
+      ],
+      "composantes": {
+        "proteine": "Poulet",
+        "legume": "Crudités",
+        "feculent": "Riz"
+      },
+      "ingredients": [
+        {
+          "item": "Filet de poulet",
+          "qty": 130,
+          "unit": "g",
+          "rayon": "Boucherie & volaille"
+        },
+        {
+          "item": "Riz",
+          "qty": 60,
+          "unit": "g",
+          "rayon": "Épicerie"
+        },
+        {
+          "item": "Concombre",
+          "qty": 0.5,
+          "unit": "pièce",
+          "rayon": "Fruits & légumes"
+        },
+        {
+          "item": "Carotte",
+          "qty": 1,
+          "unit": "pièce",
+          "rayon": "Fruits & légumes"
+        },
+        {
+          "item": "Maïs",
+          "qty": 30,
+          "unit": "g",
+          "rayon": "Épicerie"
+        },
+        {
+          "item": "Yaourt grec",
+          "qty": 2,
+          "unit": "c.à.s",
+          "rayon": "Crémerie & œufs"
+        },
+        {
+          "item": "Paprika",
+          "qty": 1,
+          "unit": "pincée",
+          "rayon": "Épicerie"
+        }
+      ],
+      "macros": {
+        "kcal": 470,
+        "proteines": 42,
+        "glucides": 56,
+        "lipides": 9
+      },
+      "etapes": [
+        "Cuire le riz et laisser tiédir.",
+        "Cuire le poulet assaisonné au paprika, puis émincer.",
+        "Râper la carotte, couper le concombre.",
+        "Dresser en bowl, ajouter le maïs et napper de yaourt grec citronné."
       ]
     },
     {
@@ -2718,6 +3538,61 @@
       "categorie": "salades-bowls",
       "saisons": [
         "toute_annee"
+      ],
+      "composantes": {
+        "proteine": "Poulet",
+        "legume": "Salade + avocat",
+        "feculent": "—"
+      },
+      "ingredients": [
+        {
+          "item": "Filet de poulet",
+          "qty": 120,
+          "unit": "g",
+          "rayon": "Boucherie & volaille"
+        },
+        {
+          "item": "Salade mêlée",
+          "qty": 1,
+          "unit": "poignée",
+          "rayon": "Fruits & légumes"
+        },
+        {
+          "item": "Avocat",
+          "qty": 0.5,
+          "unit": "pièce",
+          "rayon": "Fruits & légumes"
+        },
+        {
+          "item": "Tomate cerise",
+          "qty": 6,
+          "unit": "pièce",
+          "rayon": "Fruits & légumes"
+        },
+        {
+          "item": "Huile d'olive",
+          "qty": 1,
+          "unit": "c.à.c",
+          "rayon": "Épicerie"
+        },
+        {
+          "item": "Citron",
+          "qty": 0.5,
+          "unit": "pièce",
+          "rayon": "Fruits & légumes"
+        }
+      ],
+      "macros": {
+        "kcal": 360,
+        "proteines": 35,
+        "glucides": 12,
+        "lipides": 19
+      },
+      "etapes": [
+        "Cuire le poulet et l'émincer.",
+        "Couper l'avocat et les tomates cerises.",
+        "Mélanger salade, légumes et poulet.",
+        "Assaisonner d'huile d'olive et de citron."
       ]
     },
     {
@@ -2829,6 +3704,61 @@
       "categorie": "pates-feculents",
       "saisons": [
         "toute_annee"
+      ],
+      "composantes": {
+        "proteine": "Thon",
+        "legume": "Tomate",
+        "feculent": "Pâtes"
+      },
+      "ingredients": [
+        {
+          "item": "Pâtes complètes",
+          "qty": 70,
+          "unit": "g",
+          "rayon": "Épicerie"
+        },
+        {
+          "item": "Thon au naturel",
+          "qty": 1,
+          "unit": "pièce",
+          "rayon": "Épicerie"
+        },
+        {
+          "item": "Sauce tomate",
+          "qty": 100,
+          "unit": "g",
+          "rayon": "Sauces & condiments"
+        },
+        {
+          "item": "Oignon",
+          "qty": 0.5,
+          "unit": "pièce",
+          "rayon": "Fruits & légumes"
+        },
+        {
+          "item": "Ail",
+          "qty": 1,
+          "unit": "gousse",
+          "rayon": "Fruits & légumes"
+        },
+        {
+          "item": "Huile d'olive",
+          "qty": 1,
+          "unit": "c.à.c",
+          "rayon": "Épicerie"
+        }
+      ],
+      "macros": {
+        "kcal": 460,
+        "proteines": 38,
+        "glucides": 62,
+        "lipides": 8
+      },
+      "etapes": [
+        "Cuire les pâtes.",
+        "Faire revenir oignon et ail, ajouter la sauce tomate.",
+        "Incorporer le thon égoutté, mijoter 5 min.",
+        "Mélanger aux pâtes."
       ]
     },
     {
@@ -3697,6 +4627,48 @@
       "categorie": "desserts-cremeux",
       "saisons": [
         "toute_annee"
+      ],
+      "composantes": {
+        "proteine": "Skyr + whey",
+        "legume": "—",
+        "feculent": "—"
+      },
+      "ingredients": [
+        {
+          "item": "Skyr nature",
+          "qty": 150,
+          "unit": "g",
+          "rayon": "Crémerie & œufs"
+        },
+        {
+          "item": "Whey chocolat",
+          "qty": 1,
+          "unit": "c.à.s",
+          "rayon": "Épicerie"
+        },
+        {
+          "item": "Cacao maigre",
+          "qty": 1,
+          "unit": "c.à.c",
+          "rayon": "Épicerie"
+        },
+        {
+          "item": "Édulcorant",
+          "qty": 1,
+          "unit": "pincée",
+          "rayon": "Épicerie"
+        }
+      ],
+      "macros": {
+        "kcal": 200,
+        "proteines": 28,
+        "glucides": 14,
+        "lipides": 3
+      },
+      "etapes": [
+        "Mélanger skyr, whey, cacao et édulcorant jusqu'à une texture lisse.",
+        "Réserver 30 min au frais.",
+        "Servir bien frais."
       ]
     },
     {
@@ -3705,6 +4677,60 @@
       "categorie": "desserts-cremeux",
       "saisons": [
         "toute_annee"
+      ],
+      "composantes": {
+        "proteine": "Whey + œuf",
+        "legume": "—",
+        "feculent": "Flocons d'avoine"
+      },
+      "ingredients": [
+        {
+          "item": "Whey chocolat",
+          "qty": 1,
+          "unit": "c.à.s",
+          "rayon": "Épicerie"
+        },
+        {
+          "item": "Œuf",
+          "qty": 1,
+          "unit": "pièce",
+          "rayon": "Crémerie & œufs"
+        },
+        {
+          "item": "Flocons d'avoine",
+          "qty": 20,
+          "unit": "g",
+          "rayon": "Épicerie"
+        },
+        {
+          "item": "Cacao maigre",
+          "qty": 1,
+          "unit": "c.à.c",
+          "rayon": "Épicerie"
+        },
+        {
+          "item": "Levure chimique",
+          "qty": 1,
+          "unit": "pincée",
+          "rayon": "Épicerie"
+        },
+        {
+          "item": "Lait demi-écrémé",
+          "qty": 2,
+          "unit": "c.à.s",
+          "rayon": "Crémerie & œufs"
+        }
+      ],
+      "macros": {
+        "kcal": 250,
+        "proteines": 28,
+        "glucides": 22,
+        "lipides": 7
+      },
+      "etapes": [
+        "Mélanger tous les ingrédients dans un mug.",
+        "Micro-ondes 60-90 s.",
+        "Laisser tiédir avant de déguster."
       ]
     },
     {
@@ -3835,6 +4861,48 @@
       "categorie": "snacks",
       "saisons": [
         "toute_annee"
+      ],
+      "composantes": {
+        "proteine": "Pois chiches",
+        "legume": "—",
+        "feculent": "Pois chiches"
+      },
+      "ingredients": [
+        {
+          "item": "Pois chiches cuits",
+          "qty": 100,
+          "unit": "g",
+          "rayon": "Épicerie"
+        },
+        {
+          "item": "Huile d'olive",
+          "qty": 1,
+          "unit": "c.à.c",
+          "rayon": "Épicerie"
+        },
+        {
+          "item": "Paprika",
+          "qty": 1,
+          "unit": "c.à.c",
+          "rayon": "Épicerie"
+        },
+        {
+          "item": "Sel",
+          "qty": 1,
+          "unit": "pincée",
+          "rayon": "Épicerie"
+        }
+      ],
+      "macros": {
+        "kcal": 200,
+        "proteines": 11,
+        "glucides": 24,
+        "lipides": 7
+      },
+      "etapes": [
+        "Égoutter et bien sécher les pois chiches.",
+        "Mélanger avec l'huile et les épices.",
+        "Air fryer 15-18 min à 190°C en secouant à mi-cuisson."
       ]
     },
     {
