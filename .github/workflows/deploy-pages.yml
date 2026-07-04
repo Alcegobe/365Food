@@ -28,6 +28,12 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      # Empreinte le cache du service worker avec le SHA du commit : toute
+      # mise à jour du shell (app.js/app.css/index.html) est ainsi livrée aux
+      # utilisateurs installés sans dépendre d'un bump manuel dans sw.js.
+      - name: Versionner le cache du service worker
+        run: sed -i "s/365food-v[0-9A-Za-z]*/365food-${GITHUB_SHA::7}/" sw.js
+
       - name: Configurer Pages
         uses: actions/configure-pages@v5
 

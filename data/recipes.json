@@ -352,11 +352,12 @@
         }
       ],
       "macros": {
-        "kcal": 380,
-        "proteines": 22,
-        "glucides": 55,
-        "lipides": 8
-      }
+        "kcal": 280,
+        "proteines": 13,
+        "glucides": 45,
+        "lipides": 5
+      },
+      "portions": 2
     },
     {
       "id": "porridge-pomme-speculoos",
@@ -420,7 +421,8 @@
         "Râper la pomme et l'ajouter avec la cannelle.",
         "Hors du feu, incorporer la whey.",
         "Verser dans un bol et émietter le spéculoos par-dessus."
-      ]
+      ],
+      "portions": 1
     },
     {
       "id": "overnight-oats-myrtilles",
@@ -475,11 +477,12 @@
         }
       ],
       "macros": {
-        "kcal": 420,
-        "proteines": 24,
-        "glucides": 48,
-        "lipides": 14
-      }
+        "kcal": 255,
+        "proteines": 12,
+        "glucides": 31,
+        "lipides": 9
+      },
+      "portions": 2
     },
     {
       "id": "porridge-poire-chocolat",
@@ -543,11 +546,12 @@
         }
       ],
       "macros": {
-        "kcal": 380,
-        "proteines": 28,
-        "glucides": 42,
-        "lipides": 10
-      }
+        "kcal": 300,
+        "proteines": 22,
+        "glucides": 34,
+        "lipides": 9
+      },
+      "portions": 2
     },
     {
       "id": "gaufres-proteinees",
@@ -618,7 +622,8 @@
         "Ajouter œuf, blanc, lait, whey et levure, mixer jusqu'à une pâte lisse.",
         "Cuire de petites crêpes 1-2 min par face dans une poêle antiadhésive.",
         "Garnir au choix (fruits rouges, skyr…)."
-      ]
+      ],
+      "portions": 1
     },
     {
       "id": "pain-perdu-proteine",
@@ -675,11 +680,12 @@
         }
       ],
       "macros": {
-        "kcal": 420,
-        "proteines": 22,
-        "glucides": 26,
-        "lipides": 26
-      }
+        "kcal": 370,
+        "proteines": 18,
+        "glucides": 21,
+        "lipides": 24
+      },
+      "portions": 2
     },
     {
       "id": "oeufs-coque-mouillettes",
@@ -728,11 +734,12 @@
         }
       ],
       "macros": {
-        "kcal": 330,
-        "proteines": 30,
-        "glucides": 18,
-        "lipides": 16
-      }
+        "kcal": 270,
+        "proteines": 21,
+        "glucides": 17,
+        "lipides": 13
+      },
+      "portions": 2
     },
     {
       "id": "omelette-jambon-champignons",
@@ -773,11 +780,12 @@
         }
       ],
       "macros": {
-        "kcal": 320,
-        "proteines": 28,
-        "glucides": 6,
-        "lipides": 20
-      }
+        "kcal": 230,
+        "proteines": 22,
+        "glucides": 3,
+        "lipides": 14
+      },
+      "portions": 2
     },
     {
       "id": "omelette-epinards-feta",
@@ -835,7 +843,8 @@
         "Faire tomber les épinards 1 min dans la poêle huilée.",
         "Verser les œufs et émietter la feta.",
         "Cuire à feu moyen puis plier l'omelette."
-      ]
+      ],
+      "portions": 1
     },
     {
       "id": "shakshuka-legere",
@@ -889,11 +898,12 @@
         }
       ],
       "macros": {
-        "kcal": 280,
-        "proteines": 20,
-        "glucides": 18,
-        "lipides": 14
-      }
+        "kcal": 210,
+        "proteines": 15,
+        "glucides": 12,
+        "lipides": 11
+      },
+      "portions": 2
     },
     {
       "id": "egg-muffins-jambon",
@@ -934,11 +944,12 @@
         }
       ],
       "macros": {
-        "kcal": 260,
-        "proteines": 24,
-        "glucides": 6,
-        "lipides": 16
-      }
+        "kcal": 225,
+        "proteines": 19,
+        "glucides": 3,
+        "lipides": 15
+      },
+      "portions": 2
     },
     {
       "id": "oeufs-cocotte-epinards",
@@ -996,11 +1007,12 @@
         }
       ],
       "macros": {
-        "kcal": 360,
-        "proteines": 28,
-        "glucides": 45,
-        "lipides": 8
-      }
+        "kcal": 245,
+        "proteines": 19,
+        "glucides": 30,
+        "lipides": 5
+      },
+      "portions": 2
     },
     {
       "id": "skyr-myrtilles-amandes",
@@ -1050,7 +1062,8 @@
         "Verser le skyr dans un bol.",
         "Ajouter les myrtilles et les amandes.",
         "Terminer par un filet de miel."
-      ]
+      ],
+      "portions": 1
     },
     {
       "id": "fromage-blanc-miel-noix",
@@ -1085,11 +1098,12 @@
         }
       ],
       "macros": {
-        "kcal": 240,
-        "proteines": 26,
-        "glucides": 18,
-        "lipides": 8
-      }
+        "kcal": 200,
+        "proteines": 14,
+        "glucides": 15,
+        "lipides": 10
+      },
+      "portions": 2
     },
     {
       "id": "smoothie-bowl-fruits-rouges",
@@ -1183,7 +1197,8 @@
         "proteines": 38,
         "glucides": 38,
         "lipides": 22
-      }
+      },
+      "portions": 2
     },
     {
       "id": "cheeseburger-frites-airfryer",
@@ -1240,7 +1255,8 @@
         "proteines": 34,
         "glucides": 55,
         "lipides": 28
-      }
+      },
+      "portions": 2
     },
     {
       "id": "chicken-burger-croustillant",
@@ -1309,7 +1325,8 @@
         "Cuire à l'air fryer 12-14 min à 200°C en retournant à mi-cuisson.",
         "Toaster le pain.",
         "Monter : sauce, salade, tomate, poulet."
-      ]
+      ],
+      "portions": 1
     },
     {
       "id": "double-burger-proteine",
@@ -1409,7 +1426,8 @@
         "Tailler les pommes de terre en frites, rincer et bien sécher.",
         "Enrober d'huile et de sel.",
         "Air fryer 22-25 min à 200°C en secouant 2-3 fois."
-      ]
+      ],
+      "portions": 1
     },
     {
       "id": "frites-patate-douce",
@@ -1535,7 +1553,8 @@
         "proteines": 45,
         "glucides": 50,
         "lipides": 18
-      }
+      },
+      "portions": 2
     },
     {
       "id": "durum-poulet-yaourt-ail",
@@ -1598,7 +1617,8 @@
         "proteines": 44,
         "glucides": 52,
         "lipides": 16
-      }
+      },
+      "portions": 2
     },
     {
       "id": "bowl-kebab-poulet",
@@ -1667,7 +1687,8 @@
         "Cuire le riz.",
         "Couper les crudités.",
         "Dresser en bowl avec une sauce blanche au yaourt grec."
-      ]
+      ],
+      "portions": 1
     },
     {
       "id": "assiette-kebab-dinde",
@@ -1734,7 +1755,8 @@
         "proteines": 26,
         "glucides": 70,
         "lipides": 22
-      }
+      },
+      "portions": 2
     },
     {
       "id": "pizza-jambon-fromage",
@@ -1791,7 +1813,8 @@
         "Répartir le jambon et la mozzarella.",
         "Four 10-12 min à 240°C.",
         "Parsemer d'origan à la sortie."
-      ]
+      ],
+      "portions": 1
     },
     {
       "id": "pizza-fruits-de-mer",
@@ -1856,7 +1879,8 @@
         "proteines": 30,
         "glucides": 68,
         "lipides": 20
-      }
+      },
+      "portions": 2
     },
     {
       "id": "pizza-poulet-pesto",
@@ -1907,7 +1931,8 @@
         "proteines": 36,
         "glucides": 62,
         "lipides": 22
-      }
+      },
+      "portions": 2
     },
     {
       "id": "pizza-thon-oignon",
@@ -2027,7 +2052,8 @@
         "proteines": 40,
         "glucides": 45,
         "lipides": 14
-      }
+      },
+      "portions": 2
     },
     {
       "id": "wok-boeuf-soja-gingembre",
@@ -2097,7 +2123,8 @@
         "Faire sauter poivron, brocoli, ail et gingembre 4-5 min.",
         "Remettre le bœuf, déglacer à la sauce soja.",
         "Servir sur le riz."
-      ]
+      ],
+      "portions": 1
     },
     {
       "id": "nouilles-sautees-poulet",
@@ -2154,7 +2181,8 @@
         "proteines": 38,
         "glucides": 58,
         "lipides": 14
-      }
+      },
+      "portions": 2
     },
     {
       "id": "nouilles-soba-boeuf-brocoli",
@@ -2240,7 +2268,8 @@
         "Ajouter poivron et ananas, sauter 3 min.",
         "Mélanger ketchup, vinaigre et soja, verser et laisser épaissir 2 min.",
         "Servir sur le riz."
-      ]
+      ],
+      "portions": 1
     },
     {
       "id": "boeuf-aux-oignons",
@@ -2351,7 +2380,8 @@
         "proteines": 34,
         "glucides": 60,
         "lipides": 20
-      }
+      },
+      "portions": 2
     },
     {
       "id": "pokebowl-thon-epice",
@@ -2422,7 +2452,8 @@
         "proteines": 42,
         "glucides": 62,
         "lipides": 16
-      }
+      },
+      "portions": 2
     },
     {
       "id": "pokebowl-crevettes-avocat",
@@ -2603,7 +2634,8 @@
         "proteines": 48,
         "glucides": 28,
         "lipides": 26
-      }
+      },
+      "portions": 2
     },
     {
       "id": "escalope-dinde-panee",
@@ -2684,7 +2716,8 @@
         "proteines": 40,
         "glucides": 35,
         "lipides": 22
-      }
+      },
+      "portions": 2
     },
     {
       "id": "cabillaud-ecrase-pdt",
@@ -2741,7 +2774,8 @@
         "proteines": 38,
         "glucides": 40,
         "lipides": 12
-      }
+      },
+      "portions": 2
     },
     {
       "id": "saumon-papillote",
@@ -2798,7 +2832,8 @@
         "proteines": 38,
         "glucides": 8,
         "lipides": 26
-      }
+      },
+      "portions": 2
     },
     {
       "id": "saumon-croute-moutarde",
@@ -2861,7 +2896,8 @@
         "Cuire au four ou à l'air fryer 12-15 min à 190°C.",
         "Cuire le brocoli à la vapeur 6-8 min.",
         "Servir avec le citron."
-      ]
+      ],
+      "portions": 1
     },
     {
       "id": "cabillaud-pane-airfryer",
@@ -2924,7 +2960,8 @@
         "Paner le cabillaud : farine, œuf battu, chapelure.",
         "Air fryer 10-12 min à 190°C.",
         "Servir avec une sauce tartare light."
-      ]
+      ],
+      "portions": 1
     },
     {
       "id": "truite-amandine",
@@ -3005,7 +3042,8 @@
         "proteines": 40,
         "glucides": 50,
         "lipides": 14
-      }
+      },
+      "portions": 2
     },
     {
       "id": "tartare-saumon",
@@ -3102,7 +3140,8 @@
         "proteines": 34,
         "glucides": 42,
         "lipides": 10
-      }
+      },
+      "portions": 2
     },
     {
       "id": "gambas-grillees-riz",
@@ -3214,7 +3253,8 @@
         "Déglacer à la bière, ajouter bœuf, moutarde et pain d'épices.",
         "Mijoter 2 h à couvert à feu doux.",
         "Servir avec la purée (pommes de terre écrasées au lait)."
-      ]
+      ],
+      "portions": 1
     },
     {
       "id": "stoemp-carottes-saucisse",
@@ -3278,7 +3318,8 @@
         "Faire revenir l'oignon et griller la saucisse.",
         "Écraser pommes de terre et carottes avec le lait et la muscade.",
         "Servir le stoemp avec la saucisse."
-      ]
+      ],
+      "portions": 1
     },
     {
       "id": "stoemp-kale-lard",
@@ -3347,7 +3388,8 @@
         "proteines": 34,
         "glucides": 16,
         "lipides": 20
-      }
+      },
+      "portions": 2
     },
     {
       "id": "waterzooi-poulet",
@@ -3461,7 +3503,8 @@
         "proteines": 42,
         "glucides": 20,
         "lipides": 18
-      }
+      },
+      "portions": 2
     },
     {
       "id": "bowl-poulet-riz-legumes",
@@ -3530,7 +3573,8 @@
         "Cuire le poulet assaisonné au paprika, puis émincer.",
         "Râper la carotte, couper le concombre.",
         "Dresser en bowl, ajouter le maïs et napper de yaourt grec citronné."
-      ]
+      ],
+      "portions": 1
     },
     {
       "id": "salade-poulet-avocat",
@@ -3593,7 +3637,8 @@
         "Couper l'avocat et les tomates cerises.",
         "Mélanger salade, légumes et poulet.",
         "Assaisonner d'huile d'olive et de citron."
-      ]
+      ],
+      "portions": 1
     },
     {
       "id": "buddha-bowl-proteine",
@@ -3696,7 +3741,8 @@
         "proteines": 34,
         "glucides": 68,
         "lipides": 14
-      }
+      },
+      "portions": 2
     },
     {
       "id": "pates-thon-tomate",
@@ -3759,7 +3805,8 @@
         "Faire revenir oignon et ail, ajouter la sauce tomate.",
         "Incorporer le thon égoutté, mijoter 5 min.",
         "Mélanger aux pâtes."
-      ]
+      ],
+      "portions": 1
     },
     {
       "id": "onepot-poulet-epinards",
@@ -3830,7 +3877,8 @@
         "proteines": 38,
         "glucides": 50,
         "lipides": 20
-      }
+      },
+      "portions": 2
     },
     {
       "id": "gratin-pates-jambon",
@@ -3890,7 +3938,8 @@
         "proteines": 34,
         "glucides": 62,
         "lipides": 18
-      }
+      },
+      "portions": 2
     },
     {
       "id": "penne-tomate-poulet",
@@ -3977,7 +4026,8 @@
         "proteines": 38,
         "glucides": 62,
         "lipides": 14
-      }
+      },
+      "portions": 2
     },
     {
       "id": "riz-saute-poulet-legumes",
@@ -4034,7 +4084,8 @@
         "proteines": 36,
         "glucides": 60,
         "lipides": 12
-      }
+      },
+      "portions": 2
     },
     {
       "id": "brochettes-poulet-legumes",
@@ -4133,7 +4184,8 @@
         "proteines": 42,
         "glucides": 35,
         "lipides": 20
-      }
+      },
+      "portions": 2
     },
     {
       "id": "steak-hache-haricots-verts",
@@ -4184,7 +4236,8 @@
         "proteines": 40,
         "glucides": 22,
         "lipides": 20
-      }
+      },
+      "portions": 2
     },
     {
       "id": "mijote-boeuf-carottes",
@@ -4669,7 +4722,8 @@
         "Mélanger skyr, whey, cacao et édulcorant jusqu'à une texture lisse.",
         "Réserver 30 min au frais.",
         "Servir bien frais."
-      ]
+      ],
+      "portions": 1
     },
     {
       "id": "mug-cake-proteine",
@@ -4731,7 +4785,8 @@
         "Mélanger tous les ingrédients dans un mug.",
         "Micro-ondes 60-90 s.",
         "Laisser tiédir avant de déguster."
-      ]
+      ],
+      "portions": 1
     },
     {
       "id": "fondant-chocolat-light",
@@ -4903,7 +4958,8 @@
         "Égoutter et bien sécher les pois chiches.",
         "Mélanger avec l'huile et les épices.",
         "Air fryer 15-18 min à 190°C en secouant à mi-cuisson."
-      ]
+      ],
+      "portions": 1
     },
     {
       "id": "popcorn-maison-leger",

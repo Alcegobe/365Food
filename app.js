@@ -42,7 +42,8 @@ function currentSeason(date = new Date()) {
 /* ---------- Onglets ---------- */
 function switchView(view) {
   for (const tab of document.querySelectorAll(".tab")) {
-    tab.setAttribute("aria-selected", String(tab.dataset.view === view));
+    if (tab.dataset.view === view) tab.setAttribute("aria-current", "page");
+    else tab.removeAttribute("aria-current");
   }
   $("#view-recettes").hidden = view !== "recettes";
   $("#view-semaine").hidden = view !== "semaine";
@@ -60,17 +61,20 @@ for (const tab of document.querySelectorAll(".tab")) {
 async function load() {
   try {
     const res = await fetch("./data/recipes.json", { cache: "no-cache" });
+    if (!res.ok) throw new Error("HTTP " + res.status);
     DATA = await res.json();
+    CAT_BY_ID = new Map(DATA.categories.map((c) => [c.id, c]));
+    RECIPE_BY_ID = new Map(DATA.recipes.map((r) => [r.id, r]));
   } catch (e) {
-    $("#results").innerHTML = `<p class="empty">Impossible de charger les recettes. ${e}</p>`;
+    DATA = null;
+    $("#results").innerHTML = `<p class="empty">Impossible de charger les recettes. ${esc(String(e))}</p>`;
     return;
   }
-  CAT_BY_ID = new Map(DATA.categories.map((c) => [c.id, c]));
-  RECIPE_BY_ID = new Map(DATA.recipes.map((r) => [r.id, r]));
   buildRepasFilter();
   buildSeasonFilter();
   render();
   if (pendingSemaine) renderSemaine();
+  if (pendingCourses) renderCourses();
 }
 
 function buildRepasFilter() {
@@ -82,8 +86,9 @@ function buildRepasFilter() {
     b.textContent = REPAS_LABELS[key];
     b.setAttribute("aria-pressed", String(state.repas === key));
     b.onclick = () => {
+      // Mise à jour en place (pas de reconstruction) pour ne pas perdre le focus clavier.
       state.repas = key;
-      buildRepasFilter();
+      for (const c of wrap.children) c.setAttribute("aria-pressed", String(c === b));
       render();
     };
     wrap.appendChild(b);
@@ -129,7 +134,7 @@ function highlight(text) {
   const i = n.indexOf(q);
   if (i < 0) return esc(text);
   return (
-    esc(text.slice(0, i)) + "<mark>" + esc(text.slice(i, i + state.query.length)) + "</mark>" + esc(text.slice(i + state.query.length))
+    esc(text.slice(0, i)) + "<mark>" + esc(text.slice(i, i + q.length)) + "</mark>" + esc(text.slice(i + q.length))
   );
 }
 
@@ -220,8 +225,9 @@ function recipeSheetHTML(r) {
   if (r.composantes) h += `<div class="sheet-comp">${compLabels(r.composantes)}</div>`;
   if (r.macros) h += macrosRow(r.macros);
   if (r.ingredients && r.ingredients.length) {
+    const portions = r.portions ?? 1;
     h +=
-      `<h3 class="sheet-h">Ingrédients <span class="sheet-sub">pour 1 personne</span></h3>` +
+      `<h3 class="sheet-h">Ingrédients <span class="sheet-sub">pour ${portions} personne${portions > 1 ? "s" : ""}</span></h3>` +
       `<ul class="sheet-ingr">` +
       r.ingredients
         .map(
@@ -238,6 +244,8 @@ function recipeSheetHTML(r) {
       `<ol class="sheet-steps">` +
       r.etapes.map((s) => `<li>${esc(s)}</li>`).join("") +
       `</ol>`;
+  } else if (r.ingredients && r.ingredients.length) {
+    h += `<p class="sheet-todo">Étapes de préparation bientôt disponibles — en attendant, ouvre la recherche ci-dessous. 👇</p>`;
   } else {
     h += `<p class="sheet-todo">Recette détaillée bientôt disponible — en attendant, ouvre la recherche ci-dessous. 👇</p>`;
   }
@@ -245,6 +253,14 @@ function recipeSheetHTML(r) {
     `<a class="btn sheet-search" href="${searchUrl(r.titre)}" target="_blank" rel="noopener">` +
     `<svg class="ico"><use href="#i-search" /></svg><span class="btn-lbl">Chercher la recette sur le web</span></a>`;
   return h;
+}
+
+// Rend le reste de la page inerte (focus + lecteurs d'écran) pendant que la
+// fiche est ouverte : c'est ce qui honore le contrat d'aria-modal="true".
+function setBackgroundInert(on) {
+  for (const el of document.querySelectorAll("body > header, body > main, body > footer, body > nav")) {
+    el.inert = on;
+  }
 }
 
 function openRecipe(id) {
@@ -259,7 +275,7 @@ function openRecipe(id) {
     });
     document.body.appendChild(sheetEl);
   }
-  sheetPrevFocus = document.activeElement;
+  if (sheetEl.hidden) sheetPrevFocus = document.activeElement;
   sheetEl.innerHTML =
     `<div class="sheet" role="dialog" aria-modal="true" aria-labelledby="sheet-title">` +
     `<header class="sheet-head">` +
@@ -269,6 +285,7 @@ function openRecipe(id) {
     `<div class="sheet-body">${recipeSheetHTML(r)}</div>` +
     `</div>`;
   sheetEl.hidden = false;
+  setBackgroundInert(true);
   document.body.style.overflow = "hidden";
   const closeBtn = sheetEl.querySelector(".sheet-close");
   closeBtn.addEventListener("click", closeRecipe);
@@ -278,6 +295,7 @@ function openRecipe(id) {
 function closeRecipe() {
   if (!sheetEl || sheetEl.hidden) return;
   sheetEl.hidden = true;
+  setBackgroundInert(false);
   document.body.style.overflow = "";
   if (sheetPrevFocus && sheetPrevFocus.focus) sheetPrevFocus.focus();
 }
@@ -304,9 +322,11 @@ $("#results").addEventListener("keydown", (e) => {
 async function loadResto() {
   try {
     const res = await fetch("./data/resto.json", { cache: "no-cache" });
+    if (!res.ok) throw new Error("HTTP " + res.status);
     RESTO = await res.json();
   } catch (e) {
-    $("#resto").innerHTML = `<p class="empty">Impossible de charger le guide. ${e}</p>`;
+    RESTO = null;
+    $("#resto").innerHTML = `<p class="empty">Impossible de charger le guide. ${esc(String(e))}</p>`;
     return;
   }
   renderResto();
@@ -393,6 +413,7 @@ $("#resto-search").addEventListener("input", (e) => {
 /* ---------- Ma semaine (planificateur 7 jours) ---------- */
 const JOURS = ["Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi", "Dimanche"];
 let pendingSemaine = false;
+let pendingCourses = false;
 
 function mulberry32(a) {
   return function () {
@@ -455,12 +476,11 @@ function proteinType(r) {
   return "autre";
 }
 
-function poolFor(catSet, seasonalOnly, detailOnly) {
-  const cur = currentSeason();
+function poolFor(catSet, seasonalOnly, detailOnly, season) {
   return DATA.recipes.filter(
     (r) =>
       catSet.has(r.categorie) &&
-      (!seasonalOnly || r.saisons.includes("toute_annee") || r.saisons.includes(cur)) &&
+      (!seasonalOnly || r.saisons.includes("toute_annee") || r.saisons.includes(season)) &&
       (!detailOnly || hasIngr(r))
   );
 }
@@ -484,15 +504,15 @@ function pickMain(pool, used, ctx) {
   return candidates.find((r) => ok(r, true)) || candidates.find((r) => ok(r, false)) || candidates[0];
 }
 
-function buildWeek(salt, seasonalOnly, detailOnly) {
+function buildWeek(salt, seasonalOnly, detailOnly, season) {
   const dejCats = new Set(DATA.categories.filter((c) => c.repas.includes("dejeuner")).map((c) => c.id));
   const mainCats = new Set(
     DATA.categories.filter((c) => c.repas.includes("diner") || c.repas.includes("souper")).map((c) => c.id)
   );
   const rng = mulberry32((isoWeekKey() * 131 + salt * 977) >>> 0);
-  const dej = shuffle(poolFor(dejCats, seasonalOnly, detailOnly), rng);
-  let mainsPool = shuffle(poolFor(mainCats, seasonalOnly, detailOnly), rng);
-  if (mainsPool.length < 14) mainsPool = shuffle(poolFor(mainCats, seasonalOnly, false), rng); // garde-fou
+  const dej = shuffle(poolFor(dejCats, seasonalOnly, detailOnly, season), rng);
+  let mainsPool = shuffle(poolFor(mainCats, seasonalOnly, detailOnly, season), rng);
+  if (mainsPool.length < 14) mainsPool = shuffle(poolFor(mainCats, seasonalOnly, false, season), rng); // garde-fou
 
   const usedMains = new Set();
   let plaisirCount = 0;
@@ -530,6 +550,18 @@ function buildWeek(salt, seasonalOnly, detailOnly) {
   return days;
 }
 
+// Supprime les listes de courses des semaines passées (sinon les clés
+// courses365:* s'accumulent indéfiniment dans le localStorage).
+function purgeOldCourses(wk) {
+  try {
+    for (const k of Object.keys(localStorage)) {
+      if (k.startsWith("courses365:") && !k.startsWith(`courses365:${wk}:`)) localStorage.removeItem(k);
+    }
+  } catch (e) {
+    /* ignore */
+  }
+}
+
 function getSemaineState() {
   let s = null;
   try {
@@ -538,8 +570,14 @@ function getSemaineState() {
     /* ignore */
   }
   const wk = isoWeekKey();
-  if (!s || s.week !== wk) s = { week: wk, salt: 0, seasonal: true, detail: false };
+  if (!s || s.week !== wk) {
+    // La saison est figée à la création de la semaine : le planning ne change
+    // pas silencieusement si la saison bascule un mardi (1er mars/juin/sept/déc).
+    s = { week: wk, salt: 0, seasonal: true, detail: false, season: currentSeason() };
+    purgeOldCourses(wk);
+  }
   if (s.detail === undefined) s.detail = false;
+  if (!s.season) s.season = currentSeason(); // migration des états antérieurs
   return s;
 }
 function saveSemaineState(s) {
@@ -552,17 +590,49 @@ function saveSemaineState(s) {
 
 let SEMAINE_DAYS = null;
 let SEMAINE_SIG = null;
-const semaineSig = (s) => `${s.week}:${s.salt}:${s.seasonal}:${s.detail}`;
+const semaineSig = (s) => `${s.week}:${s.salt}:${s.seasonal}:${s.detail}:${s.season}`;
+
+// Reconstitue un menu persisté (ids -> recettes). Retourne null si une
+// recette a disparu des données : on regénère alors proprement.
+function restoreMenu(menu) {
+  if (!Array.isArray(menu) || menu.length !== 7) return null;
+  const days = [];
+  for (const d of menu) {
+    const day = {};
+    for (const meal of ["dejeuner", "diner", "souper"]) {
+      if (d[meal] == null) {
+        day[meal] = null;
+      } else {
+        const r = RECIPE_BY_ID.get(d[meal]);
+        if (!r) return null;
+        day[meal] = r;
+      }
+    }
+    days.push(day);
+  }
+  return days;
+}
 
 // Construit (ou réutilise) la semaine pour l'état courant : garantit que
-// "Ma semaine" et "Courses" affichent exactement le même planning.
+// "Ma semaine" et "Courses" affichent exactement le même planning. Le menu
+// est persisté par ids pour rester stable même si recipes.json évolue
+// (déploiement) en cours de semaine.
 function ensureWeek() {
   if (!DATA) return false;
   const s = getSemaineState();
   const sig = semaineSig(s);
-  if (!SEMAINE_DAYS || SEMAINE_SIG !== sig) {
-    SEMAINE_DAYS = buildWeek(s.salt, s.seasonal, s.detail);
-    SEMAINE_SIG = sig;
+  if (SEMAINE_DAYS && SEMAINE_SIG === sig) return true;
+  const saved = s.sig === sig ? restoreMenu(s.menu) : null;
+  SEMAINE_DAYS = saved || buildWeek(s.salt, s.seasonal, s.detail, s.season);
+  SEMAINE_SIG = sig;
+  if (!saved) {
+    s.sig = sig;
+    s.menu = SEMAINE_DAYS.map((d) => ({
+      dejeuner: d.dejeuner ? d.dejeuner.id : null,
+      diner: d.diner ? d.diner.id : null,
+      souper: d.souper ? d.souper.id : null,
+    }));
+    saveSemaineState(s);
   }
   return true;
 }
@@ -713,7 +783,10 @@ function saveChecked(set) {
   }
 }
 
-// Agrège les ingrédients de la semaine en fusionnant les doublons.
+// Agrège les ingrédients de la semaine, ramenés à 1 personne (les quantités
+// des recettes sont divisées par leur nombre de portions). Un même produit
+// est fusionné par rayon ; des unités différentes restent listées côte à côte
+// (« 130 g + 2 pièces ») plutôt que d'apparaître en lignes séparées.
 function aggregateCourses() {
   const recipes = [];
   for (const day of SEMAINE_DAYS) for (const m of [day.dejeuner, day.diner, day.souper]) if (m) recipes.push(m);
@@ -722,24 +795,40 @@ function aggregateCourses() {
 
   const map = new Map();
   for (const r of detailed) {
+    const portions = r.portions || 1;
     for (const ing of r.ingredients) {
       const rayon = ing.rayon || "Autre";
-      const key = norm(ing.item) + "|" + (ing.unit || "") + "|" + rayon;
-      if (!map.has(key)) map.set(key, { key, item: ing.item, unit: ing.unit || "", rayon, qty: 0, hasQty: true });
+      const key = norm(ing.item) + "|" + rayon;
+      if (!map.has(key)) map.set(key, { key, item: ing.item, rayon, qtys: new Map() });
       const o = map.get(key);
-      if (typeof ing.qty === "number") o.qty += ing.qty;
-      else o.hasQty = false;
+      if (typeof ing.qty === "number") {
+        const unit = ing.unit || "";
+        o.qtys.set(unit, (o.qtys.get(unit) || 0) + ing.qty / portions);
+      }
     }
   }
   return { items: [...map.values()], detailed, missing, total: recipes.length };
 }
 
+const qtyLabel = (it) =>
+  [...it.qtys.entries()].map(([unit, q]) => `${fmtQty(q)}${unit ? " " + unit : ""}`).join(" + ");
+
+// Rayons à afficher : l'ordre canonique, puis tout rayon inconnu rencontré
+// dans les données (pour qu'aucun ingrédient ne disparaisse silencieusement).
+function rayonOrder(byRayon) {
+  const rayons = [...COURSES_RAYONS];
+  for (const r of byRayon.keys()) if (!rayons.includes(r)) rayons.push(r);
+  return rayons;
+}
+
 function renderCourses() {
   const root = $("#courses");
   if (!ensureWeek()) {
+    pendingCourses = true;
     root.innerHTML = `<p class="loading">Chargement…</p>`;
     return;
   }
+  pendingCourses = false;
   const { items, detailed, missing, total } = aggregateCourses();
   const checked = getChecked();
 
@@ -755,7 +844,7 @@ function renderCourses() {
 
   $("#courses-info").innerHTML =
     `<strong>Liste de courses</strong>` +
-    `<span class="semaine-sub">${detailed.length}/${total} repas détaillés · ${items.length} ingrédients</span>` +
+    `<span class="semaine-sub">${detailed.length}/${total} repas détaillés · ${items.length} ingrédients · pour 1 personne</span>` +
     (items.length
       ? `<div class="progress"><div class="progress-track"><div class="progress-fill" id="courses-progress-fill"></div></div>` +
         `<span class="progress-lbl" id="courses-progress-lbl"></span></div>`
@@ -776,7 +865,7 @@ function renderCourses() {
     if (!byRayon.has(it.rayon)) byRayon.set(it.rayon, []);
     byRayon.get(it.rayon).push(it);
   }
-  for (const rayon of COURSES_RAYONS) {
+  for (const rayon of rayonOrder(byRayon)) {
     const list = byRayon.get(rayon);
     if (!list) continue;
     list.sort((a, b) => a.item.localeCompare(b.item, "fr"));
@@ -786,13 +875,12 @@ function renderCourses() {
     const ul = document.createElement("div");
     ul.className = "courses-list";
     for (const it of list) {
-      const id = "c_" + btoa(unescape(encodeURIComponent(it.key))).replace(/=/g, "");
       const isChecked = checked.has(it.key);
-      const qty = it.hasQty && it.qty ? `<span class="ing-qty">${fmtQty(it.qty)} ${esc(it.unit)}</span>` : "";
+      const qty = it.qtys.size ? `<span class="ing-qty">${esc(qtyLabel(it))}</span>` : "";
       const row = document.createElement("label");
       row.className = "course-item" + (isChecked ? " done" : "");
       row.innerHTML =
-        `<input type="checkbox" id="${id}" ${isChecked ? "checked" : ""} />` +
+        `<input type="checkbox" ${isChecked ? "checked" : ""} />` +
         `<span class="ing-name">${esc(it.item)}</span>${qty}`;
       row.querySelector("input").addEventListener("change", (e) => {
         const set = getChecked();
@@ -829,14 +917,14 @@ function coursesToText() {
     if (!byRayon.has(it.rayon)) byRayon.set(it.rayon, []);
     byRayon.get(it.rayon).push(it);
   }
-  const lines = ["🛒 Liste de courses 365Food", ""];
-  for (const rayon of COURSES_RAYONS) {
+  const lines = ["🛒 Liste de courses 365Food (pour 1 personne)", ""];
+  for (const rayon of rayonOrder(byRayon)) {
     const list = byRayon.get(rayon);
     if (!list) continue;
     lines.push(rayon.toUpperCase());
     list
       .sort((a, b) => a.item.localeCompare(b.item, "fr"))
-      .forEach((it) => lines.push(`  - ${it.item}${it.hasQty && it.qty ? ` : ${fmtQty(it.qty)} ${it.unit}` : ""}`));
+      .forEach((it) => lines.push(`  - ${it.item}${it.qtys.size ? ` : ${qtyLabel(it)}` : ""}`));
     lines.push("");
   }
   return lines.join("\n").trim();
