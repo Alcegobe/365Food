@@ -32,9 +32,13 @@ for (const [k, v] of Object.entries(data.meta.repas)) lines.push(`- **${k}** —
 lines.push("");
 
 const total = data.recipes.length;
+const enriched = data.recipes.filter((r) => r.ingredients && r.ingredients.length).length;
+const withSteps = data.recipes.filter((r) => r.etapes && r.etapes.length).length;
 lines.push(`**Total : ${total} recettes** réparties en ${data.categories.length} catégories.`);
 lines.push("");
-lines.push("> ⚠️ Pour l'instant : titres uniquement. Les ingrédients, étapes, macros et listes de courses viendront ensuite.");
+lines.push(
+  `> ${enriched}/${total} recettes ont déjà ingrédients + macros (dont ${withSteps} avec les étapes — détails visibles dans l'app) ; les autres : titres uniquement pour l'instant.`
+);
 lines.push("");
 lines.push("---");
 lines.push("");
@@ -43,6 +47,16 @@ const byCat = new Map();
 for (const r of data.recipes) {
   if (!byCat.has(r.categorie)) byCat.set(r.categorie, []);
   byCat.get(r.categorie).push(r);
+}
+
+// Garde-fou : une recette dont la catégorie n'existe pas disparaîtrait
+// silencieusement du listing tout en restant comptée dans le total.
+const known = new Set(data.categories.map((c) => c.id));
+for (const k of byCat.keys()) {
+  if (!known.has(k)) {
+    console.error(`❌ Catégorie inconnue "${k}" (${byCat.get(k).length} recette(s) non listée(s))`);
+    process.exitCode = 1;
+  }
 }
 
 for (const cat of data.categories) {

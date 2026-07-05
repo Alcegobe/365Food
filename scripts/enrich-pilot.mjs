@@ -1,7 +1,10 @@
 #!/usr/bin/env node
 // Enrichit data/recipes.json : composantes + ingredients + macros (par portion)
-// pour les recettes "pilotes" (vagues 1 & 2). Idempotent.
-// Usage : node scripts/enrich-pilot.mjs
+// pour les recettes "pilotes" (vagues 1 & 2).
+// ⚠️ data/recipes.json est la vérité unique : les recettes déjà enrichies sont
+// IGNORÉES par défaut pour ne pas écraser des corrections manuelles.
+// Usage : node scripts/enrich-pilot.mjs [--force]
+//   --force : réécrit aussi les recettes déjà enrichies depuis les constantes ci-dessous.
 
 import { readFileSync, writeFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
@@ -173,7 +176,7 @@ const PILOT = {
   // ===== Vague 1 — Déjeuners =====
   "porridge-banane-cannelle": {
     composantes: { proteine: "Lait (+ whey)", legume: "—", feculent: "Flocons d'avoine" },
-    macros: m(380, 22, 55, 8),
+    macros: m(280, 13, 45, 5),
     ingredients: [
       i("Flocons d'avoine", 80, "g", EP), i("Lait demi-écrémé", 250, "ml", CR),
       i("Banane", 1, "pièce", FL), i("Cannelle", 1, "pincée", EP), i("Whey vanille (option)", 1, "c.à.s", EP),
@@ -181,7 +184,7 @@ const PILOT = {
   },
   "oeufs-plat-avocat-toast": {
     composantes: { proteine: "Œufs", legume: "Avocat", feculent: "Pain complet" },
-    macros: m(420, 22, 26, 26),
+    macros: m(370, 18, 21, 24),
     ingredients: [
       i("Œuf", 4, "pièce", CR), i("Pain complet", 2, "tranche", BO),
       i("Avocat", 1, "pièce", FL), i("Huile d'olive", 1, "c.à.c", EP),
@@ -189,7 +192,7 @@ const PILOT = {
   },
   "omelette-jambon-champignons": {
     composantes: { proteine: "Œufs, jambon", legume: "Champignons", feculent: "—" },
-    macros: m(320, 28, 6, 20),
+    macros: m(230, 22, 3, 14),
     ingredients: [
       i("Œuf", 4, "pièce", CR), i("Jambon", 2, "tranche", BV),
       i("Champignons", 100, "g", FL), i("Emmental", 20, "g", CR),
@@ -197,7 +200,7 @@ const PILOT = {
   },
   "bowl-skyr-granola": {
     composantes: { proteine: "Skyr", legume: "Fruits rouges", feculent: "Granola" },
-    macros: m(360, 28, 45, 8),
+    macros: m(245, 19, 30, 5),
     ingredients: [
       i("Skyr", 300, "g", CR), i("Granola", 50, "g", EP),
       i("Fruits rouges", 100, "g", FL), i("Miel", 1, "c.à.c", EP),
@@ -205,7 +208,7 @@ const PILOT = {
   },
   "pancakes-proteines-avoine": {
     composantes: { proteine: "Œufs, whey", legume: "—", feculent: "Flocons d'avoine" },
-    macros: m(380, 28, 42, 10),
+    macros: m(300, 22, 34, 9),
     ingredients: [
       i("Flocons d'avoine", 60, "g", EP), i("Œuf", 2, "pièce", CR),
       i("Banane", 1, "pièce", FL), i("Whey", 1, "dose", EP), i("Lait demi-écrémé", 50, "ml", CR),
@@ -213,7 +216,7 @@ const PILOT = {
   },
   "oeufs-brouilles-cottage": {
     composantes: { proteine: "Œufs, cottage cheese", legume: "Ciboulette", feculent: "Pain complet" },
-    macros: m(330, 30, 18, 16),
+    macros: m(270, 21, 17, 13),
     ingredients: [
       i("Œuf", 4, "pièce", CR), i("Cottage cheese", 100, "g", CR),
       i("Ciboulette", 1, "pincée", FL), i("Pain complet", 2, "tranche", BO),
@@ -221,7 +224,7 @@ const PILOT = {
   },
   "overnight-oats-cacahuete-cacao": {
     composantes: { proteine: "Lait, yaourt grec", legume: "—", feculent: "Flocons d'avoine" },
-    macros: m(420, 24, 48, 14),
+    macros: m(255, 12, 31, 9),
     ingredients: [
       i("Flocons d'avoine", 80, "g", EP), i("Lait demi-écrémé", 200, "ml", CR),
       i("Beurre de cacahuète", 1, "c.à.s", EP), i("Cacao maigre", 1, "c.à.c", EP), i("Yaourt grec 0%", 2, "c.à.s", CR),
@@ -229,7 +232,7 @@ const PILOT = {
   },
   "egg-muffins-jambon": {
     composantes: { proteine: "Œufs, jambon", legume: "Poivron", feculent: "—" },
-    macros: m(260, 24, 6, 16),
+    macros: m(225, 19, 3, 15),
     ingredients: [
       i("Œuf", 4, "pièce", CR), i("Jambon", 2, "tranche", BV),
       i("Poivron", 0.5, "pièce", FL), i("Emmental", 20, "g", CR),
@@ -327,7 +330,7 @@ const PILOT = {
   // ===== Vague 2 — Déjeuners =====
   "shakshuka-legere": {
     composantes: { proteine: "Œufs", legume: "Poivron, tomate, oignon", feculent: "—" },
-    macros: m(280, 20, 18, 14),
+    macros: m(210, 15, 12, 11),
     ingredients: [
       i("Œuf", 4, "pièce", CR), i("Tomates concassées", 400, "g", EP),
       i("Poivron", 1, "pièce", FL), i("Oignon", 1, "pièce", FL),
@@ -336,14 +339,16 @@ const PILOT = {
   },
   "fromage-blanc-miel-noix": {
     composantes: { proteine: "Fromage blanc", legume: "—", feculent: "—" },
-    macros: m(240, 26, 18, 8),
+    macros: m(200, 14, 15, 10),
     ingredients: [
       i("Fromage blanc 0%", 300, "g", CR), i("Miel", 1, "c.à.s", EP), i("Noix", 30, "g", EP),
     ],
   },
 };
 
+const force = process.argv.includes("--force");
 let n = 0;
+let skipped = 0;
 const byId = new Map(data.recipes.map((r) => [r.id, r]));
 for (const [id, extra] of Object.entries(PILOT)) {
   const r = byId.get(id);
@@ -351,11 +356,17 @@ for (const [id, extra] of Object.entries(PILOT)) {
     console.warn("⚠️  id introuvable:", id);
     continue;
   }
+  if (r.ingredients && !force) {
+    skipped++;
+    continue;
+  }
   r.composantes = extra.composantes;
   r.ingredients = extra.ingredients;
   if (extra.macros) r.macros = extra.macros;
+  r.portions = 2; // les quantités du PILOT sont pour 2 portions
   n++;
 }
 
 writeFileSync(path, JSON.stringify(data, null, 2) + "\n");
 console.log(`Enrichi ${n} recettes (composantes + ingredients + macros).`);
+if (skipped) console.log(`${skipped} recettes déjà enrichies ignorées (utiliser --force pour les réécrire).`);

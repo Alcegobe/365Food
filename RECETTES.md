@@ -17,7 +17,7 @@
 
 **Total : 237 recettes** réparties en 30 catégories.
 
-> ⚠️ Pour l'instant : titres uniquement. Les ingrédients, étapes, macros et listes de courses viendront ensuite.
+> 237/237 recettes ont déjà ingrédients + macros (dont 237 avec les étapes — détails visibles dans l'app) ; les autres : titres uniquement pour l'instant.
 
 ---
 
