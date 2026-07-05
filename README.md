@@ -22,7 +22,7 @@ Petite **PWA** pour gérer mes repas sur l'année : manger sainement **sans avoi
 ## 📂 Contenu actuel
 
 - **[`RECETTES.md`](./RECETTES.md)** — listing lisible (généré automatiquement). **C'est le fichier à parcourir.**
-- **[`data/recipes.json`](./data/recipes.json)** — source de données (vérité unique) : 237 recettes, 30 catégories, dont 56 déjà détaillées (ingrédients + macros, 20 avec les étapes).
+- **[`data/recipes.json`](./data/recipes.json)** — source de données (vérité unique) : **237 recettes, 30 catégories, toutes détaillées** (ingrédients, macros, étapes).
 - **[`data/resto.json`](./data/resto.json)** — assistant « Manger dehors » : pour chaque enseigne (Burger King, kebab, sushi, italien…), 1 choix optimal + 1 alternative, macros estimées, astuce upgrade et piège à éviter. Zéro culpabilisation.
 - **[`scripts/generate-listing.mjs`](./scripts/generate-listing.mjs)** — régénère `RECETTES.md` depuis le JSON.
 - **[`scripts/validate-data.mjs`](./scripts/validate-data.mjs)** — valide les deux fichiers de données (références, saisons, rayons, cohérence des macros).
@@ -49,7 +49,7 @@ Modifier **uniquement** `data/recipes.json`, puis relancer ces commandes — `RE
 
 - [x] **Étape 1 — Listing des titres**
 - [ ] Valider / ajuster la liste avec le propriétaire (ajouts, retraits)
-- [ ] Étape 2 — **détails par recette** : *en cours — 56/237 recettes avec ingrédients + macros, 20 avec les étapes* (reste : étapes, temps, et le reste des recettes)
+- [x] Étape 2 — **détails par recette** : les 237 recettes ont ingrédients + macros + étapes (reste : temps de préparation par recette)
 - [x] Étape 3 — **Plannings de la semaine** : onglet 📅 Semaine (7 jours, variété, saisons)
 - [x] Étape 4 — **Listes de courses** auto-générées + mutualisation des ingrédients (onglet 🛒 Courses)
 - [x] Étape 5 — **App PWA** : navigation, filtres, mode hors-ligne (service worker), installable sur mobile (reste : favoris)
@@ -66,7 +66,7 @@ Modifier **uniquement** `data/recipes.json`, puis relancer ces commandes — `RE
       "categorie": "burgers",                 // référence vers categories[].id
       "saisons": ["toute_annee"],             // toute_annee | printemps | ete | automne | hiver
 
-      // Champs des recettes détaillées (56/237 pour l'instant) :
+      // Champs des recettes détaillées (les 237 recettes) :
       "portions": 2,                          // nombre de portions couvert par les quantités
       "composantes": { "proteine": "Bœuf haché maigre", "legume": "Salade, tomate", "feculent": "Pain complet" },
       "macros": { "kcal": 520, "proteines": 38, "glucides": 38, "lipides": 22 }, // PAR portion

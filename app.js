@@ -304,12 +304,13 @@ document.addEventListener("keydown", (e) => {
   if (e.key === "Escape") closeRecipe();
 });
 
-// Délégation clic / clavier sur les cartes recette.
-$("#results").addEventListener("click", (e) => {
+// Délégation clic / clavier sur toute carte ou intitulé de recette
+// (.card-link), qu'il soit dans Recettes, Ma semaine ou Courses.
+document.addEventListener("click", (e) => {
   const card = e.target.closest(".card-link");
   if (card) openRecipe(card.dataset.id);
 });
-$("#results").addEventListener("keydown", (e) => {
+document.addEventListener("keydown", (e) => {
   if (e.key !== "Enter" && e.key !== " ") return;
   const card = e.target.closest(".card-link");
   if (card) {
@@ -664,7 +665,11 @@ function renderSemaine() {
     d.setDate(d.getDate() + i);
     const line = (ico, label, r) =>
       `<div class="repas-line"><span class="repas-ico">${ico}</span>` +
-      `<span class="repas-txt"><span class="repas-label">${label}</span>${r ? esc(r.titre) : "—"}</span></div>`;
+      `<span class="repas-txt"><span class="repas-label">${label}</span>` +
+      (r
+        ? `<span class="repas-titre card-link" data-id="${r.id}" role="button" tabindex="0">${esc(r.titre)}</span>`
+        : "—") +
+      `</span></div>`;
 
     const meals = [day.dejeuner, day.diner, day.souper];
     let kcal = 0, prot = 0, withMacros = 0;
@@ -902,7 +907,9 @@ function renderCourses() {
     const uniq = [...new Map(missing.map((r) => [r.id, r])).values()];
     det.innerHTML =
       `<summary>🧩 ${uniq.length} recette(s) à détailler (pas encore d'ingrédients)</summary>` +
-      `<ul>${uniq.map((r) => `<li>${esc(r.titre)}</li>`).join("")}</ul>`;
+      `<ul>${uniq
+        .map((r) => `<li><span class="card-link" data-id="${r.id}" role="button" tabindex="0">${esc(r.titre)}</span></li>`)
+        .join("")}</ul>`;
     frag.appendChild(det);
   }
 

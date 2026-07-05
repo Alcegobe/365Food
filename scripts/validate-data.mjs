@@ -40,6 +40,7 @@ for (const c of recipes.categories) {
   for (const r of c.repas) if (!REPAS.has(r)) err(`catégorie ${c.id} : repas inconnu "${r}"`);
 }
 
+const catById = new Map(recipes.categories.map((c) => [c.id, c]));
 const recipeIds = new Set();
 const usedCats = new Set();
 for (const r of recipes.recipes) {
@@ -52,6 +53,8 @@ for (const r of recipes.recipes) {
   else for (const s of r.saisons) if (!SAISONS.has(s)) err(`${id} : saison inconnue "${s}"`);
 
   const hasIngr = Array.isArray(r.ingredients) && r.ingredients.length > 0;
+  // Les sauces/condiments n'ont pas de découpage protéine/légume/féculent.
+  const isSauce = catById.get(r.categorie)?.repas.includes("sauce");
   if (hasIngr) {
     if (!r.portions) warn(`${id} : recette détaillée sans champ "portions"`);
     for (const ing of r.ingredients) {
@@ -60,7 +63,7 @@ for (const r of recipes.recipes) {
       if (typeof ing.qty !== "number" || !(ing.qty > 0)) warn(`${id} : quantité douteuse pour "${ing.item}" (${ing.qty})`);
     }
     if (!r.macros) warn(`${id} : ingrédients présents mais macros absentes`);
-    if (!r.composantes) warn(`${id} : ingrédients présents mais composantes absentes`);
+    if (!r.composantes && !isSauce) warn(`${id} : ingrédients présents mais composantes absentes`);
   }
 
   if (r.macros) {

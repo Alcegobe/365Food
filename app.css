@@ -358,6 +358,17 @@ mark { background: rgba(255, 204, 0, 0.5); color: inherit; padding: 0 1px; borde
 .repas-line { display: flex; gap: 10px; padding: 7px 0; align-items: baseline; }
 .repas-ico { font-size: 15px; flex: 0 0 auto; }
 .repas-txt { font-size: 14px; }
+.repas-titre.card-link {
+  display: inline;
+  padding: 0;
+  cursor: pointer;
+  text-decoration-line: underline;
+  text-decoration-color: var(--sep);
+  text-underline-offset: 2px;
+}
+.repas-titre.card-link:hover,
+.repas-titre.card-link:focus-visible { text-decoration-color: var(--accent); }
+.repas-titre.card-link:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 3px; }
 .repas-label {
   display: block;
   font-size: 10.5px;
@@ -423,6 +434,10 @@ mark { background: rgba(255, 204, 0, 0.5); color: inherit; padding: 0 1px; borde
 .courses-missing summary { cursor: pointer; font-weight: 600; color: var(--muted); }
 .courses-missing ul { margin: 8px 0 2px; padding-left: 20px; color: var(--muted); }
 .courses-missing li { margin: 3px 0; }
+.courses-missing .card-link { cursor: pointer; text-decoration: underline; text-decoration-color: var(--sep); }
+.courses-missing .card-link:hover,
+.courses-missing .card-link:focus-visible { text-decoration-color: var(--accent); color: var(--ink); }
+.courses-missing .card-link:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 3px; }
 
 /* ---------- Vue Manger dehors ---------- */
 .resto-intro {
