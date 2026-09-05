@@ -1,0 +1,44 @@
+/* 365Food — impression : on ne garde que le contenu utile, sur fond blanc. */
+
+@page {
+  size: A4;
+  margin: 16mm;
+}
+
+body {
+  background: #fff !important;
+  color: #000 !important;
+}
+
+.topbar__actions,
+.skip-link,
+.footer,
+.toast,
+.btn,
+.inline-form,
+#view-profile,
+.alert {
+  display: none !important;
+}
+
+.card,
+.hero {
+  box-shadow: none !important;
+  border: 1px solid #bbb !important;
+  break-inside: avoid;
+}
+
+.hero {
+  background: #fff !important;
+  color: #000 !important;
+}
+
+.stat {
+  background: #fff !important;
+  border: 1px solid #bbb !important;
+  color: #000 !important;
+}
+
+.grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+}

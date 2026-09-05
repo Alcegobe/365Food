@@ -1,83 +1,62 @@
-# 🍔🥗 365Food
+# 365Food — Livre de recettes « healthy plaisir »
 
-Petite **PWA** pour gérer mes repas sur l'année : manger sainement **sans avoir l'impression de se priver**. Du fast-food revisité healthy (burger sauce légère + frites à l'air fryer, kebab sauce blanche light, pizza maison, etc.), adapté à la **Belgique** et aux **saisons**.
+Application web **100 % statique** (HTML / CSS / JS en modules ES, sans serveur ni dépendance) qui remplace un livre de recettes papier : besoins personnels, budget de **points**, recettes gourmandes mais légères et riches en protéines, planning et impression.
 
-## 🎯 Objectifs
+Le cahier des charges complet est dans [`CLAUDE.md`](./CLAUDE.md) (formules §4, feuille de route §7, état d'avancement §9).
 
-- **Corps athlétique** : perte de gras + prise musculaire (entraînement kettlebell à côté).
-- **Plaisir d'abord** : des plats sympas pour éviter de craquer sur des « crasses ».
-- **Équilibre par repas** : minimum **1 protéine + 1 légume** (+ 1 féculent optionnel).
-- **Courses malines** : recettes qui partagent des ingrédients (réutilisation, moins de gaspillage).
-- **Saisons belges** : privilégier ce qui se trouve facilement selon la période.
-- **On n'aime pas** : tofu, quinoa.
+## État : V0 — Socle ✅
 
-## 🍽️ Vocabulaire des repas (belge)
+- **Profil** : date de naissance (âge calculé), sexe, taille, poids, activité, objectif avec ajustement réglable, fréquence de pesée, réglages avancés (g/kg de protéines et de lipides).
+- **Cibles du jour** : métabolisme de base (Mifflin-St Jeor) → dépense journalière → cible kcal (avec plancher de sécurité) → protéines / lipides / glucides.
+- **Budget de points** quotidien et hebdomadaire (jokers +10 %).
+- **Pesées** : historique conservé, cibles recalculées à chaque nouvelle pesée.
+- **Stockage local** (localStorage), **export / import JSON** de toutes les données, effacement.
+- **Tests unitaires** des formules et du stockage (`npm test`, aucune dépendance).
 
-| Repas | Moment | Équivalent FR |
-|-------|--------|---------------|
-| **déjeuner** | matin | petit-déjeuner |
-| **dîner** | midi | déjeuner |
-| **souper** | soir | dîner |
+Prochaine étape : **V1 — Recettes** (base d'ingrédients, `recipes.json`, fiche imprimable A4/A5).
 
-## 📂 Contenu actuel
+## Lancer l'application
 
-- **[`RECETTES.md`](./RECETTES.md)** — listing lisible (généré automatiquement). **C'est le fichier à parcourir.**
-- **[`data/recipes.json`](./data/recipes.json)** — source de données (vérité unique) : **237 recettes, 30 catégories, toutes détaillées** (ingrédients, macros, étapes).
-- **[`data/resto.json`](./data/resto.json)** — assistant « Manger dehors » : pour chaque enseigne (Burger King, kebab, sushi, italien…), 1 choix optimal + 1 alternative, macros estimées, astuce upgrade et piège à éviter. Zéro culpabilisation.
-- **[`scripts/generate-listing.mjs`](./scripts/generate-listing.mjs)** — régénère `RECETTES.md` depuis le JSON.
-- **[`scripts/validate-data.mjs`](./scripts/validate-data.mjs)** — valide les deux fichiers de données (références, saisons, rayons, cohérence des macros).
-- **[`scripts/enrich-pilot.mjs`](./scripts/enrich-pilot.mjs)** — script d'amorçage des 36 recettes « pilotes » (composantes/ingrédients/macros codés en dur). Il **ignore** les recettes déjà enrichies ; `--force` les réécrit depuis ses constantes (écrase donc les corrections manuelles).
-
-### App (PWA) — 4 onglets
-- **🍳 Recettes** : recherche + filtres repas/saison sur les 237 recettes ; fiche détaillée au clic (ingrédients, macros, étapes).
-- **📅 Semaine** : planning 7 jours généré depuis les recettes (variété des protéines, plats « plaisir » espacés, saison figée en début de semaine, persisté en localStorage).
-- **🛒 Courses** : liste de courses par rayon dérivée du même planning, quantités ramenées à 1 personne, cases à cocher.
-- **🍔 Dehors** : tu es au fast-food / resto → l'app te donne le meilleur compromis goût/objectif (menus France, valeurs estimées).
-
-Catégories : déjeuners (avoine, œufs, laitages, salé), burgers, friterie/air fryer, kebab, **pizzas (8+ variantes)**, wok & nouilles, pokebowls, quiches, rôtis, cordons bleus, poissons, crevettes & fruits de mer, **plats belges traditionnels revisités**, salades/bowls meal-prep, pâtes, viandes, **sauces healthy catégorisées** (blanches, avocat, tomate, asiatiques, herbes, friterie), desserts (sablé, fruits, crémeux, chocolat) et snacks/petits creux.
-
-## 🔧 Régénérer le listing / valider les données
+Les modules ES sont bloqués par Chrome/Edge lorsqu'on ouvre `index.html` directement en `file://` (Firefox l'accepte). Il suffit d'un petit serveur statique :
 
 ```bash
-node scripts/generate-listing.mjs   # régénère RECETTES.md
-node scripts/validate-data.mjs      # valide recipes.json + resto.json
+npm start                    # python3 -m http.server 8080
+# ou : npx serve .
 ```
 
-Modifier **uniquement** `data/recipes.json`, puis relancer ces commandes — `RECETTES.md` est généré.
+puis ouvrir <http://localhost:8080>. En production, le dépôt est publié tel quel sur **GitHub Pages** (workflow `.github/workflows/ci.yml`, déploiement depuis la branche par défaut).
 
-## 🗺️ Suite (roadmap)
+## Tests
 
-- [x] **Étape 1 — Listing des titres**
-- [ ] Valider / ajuster la liste avec le propriétaire (ajouts, retraits)
-- [x] Étape 2 — **détails par recette** : les 237 recettes ont ingrédients + macros + étapes (reste : temps de préparation par recette)
-- [x] Étape 3 — **Plannings de la semaine** : onglet 📅 Semaine (7 jours, variété, saisons)
-- [x] Étape 4 — **Listes de courses** auto-générées + mutualisation des ingrédients (onglet 🛒 Courses)
-- [x] Étape 5 — **App PWA** : navigation, filtres, mode hors-ligne (service worker), installable sur mobile (reste : favoris)
-- [ ] Étape 6 — Suivi nutritionnel adapté à l'objectif (recomposition corporelle)
-
-## 📐 Schéma des données (`data/recipes.json`)
-
-```jsonc
-{
-  "recipes": [
-    {
-      "id": "burger-boeuf-sauce-light",      // identifiant unique (slug)
-      "titre": "Burger maison bœuf maigre…", // nom affiché
-      "categorie": "burgers",                 // référence vers categories[].id
-      "saisons": ["toute_annee"],             // toute_annee | printemps | ete | automne | hiver
-
-      // Champs des recettes détaillées (les 237 recettes) :
-      "portions": 2,                          // nombre de portions couvert par les quantités
-      "composantes": { "proteine": "Bœuf haché maigre", "legume": "Salade, tomate", "feculent": "Pain complet" },
-      "macros": { "kcal": 520, "proteines": 38, "glucides": 38, "lipides": 22 }, // PAR portion
-      "ingredients": [
-        { "item": "Bœuf haché 5%", "qty": 250, "unit": "g", "rayon": "Boucherie & volaille" }
-      ],
-      "etapes": ["Façonner les steaks…", "Cuire 3 min par face…"]
-    }
-  ]
-}
+```bash
+npm test
 ```
 
-Valeurs de `rayon` reconnues par l'app (toute autre valeur est signalée par `validate-data.mjs`) :
-`Fruits & légumes`, `Boucherie & volaille`, `Poissonnerie`, `Crémerie & œufs`, `Boulangerie`, `Épicerie`, `Sauces & condiments`, `Surgelés`, `Autre`.
+Node ≥ 20 (test runner intégré). Les tests couvrent chaque formule du brief §4 avec le profil de référence (homme, 36 ans, 180 cm, 80 kg, activité modérée, −15 % → 2 306 kcal · P 144 g · L 72 g · G 271 g · 31,5 points / jour · 242,5 points / semaine), les cas limites (plancher kcal, glucides tronqués, arrondi au demi-point, minimum 0, bonus fibres, malus sucres), la validation du profil, les pesées, les migrations de schéma et l'aller-retour export / import.
+
+## Structure
+
+```
+/
+├── index.html
+├── css/
+│   ├── app.css            # écran (palette chaleureuse, mode sombre auto, responsive)
+│   └── print.css          # impression
+├── js/
+│   ├── config.js          # tous les paramètres ajustables (facteurs, g/kg, points, plancher…)
+│   ├── nutrition.js       # formules §4 : âge, BMR, TDEE, cible, macros, points, budgets
+│   ├── profile.js         # modèle du profil, pesées, validation, cibles d'un profil
+│   ├── store.js           # localStorage, migrations, export / import JSON
+│   ├── app.js             # point d'entrée : état, navigation, actions
+│   └── ui/
+│       ├── dom.js         # gabarits HTML échappés, formats fr-BE, toast, fichiers
+│       ├── profile-form.js
+│       └── dashboard.js
+├── tests/                 # node --test
+├── CLAUDE.md              # brief + état d'avancement
+└── package.json           # scripts test / start, aucune dépendance
+```
+
+## Données et confidentialité
+
+Aucune donnée ne quitte l'appareil : le profil et l'historique de poids vivent dans le `localStorage` du navigateur. Le bouton **Exporter** produit un fichier `365food-sauvegarde-AAAA-MM-JJ.json` ré-importable sur un autre appareil.

@@ -1,128 +1,50 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <meta name="theme-color" content="#ffffff" />
-  <meta name="color-scheme" content="only light" />
-  <meta name="mobile-web-app-capable" content="yes" />
-  <meta name="apple-mobile-web-app-capable" content="yes" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-  <title>365Food — Mes repas sains & gourmands</title>
-  <meta name="description" content="Recettes saines et gourmandes adaptées à la Belgique et aux saisons, planning de la semaine, liste de courses et assistant fast-food / resto." />
-  <link rel="manifest" href="./manifest.webmanifest" />
-  <link rel="icon" href="./icon.svg" type="image/svg+xml" />
-  <link rel="apple-touch-icon" href="./icon-180.png" sizes="180x180" />
-  <link rel="stylesheet" href="./app.css" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#c2502a">
+  <meta name="description" content="Livre de recettes healthy plaisir : calcule tes besoins (kcal, protéines, lipides, glucides) et ton budget de points. Tout reste sur ton appareil.">
+  <title>365Food — Livre de recettes, macros &amp; points</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23c2502a'/%3E%3Ctext x='32' y='42' text-anchor='middle' font-family='Georgia,serif' font-size='26' font-weight='700' fill='%23fff7ee'%3E365%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="css/app.css">
+  <link rel="stylesheet" href="css/print.css" media="print">
 </head>
 <body>
-  <!-- Jeu d'icônes Google Material Symbols (chemins officiels, filled) -->
-  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
-    <symbol id="i-book" viewBox="0 0 24 24"><path d="M11 9H9V2H7v7H5V2H3v7c0 2.12 1.66 3.84 3.75 3.97V22h2.5v-9.03C11.34 12.84 13 11.12 13 9V2h-2v7zm5-3v8h2.5v8H21V2c-2.76 0-5 2.24-5 4z"/></symbol>
-    <symbol id="i-calendar" viewBox="0 0 24 24"><path d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1h-2zm3 18H5V8h14v11z"/></symbol>
-    <symbol id="i-cart" viewBox="0 0 24 24"><path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/></symbol>
-    <symbol id="i-bag" viewBox="0 0 24 24"><path d="M18 6h-2c0-2.21-1.79-4-4-4S8 3.79 8 6H6c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-6-2c1.1 0 2 .9 2 2h-4c0-1.1.9-2 2-2zm6 16H6V8h2v2c0 .55.45 1 1 1s1-.45 1-1V8h4v2c0 .55.45 1 1 1s1-.45 1-1V8h2v12z"/></symbol>
-    <symbol id="i-search" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></symbol>
-    <symbol id="i-shuffle" viewBox="0 0 24 24"><path d="M10.59 9.17L5.41 4 4 5.41l5.17 5.17 1.42-1.41zM14.5 4l2.04 2.04L4 18.59 5.41 20 17.96 7.46 20 9.5V4h-5.5zm.33 9.41l-1.41 1.41 3.13 3.13L14.5 20H20v-5.5l-2.04 2.04-3.13-3.13z"/></symbol>
-    <symbol id="i-copy" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></symbol>
-    <symbol id="i-undo" viewBox="0 0 24 24"><path d="M12.5 8c-2.65 0-5.05.99-6.9 2.6L2 7v9h9l-3.62-3.62c1.39-1.16 3.16-1.88 5.12-1.88 3.54 0 6.55 2.31 7.6 5.5l2.37-.78C21.08 11.03 17.15 8 12.5 8z"/></symbol>
-    <symbol id="i-chevron" viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></symbol>
-    <symbol id="i-close" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></symbol>
-  </svg>
+  <a class="skip-link" href="#main">Aller au contenu</a>
 
-  <header class="app-header">
+  <header class="topbar">
     <div class="brand">
-      <span class="brand-mark">365</span>
-      <div>
-        <h1>365Food</h1>
-        <p class="tagline">Manger sain, sans se priver</p>
+      <span class="brand__mark" aria-hidden="true">365</span>
+      <div class="brand__text">
+        <p class="brand__name">365Food</p>
+        <p class="brand__tagline">Livre de recettes · macros &amp; points</p>
       </div>
     </div>
+    <nav class="topbar__actions" aria-label="Actions principales">
+      <button type="button" class="btn btn--ghost" data-action="edit-profile">Profil</button>
+      <button type="button" class="btn btn--ghost" data-action="export">Exporter</button>
+      <button type="button" class="btn btn--ghost" data-action="import">Importer</button>
+      <input type="file" id="import-file" accept="application/json,.json" hidden>
+    </nav>
   </header>
 
-  <main class="views">
-  <!-- VUE RECETTES -->
-  <div id="view-recettes" class="view">
-    <div class="searchbar">
-      <div class="search-field">
-        <svg class="ico search-ico"><use href="#i-search" /></svg>
-        <input id="search" type="search" placeholder="Rechercher un plat, une sauce…" autocomplete="off" aria-label="Rechercher une recette" />
-      </div>
-    </div>
-    <nav class="filters" aria-label="Filtres">
-      <div class="filter-group" id="repas-filter" role="group" aria-label="Type de repas"></div>
-      <div class="filter-row">
-        <label class="season-select">
-          Saison
-          <select id="season-filter" aria-label="Saison"></select>
-        </label>
-        <span id="count" class="count" aria-live="polite"></span>
-      </div>
-    </nav>
-    <section id="results" class="results"><p class="loading">Chargement des recettes…</p></section>
-  </div>
-
-  <!-- VUE MA SEMAINE -->
-  <div id="view-semaine" class="view" hidden>
-    <div class="semaine-bar">
-      <div class="semaine-info" id="semaine-info"></div>
-      <div class="toggles">
-        <label class="seasonal-toggle"><input type="checkbox" id="semaine-seasonal" checked /> De saison</label>
-        <label class="seasonal-toggle"><input type="checkbox" id="semaine-detail" /> Recettes détaillées</label>
-      </div>
-      <div class="semaine-actions">
-        <button id="semaine-regen" class="btn" type="button"><svg class="ico"><use href="#i-shuffle" /></svg><span class="btn-lbl">Régénérer</span></button>
-        <button id="semaine-copy" class="btn ghost" type="button"><svg class="ico"><use href="#i-copy" /></svg><span class="btn-lbl" aria-live="polite">Copier</span></button>
-      </div>
-    </div>
-    <section id="semaine" class="results"><p class="loading">Chargement…</p></section>
-  </div>
-
-  <!-- VUE COURSES -->
-  <div id="view-courses" class="view" hidden>
-    <div class="semaine-bar">
-      <div class="semaine-info" id="courses-info"></div>
-      <div class="semaine-actions">
-        <button id="courses-copy" class="btn ghost" type="button"><svg class="ico"><use href="#i-copy" /></svg><span class="btn-lbl" aria-live="polite">Copier</span></button>
-        <button id="courses-reset" class="btn ghost" type="button"><svg class="ico"><use href="#i-undo" /></svg><span class="btn-lbl">Décocher</span></button>
-      </div>
-    </div>
-    <section id="courses" class="results"><p class="loading">Chargement…</p></section>
-  </div>
-
-  <!-- VUE MANGER DEHORS -->
-  <div id="view-resto" class="view" hidden>
-    <div class="searchbar">
-      <div class="search-field">
-        <svg class="ico search-ico"><use href="#i-search" /></svg>
-        <input id="resto-search" type="search" placeholder="Burger King, kebab, sushi, italien…" autocomplete="off" aria-label="Rechercher une enseigne" />
-      </div>
-    </div>
-    <section id="resto" class="results"><p class="loading">Chargement…</p></section>
-  </div>
+  <main id="main" class="container" tabindex="-1">
+    <h1 class="visually-hidden">365Food</h1>
+    <section id="view-dashboard" aria-label="Tableau de bord" hidden></section>
+    <section id="view-profile" aria-label="Profil" hidden></section>
+    <noscript>
+      <p class="card">Cette application a besoin de JavaScript pour calculer tes besoins et enregistrer ton profil.</p>
+    </noscript>
   </main>
 
-  <footer class="app-footer">
-    <span id="install-hint"></span>
-    <span>Belgique · de saison · objectif athlétique</span>
+  <footer class="footer">
+    <p>Tes données restent sur cet appareil : aucun serveur, aucun traqueur. Pense à exporter une sauvegarde de temps en temps.</p>
   </footer>
 
-  <!-- Barre de navigation (pas un tablist ARIA : l'état actif est porté par aria-current) -->
-  <nav class="tabbar" aria-label="Navigation principale">
-    <button class="tab" id="tab-recettes" data-view="recettes" type="button" aria-current="page">
-      <svg class="ico"><use href="#i-book" /></svg><span class="tab-lbl">Recettes</span>
-    </button>
-    <button class="tab" id="tab-semaine" data-view="semaine" type="button">
-      <svg class="ico"><use href="#i-calendar" /></svg><span class="tab-lbl">Semaine</span>
-    </button>
-    <button class="tab" id="tab-courses" data-view="courses" type="button">
-      <svg class="ico"><use href="#i-cart" /></svg><span class="tab-lbl">Courses</span>
-    </button>
-    <button class="tab" id="tab-resto" data-view="resto" type="button">
-      <svg class="ico"><use href="#i-bag" /></svg><span class="tab-lbl">Dehors</span>
-    </button>
-  </nav>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
 
-  <script src="./app.js" type="module"></script>
+  <script type="module" src="js/app.js"></script>
 </body>
 </html>
