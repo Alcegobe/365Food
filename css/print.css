@@ -1,33 +1,50 @@
-/* 365Food — impression : contenu utile seulement, sur fond blanc. */
+/* 365Food — impression. Une recette = une fiche A4 ; en A5, deux fiches par feuille A4 paysage. */
 
 @page {
   size: A4;
-  margin: 16mm;
+  margin: 14mm;
 }
 
 body {
   background: #fff !important;
   color: #000 !important;
+  padding: 0 !important;
 }
 
-.topbar__actions,
+.container {
+  width: 100% !important;
+  padding: 0 !important;
+}
+
+.topbar,
+.tabbar,
 .skip-link,
-.footer,
 .toast,
 .btn,
 .icon-btn,
 .inline-form,
-#view-profile,
-.alert {
+.alert,
+.fiche__top,
+.stepper button {
   display: none !important;
 }
 
 .tile,
+.recipe-card,
 .avatar {
   background: #fff !important;
   border: 1px solid #bbb !important;
   box-shadow: none !important;
   break-inside: avoid;
+}
+
+.tile--dark {
+  background: #000 !important;
+  color: #fff !important;
+}
+
+.tile--dark .tile__value small {
+  color: #fff !important;
 }
 
 .pill__bar {
@@ -38,10 +55,109 @@ body {
   background: #ddd !important;
 }
 
+.stepper {
+  background: none !important;
+  padding: 0 !important;
+}
+
 .tiles {
   grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
 }
 
+.tiles--macros {
+  grid-template-columns: repeat(6, minmax(0, 1fr)) !important;
+}
+
 .grid {
   grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+}
+
+.fiche {
+  font-size: 0.92rem;
+  line-height: 1.35;
+}
+
+.fiche .headline {
+  font-size: 1.8rem;
+  margin-bottom: 0.3rem;
+}
+
+.fiche .subline {
+  margin-bottom: 0.7rem;
+}
+
+.fiche .tile {
+  padding: 0.7rem 0.85rem;
+  gap: 0.5rem;
+  margin: 0 0 4mm;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+.fiche .tile__title {
+  font-size: 1rem;
+  break-after: avoid;
+}
+
+.fiche .tiles--macros .tile {
+  margin: 0;
+  break-inside: avoid;
+}
+
+.fiche .tiles--macros .tile__value {
+  font-size: 1.2rem;
+}
+
+.fiche .ingredients li {
+  padding: 0.3rem 0;
+  break-inside: avoid;
+}
+
+.fiche .steps {
+  gap: 0.35rem;
+}
+
+.fiche .steps li,
+.fiche .plain-list li {
+  break-inside: avoid;
+}
+
+/* Le corps de la fiche coule en deux colonnes ; les cartes peuvent se couper entre deux lignes. */
+.fiche__body,
+.fiche__body .grid__col {
+  display: block !important;
+}
+
+.fiche__body .grid__col {
+  display: contents !important;
+}
+
+.fiche__body {
+  column-count: 2;
+  column-gap: 8mm;
+  margin-top: 4mm;
+}
+
+.fiche__body .tile {
+  break-inside: auto;
+}
+
+/* A5 : toute la fiche coule sur les deux colonnes d'une feuille A4 paysage ; coupée en deux, deux cartes A5. */
+body[data-print="a5"] .fiche {
+  column-count: 2;
+  column-gap: 16mm;
+  font-size: 0.86rem;
+}
+
+body[data-print="a5"] .fiche .headline {
+  font-size: 1.4rem;
+}
+
+body[data-print="a5"] .tiles--macros {
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+}
+
+body[data-print="a5"] .fiche__body {
+  column-count: auto;
+  margin-top: 0;
 }

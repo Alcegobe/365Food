@@ -211,7 +211,7 @@ points(recette / portion) = kcal / 50  −  protéines(g) / 10  +  bonus_malus
 | Version | État | Notes |
 |---------|------|-------|
 | **V0 — Socle** | ✅ livrée | profil, cibles, budget de points, localStorage, export/import JSON, tests des formules (`npm test`) |
-| V1 — Recettes | ⏳ à faire | attend les 3 recettes de référence fournies par le propriétaire |
+| **V1 — Recettes** | ✅ livrée | `data/ingredients.json`, `data/recipes.json` (3 recettes de référence rédigées par Claude : sauce blanche kebab, pancakes protéinés, smash burger), catalogue + filtres, fiche avec portions ajustables, impression A4/A5, routes `#/…` |
 | V2 — Planning | ⏳ à faire | |
 | V3 — Contenu | ⏳ à faire | répondre d'abord au §8 |
 | V4 — Finitions | ⏳ à faire | |
@@ -222,3 +222,4 @@ Règles de travail pour les prochaines sessions :
 - Toute formule (§4) vit dans `js/nutrition.js`, ses paramètres dans `js/config.js`, et a un test dans `tests/`.
 - Lancer `npm test` avant chaque commit (Node ≥ 20, aucune dépendance).
 - Interface en français, unités métriques, aucune donnée ne quitte l'appareil.
+- Interface sobre : pas de texte explicatif superflu (rappels de confidentialité, conseils de sauvegarde, aides de champ évidentes).

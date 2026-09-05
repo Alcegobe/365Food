@@ -1,0 +1,107 @@
+{
+  "version": 1,
+  "recipes": [
+    {
+      "id": "sauce-blanche-kebab",
+      "title": "Sauce blanche façon kebab",
+      "category": "sauces",
+      "tags": ["haute-proteine", "sans-cuisson", "express"],
+      "servings": 4,
+      "portionNote": "1 portion ≈ 3 cuillères à soupe",
+      "prepMin": 5,
+      "cookMin": 0,
+      "ingredients": [
+        { "ref": "skyr-nature-0", "qty": 150, "unit": "g" },
+        { "ref": "mayonnaise-allegee", "qty": 15, "unit": "g", "label": "mayonnaise allégée (1 c. à s.)" },
+        { "ref": "ail", "qty": 1, "unit": "pce" },
+        { "ref": "citron-jus", "qty": 10, "unit": "ml" },
+        { "ref": "herbes-sechees", "qty": 2, "unit": "g", "label": "menthe séchée (1 c. à c.)" },
+        { "ref": "cumin", "qty": 1, "unit": "g", "label": "cumin moulu (½ c. à c.)" },
+        { "ref": "sel", "qty": 1, "unit": "g" },
+        { "ref": "poivre", "qty": 0.5, "unit": "g" }
+      ],
+      "steps": [
+        "Presse l'ail, ou hache-le très fin.",
+        "Mélange le skyr, la mayonnaise, l'ail, le jus de citron, la menthe et le cumin jusqu'à obtenir une sauce lisse.",
+        "Sale, poivre, goûte : ajoute un peu de citron si tu la veux plus vive.",
+        "Laisse reposer 30 min au frigo : l'ail et la menthe infusent, la sauce épaissit."
+      ],
+      "whyLight": "Le skyr remplace la mayonnaise : cinq fois moins de calories et trois fois plus de protéines. Une seule cuillère de mayo allégée suffit à garder le côté gras en bouche.",
+      "leftoverTip": "Se garde 3 jours au frigo dans un pot fermé. Parfaite avec un kebab maison, des crudités ou des frites à l'air fryer.",
+      "variants": [
+        "Version tzatziki : ajoute 80 g de concombre râpé et bien essoré.",
+        "Version samouraï : remplace la menthe par 1 c. à c. de harissa et 1 c. à c. de ketchup."
+      ]
+    },
+    {
+      "id": "pancakes-proteines-banane",
+      "title": "Pancakes protéinés à la banane",
+      "category": "matin",
+      "tags": ["haute-proteine", "express", "vegetarien"],
+      "servings": 1,
+      "portionNote": "4 pancakes avec leur garniture",
+      "prepMin": 5,
+      "cookMin": 10,
+      "ingredients": [
+        { "ref": "flocons-avoine", "qty": 40, "unit": "g" },
+        { "ref": "banane", "qty": 1, "unit": "pce", "label": "banane bien mûre" },
+        { "ref": "oeuf", "qty": 1, "unit": "pce" },
+        { "ref": "skyr-nature-0", "qty": 100, "unit": "g", "label": "skyr nature 0 % (la moitié dans la pâte, le reste pour servir)" },
+        { "ref": "levure-chimique", "qty": 3, "unit": "g", "label": "levure chimique (½ c. à c.)" },
+        { "ref": "cannelle", "qty": 1, "unit": "g" },
+        { "ref": "myrtilles", "qty": 60, "unit": "g" },
+        { "ref": "sirop-erable", "qty": 10, "unit": "g", "label": "sirop d'érable (1 c. à c.)" }
+      ],
+      "steps": [
+        "Mixe les flocons d'avoine, la banane, l'œuf, la moitié du skyr, la levure et la cannelle jusqu'à obtenir une pâte lisse. Laisse gonfler 5 min.",
+        "Chauffe une poêle antiadhésive à feu moyen, sans matière grasse.",
+        "Verse 4 petits pancakes. Quand des bulles apparaissent et que les bords sont secs, après 2 min environ, retourne et laisse encore 1 min.",
+        "Empile, ajoute le reste du skyr, les myrtilles et le filet de sirop d'érable."
+      ],
+      "whyLight": "Pas de farine, pas de beurre, pas de sucre dans la pâte : l'avoine et la banane font le liant, l'œuf et le skyr apportent près de 25 g de protéines qui tiennent jusqu'à midi.",
+      "leftoverTip": "Les pancakes se gardent 2 jours au frigo et se réchauffent 20 s au micro-ondes. Double la pâte pour en avoir pour deux matins.",
+      "variants": [
+        "Version chocolat : 10 g de cacao non sucré dans la pâte.",
+        "Sans banane : 100 g de compote sans sucres ajoutés."
+      ]
+    },
+    {
+      "id": "smash-burger-light",
+      "title": "Smash burger façon fast-food",
+      "category": "soir",
+      "tags": ["haute-proteine", "restes-midi", "batch"],
+      "servings": 2,
+      "portionNote": "1 double smash burger",
+      "prepMin": 10,
+      "cookMin": 12,
+      "ingredients": [
+        { "ref": "boeuf-hache-5", "qty": 250, "unit": "g" },
+        { "ref": "pain-burger-complet", "qty": 2, "unit": "pce" },
+        { "ref": "cheddar-allege-tranches", "qty": 2, "unit": "pce" },
+        { "ref": "oignon", "qty": 50, "unit": "g", "label": "oignon (½ oignon)" },
+        { "ref": "cornichons", "qty": 30, "unit": "g" },
+        { "ref": "salade-iceberg", "qty": 40, "unit": "g" },
+        { "ref": "tomate", "qty": 80, "unit": "g", "label": "tomate (4 tranches)" },
+        { "ref": "skyr-nature-0", "qty": 60, "unit": "g", "label": "skyr nature 0 % (pour la sauce)" },
+        { "ref": "ketchup", "qty": 20, "unit": "g", "label": "ketchup (pour la sauce)" },
+        { "ref": "moutarde", "qty": 10, "unit": "g", "label": "moutarde (pour la sauce)" },
+        { "ref": "sel", "qty": 1, "unit": "g" },
+        { "ref": "poivre", "qty": 0.5, "unit": "g" }
+      ],
+      "steps": [
+        "Sors la viande 15 min avant. Divise-la en 4 boules de 60 g environ, sans les tasser.",
+        "Prépare la sauce : mélange le skyr, le ketchup, la moutarde et 10 g de cornichons hachés. Émince l'oignon, tranche la tomate, lave la salade.",
+        "Chauffe une poêle en fonte ou en acier à feu vif, à sec. Dépose 2 boules, écrase-les très fort avec une spatule pendant 10 secondes pour obtenir des galettes fines. Sale, poivre, et laisse 1 min sans toucher.",
+        "Retourne, pose une demi-tranche de cheddar sur chaque galette, laisse 45 secondes de plus. Recommence avec les 2 boules restantes.",
+        "Toaste les pains coupés en deux 1 min dans la poêle encore chaude, côté mie.",
+        "Monte le burger : sauce sur les deux faces du pain, salade, 2 galettes empilées, oignon, cornichons, tomate. Sers aussitôt."
+      ],
+      "whyLight": "Bœuf 5 %, cheddar allégé, pain complet et sauce au skyr à la place de la mayonnaise : le goût du fast-food avec deux fois moins de gras, et un pain qui cale vraiment.",
+      "leftoverTip": "Le lendemain midi : réchauffe les galettes 1 min à la poêle ou 30 s au micro-ondes, toaste le pain à part et remonte le burger avec des crudités fraîches.",
+      "variants": [
+        "Version poulet : 250 g de haché de poulet, cuisson 1 min 30 par face.",
+        "Version menu : ajoute 150 g de frites au four passées 15 min à l'air fryer à 200 °C."
+      ]
+    }
+  ]
+}
