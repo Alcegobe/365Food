@@ -1,4 +1,4 @@
-/* 365Food — impression : on ne garde que le contenu utile, sur fond blanc. */
+/* 365Food — impression : contenu utile seulement, sur fond blanc. */
 
 @page {
   size: A4;
@@ -15,28 +15,31 @@ body {
 .footer,
 .toast,
 .btn,
+.icon-btn,
 .inline-form,
 #view-profile,
 .alert {
   display: none !important;
 }
 
-.card,
-.hero {
-  box-shadow: none !important;
+.tile,
+.avatar {
+  background: #fff !important;
   border: 1px solid #bbb !important;
+  box-shadow: none !important;
   break-inside: avoid;
 }
 
-.hero {
-  background: #fff !important;
-  color: #000 !important;
+.pill__bar {
+  background: #000 !important;
 }
 
-.stat {
-  background: #fff !important;
-  border: 1px solid #bbb !important;
-  color: #000 !important;
+.pill__cap {
+  background: #ddd !important;
+}
+
+.tiles {
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
 }
 
 .grid {

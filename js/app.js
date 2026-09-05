@@ -56,8 +56,10 @@ function renderAll() {
   document.body.dataset.view = view;
 
   if (view === 'dashboard') {
+    views.profile.replaceChildren();
     renderDashboard(views.dashboard, { profile: state.profile, targets: targetsForProfile(state.profile) });
   } else {
+    views.dashboard.replaceChildren();
     renderProfileForm(views.profile, { profile: state.profile ?? newProfile(), isFirstRun: !valid });
   }
 }

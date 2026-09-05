@@ -57,6 +57,7 @@ const dec2Format = new Intl.NumberFormat(LOCALE, { maximumFractionDigits: 2 });
 const longDate = new Intl.DateTimeFormat(LOCALE, { day: 'numeric', month: 'long', year: 'numeric' });
 const shortDate = new Intl.DateTimeFormat(LOCALE, { day: '2-digit', month: '2-digit', year: 'numeric' });
 const weekdayDate = new Intl.DateTimeFormat(LOCALE, { weekday: 'long', day: 'numeric', month: 'long' });
+const dayMonth = new Intl.DateTimeFormat(LOCALE, { day: '2-digit', month: '2-digit' });
 
 function toLocalDate(iso) {
   const parts = parseDateParts(iso);
@@ -75,6 +76,7 @@ export const fmt = {
   date: (iso) => (toLocalDate(iso) ? longDate.format(toLocalDate(iso)) : String(iso)),
   dateShort: (iso) => (toLocalDate(iso) ? shortDate.format(toLocalDate(iso)) : String(iso)),
   weekdayDate: (iso) => (toLocalDate(iso) ? weekdayDate.format(toLocalDate(iso)) : String(iso)),
+  dayMonth: (iso) => (toLocalDate(iso) ? dayMonth.format(toLocalDate(iso)) : String(iso)),
 };
 
 /* ---------- Toast ---------- */

@@ -6,10 +6,10 @@ Le cahier des charges complet est dans [`CLAUDE.md`](./CLAUDE.md) (formules §4,
 
 ## État : V0 — Socle ✅
 
-- **Profil** : date de naissance (âge calculé), sexe, taille, poids, activité, objectif avec ajustement réglable, fréquence de pesée, réglages avancés (g/kg de protéines et de lipides).
+- **Profil** : prénom facultatif, date de naissance (âge calculé), sexe, taille, poids, activité, objectif avec ajustement réglable, fréquence de pesée, réglages avancés (g/kg de protéines et de lipides).
 - **Cibles du jour** : métabolisme de base (Mifflin-St Jeor) → dépense journalière → cible kcal (avec plancher de sécurité) → protéines / lipides / glucides.
 - **Budget de points** quotidien et hebdomadaire (jokers +10 %).
-- **Pesées** : historique conservé, cibles recalculées à chaque nouvelle pesée.
+- **Pesées** : historique conservé, graphique en pilules des 7 dernières pesées, cibles recalculées à chaque nouvelle pesée.
 - **Stockage local** (localStorage), **export / import JSON** de toutes les données, effacement.
 - **Tests unitaires** des formules et du stockage (`npm test`, aucune dépendance).
 
@@ -40,7 +40,7 @@ Node ≥ 20 (test runner intégré). Les tests couvrent chaque formule du brief 
 /
 ├── index.html
 ├── css/
-│   ├── app.css            # écran (palette chaleureuse, mode sombre auto, responsive)
+│   ├── app.css            # écran (style « app santé » : dégradé menthe/gris, tuiles, mode sombre auto)
 │   └── print.css          # impression
 ├── js/
 │   ├── config.js          # tous les paramètres ajustables (facteurs, g/kg, points, plancher…)

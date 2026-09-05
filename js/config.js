@@ -5,11 +5,11 @@
 
 /** Facteurs d'activité appliqués au métabolisme de base (§4.3). */
 export const ACTIVITY_LEVELS = Object.freeze([
-  { factor: 1.2, label: 'Sédentaire', hint: 'Travail assis, peu de marche' },
-  { factor: 1.375, label: 'Léger', hint: '1 à 3 séances légères par semaine' },
-  { factor: 1.55, label: 'Modéré', hint: '3 à 5 séances par semaine' },
-  { factor: 1.725, label: 'Actif', hint: '6 à 7 séances par semaine' },
-  { factor: 1.9, label: 'Très actif', hint: 'Sport quotidien intense ou travail physique' },
+  { factor: 1.2, label: 'Sédentaire', hint: 'bureau, peu de marche' },
+  { factor: 1.375, label: 'Léger', hint: '1 à 3 séances légères / sem.' },
+  { factor: 1.55, label: 'Modéré', hint: '3 à 5 séances / sem.' },
+  { factor: 1.725, label: 'Actif', hint: '6 à 7 séances / sem.' },
+  { factor: 1.9, label: 'Très actif', hint: 'sport intense quotidien ou métier physique' },
 ]);
 
 /** Objectifs : ajustement kcal par défaut (%) et protéines par défaut (g/kg). */
@@ -60,6 +60,7 @@ export const DEFAULT_WEIGH_IN_EVERY_DAYS = 14;
 
 /** Bornes de validation du profil. */
 export const PROFILE_LIMITS = Object.freeze({
+  nameMaxLength: 40,
   ageYears: Object.freeze({ min: 10, max: 120 }),
   heightCm: Object.freeze({ min: 100, max: 250 }),
   weightKg: Object.freeze({ min: 30, max: 300 }),

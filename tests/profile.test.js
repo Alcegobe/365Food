@@ -86,6 +86,8 @@ describe('validateProfile', () => {
     assert.ok(fields.includes('weights'));
   });
   const cases = [
+    ['name', { name: 'x'.repeat(41) }],
+    ['name', { name: 42 }],
     ['birthDate', { birthDate: '01/01/1990' }],
     ['birthDate', { birthDate: '2030-01-01' }],
     ['birthDate', { birthDate: '2020-01-01' }],
@@ -112,6 +114,10 @@ describe('validateProfile', () => {
       assert.match(errors[0].message, /\S/);
     });
   }
+  it('le prénom est facultatif', () => {
+    assert.deepEqual(validateProfile({ ...briefProfile(), name: '' }, TODAY), []);
+    assert.deepEqual(validateProfile({ ...briefProfile(), name: 'Katrina' }, TODAY), []);
+  });
   it('les surcharges g/kg à null sont acceptées', () => {
     assert.deepEqual(validateProfile({ ...briefProfile(), proteinPerKg: null, fatPerKg: null }, TODAY), []);
   });

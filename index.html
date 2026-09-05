@@ -2,12 +2,13 @@
 <html lang="fr">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="color-scheme" content="light dark">
-  <meta name="theme-color" content="#c2502a">
+  <meta name="theme-color" content="#e4eeea" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#181e1c" media="(prefers-color-scheme: dark)">
   <meta name="description" content="Livre de recettes healthy plaisir : calcule tes besoins (kcal, protéines, lipides, glucides) et ton budget de points. Tout reste sur ton appareil.">
   <title>365Food — Livre de recettes, macros &amp; points</title>
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23c2502a'/%3E%3Ctext x='32' y='42' text-anchor='middle' font-family='Georgia,serif' font-size='26' font-weight='700' fill='%23fff7ee'%3E365%3C/text%3E%3C/svg%3E">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23101413'/%3E%3Ccircle cx='32' cy='32' r='11' fill='%23ffffff'/%3E%3C/svg%3E">
   <link rel="stylesheet" href="css/app.css">
   <link rel="stylesheet" href="css/print.css" media="print">
 </head>
@@ -15,19 +16,13 @@
   <a class="skip-link" href="#main">Aller au contenu</a>
 
   <header class="topbar">
-    <div class="brand">
-      <span class="brand__mark" aria-hidden="true">365</span>
-      <div class="brand__text">
-        <p class="brand__name">365Food</p>
-        <p class="brand__tagline">Livre de recettes · macros &amp; points</p>
-      </div>
-    </div>
-    <nav class="topbar__actions" aria-label="Actions principales">
-      <button type="button" class="btn btn--ghost" data-action="edit-profile">Profil</button>
-      <button type="button" class="btn btn--ghost" data-action="export">Exporter</button>
-      <button type="button" class="btn btn--ghost" data-action="import">Importer</button>
+    <a class="brand" href="./" aria-label="365Food, accueil"><span class="brand__dot" aria-hidden="true"></span>365Food</a>
+    <div class="topbar__actions">
+      <button type="button" class="icon-btn" data-action="edit-profile" aria-label="Modifier le profil" title="Profil">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+      </button>
       <input type="file" id="import-file" accept="application/json,.json" hidden>
-    </nav>
+    </div>
   </header>
 
   <main id="main" class="container" tabindex="-1">
@@ -35,7 +30,7 @@
     <section id="view-dashboard" aria-label="Tableau de bord" hidden></section>
     <section id="view-profile" aria-label="Profil" hidden></section>
     <noscript>
-      <p class="card">Cette application a besoin de JavaScript pour calculer tes besoins et enregistrer ton profil.</p>
+      <p class="tile">Cette application a besoin de JavaScript pour calculer tes besoins et enregistrer ton profil.</p>
     </noscript>
   </main>
 

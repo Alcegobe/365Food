@@ -80,6 +80,7 @@ describe('normalizeState et migrations', () => {
     assert.equal(state.profile.goal, 'loss');
     assert.equal(state.profile.weighInEveryDays, 14);
     assert.equal(state.profile.proteinPerKg, null);
+    assert.equal(state.profile.name, '');
     assert.deepEqual(state.profile.weights, []);
     assert.equal(state.profile.sex, 'f');
   });

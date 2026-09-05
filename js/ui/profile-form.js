@@ -6,7 +6,7 @@ import { parseDateParts } from '../nutrition.js';
 import { addWeighIn, currentWeighIn, newProfile, targetsForProfile, todayISO, validateProfile } from '../profile.js';
 import { fmt, html, render } from './dom.js';
 
-const FIELD_ORDER = ['birthDate', 'sex', 'heightCm', 'weights', 'activity', 'goal', 'goalAdjustPct', 'weighInEveryDays', 'proteinPerKg', 'fatPerKg'];
+const FIELD_ORDER = ['name', 'birthDate', 'sex', 'heightCm', 'weights', 'activity', 'goal', 'goalAdjustPct', 'weighInEveryDays', 'proteinPerKg', 'fatPerKg'];
 
 function numberOrNull(value) {
   if (value === null || value === undefined) return null;
@@ -49,17 +49,12 @@ export function renderProfileForm(container, { profile, isFirstRun, today = new 
     html`
       ${isFirstRun
         ? html`
-            <div class="welcome">
-              <h2>Bienvenue !</h2>
-              <p>Pour calculer tes besoins du jour (kcal, protéines, lipides, glucides) et ton budget de points,
-                 il me faut quelques infos. Tout reste sur cet appareil.</p>
-            </div>
+            <h2 class="headline">Bienvenue</h2>
+            <p class="lead">Pour calculer tes besoins du jour et ton budget de points, il me faut quelques infos. Tout reste sur cet appareil.</p>
           `
         : html`
-            <div class="welcome">
-              <h2>Ton profil</h2>
-              <p>Les cibles se recalculent automatiquement après chaque modification.</p>
-            </div>
+            <h2 class="headline">Ton profil</h2>
+            <p class="lead">Les cibles se recalculent automatiquement après chaque modification.</p>
           `}
 
       <form id="profile-form" class="form" novalidate data-goal="${p.goal}">
@@ -67,13 +62,21 @@ export function renderProfileForm(container, { profile, isFirstRun, today = new 
 
         <fieldset>
           <legend>Toi</legend>
-          <div class="fields fields--3">
+          <div class="fields fields--2">
+            ${field({
+              name: 'name',
+              label: 'Prénom',
+              hint: 'Facultatif, juste pour te saluer.',
+              control: html`<input class="input" id="f-name" name="name" type="text" value="${p.name ?? ''}" maxlength="40" autocomplete="given-name" aria-describedby="f-name-hint f-name-error">`,
+            })}
             ${field({
               name: 'birthDate',
               label: 'Date de naissance',
               hint: "L'âge se calcule tout seul.",
               control: html`<input class="input" id="f-birthDate" name="birthDate" type="date" value="${p.birthDate ?? ''}" max="${todayIso}" aria-describedby="f-birthDate-hint f-birthDate-error">`,
             })}
+          </div>
+          <div class="fields fields--2">
             <div class="field" data-field="sex">
               <span class="field__label" id="sex-label">Sexe</span>
               <div class="choices" role="radiogroup" aria-labelledby="sex-label">
@@ -142,7 +145,7 @@ export function renderProfileForm(container, { profile, isFirstRun, today = new 
             </div>
             <p class="field__error" id="f-goal-error" aria-live="polite"></p>
           </div>
-          <div class="fields fields--2" style="margin-top: 0.9rem">
+          <div class="fields fields--2">
             ${field({
               name: 'goalAdjustPct',
               label: 'Ajustement de la dépense',
@@ -180,7 +183,7 @@ export function renderProfileForm(container, { profile, isFirstRun, today = new 
 
         <div class="form__actions">
           <button type="submit" class="btn btn--primary">${isFirstRun ? 'Calculer mes cibles' : 'Enregistrer'}</button>
-          ${isFirstRun ? '' : html`<button type="button" class="btn btn--ghost" data-action="cancel-profile">Annuler</button>`}
+          ${isFirstRun ? '' : html`<button type="button" class="btn" data-action="cancel-profile">Annuler</button>`}
         </div>
       </form>
     `,
@@ -208,6 +211,7 @@ export function readProfileForm(form, baseProfile, today = new Date()) {
 
   let profile = {
     ...(baseProfile ?? newProfile()),
+    name: String(data.get('name') ?? '').trim(),
     birthDate: String(data.get('birthDate') ?? '').trim(),
     sex: data.get('sex'),
     heightCm: Number.isNaN(heightCm) ? null : heightCm,

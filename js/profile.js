@@ -13,6 +13,8 @@ export function todayISO(date = new Date()) {
 /** Profil vierge (un seul champ est pré-rempli : les valeurs par défaut du brief). */
 export function newProfile(overrides = {}) {
   return {
+    /** Prénom facultatif, uniquement pour l'affichage. */
+    name: '',
     birthDate: '',
     sex: 'm',
     heightCm: null,
@@ -81,6 +83,10 @@ export function validateProfile(profile, today = new Date()) {
   const errors = [];
   const push = (field, message) => errors.push({ field, message });
   if (!profile || typeof profile !== 'object') return [{ field: 'profile', message: 'Profil absent.' }];
+
+  if (profile.name !== undefined && (typeof profile.name !== 'string' || profile.name.length > PROFILE_LIMITS.nameMaxLength)) {
+    push('name', `Le prénom ne doit pas dépasser ${PROFILE_LIMITS.nameMaxLength} caractères.`);
+  }
 
   const age = ageFromBirthDate(profile.birthDate, today);
   if (age === null) push('birthDate', 'Date de naissance invalide.');
