@@ -52,6 +52,7 @@ Node ≥ 20 (test runner intégré). Les tests couvrent chaque formule du brief 
 │       ├── dom.js         # gabarits HTML échappés, formats fr-BE, toast, fichiers
 │       ├── profile-form.js
 │       └── dashboard.js
+├── sw.js                  # désinstalle le service worker de l'ancienne app (un vrai arrivera en V4)
 ├── tests/                 # node --test
 ├── CLAUDE.md              # brief + état d'avancement
 └── package.json           # scripts test / start, aucune dépendance
