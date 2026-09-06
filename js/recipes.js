@@ -37,7 +37,7 @@ function emptyNutrition() {
   return { kcal: 0, protein: 0, fat: 0, carbs: 0, fiber: 0, salt: 0, sugars: 0, addedSugar: 0 };
 }
 
-function round1(value) {
+export function round1(value) {
   return Math.round(value * 10) / 10;
 }
 

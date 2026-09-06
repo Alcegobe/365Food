@@ -1,13 +1,16 @@
 /**
- * Point d'entrée : état, routage (#/…), catalogue, actions.
+ * Point d'entrée : état, routage (#/…), catalogue, planning, actions.
  */
-import { addWeighIn, isProfileValid, newProfile, removeWeighIn, targetsForProfile } from './profile.js';
-import { RECIPE_SERVINGS_MAX } from './config.js';
+import { RECIPE_SERVINGS_MAX, PLANNER_LIMITS } from './config.js';
+import { parseDateParts } from './nutrition.js';
+import { addDays, addItem, addLeftovers, findItem, removeItem, setPortions, toggleShopping, weekDates, weekStart } from './planner.js';
+import { addWeighIn, isProfileValid, newProfile, removeWeighIn, targetsForProfile, todayISO } from './profile.js';
 import { emptyFilters, filterRecipes, loadCatalog, scaleRecipe } from './recipes.js';
-import { parseRoute } from './router.js';
+import { parseRoute, routeHash } from './router.js';
 import { clearState, emptyState, exportFileName, exportState, importState, loadState, saveState } from './store.js';
 import { renderDashboard } from './ui/dashboard.js';
 import { downloadTextFile, readFileAsText, toast } from './ui/dom.js';
+import { renderPicker, renderPlanRecipe, renderPlanner } from './ui/planner.js';
 import { readProfileForm, renderProfileForm, showFormErrors } from './ui/profile-form.js';
 import { renderRecipeMissing, renderRecipeView } from './ui/recipe-detail.js';
 import { renderRecipeResults, renderRecipesView, syncFilterControls } from './ui/recipes-list.js';
@@ -35,9 +38,11 @@ const views = {
   today: document.getElementById('view-dashboard'),
   recipes: document.getElementById('view-recipes'),
   recipe: document.getElementById('view-recipe'),
+  planner: document.getElementById('view-planner'),
   profile: document.getElementById('view-profile'),
 };
 const importInput = document.getElementById('import-file');
+const sheet = document.getElementById('sheet');
 const main = document.getElementById('main');
 
 let state = loadState(storage);
@@ -45,6 +50,8 @@ let catalog = null;
 let catalogPromise = null;
 let filters = emptyFilters();
 const servingsById = new Map();
+let plannerFocus = null;
+let picker = null;
 let lastRouteKey = '';
 
 /* ---------- État ---------- */
@@ -75,11 +82,23 @@ function ensureCatalog() {
   return catalogPromise;
 }
 
+/** Charge le catalogue puis re-rend la route donnée si elle est toujours active. */
+function whenCatalog(target, routeName, renderFn) {
+  target.textContent = 'Chargement…';
+  ensureCatalog()
+    .then(() => {
+      if (currentRoute().name === routeName) renderFn();
+    })
+    .catch(() => {
+      target.textContent = 'Impossible de charger les recettes.';
+    });
+}
+
 /* ---------- Rendu ---------- */
 
 function renderAll() {
   const route = currentRoute();
-  const routeKey = `${route.name}:${route.id ?? ''}`;
+  const routeKey = `${route.name}:${route.id ?? route.date ?? ''}`;
   const changed = routeKey !== lastRouteKey;
   lastRouteKey = routeKey;
 
@@ -101,16 +120,35 @@ function renderAll() {
     case 'recipe':
       renderRecipePage(route.id);
       break;
+    case 'planner':
+      renderPlannerPage(route.date);
+      break;
     case 'profile':
       renderProfileForm(views.profile, { profile: state.profile ?? newProfile(), isFirstRun: !isProfileValid(state.profile) });
       break;
     default:
-      renderDashboard(views.today, { profile: state.profile, targets: targetsForProfile(state.profile) });
+      renderDashboardPage();
   }
 
   if (changed) {
     window.scrollTo({ top: 0, behavior: 'instant' });
     main.focus({ preventScroll: true });
+  }
+}
+
+function renderDashboardPage() {
+  renderDashboard(views.today, {
+    profile: state.profile,
+    targets: targetsForProfile(state.profile),
+    planner: state.planner,
+    catalog,
+  });
+  if (!catalog) {
+    ensureCatalog()
+      .then(() => {
+        if (currentRoute().name === 'today') renderDashboardPage();
+      })
+      .catch(() => {});
   }
 }
 
@@ -123,14 +161,7 @@ function renderResults() {
   const target = views.recipes.querySelector('#recipe-results');
   if (!target) return;
   if (!catalog) {
-    target.textContent = 'Chargement…';
-    ensureCatalog()
-      .then(() => {
-        if (currentRoute().name === 'recipes') renderResults();
-      })
-      .catch(() => {
-        target.textContent = 'Impossible de charger les recettes.';
-      });
+    whenCatalog(target, 'recipes', renderResults);
     return;
   }
   renderRecipeResults(target, {
@@ -142,15 +173,7 @@ function renderResults() {
 
 function renderRecipePage(id) {
   if (!catalog) {
-    views.recipe.textContent = 'Chargement…';
-    ensureCatalog()
-      .then(() => {
-        const route = currentRoute();
-        if (route.name === 'recipe' && route.id === id) renderRecipePage(id);
-      })
-      .catch(() => {
-        views.recipe.textContent = 'Impossible de charger les recettes.';
-      });
+    whenCatalog(views.recipe, 'recipe', () => renderRecipePage(id));
     return;
   }
   const recipe = catalog.recipes.find((r) => r.id === id);
@@ -164,6 +187,53 @@ function renderRecipePage(id) {
     nutrition: catalog.nutritionById.get(id),
     ingredientIndex: catalog.ingredientIndex,
   });
+}
+
+function renderPlannerPage(routeDate) {
+  if (routeDate && parseDateParts(routeDate)) plannerFocus = routeDate;
+  if (!catalog) {
+    whenCatalog(views.planner, 'planner', () => renderPlannerPage(routeDate));
+    return;
+  }
+  const today = todayISO();
+  renderPlanner(views.planner, {
+    planner: state.planner,
+    dates: weekDates(plannerFocus ?? today),
+    today,
+    catalog,
+    targets: targetsForProfile(state.profile),
+  });
+}
+
+/* ---------- Feuille modale ---------- */
+
+function openSheet() {
+  if (!sheet.open) sheet.showModal();
+}
+
+function closeSheet() {
+  picker = null;
+  if (sheet.open) sheet.close();
+  sheet.replaceChildren();
+}
+
+function refreshPicker({ focusSearch = false } = {}) {
+  if (!picker || !catalog) return;
+  renderPicker(sheet, { ...picker, catalog, planner: state.planner });
+  if (focusSearch) {
+    const input = sheet.querySelector('#picker-search');
+    if (input) {
+      input.focus();
+      const end = input.value.length;
+      input.setSelectionRange(end, end);
+    }
+  }
+}
+
+function openPicker({ date, slot }) {
+  picker = { date, slot, query: '', all: false };
+  refreshPicker();
+  openSheet();
 }
 
 /* ---------- Actions ---------- */
@@ -231,10 +301,11 @@ async function onImportFile(file) {
 }
 
 function onReset() {
-  if (!window.confirm('Effacer le profil et l’historique de poids de cet appareil ?')) return;
+  if (!window.confirm('Effacer le profil, l’historique de poids et le planning de cet appareil ?')) return;
   clearState(storage);
   state = emptyState();
   servingsById.clear();
+  plannerFocus = null;
   window.location.hash = '#/';
   renderAll();
 }
@@ -245,19 +316,70 @@ function onServings(delta) {
   const recipe = catalog.recipes.find((r) => r.id === route.id);
   if (!recipe) return;
   const current = servingsById.get(recipe.id) ?? recipe.servings;
-  const next = Math.min(RECIPE_SERVINGS_MAX, Math.max(1, current + delta));
-  servingsById.set(recipe.id, next);
+  servingsById.set(recipe.id, Math.min(RECIPE_SERVINGS_MAX, Math.max(1, current + delta)));
   renderRecipePage(recipe.id);
+}
+
+function updatePlanner(next, message) {
+  commit({ ...state, planner: next });
+  renderAll();
+  if (message) toast(message, 'success');
+}
+
+function onPlanPick({ date, slot, recipeId }) {
+  try {
+    const next = addItem(state.planner, { date, slot, recipeId });
+    closeSheet();
+    updatePlanner(next);
+  } catch (err) {
+    toast(err.message, 'error');
+  }
+}
+
+function onPlanLeftover(date) {
+  const { planner, added } = addLeftovers(state.planner, date);
+  if (sheet.open) closeSheet();
+  if (added === 0) {
+    toast('Rien à reprendre de la veille.', 'error');
+    return;
+  }
+  updatePlanner(planner);
+}
+
+function onPlanPortions({ date, itemId, delta }) {
+  const found = findItem(state.planner, { date, itemId });
+  if (!found) return;
+  const portions = Math.min(PLANNER_LIMITS.maxPortions, Math.max(1, found.item.portions + delta));
+  if (portions === found.item.portions) return;
+  updatePlanner(setPortions(state.planner, { date, itemId, portions }));
+}
+
+function onPlanRecipeSubmit(form) {
+  const data = new FormData(form);
+  const date = String(data.get('date') ?? '');
+  const slot = String(data.get('slot') ?? '');
+  try {
+    const next = addItem(state.planner, { date, slot, recipeId: form.dataset.recipe });
+    closeSheet();
+    commit({ ...state, planner: next });
+    toast('Ajouté au planning.', 'success');
+  } catch (err) {
+    toast(err.message, 'error');
+  }
+}
+
+function goToWeek(date) {
+  window.location.hash = routeHash(date ? { name: 'planner', date } : { name: 'planner' });
 }
 
 let printStyle = null;
 
-function printRecipe(format) {
+function printView(kind) {
   printStyle?.remove();
   printStyle = document.createElement('style');
-  printStyle.textContent = format === 'a5' ? '@page { size: A4 landscape; margin: 10mm; }' : '@page { size: A4 portrait; margin: 14mm; }';
+  printStyle.textContent = kind === 'a5' ? '@page { size: A4 landscape; margin: 10mm; }' : '@page { size: A4 portrait; margin: 14mm; }';
   document.head.append(printStyle);
-  document.body.dataset.print = format;
+  document.body.dataset.print = kind;
   const cleanup = () => {
     printStyle?.remove();
     printStyle = null;
@@ -271,8 +393,18 @@ function printRecipe(format) {
 /* ---------- Câblage ---------- */
 
 document.addEventListener('click', (event) => {
-  const chip = event.target.closest('[data-filter-category], [data-filter-tag]');
+  if (event.target === sheet) {
+    closeSheet();
+    return;
+  }
+
+  const chip = event.target.closest('[data-filter-category], [data-filter-tag], [data-picker-all]');
   if (chip) {
+    if (chip.dataset.pickerAll !== undefined && picker) {
+      picker.all = chip.dataset.pickerAll === 'true';
+      refreshPicker();
+      return;
+    }
     if (chip.dataset.filterCategory) filters.category = chip.dataset.filterCategory;
     if (chip.dataset.filterTag) {
       const tag = chip.dataset.filterTag;
@@ -284,6 +416,7 @@ document.addEventListener('click', (event) => {
 
   const trigger = event.target.closest('[data-action]');
   if (!trigger) return;
+  const { date, slot, item: itemId } = trigger.dataset;
   switch (trigger.dataset.action) {
     case 'export':
       onExport();
@@ -296,7 +429,7 @@ document.addEventListener('click', (event) => {
       onReset();
       break;
     case 'delete-weigh-in':
-      onDeleteWeighIn(trigger.dataset.date);
+      onDeleteWeighIn(date);
       break;
     case 'reset-filters':
       filters = emptyFilters();
@@ -306,8 +439,44 @@ document.addEventListener('click', (event) => {
       onServings(Number(trigger.dataset.delta));
       break;
     case 'print':
-      printRecipe(trigger.dataset.format);
+      printView(trigger.dataset.format);
       break;
+    case 'print-week':
+      printView('week');
+      break;
+    case 'week-prev':
+      goToWeek(addDays(weekStart(plannerFocus ?? todayISO()), -7));
+      break;
+    case 'week-next':
+      goToWeek(addDays(weekStart(plannerFocus ?? todayISO()), 7));
+      break;
+    case 'week-today':
+      plannerFocus = null;
+      goToWeek(null);
+      renderAll();
+      break;
+    case 'plan-add':
+      openPicker({ date, slot });
+      break;
+    case 'plan-pick':
+      onPlanPick({ date, slot, recipeId: trigger.dataset.recipe });
+      break;
+    case 'plan-leftover':
+      onPlanLeftover(date);
+      break;
+    case 'plan-remove':
+      updatePlanner(removeItem(state.planner, { date, itemId }));
+      break;
+    case 'plan-portions':
+      onPlanPortions({ date, itemId, delta: Number(trigger.dataset.delta) });
+      break;
+    case 'plan-recipe': {
+      const recipe = catalog?.recipes.find((r) => r.id === trigger.dataset.recipe);
+      if (!recipe) return;
+      renderPlanRecipe(sheet, { recipe, today: todayISO() });
+      openSheet();
+      break;
+    }
     default:
       break;
   }
@@ -317,6 +486,9 @@ document.addEventListener('input', (event) => {
   if (event.target.id === 'recipe-search') {
     filters.query = event.target.value;
     renderResults();
+  } else if (event.target.id === 'picker-search' && picker) {
+    picker.query = event.target.value;
+    refreshPicker({ focusSearch: true });
   }
 });
 
@@ -327,6 +499,9 @@ document.addEventListener('change', (event) => {
   } else if (event.target.matches('[data-filter-minutes]')) {
     filters.maxMinutes = event.target.value === '' ? null : Number(event.target.value);
     renderResults();
+  } else if (event.target.matches('[data-shop]')) {
+    commit({ ...state, planner: toggleShopping(state.planner, event.target.dataset.week, event.target.dataset.shop) });
+    event.target.closest('li')?.classList.toggle('is-checked', event.target.checked);
   }
 });
 
@@ -337,7 +512,15 @@ document.addEventListener('submit', (event) => {
   } else if (event.target.id === 'weigh-in-form') {
     event.preventDefault();
     onAddWeighIn(event.target);
+  } else if (event.target.id === 'plan-recipe-form') {
+    event.preventDefault();
+    onPlanRecipeSubmit(event.target);
   }
+});
+
+sheet.addEventListener('close', () => {
+  picker = null;
+  sheet.replaceChildren();
 });
 
 importInput.addEventListener('change', () => onImportFile(importInput.files?.[0]));

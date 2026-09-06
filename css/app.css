@@ -17,6 +17,7 @@
   --muted: #6e7674;
   --line: rgba(16, 20, 19, 0.09);
   --track: rgba(16, 20, 19, 0.1);
+  --slot: rgba(16, 20, 19, 0.05);
 
   --btn: #101413;
   --btn-ink: #ffffff;
@@ -57,6 +58,7 @@
     --muted: #8f9995;
     --line: rgba(255, 255, 255, 0.09);
     --track: rgba(255, 255, 255, 0.14);
+    --slot: rgba(255, 255, 255, 0.06);
 
     --btn: #f1f4f2;
     --btn-ink: #101413;
@@ -955,6 +957,16 @@ select.input {
   height: 18px;
 }
 
+@media (max-width: 24rem) {
+  .tabbar a span {
+    display: none;
+  }
+
+  .tabbar a {
+    padding: 0.6rem 0.9rem;
+  }
+}
+
 @media (max-width: 45.99rem) {
   .tabbar {
     position: fixed;
@@ -1323,4 +1335,488 @@ select.input {
 
 .tile p + p {
   margin-top: 0.5rem;
+}
+
+/* ---------- Planning ---------- */
+
+.planner__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.9rem;
+}
+
+.planner__nav {
+  align-items: center;
+}
+
+.week-summary {
+  margin-bottom: 0.75rem;
+}
+
+.gauge {
+  display: grid;
+  gap: 0.3rem;
+  min-width: 0;
+}
+
+.gauge__text {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.6rem;
+  font-size: 0.82rem;
+  color: var(--muted);
+}
+
+.gauge__nums {
+  font-variant-numeric: tabular-nums;
+  color: var(--ink);
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.gauge__track {
+  height: 8px;
+  border-radius: var(--r-pill);
+  background: var(--track);
+  overflow: hidden;
+}
+
+.gauge__bar {
+  display: block;
+  height: 100%;
+  border-radius: var(--r-pill);
+  background: var(--ink);
+  transition: width 0.25s ease;
+}
+
+.gauge--over .gauge__bar {
+  background: var(--danger);
+}
+
+.week {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.day {
+  padding: 1rem 1.05rem 1.1rem;
+  background: var(--card);
+  border: 1px solid var(--card-edge);
+  border-radius: var(--r-xl);
+  box-shadow: var(--shadow-card);
+}
+
+.day--today {
+  background: var(--card-strong);
+}
+
+.day__head {
+  display: grid;
+  gap: 0.7rem;
+  margin-bottom: 0.8rem;
+}
+
+.day__name {
+  font-weight: 600;
+  font-size: 1.05rem;
+}
+
+.day__today {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.day__gauges {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.6rem;
+}
+
+.slots {
+  display: grid;
+  gap: 0.6rem;
+}
+
+.slot {
+  padding: 0.6rem 0.75rem 0.7rem;
+  border-radius: var(--r-md);
+  background: var(--slot);
+  min-width: 0;
+}
+
+.slot__label {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+}
+
+.slot__items {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.4rem;
+}
+
+.plan-item {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.35rem 0.6rem;
+  padding: 0.45rem 0.6rem;
+  border-radius: var(--r-md);
+  background: var(--card-strong);
+  border: 1px solid var(--line);
+  min-width: 0;
+}
+
+.plan-item--leftover {
+  border-style: dashed;
+}
+
+.plan-item__main {
+  flex: 1 1 7rem;
+  min-width: 0;
+  display: grid;
+  gap: 0.1rem;
+}
+
+.plan-item__title {
+  font-weight: 600;
+  color: inherit;
+  text-decoration: none;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.plan-item__meta {
+  font-size: 0.8rem;
+  color: var(--muted);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.plan-item__meta svg {
+  width: 14px;
+  height: 14px;
+}
+
+.plan-item__controls {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  flex: none;
+  margin-left: auto;
+}
+
+.stepper--small {
+  padding: 0.15rem;
+}
+
+.stepper--small button {
+  width: 1.8rem;
+  height: 1.8rem;
+}
+
+.stepper--small button svg {
+  width: 14px;
+  height: 14px;
+}
+
+.stepper--small output {
+  min-width: 1.6rem;
+}
+
+.slot__actions {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+  margin-top: 0.5rem;
+}
+
+.slot__actions .chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.4rem 0.8rem;
+  font-size: 0.9rem;
+  background: var(--card-strong);
+  border: 1px solid var(--line);
+}
+
+.slot__actions .chip svg {
+  width: 15px;
+  height: 15px;
+}
+
+@media (min-width: 62rem) {
+  .day {
+    display: grid;
+    grid-template-columns: 12rem 1fr;
+    gap: 1rem;
+    align-items: start;
+  }
+
+  .day__head {
+    margin: 0;
+  }
+
+  .day__gauges {
+    grid-template-columns: 1fr;
+  }
+
+  .slots {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+/* ---------- Liste de courses ---------- */
+
+.shopping {
+  margin-top: 0.75rem;
+}
+
+.shopping__aisle {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+  font-weight: 600;
+  margin: 0.7rem 0 0.2rem;
+}
+
+.shopping__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.shopping__list li {
+  border-bottom: 1px solid var(--line);
+}
+
+.shopping__list li:last-child {
+  border-bottom: 0;
+}
+
+.check {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0.5rem 0;
+  cursor: pointer;
+}
+
+.check input {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+}
+
+.check__box {
+  width: 1.35rem;
+  height: 1.35rem;
+  border-radius: 0.45rem;
+  border: 1.5px solid var(--muted);
+  display: grid;
+  place-items: center;
+}
+
+.check input:checked + .check__box {
+  background: var(--ink);
+  border-color: var(--ink);
+}
+
+.check input:checked + .check__box::after {
+  content: "";
+  width: 0.35rem;
+  height: 0.65rem;
+  border: solid var(--btn-ink);
+  border-width: 0 2px 2px 0;
+  transform: translateY(-1px) rotate(45deg);
+}
+
+.check input:focus-visible + .check__box {
+  outline: 2px solid var(--ink);
+  outline-offset: 2px;
+}
+
+.is-checked .check__name,
+.is-checked .check__qty {
+  text-decoration: line-through;
+  color: var(--muted);
+}
+
+.check__qty {
+  font-variant-numeric: tabular-nums;
+  color: var(--muted);
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+.shopping__pantry {
+  margin-top: 0.8rem;
+}
+
+/* ---------- Feuille modale ---------- */
+
+.sheet {
+  width: min(100%, 40rem);
+  max-height: 85dvh;
+  margin: auto auto 0;
+  padding: 1rem 1.15rem 1.3rem;
+  border: 0;
+  border-radius: var(--r-xl) var(--r-xl) 0 0;
+  background: var(--bg-b);
+  color: var(--ink);
+  box-shadow: var(--shadow-float);
+  overflow: auto;
+}
+
+.sheet::backdrop {
+  background: rgba(16, 20, 19, 0.4);
+}
+
+@media (min-width: 46rem) {
+  .sheet {
+    margin: auto;
+    border-radius: var(--r-xl);
+  }
+}
+
+.sheet__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.8rem;
+  margin-bottom: 0.8rem;
+}
+
+.sheet .search,
+.sheet .chips {
+  margin-bottom: 0.6rem;
+}
+
+.picker__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.picker__item {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0.15rem 0.7rem;
+  align-items: center;
+  text-align: left;
+  padding: 0.75rem 0.9rem;
+  border: 0;
+  border-radius: var(--r-md);
+  background: var(--card-strong);
+  color: inherit;
+  cursor: pointer;
+  font: inherit;
+}
+
+.picker__item .badge {
+  grid-row: 1 / span 2;
+}
+
+.picker__title {
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.picker__title svg {
+  width: 16px;
+  height: 16px;
+}
+
+.picker__meta {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.picker__item--leftover {
+  border: 1px dashed var(--muted);
+}
+
+.picker__empty {
+  padding: 0.6rem;
+}
+
+/* ---------- Menu du jour (tableau de bord) ---------- */
+
+.tile--full {
+  grid-column: 1 / -1;
+}
+
+.menu-gauges {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.8rem;
+}
+
+.menu-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+}
+
+.menu-list li {
+  display: grid;
+  grid-template-columns: 3.6rem 1fr auto;
+  align-items: baseline;
+  gap: 0.6rem;
+  padding: 0.4rem 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.menu-list li:last-child {
+  border-bottom: 0;
+}
+
+.menu-list .slot-tag {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.menu-list a {
+  color: inherit;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.menu-list .pts {
+  font-variant-numeric: tabular-nums;
+  color: var(--muted);
+  font-size: 0.9rem;
+  white-space: nowrap;
 }

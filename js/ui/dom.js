@@ -79,6 +79,22 @@ export const fmt = {
   dayMonth: (iso) => (toLocalDate(iso) ? dayMonth.format(toLocalDate(iso)) : String(iso)),
 };
 
+/* ---------- Jauge ---------- */
+
+/** Barre de progression : consommé / budget, saturée à 100 %, rouge au-delà. */
+export function gauge({ value, max, label, unit }) {
+  const ratio = max > 0 ? value / max : 0;
+  const width = Math.min(100, Math.round(ratio * 100));
+  return html`
+    <div class="gauge ${ratio > 1 ? 'gauge--over' : ''}">
+      <div class="gauge__text"><span>${label}</span><span class="gauge__nums">${fmt.dec(value)} / ${fmt.dec(max)} ${unit}</span></div>
+      <div class="gauge__track" role="progressbar" aria-label="${label}" aria-valuemin="0" aria-valuemax="${max}" aria-valuenow="${value}">
+        <span class="gauge__bar" style="width: ${width}%"></span>
+      </div>
+    </div>
+  `;
+}
+
 /* ---------- Toast ---------- */
 
 let toastTimer = 0;

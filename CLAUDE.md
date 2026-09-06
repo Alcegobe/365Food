@@ -212,7 +212,7 @@ points(recette / portion) = kcal / 50  −  protéines(g) / 10  +  bonus_malus
 |---------|------|-------|
 | **V0 — Socle** | ✅ livrée | profil, cibles, budget de points, localStorage, export/import JSON, tests des formules (`npm test`) |
 | **V1 — Recettes** | ✅ livrée | `data/ingredients.json`, `data/recipes.json` (3 recettes de référence rédigées par Claude : sauce blanche kebab, pancakes protéinés, smash burger), catalogue + filtres, fiche avec portions ajustables, impression A4/A5, routes `#/…` |
-| V2 — Planning | ⏳ à faire | |
+| **V2 — Planning** | ✅ livrée | `js/planner.js`, vue semaine (`#/planning`), créneaux matin/midi/soir/snack, restes d'hier soir, jauges jour/semaine, liste de courses par rayon, impression semaine + liste, menu du jour sur l'accueil, schéma de stockage v2 |
 | V3 — Contenu | ⏳ à faire | répondre d'abord au §8 |
 | V4 — Finitions | ⏳ à faire | |
 

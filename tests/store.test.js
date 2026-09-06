@@ -15,6 +15,7 @@ import {
   saveState,
 } from '../js/store.js';
 import { newProfile } from '../js/profile.js';
+import { emptyPlanner } from '../js/planner.js';
 
 const TODAY = new Date(2026, 8, 5);
 
@@ -36,6 +37,7 @@ function sampleState() {
       weights: [{ date: '2026-09-05', kg: 80 }],
     }),
     settings: { theme: 'auto' },
+    planner: { days: { '2026-09-07': { soir: [{ id: 'a', recipeId: 'smash-burger-light', portions: 1 }] } }, shopping: {} },
   };
 }
 
@@ -73,6 +75,16 @@ describe('normalizeState et migrations', () => {
     const state = normalizeState({ profile: null });
     assert.equal(state.schemaVersion, SCHEMA_VERSION);
     assert.deepEqual(state.settings, {});
+    assert.deepEqual(state.planner, emptyPlanner());
+  });
+  it('schéma 1 (V0/V1) → 2 : le planning vide est ajouté', () => {
+    const state = normalizeState({ schemaVersion: 1, profile: null, settings: {} });
+    assert.equal(state.schemaVersion, 2);
+    assert.deepEqual(state.planner, emptyPlanner());
+  });
+  it('un planning corrompu est nettoyé, pas fatal', () => {
+    const state = normalizeState({ schemaVersion: 2, profile: null, settings: {}, planner: { days: { nope: 1 } } });
+    assert.deepEqual(state.planner, emptyPlanner());
   });
   it('complète les champs manquants du profil avec les valeurs par défaut', () => {
     const state = normalizeState({ schemaVersion: 1, profile: { birthDate: '1990-01-01', sex: 'f', heightCm: 165 } });
@@ -102,6 +114,7 @@ describe('export / import JSON', () => {
     assert.equal(data.exportedAt, TODAY.toISOString());
     assert.deepEqual(data.profile, sampleState().profile);
     assert.deepEqual(data.settings, { theme: 'auto' });
+    assert.deepEqual(data.planner, sampleState().planner);
   });
   it('nom de fichier daté', () => {
     assert.equal(exportFileName(TODAY), '365food-sauvegarde-2026-09-05.json');
@@ -122,6 +135,11 @@ describe('export / import JSON', () => {
   });
   it('sauvegarde d’une version plus récente', () => {
     assert.throws(() => importState(JSON.stringify({ app: APP_ID, schemaVersion: 99, profile: null }), TODAY), /plus récente/);
+  });
+  it('sauvegarde V1 (schéma 1) importée dans la V2', () => {
+    const state = importState(JSON.stringify({ app: APP_ID, schemaVersion: 1, profile: null, settings: {} }), TODAY);
+    assert.equal(state.schemaVersion, 2);
+    assert.deepEqual(state.planner, emptyPlanner());
   });
   it('profil invalide dans la sauvegarde : message explicite', () => {
     const bad = { app: APP_ID, schemaVersion: 1, profile: { birthDate: 'hier', sex: 'm', heightCm: 180, weights: [{ date: '2026-09-05', kg: 80 }] } };

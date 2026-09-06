@@ -5,20 +5,23 @@
  */
 import { newProfile, validateProfile } from './profile.js';
 import { formatISODate, parseDateParts } from './nutrition.js';
+import { emptyPlanner, normalizePlanner } from './planner.js';
 
 export const APP_ID = '365food';
-export const SCHEMA_VERSION = 1;
+export const SCHEMA_VERSION = 2;
 export const STORAGE_KEY = '365food.state';
 
 /** État vide (première ouverture). */
 export function emptyState() {
-  return { schemaVersion: SCHEMA_VERSION, profile: null, settings: {} };
+  return { schemaVersion: SCHEMA_VERSION, profile: null, settings: {}, planner: emptyPlanner() };
 }
 
 /** Migrations successives de schéma. Chaque étape amène de N à N + 1. */
 const MIGRATIONS = {
   // 0 → 1 : premier schéma versionné.
   0: (state) => ({ ...state, schemaVersion: 1 }),
+  // 1 → 2 : planning (V2).
+  1: (state) => ({ ...state, schemaVersion: 2, planner: state.planner ?? emptyPlanner() }),
 };
 
 function isPlainObject(value) {
@@ -36,6 +39,7 @@ export function normalizeState(input) {
     schemaVersion: Number.isInteger(input.schemaVersion) ? input.schemaVersion : 0,
     profile: input.profile ?? null,
     settings: isPlainObject(input.settings) ? { ...input.settings } : {},
+    planner: input.planner,
   };
   while (state.schemaVersion < SCHEMA_VERSION) {
     const step = MIGRATIONS[state.schemaVersion];
@@ -49,6 +53,7 @@ export function normalizeState(input) {
     if (!isPlainObject(state.profile)) throw new TypeError('Profil invalide.');
     state.profile = newProfile({ ...state.profile, weights: Array.isArray(state.profile.weights) ? state.profile.weights : [] });
   }
+  state.planner = normalizePlanner(state.planner);
   return state;
 }
 
@@ -90,6 +95,7 @@ export function exportState(state, now = new Date()) {
       exportedAt: now.toISOString(),
       profile: normalized.profile,
       settings: normalized.settings,
+      planner: normalized.planner,
     },
     null,
     2,

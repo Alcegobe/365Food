@@ -31,6 +31,7 @@ export function renderRecipeView(container, { recipe, nutrition, ingredientIndex
         <div class="fiche__top">
           <a class="btn" href="#/recettes">${icon('arrowLeft')} Recettes</a>
           <div class="btn-row">
+            <button type="button" class="btn btn--primary" data-action="plan-recipe" data-recipe="${recipe.id}">${icon('planner')} Planifier</button>
             <button type="button" class="btn" data-action="print" data-format="a4">${icon('print')} A4</button>
             <button type="button" class="btn" data-action="print" data-format="a5">${icon('print')} A5</button>
           </div>
