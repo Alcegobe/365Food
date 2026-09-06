@@ -101,7 +101,7 @@
     {"id": "epices-tacos", "name": "Mélange d'épices mexicain (tacos, fajitas)", "aisle": "epicerie", "per100g": {"kcal": 300, "protein": 10, "fat": 8, "carbs": 45, "fiber": 15, "salt": 20, "sugars": 10}, "pantry": true},
     {"id": "piment-flocons", "name": "Piment en flocons", "aisle": "epicerie", "per100g": {"kcal": 300, "protein": 12, "fat": 15, "carbs": 30, "fiber": 30, "salt": 0.1, "sugars": 8}, "pantry": true},
     {"id": "vanille", "name": "Extrait de vanille", "aisle": "epicerie", "per100g": {"kcal": 290, "protein": 0, "fat": 0, "carbs": 12, "fiber": 0, "salt": 0, "sugars": 12}, "gPerMl": 0.9, "pantry": true},
-    {"id": "edulcorant", "name": "Édulcorant (poudre ou sirop 0 kcal)", "aisle": "epicerie", "per100g": {"kcal": 0, "protein": 0, "fat": 0, "carbs": 0, "fiber": 0, "salt": 0, "sugars": 0}, "pantry": true},
+    {"id": "edulcorant", "name": "Édulcorant en poudre, pouvoir sucrant 1:1 (érythritol, stévia)", "aisle": "epicerie", "per100g": {"kcal": 0, "protein": 0, "fat": 0, "carbs": 0, "fiber": 0, "salt": 0, "sugars": 0}, "pantry": true},
     {"id": "bouillon-cube", "name": "Bouillon en cube (volaille ou légumes)", "aisle": "epicerie", "per100g": {"kcal": 250, "protein": 10, "fat": 15, "carbs": 15, "fiber": 0, "salt": 45, "sugars": 5}, "piece": {"grams": 10, "name": "cube"}, "pantry": true},
     {"id": "vinaigre", "name": "Vinaigre (cidre ou vin)", "aisle": "epicerie", "per100g": {"kcal": 20, "protein": 0, "fat": 0, "carbs": 0.5, "fiber": 0, "salt": 0, "sugars": 0.5}, "gPerMl": 1.0, "pantry": true},
     {"id": "vinaigre-balsamique", "name": "Vinaigre balsamique", "aisle": "epicerie", "per100g": {"kcal": 90, "protein": 0.5, "fat": 0, "carbs": 17, "fiber": 0, "salt": 0, "sugars": 15}, "gPerMl": 1.05, "pantry": true},

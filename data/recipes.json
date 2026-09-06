@@ -2403,13 +2403,13 @@
         { "ref": "whey-proteine", "qty": 30, "unit": "g", "label": "whey chocolat (1 dose)" },
         { "ref": "cacao-non-sucre", "qty": 15, "unit": "g", "label": "cacao non sucré (2 c. à s.)" },
         { "ref": "lait-demi-ecreme", "qty": 30, "unit": "ml", "label": "lait demi-écrémé (2 c. à s.)" },
-        { "ref": "edulcorant", "qty": 10, "unit": "g", "label": "édulcorant en poudre (1 c. à s.)" },
+        { "ref": "edulcorant", "qty": 10, "unit": "g", "label": "édulcorant en poudre 1:1, type érythritol (1 c. à s.)" },
         { "ref": "blanc-oeuf", "qty": 100, "unit": "ml", "label": "blancs d'œufs liquides pasteurisés (≈ 3 blancs)" },
         { "ref": "citron-jus", "qty": 5, "unit": "ml", "label": "jus de citron (quelques gouttes, pour monter les blancs)" },
         { "ref": "chocolat-noir-70", "qty": 10, "unit": "g", "label": "chocolat noir 70 % (pour les copeaux)" }
       ],
       "steps": [
-        "Fouette le fromage blanc avec la whey, le cacao, le lait et l'édulcorant jusqu'à obtenir une crème lisse et brillante, sans grumeaux.",
+        "Fouette le fromage blanc avec la whey, le cacao, le lait et l'édulcorant jusqu'à obtenir une crème lisse et brillante, sans grumeaux. Goûte : elle doit être un peu trop sucrée, les blancs montés vont l'adoucir ; ajuste l'édulcorant.",
         "Verse les blancs d'œufs et le jus de citron dans un saladier bien propre. Monte-les au batteur en neige ferme : le bec d'oiseau tient quand tu soulèves les fouets.",
         "Incorpore un tiers des blancs à la crème au chocolat en mélangeant franchement pour la détendre, puis le reste délicatement à la spatule, de bas en haut, jusqu'à ce qu'il n'y ait plus de traces blanches.",
         "Répartis dans 2 ramequins. Laisse prendre 2 h au frigo : la mousse se raffermit et le cacao perd son amertume.",
@@ -2439,14 +2439,14 @@
         { "ref": "oeuf", "qty": 2, "unit": "pce" },
         { "ref": "skyr-nature-0", "qty": 150, "unit": "g" },
         { "ref": "lait-demi-ecreme", "qty": 50, "unit": "ml" },
-        { "ref": "edulcorant", "qty": 20, "unit": "g", "label": "édulcorant en poudre (2 c. à s.)" },
+        { "ref": "edulcorant", "qty": 20, "unit": "g", "label": "édulcorant en poudre 1:1, type érythritol (2 c. à s.)" },
         { "ref": "vanille", "qty": 5, "unit": "ml", "label": "extrait de vanille (1 c. à c.)" },
         { "ref": "myrtilles", "qty": 120, "unit": "g", "label": "myrtilles fraîches ou surgelées" }
       ],
       "steps": [
         "Préchauffe le four à 180 °C. Garnis un moule à muffins de 6 caissettes en papier.",
         "Mixe les flocons d'avoine 20 s pour obtenir une farine grossière. Mélange-la dans un saladier avec la whey, la levure et le sel.",
-        "Dans un autre bol, fouette les œufs, le skyr, le lait, l'édulcorant et la vanille. Verse sur la farine et mélange juste assez pour ne plus voir de sec : une pâte épaisse, un peu grumeleuse, c'est normal.",
+        "Dans un autre bol, fouette le skyr, le lait, l'édulcorant et la vanille ; goûte, ça doit être franchement sucré, ajuste l'édulcorant, puis ajoute les œufs et fouette. Verse sur la farine et mélange juste assez pour ne plus voir de sec : une pâte épaisse, un peu grumeleuse, c'est normal.",
         "Incorpore les myrtilles à la spatule sans les écraser (surgelées : sans les décongeler, pour ne pas colorer la pâte).",
         "Répartis dans les caissettes, jusqu'à 1 cm du bord. Enfourne 20 min : le dessus est doré et une pointe de couteau ressort sèche.",
         "Laisse tiédir 10 min dans le moule avant de démouler : chauds, les muffins protéinés sont fragiles."
@@ -2475,14 +2475,14 @@
         { "ref": "beurre-cacahuete", "qty": 60, "unit": "g", "label": "beurre de cacahuète 100 % (3 c. à s.)" },
         { "ref": "compote-sans-sucre", "qty": 100, "unit": "g" },
         { "ref": "oeuf", "qty": 1, "unit": "pce" },
-        { "ref": "edulcorant", "qty": 15, "unit": "g", "label": "édulcorant en poudre (1 c. à s. bombée)" },
+        { "ref": "edulcorant", "qty": 15, "unit": "g", "label": "édulcorant en poudre 1:1, type érythritol (1 c. à s. bombée)" },
         { "ref": "vanille", "qty": 3, "unit": "ml", "label": "extrait de vanille (½ c. à c.)" },
         { "ref": "chocolat-noir-70", "qty": 30, "unit": "g", "label": "chocolat noir 70 % (concassé au couteau)" }
       ],
       "steps": [
         "Préchauffe le four à 180 °C et couvre une plaque de papier cuisson.",
         "Mixe les flocons d'avoine en farine grossière. Mélange-les avec la whey, la levure et le sel.",
-        "Fouette le beurre de cacahuète, la compote, l'œuf, l'édulcorant et la vanille jusqu'à obtenir une crème homogène. Verse sur les poudres et mélange à la spatule : la pâte est collante mais se tient.",
+        "Fouette le beurre de cacahuète, la compote, l'édulcorant et la vanille jusqu'à obtenir une crème homogène ; goûte et ajuste l'édulcorant, puis incorpore l'œuf. Verse sur les poudres et mélange à la spatule : la pâte est collante mais se tient.",
         "Ajoute les deux tiers du chocolat concassé. Forme 8 boules avec les mains humides, pose-les sur la plaque bien espacées et aplatis-les en disques de 1 cm : ils ne s'étalent pas à la cuisson.",
         "Enfonce le reste du chocolat sur le dessus. Enfourne 12 min : les bords sont dorés, le centre encore souple.",
         "Laisse refroidir 10 min sur la plaque sans y toucher : les cookies durcissent en refroidissant."
@@ -2538,13 +2538,13 @@
         { "ref": "whey-proteine", "qty": 45, "unit": "g", "label": "whey vanille (1 dose ½)" },
         { "ref": "maizena", "qty": 15, "unit": "g", "label": "fécule de maïs (1 c. à s. bombée)" },
         { "ref": "vanille", "qty": 5, "unit": "ml", "label": "extrait de vanille (1 c. à c.)" },
-        { "ref": "edulcorant", "qty": 10, "unit": "g", "label": "édulcorant en poudre (1 c. à s.)" }
+        { "ref": "edulcorant", "qty": 10, "unit": "g", "label": "édulcorant en poudre 1:1, type érythritol (1 c. à s.)" }
       ],
       "steps": [
         "Prélève 50 ml de lait froid dans un bol et fouette-le avec la whey jusqu'à obtenir une pâte lisse. Réserve.",
         "Dans une petite casserole, délaye la fécule dans le reste du lait froid, puis chauffe à feu moyen en fouettant sans arrêt.",
         "Dès que la crème épaissit et nappe le fouet, après 4 à 5 min, laisse bouillonner 30 s puis retire du feu.",
-        "Attends 2 min hors du feu, puis incorpore la whey délayée, la vanille et l'édulcorant en fouettant vivement : la whey ne doit jamais bouillir, sinon elle devient granuleuse.",
+        "Attends 2 min hors du feu, puis incorpore la whey délayée, la vanille et l'édulcorant en fouettant vivement : la whey ne doit jamais bouillir, sinon elle devient granuleuse. Goûte et ajuste l'édulcorant : froide, la crème paraîtra un peu moins sucrée.",
         "Verse dans 2 ramequins, filme au contact pour éviter la peau et laisse prendre 2 h au frigo."
       ],
       "whyLight": "Ni crème, ni jaunes d'œufs, ni sucre : la fécule épaissit le lait demi-écrémé comme dans les crèmes du commerce, et la whey vanille apporte le goût, l'onctuosité et plus de 20 g de protéines par ramequin.",
@@ -2568,13 +2568,13 @@
         { "ref": "skyr-nature-0", "qty": 300, "unit": "g" },
         { "ref": "fromage-frais-light", "qty": 100, "unit": "g" },
         { "ref": "whey-proteine", "qty": 60, "unit": "g", "label": "whey vanille (2 doses)" },
-        { "ref": "edulcorant", "qty": 20, "unit": "g", "label": "édulcorant en poudre (2 c. à s.)" },
+        { "ref": "edulcorant", "qty": 20, "unit": "g", "label": "édulcorant en poudre 1:1, type érythritol (2 c. à s.)" },
         { "ref": "boudoirs", "qty": 12, "unit": "pce" },
         { "ref": "cacao-non-sucre", "qty": 8, "unit": "g", "label": "cacao non sucré (pour saupoudrer)" }
       ],
       "steps": [
         "Prépare le café et laisse-le refroidir dans une assiette creuse.",
-        "Fouette le skyr, le fromage frais, la whey et l'édulcorant 1 min au batteur : la crème devient lisse et épaisse, comme un mascarpone monté.",
+        "Fouette le skyr, le fromage frais, la whey et l'édulcorant 1 min au batteur : la crème devient lisse et épaisse, comme un mascarpone monté. Goûte et ajuste l'édulcorant.",
         "Casse chaque boudoir en deux. Trempe les morceaux 1 s par face dans le café, pas plus : ils doivent rester fermes au cœur.",
         "Dans 4 verrines, dépose 3 demi-boudoirs, une couche de crème, 3 demi-boudoirs, puis le reste de crème. Lisse le dessus.",
         "Filme et laisse reposer au moins 4 h au frigo, idéalement une nuit : les biscuits s'imbibent et la crème prend.",
@@ -2601,7 +2601,7 @@
         { "ref": "beurre", "qty": 25, "unit": "g", "label": "beurre fondu" },
         { "ref": "skyr-nature-0", "qty": 500, "unit": "g" },
         { "ref": "fromage-frais-light", "qty": 200, "unit": "g" },
-        { "ref": "edulcorant", "qty": 40, "unit": "g", "label": "édulcorant en poudre (4 c. à s.)" },
+        { "ref": "edulcorant", "qty": 40, "unit": "g", "label": "édulcorant en poudre 1:1, type érythritol (4 c. à s.)" },
         { "ref": "vanille", "qty": 5, "unit": "ml", "label": "extrait de vanille (1 c. à c.)" },
         { "ref": "citron-jus", "qty": 15, "unit": "ml", "label": "jus de citron (1 c. à s.)" },
         { "ref": "maizena", "qty": 20, "unit": "g", "label": "fécule de maïs (2 c. à s.)" },
@@ -2610,7 +2610,7 @@
       "steps": [
         "Préchauffe le four à 170 °C. Tapisse le fond d'un moule à charnière de 22 à 24 cm de papier cuisson.",
         "Réduis les spéculoos en poudre, au mixeur ou dans un sac avec un rouleau. Mélange avec le beurre fondu et tasse fermement au fond du moule avec le dos d'une cuillère.",
-        "Fouette le skyr, le fromage frais, l'édulcorant, la vanille, le jus de citron et la fécule jusqu'à obtenir une crème lisse. Ajoute les œufs un à un en fouettant juste assez pour les incorporer : trop d'air fait craquer le gâteau.",
+        "Fouette le skyr, le fromage frais, l'édulcorant, la vanille, le jus de citron et la fécule jusqu'à obtenir une crème lisse ; goûte et ajuste l'édulcorant. Ajoute ensuite les œufs un à un en fouettant juste assez pour les incorporer : trop d'air fait craquer le gâteau.",
         "Verse l'appareil sur la base et lisse. Enfourne 30 min : les bords sont pris, le centre tremble encore comme un flan.",
         "Éteins le four et laisse le cheesecake dedans, porte entrouverte, 15 min. Puis 4 h au frigo, idéalement une nuit, avant de démouler et de couper en 8."
       ],
@@ -2668,7 +2668,7 @@
         { "ref": "oeuf", "qty": 2, "unit": "pce" },
         { "ref": "beurre-cacahuete", "qty": 40, "unit": "g", "label": "beurre de cacahuète 100 % (2 c. à s.)" },
         { "ref": "miel", "qty": 30, "unit": "g", "label": "miel (1 c. à s. et demie)" },
-        { "ref": "edulcorant", "qty": 20, "unit": "g", "label": "édulcorant en poudre (2 c. à s.)" },
+        { "ref": "edulcorant", "qty": 20, "unit": "g", "label": "édulcorant en poudre 1:1, type érythritol (2 c. à s.)" },
         { "ref": "vanille", "qty": 5, "unit": "ml", "label": "extrait de vanille (1 c. à c.)" },
         { "ref": "cacao-non-sucre", "qty": 30, "unit": "g", "label": "cacao non sucré (4 c. à s.)" },
         { "ref": "whey-proteine", "qty": 60, "unit": "g", "label": "whey chocolat (2 doses)" },
@@ -2678,7 +2678,7 @@
       ],
       "steps": [
         "Préchauffe le four à 180 °C et tapisse un moule carré de 20 cm de papier cuisson.",
-        "Mixe les haricots bien rincés avec les œufs, le beurre de cacahuète, le miel, l'édulcorant et la vanille pendant 1 min, jusqu'à une purée parfaitement lisse : plus aucun morceau, c'est le secret pour ne pas sentir le haricot.",
+        "Mixe les haricots bien rincés avec le beurre de cacahuète, le miel, l'édulcorant et la vanille pendant 1 min, jusqu'à une purée parfaitement lisse : plus aucun morceau, c'est le secret pour ne pas sentir le haricot. Goûte et ajuste l'édulcorant, puis ajoute les œufs et mixe 20 s de plus.",
         "Ajoute le cacao, la whey, la levure et le sel, mixe encore 20 s. La pâte est épaisse comme une pâte à gâteau classique.",
         "Incorpore les deux tiers du chocolat concassé à la spatule, verse dans le moule, lisse et parsème du reste de chocolat.",
         "Enfourne 22 min : les bords sont pris, le centre juste ferme au toucher, et une pointe de couteau ressort avec des miettes humides. Pas plus, il sécherait.",
