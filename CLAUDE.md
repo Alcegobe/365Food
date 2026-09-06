@@ -222,7 +222,7 @@ Hypothèses retenues pour la V3, faute de réponse (à corriger dans une prochai
 | **V1 — Recettes** | ✅ livrée | `data/ingredients.json`, `data/recipes.json` (3 recettes de référence rédigées par Claude : sauce blanche kebab, pancakes protéinés, smash burger), catalogue + filtres, fiche avec portions ajustables, impression A4/A5, routes `#/…` |
 | **V2 — Planning** | ✅ livrée | `js/planner.js`, vue semaine (`#/planning`), créneaux matin/midi/soir/snack, restes d'hier soir, jauges jour/semaine, liste de courses par rayon, impression semaine + liste, menu du jour sur l'accueil, schéma de stockage v2 |
 | **V3 — Contenu** | ✅ livrée | catalogue de 78 recettes (11 sauces, 11 matins, 15 midis express, 31 dîners, 10 desserts & snacks) et 132 ingrédients, catalogue groupé par catégorie, rappel de pesée à l'échéance (invite « Quel est ton poids aujourd'hui ? » sur l'accueil), courbe de l'historique de poids (`js/charts.js`), hypothèses du §8 documentées, bornes éditoriales testées (`tests/recipes.test.js`) |
-| V4 — Finitions | ⏳ à faire | |
+| **V4 — Finitions** | ✅ livrée | PWA installable (`manifest.json`, icônes `img/`, `sw.js` hors ligne avec proposition de rechargement à la mise à jour), apparence automatique / claire / sombre (`js/theme.js`, réglage `settings.theme`), recettes perso (`js/custom-recipes.js`, `js/ui/recipe-form.js`, routes `#/recettes/nouvelle[/<id>]` et `#/recettes/<id>/modifier`, macros calculées depuis la base ou saisies à la main, « Ma version » d'une recette officielle, filtre « Mes recettes », schéma de stockage v3), polish (étiquette Perso, bouton d'installation, zones de texte extensibles) |
 
 Règles de travail pour les prochaines sessions :
 
@@ -231,3 +231,5 @@ Règles de travail pour les prochaines sessions :
 - Lancer `npm test` avant chaque commit (Node ≥ 20, aucune dépendance).
 - Interface en français, unités métriques, aucune donnée ne quitte l'appareil.
 - Interface sobre : pas de texte explicatif superflu (rappels de confidentialité, conseils de sauvegarde, aides de champ évidentes).
+- Tout nouveau fichier de l'application (`js/`, `css/`, `data/`, `img/`) doit être ajouté à la liste `SHELL` de `sw.js` (le test `tests/pwa.test.js` le vérifie) ; les recettes perso vivent dans `state.recipes` (schéma 3) et sont validées par `validateRecipe`.
+- Prochaine étape : la feuille de route est livrée ; les évolutions suivantes se décident avec l'utilisateur (photos, nouvelles recettes, retours d'usage).

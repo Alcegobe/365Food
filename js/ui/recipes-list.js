@@ -14,16 +14,20 @@ export function renderRecipesView(container, { filters }) {
     html`
       <h2 class="headline">Recettes</h2>
       <div class="toolbar">
-        <label class="search">
-          <span class="visually-hidden">Rechercher un plat ou un ingrédient</span>
-          ${icon('search')}
-          <input class="input" id="recipe-search" type="search" placeholder="Plat ou ingrédient" value="${filters.query}" autocomplete="off">
-        </label>
+        <div class="toolbar__row">
+          <label class="search">
+            <span class="visually-hidden">Rechercher un plat ou un ingrédient</span>
+            ${icon('search')}
+            <input class="input" id="recipe-search" type="search" placeholder="Plat ou ingrédient" value="${filters.query}" autocomplete="off">
+          </label>
+          <a class="btn btn--primary toolbar__new" href="#/recettes/nouvelle">${icon('plus')} <span>Nouvelle recette</span></a>
+        </div>
         <div class="chips" role="group" aria-label="Catégorie">
           <button type="button" class="chip" data-filter-category="all" aria-pressed="${filters.category === 'all'}">Toutes</button>
           ${Object.entries(RECIPE_CATEGORIES).map(
             ([id, label]) => html`<button type="button" class="chip" data-filter-category="${id}" aria-pressed="${filters.category === id}">${label}</button>`,
           )}
+          <button type="button" class="chip chip--mine" data-filter-custom aria-pressed="${filters.onlyCustom}">${icon('pencil')} Mes recettes</button>
         </div>
         <details class="filters-more" ${advancedOpen ? 'open' : ''}>
           <summary>Plus de filtres</summary>
@@ -70,12 +74,14 @@ export function syncFilterControls(container, filters) {
   if (points) points.value = filters.maxPoints === null ? '' : String(filters.maxPoints);
   const minutes = container.querySelector('[data-filter-minutes]');
   if (minutes) minutes.value = filters.maxMinutes === null ? '' : String(filters.maxMinutes);
+  container.querySelector('[data-filter-custom]')?.setAttribute('aria-pressed', String(Boolean(filters.onlyCustom)));
 }
 
 function recipeCard(recipe, n) {
   return html`
     <a class="recipe-card" href="#/recettes/${encodeURIComponent(recipe.id)}">
       <span class="recipe-card__cat">${RECIPE_CATEGORIES[recipe.category] ?? recipe.category}</span>
+      ${recipe.custom ? html`<span class="tag recipe-card__tag">Perso</span>` : ''}
       <span class="recipe-card__title">${recipe.title}</span>
       <span class="recipe-card__meta">${totalMinutes(recipe)} min · ${recipe.servings} ${recipe.servings > 1 ? 'portions' : 'portion'}</span>
       <span class="recipe-card__foot">
@@ -86,15 +92,21 @@ function recipeCard(recipe, n) {
   `;
 }
 
-/** Cartes des recettes filtrées ; `grouped` les range par catégorie (vue « Toutes »). */
-export function renderRecipeResults(container, { recipes, nutritionById, grouped = false }) {
+/**
+ * Cartes des recettes filtrées ; `grouped` les range par catégorie (vue « Toutes ») ;
+ * `onlyCustom` adapte l'état vide au filtre « Mes recettes ».
+ */
+export function renderRecipeResults(container, { recipes, nutritionById, grouped = false, onlyCustom = false }) {
   if (recipes.length === 0) {
     render(
       container,
       html`
         <div class="empty">
-          <p>Aucune recette ne correspond.</p>
-          <p><button type="button" class="btn" data-action="reset-filters">Réinitialiser les filtres</button></p>
+          <p>${onlyCustom ? 'Aucune recette perso pour l’instant.' : 'Aucune recette ne correspond.'}</p>
+          <p class="btn-row btn-row--center">
+            ${onlyCustom ? html`<a class="btn btn--primary" href="#/recettes/nouvelle">${icon('plus')} Nouvelle recette</a>` : ''}
+            <button type="button" class="btn" data-action="reset-filters">Réinitialiser les filtres</button>
+          </p>
         </div>
       `,
     );

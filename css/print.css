@@ -32,8 +32,16 @@ body {
 .planner__nav,
 .slot__actions,
 .plan-item__controls,
-.day__today {
+.day__today,
+.toolbar,
+#view-recipe-form {
   display: none !important;
+}
+
+.tag {
+  border: 1px solid #000;
+  background: none !important;
+  color: #000 !important;
 }
 
 .tile,

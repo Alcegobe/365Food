@@ -8,9 +8,23 @@
   <meta name="theme-color" content="#181e1c" media="(prefers-color-scheme: dark)">
   <meta name="description" content="Livre de recettes healthy plaisir : besoins du jour, macros et budget de points.">
   <title>365Food</title>
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23101413'/%3E%3Ccircle cx='32' cy='32' r='11' fill='%23ffffff'/%3E%3C/svg%3E">
+  <link rel="icon" href="img/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+  <link rel="manifest" href="manifest.json">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="365Food">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
   <link rel="stylesheet" href="css/app.css">
   <link rel="stylesheet" href="css/print.css" media="print">
+  <script>
+    // Apparence choisie (clé « 365food.state », voir js/store.js) appliquée avant le premier rendu, sans à-coup.
+    try {
+      var saved = JSON.parse(localStorage.getItem('365food.state') || 'null');
+      var theme = saved && saved.settings && saved.settings.theme;
+      if (theme === 'light' || theme === 'dark') document.documentElement.setAttribute('data-theme', theme);
+    } catch (e) {}
+  </script>
 </head>
 <body>
   <a class="skip-link" href="#main">Aller au contenu</a>
@@ -44,6 +58,7 @@
     <section id="view-dashboard" aria-label="Aujourd'hui" hidden></section>
     <section id="view-recipes" aria-label="Recettes" hidden></section>
     <section id="view-recipe" aria-label="Fiche recette" hidden></section>
+    <section id="view-recipe-form" aria-label="Recette perso" hidden></section>
     <section id="view-planner" aria-label="Planning" hidden></section>
     <section id="view-profile" aria-label="Profil" hidden></section>
     <noscript><p class="tile">Cette application a besoin de JavaScript.</p></noscript>

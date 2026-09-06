@@ -29,6 +29,9 @@ const PATHS = {
   cart: '<path d="M3 4h2l2.4 11.5a1 1 0 0 0 1 .8H18a1 1 0 0 0 1-.8L21 8H6.5"/><circle cx="9.5" cy="20" r="1.2"/><circle cx="17" cy="20" r="1.2"/>',
   leftover: '<path d="M4 12a8 8 0 1 1 2.3 5.7"/><path d="M4 18v-5h5"/>',
   planner: '<rect x="3" y="4" width="18" height="17" rx="4"/><path d="M3 9h18M8 2v4M16 2v4M8 14h3M13 14h3M8 17.5h3"/>',
+  pencil: '<path d="M4 20h4L18.5 9.5a2.1 2.1 0 0 0-3-3L5 17z"/><path d="m13.5 8.5 3 3"/>',
+  copy: '<rect x="9" y="9" width="11" height="11" rx="2.5"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/>',
+  sparkle: '<path d="M12 3v4M12 17v4M3 12h4M17 12h4M6.5 6.5l2.5 2.5M15 15l2.5 2.5M6.5 17.5 9 15M15 9l2.5-2.5"/>',
 };
 
 /** Retourne le SVG d'une icône, prêt à être interpolé dans un gabarit `html`. */

@@ -6,6 +6,7 @@ import {
   addItem,
   addLeftovers,
   cookedPortions,
+  countRecipeItems,
   dayItems,
   dayPlan,
   dayTotals,
@@ -14,6 +15,7 @@ import {
   leftoverCandidates,
   normalizePlanner,
   removeItem,
+  removeRecipeItems,
   setPortions,
   shoppingChecked,
   shoppingList,
@@ -261,5 +263,24 @@ describe('normalisation', () => {
   it('entrée absente ou aberrante → planning vide', () => {
     assert.deepEqual(normalizePlanner(undefined), emptyPlanner());
     assert.deepEqual(normalizePlanner('x'), emptyPlanner());
+  });
+});
+
+describe('recette supprimée du planning (V4)', () => {
+  it('retire tous ses repas, restes compris, sans toucher aux autres', () => {
+    const makeId = ids();
+    let planner = addItem(emptyPlanner(), { date: '2026-09-07', slot: 'soir', recipeId: 'burger' }, makeId);
+    planner = addItem(planner, { date: '2026-09-07', slot: 'matin', recipeId: 'bowl' }, makeId);
+    planner = addLeftovers(planner, '2026-09-08', makeId).planner;
+    planner = addItem(planner, { date: '2026-09-09', slot: 'soir', recipeId: 'burger' }, makeId);
+    assert.equal(countRecipeItems(planner, 'burger'), 3);
+    assert.equal(countRecipeItems(planner, 'bowl'), 1);
+    const { planner: next, removed } = removeRecipeItems(planner, 'burger');
+    assert.equal(removed, 3);
+    assert.equal(countRecipeItems(next, 'burger'), 0);
+    assert.deepEqual(Object.keys(next.days), ['2026-09-07']);
+    assert.equal(dayItems(next, '2026-09-07').length, 1);
+    assert.equal(countRecipeItems(planner, 'burger'), 3, 'l’original n’est pas modifié');
+    assert.deepEqual(removeRecipeItems(next, 'inconnue'), { planner: next, removed: 0 });
   });
 });
