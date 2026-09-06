@@ -167,6 +167,7 @@ function renderResults() {
   renderRecipeResults(target, {
     recipes: filterRecipes(catalog.recipes, filters, catalog.nutritionById, catalog.ingredientIndex),
     nutritionById: catalog.nutritionById,
+    grouped: filters.category === 'all',
   });
   syncFilterControls(views.recipes, filters);
 }
@@ -509,7 +510,7 @@ document.addEventListener('submit', (event) => {
   if (event.target.id === 'profile-form') {
     event.preventDefault();
     onSaveProfile(event.target);
-  } else if (event.target.id === 'weigh-in-form') {
+  } else if (event.target.id === 'weigh-in-form' || event.target.id === 'weigh-in-prompt') {
     event.preventDefault();
     onAddWeighIn(event.target);
   } else if (event.target.id === 'plan-recipe-form') {

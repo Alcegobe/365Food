@@ -15,6 +15,12 @@ function macroTile(label, value, unit, extraClass = '') {
   `;
 }
 
+/** Le titre de la tuile dit déjà « Le lendemain » : on retire ce préfixe de la note. */
+function leftoverText(tip) {
+  const text = String(tip).replace(/^le lendemain(?: midi)?\s*:\s*/i, '');
+  return text.charAt(0).toLocaleUpperCase('fr') + text.slice(1);
+}
+
 /** `recipe` est déjà ajustée au nombre de portions demandé (scaleRecipe). */
 export function renderRecipeView(container, { recipe, nutrition, ingredientIndex }) {
   const p = nutrition.perPortion;
@@ -92,7 +98,7 @@ export function renderRecipeView(container, { recipe, nutrition, ingredientIndex
               ? html`
                   <section class="tile" aria-labelledby="leftover-title">
                     <h3 class="tile__title" id="leftover-title">Le lendemain</h3>
-                    <p>${recipe.leftoverTip}</p>
+                    <p>${leftoverText(recipe.leftoverTip)}</p>
                   </section>
                 `
               : ''}

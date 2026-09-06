@@ -11,6 +11,7 @@ import {
   targetsForProfile,
   todayISO,
   validateProfile,
+  weighInStatus,
 } from '../js/profile.js';
 
 const TODAY = '2026-09-05';
@@ -151,5 +152,43 @@ describe('targetsForProfile', () => {
   });
   it('profil invalide → null', () => {
     assert.equal(targetsForProfile(newProfile(), TODAY), null);
+  });
+});
+
+describe('weighInStatus', () => {
+  it('sans pesée → null', () => {
+    assert.equal(weighInStatus(newProfile(), TODAY), null);
+  });
+  it('pesée du jour : rien à faire, prochaine dans 14 jours', () => {
+    const s = weighInStatus(briefProfile(), TODAY);
+    assert.equal(s.due, false);
+    assert.equal(s.daysSince, 0);
+    assert.equal(s.daysLeft, 14);
+    assert.equal(s.nextDate, '2026-09-19');
+    assert.equal(s.lastDate, '2026-09-05');
+  });
+  it('à l’échéance, l’invite est due', () => {
+    const s = weighInStatus(newProfile({ weights: [{ date: '2026-08-22', kg: 80 }] }), TODAY);
+    assert.equal(s.due, true);
+    assert.equal(s.daysSince, 14);
+    assert.equal(s.daysLeft, 0);
+    assert.equal(s.nextDate, '2026-09-05');
+  });
+  it('en retard : compte les jours depuis la dernière pesée', () => {
+    const s = weighInStatus(newProfile({ weights: [{ date: '2026-08-01', kg: 80 }] }), TODAY);
+    assert.equal(s.due, true);
+    assert.equal(s.daysSince, 35);
+  });
+  it('respecte la fréquence du profil', () => {
+    const s = weighInStatus(newProfile({ weighInEveryDays: 7, weights: [{ date: '2026-09-01', kg: 80 }] }), TODAY);
+    assert.equal(s.everyDays, 7);
+    assert.equal(s.due, false);
+    assert.equal(s.daysLeft, 3);
+    assert.equal(s.nextDate, '2026-09-08');
+  });
+  it('part de la pesée la plus récente, quel que soit l’ordre', () => {
+    const s = weighInStatus(newProfile({ weights: [{ date: '2026-09-03', kg: 80 }, { date: '2026-07-01', kg: 83 }] }), TODAY);
+    assert.equal(s.lastDate, '2026-09-03');
+    assert.equal(s.daysSince, 2);
   });
 });

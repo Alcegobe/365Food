@@ -4,7 +4,8 @@
 import { GOALS, PLANNER_SLOTS, PROFILE_LIMITS } from '../config.js';
 import { activityLevel } from '../nutrition.js';
 import { dayItems, dayTotals } from '../planner.js';
-import { currentWeighIn, todayISO } from '../profile.js';
+import { weightCurve } from '../charts.js';
+import { currentWeighIn, todayISO, weighInStatus } from '../profile.js';
 import { fmt, gauge, html, render } from './dom.js';
 import { icon } from './icons.js';
 
@@ -43,6 +44,27 @@ function weightPills(weights) {
   ];
   const description = `Poids des dernières pesées : ${asc.map((w) => `${fmt.date(w.date)} ${fmt.kg(w.kg)}`).join(', ')}.`;
   return { pills, labels, description };
+}
+
+/** Courbe de l'historique complet (à partir de deux pesées). */
+function curveFigure(curve) {
+  if (!curve) return '';
+  const area = `${curve.path} L ${curve.last.x} ${curve.height} L ${curve.first.x} ${curve.height} Z`;
+  const description = `Courbe du poids du ${fmt.date(curve.first.date)} au ${fmt.date(curve.last.date)}, de ${fmt.kg(curve.min)} à ${fmt.kg(curve.max)}.`;
+  return html`
+    <figure class="curve" role="img" aria-label="${description}">
+      <svg viewBox="0 0 ${curve.width} ${curve.height}" aria-hidden="true" focusable="false">
+        <path class="curve__area" d="${area}"></path>
+        <path class="curve__line" d="${curve.path}"></path>
+        ${curve.points.map((p, i) => html`<circle class="curve__dot ${i === curve.points.length - 1 ? 'curve__dot--last' : ''}" cx="${p.x}" cy="${p.y}" r="3"></circle>`)}
+      </svg>
+      <figcaption class="curve__labels" aria-hidden="true">
+        <span>${fmt.dayMonth(curve.first.date)}</span>
+        <span>${fmt.dec(curve.min)} à ${fmt.dec(curve.max)} kg</span>
+        <span>${fmt.dayMonth(curve.last.date)}</span>
+      </figcaption>
+    </figure>
+  `;
 }
 
 function statTile({ key, label, iconName, value, unit, wide = false, hint = '' }) {
@@ -105,6 +127,8 @@ export function renderDashboard(container, { profile, targets, planner, catalog 
   const history = [...profile.weights].sort((a, b) => b.date.localeCompare(a.date));
   const recent = history.slice(0, 6);
   const chart = weightPills(profile.weights);
+  const reminder = weighInStatus(profile, today);
+  const curve = weightCurve(profile.weights);
   const name = String(profile.name ?? '').trim();
   const headlinePoints = consumed && consumed.items > 0 ? remaining : targets.dailyPoints;
   const pointsWord = headlinePoints >= 2 ? 'points' : 'point';
@@ -147,6 +171,28 @@ export function renderDashboard(container, { profile, targets, planner, catalog 
             </div>
           `
         : ''}
+      ${reminder?.due
+        ? html`
+            <section class="tile tile--white prompt" aria-labelledby="weigh-prompt-title">
+              <div class="prompt__text">
+                <h3 class="tile__title" id="weigh-prompt-title">Quel est ton poids aujourd'hui ?</h3>
+                <p class="tile__hint">Dernière pesée il y a ${reminder.daysSince} ${reminder.daysSince > 1 ? 'jours' : 'jour'}.</p>
+              </div>
+              <form id="weigh-in-prompt" class="inline-form" novalidate>
+                <div class="field">
+                  <label class="visually-hidden" for="wp-kg">Poids</label>
+                  <div class="with-unit">
+                    <input class="input" id="wp-kg" name="kg" type="number" step="0.1" inputmode="decimal" required
+                           min="${PROFILE_LIMITS.weightKg.min}" max="${PROFILE_LIMITS.weightKg.max}" placeholder="${fmt.dec(current.kg)}">
+                    <span class="with-unit__unit" aria-hidden="true">kg</span>
+                  </div>
+                </div>
+                <input type="hidden" name="date" value="${todayIso}">
+                <button type="submit" class="btn btn--primary">Enregistrer</button>
+              </form>
+            </section>
+          `
+        : ''}
 
       <div class="tiles">
         ${menuTile({ planner, catalog, todayIso, targets })}
@@ -175,7 +221,10 @@ export function renderDashboard(container, { profile, targets, planner, catalog 
             hint: `7 × ${fmt.dec(targets.dailyPoints)} + 10 % de jokers.`,
           })}
           <section class="tile" aria-labelledby="weight-title">
-            <h3 class="tile__title" id="weight-title">Pesées</h3>
+            <div class="tile__head">
+              <h3 class="tile__title" id="weight-title">Pesées</h3>
+              ${reminder ? html`<p class="tile__hint">${reminder.due ? "À faire aujourd'hui" : `Prochaine le ${fmt.dateShort(reminder.nextDate)}`}</p>` : ''}
+            </div>
             <form id="weigh-in-form" class="inline-form" novalidate>
               <div class="field">
                 <label class="field__label" for="w-kg">Poids</label>
@@ -191,6 +240,7 @@ export function renderDashboard(container, { profile, targets, planner, catalog 
               </div>
               <button type="submit" class="icon-btn icon-btn--dark" aria-label="Ajouter la pesée">${icon('plus')}</button>
             </form>
+            ${curveFigure(curve)}
             <ol class="weigh-list" aria-label="Dernières pesées">
               ${recent.map((entry, i) => {
                 const previous = history[i + 1];

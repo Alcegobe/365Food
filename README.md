@@ -4,14 +4,15 @@ Application web **100 % statique** (HTML / CSS / JS en modules ES, sans serveur 
 
 Le cahier des charges complet est dans [`CLAUDE.md`](./CLAUDE.md) (formules §4, feuille de route §7, état d'avancement §9).
 
-## État : V2 — Planning ✅
+## État : V3 — Contenu ✅
 
 - **V0 — Socle** : profil (âge calculé, sexe, taille, poids, activité, objectif, réglages g/kg), cibles du jour (Mifflin-St Jeor → dépense → cible avec plancher → macros), budget de points quotidien et hebdomadaire, pesées, stockage local, export / import JSON.
-- **V1 — Recettes** : base d'ingrédients (`data/ingredients.json`, valeurs pour 100 g), trois recettes de référence (`data/recipes.json`), macros et points calculés automatiquement, catalogue avec recherche et filtres (catégorie, points max, temps max, tags), fiche recette avec portions ajustables, impression A4 ou A5.
+- **V1 — Recettes** : base d'ingrédients (`data/ingredients.json`, valeurs pour 100 g), recettes officielles (`data/recipes.json`), macros et points calculés automatiquement, catalogue avec recherche et filtres (catégorie, points max, temps max, tags), fiche recette avec portions ajustables, impression A4 ou A5.
 - **V2 — Planning** : semaine par jours et créneaux (matin, midi, soir, snack), ajout de recettes par sélection, portions, « Midi = restes d'hier soir », jauges de points et de protéines par jour et par semaine, liste de courses agrégée par rayon avec cases à cocher, impression de la semaine et de la liste, menu du jour sur le tableau de bord.
+- **V3 — Contenu** : catalogue de 78 recettes (11 sauces, 11 matins, 15 midis express en 10 minutes, 31 dîners pour 2 avec la note « le lendemain », 10 desserts & snacks) sur une base de 132 ingrédients, catalogue groupé par catégorie, rappel de pesée à l'échéance (invite sur l'accueil), courbe de l'historique de poids.
 - **Tests** des formules, du stockage, du catalogue, du planning et de la cohérence des fichiers de données (`npm test`, aucune dépendance).
 
-Prochaine étape : **V3 — Contenu** (catalogue complet, rappel de pesée et courbe), après réponse au §8 du brief.
+Prochaine étape : **V4 — Finitions** (PWA, mode sombre, ajout / édition de recettes perso, polish visuel).
 
 ## Lancer l'application
 
@@ -47,7 +48,8 @@ Node ≥ 20 (test runner intégré). Les tests couvrent chaque formule du brief 
 ├── js/
 │   ├── config.js          # tous les paramètres ajustables (facteurs, g/kg, points, catégories, tags…)
 │   ├── nutrition.js       # formules §4 : âge, BMR, TDEE, cible, macros, points, budgets
-│   ├── profile.js         # modèle du profil, pesées, validation, cibles d'un profil
+│   ├── charts.js          # courbe de l'historique de poids (coordonnées SVG)
+│   ├── profile.js         # modèle du profil, pesées, rappel de pesée, validation, cibles d'un profil
 │   ├── store.js           # localStorage, migrations, export / import JSON
 │   ├── recipes.js         # chargement, macros et points d'une recette, portions, filtres, validation des données
 │   ├── planner.js         # semaine, créneaux, restes du midi, totaux, liste de courses

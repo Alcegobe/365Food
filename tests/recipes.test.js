@@ -202,30 +202,60 @@ describe('validation des données', () => {
 describe('fichiers data/ du dépôt', () => {
   const recipesDb = JSON.parse(readFileSync(new URL('../data/recipes.json', import.meta.url), 'utf8'));
   const ingredientsDb = JSON.parse(readFileSync(new URL('../data/ingredients.json', import.meta.url), 'utf8'));
+  const byCategory = (category) => recipesDb.recipes.filter((r) => r.category === category);
 
   it('sont cohérents entre eux', () => {
     assert.deepEqual(validateCatalog(recipesDb, ingredientsDb), []);
   });
-  it('contiennent les trois recettes de référence de la V1, une par moment', () => {
-    assert.deepEqual(
-      recipesDb.recipes.map((r) => r.category).sort(),
-      ['matin', 'sauces', 'soir'],
-    );
+  it('couvrent le catalogue de la V3 (§7 du brief)', () => {
+    const minimum = { sauces: 10, matin: 10, midi: 15, soir: 30, snacks: 10 };
+    for (const [category, min] of Object.entries(minimum)) {
+      assert.ok(byCategory(category).length >= min, `${category} : ${byCategory(category).length} recettes, ${min} attendues`);
+    }
+    const ids = recipesDb.recipes.map((r) => r.id);
+    assert.equal(new Set(ids).size, ids.length, 'ids uniques');
+    for (const id of ids) assert.match(id, /^[a-z0-9]+(?:-[a-z0-9]+)*$/);
   });
   it('chaque recette a une fiche complète', () => {
     for (const recipe of recipesDb.recipes) {
+      assert.ok(recipe.title.length >= 8 && recipe.title.length <= 60, `${recipe.id} : titre`);
       assert.ok(recipe.whyLight, `${recipe.id} : whyLight`);
       assert.ok(recipe.steps.length >= 3, `${recipe.id} : étapes`);
       assert.ok(Array.isArray(recipe.variants) && recipe.variants.length > 0, `${recipe.id} : variantes`);
       assert.ok(recipe.prepMin >= 0 && recipe.cookMin >= 0, `${recipe.id} : temps`);
+      assert.ok(recipe.ingredients.length >= 3, `${recipe.id} : ingrédients`);
     }
-    const soir = recipesDb.recipes.find((r) => r.category === 'soir');
-    assert.equal(soir.servings, 2, 'un dîner = 2 portions (restes du midi)');
-    assert.ok(soir.leftoverTip, 'note « le lendemain »');
   });
-  it('donnent des macros et des points plausibles', async () => {
+  it('un dîner = 2 portions et une note « le lendemain » (restes du midi)', () => {
+    for (const recipe of byCategory('soir')) {
+      assert.equal(recipe.servings, 2, recipe.id);
+      assert.match(recipe.leftoverTip ?? '', /^Le lendemain/, recipe.id);
+    }
+  });
+  it('un midi express se prépare en 10 minutes au plus', () => {
+    for (const recipe of byCategory('midi')) assert.ok(totalMinutes(recipe) <= 10, `${recipe.id} : ${totalMinutes(recipe)} min`);
+  });
+  it('macros et points par portion restent dans les bornes éditoriales', async () => {
     const catalog = await loadCatalog({ inline: { recipes: recipesDb, ingredients: ingredientsDb } });
-    assert.equal(catalog.recipes.length, 3);
+    assert.equal(catalog.recipes.length, recipesDb.recipes.length, 'aucune recette ignorée au chargement');
+    const bounds = {
+      sauces: { kcal: [10, 80], protein: 0, points: [0, 1.5] },
+      matin: { kcal: [280, 560], protein: 20, points: [2, 8] },
+      midi: { kcal: [330, 620], protein: 28, points: [2.5, 8] },
+      soir: { kcal: [380, 720], protein: 35, points: [3, 10] },
+      snacks: { kcal: [80, 320], protein: 7, points: [0, 4] },
+    };
+    for (const recipe of catalog.recipes) {
+      const b = bounds[recipe.category];
+      const n = catalog.nutritionById.get(recipe.id);
+      const p = n.perPortion;
+      assert.ok(p.kcal >= b.kcal[0] && p.kcal <= b.kcal[1], `${recipe.id} : ${p.kcal} kcal`);
+      assert.ok(p.protein >= b.protein, `${recipe.id} : ${p.protein} g de protéines`);
+      assert.ok(n.points >= b.points[0] && n.points <= b.points[1], `${recipe.id} : ${n.points} points`);
+    }
+  });
+  it('les trois recettes de référence de la V1 gardent leurs valeurs', async () => {
+    const catalog = await loadCatalog({ inline: { recipes: recipesDb, ingredients: ingredientsDb } });
     const n = (id) => catalog.nutritionById.get(id);
 
     const sauce = n('sauce-blanche-kebab');
