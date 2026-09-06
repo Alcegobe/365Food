@@ -114,3 +114,24 @@ export const PLANNER_SLOTS = Object.freeze([
 
 /** Bornes du planning. */
 export const PLANNER_LIMITS = Object.freeze({ maxPortions: 6, maxItemsPerSlot: 6 });
+
+/** Apparence (V4) : réglage de l'utilisateur, appliqué via `data-theme` sur <html>. */
+export const THEMES = Object.freeze({ auto: 'Automatique', light: 'Clair', dark: 'Sombre' });
+
+/** Recettes perso (V4) : préfixe des identifiants (jamais utilisé par le catalogue officiel). */
+export const CUSTOM_RECIPE_PREFIX = 'perso-';
+
+/** Bornes du formulaire de recette perso. */
+export const CUSTOM_RECIPE_LIMITS = Object.freeze({
+  titleMaxLength: 80,
+  textMaxLength: 600,
+  servings: Object.freeze({ min: 1, max: RECIPE_SERVINGS_MAX }),
+  minutes: Object.freeze({ min: 0, max: 600 }),
+  maxIngredients: 40,
+  maxSteps: 30,
+  maxVariants: 10,
+  /** Quantité maximale d'une ligne (g, ml ou pièces). */
+  qtyMax: 5000,
+  /** Macros saisies à la main, par portion. */
+  manual: Object.freeze({ kcalMax: 5000, gramsMax: 500 }),
+});

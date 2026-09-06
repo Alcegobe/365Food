@@ -1,7 +1,7 @@
 /**
  * Tableau de bord : identité, titre du jour, tuiles (poids, macros, semaine), pesées, profil, données.
  */
-import { GOALS, PLANNER_SLOTS, PROFILE_LIMITS } from '../config.js';
+import { GOALS, PLANNER_SLOTS, PROFILE_LIMITS, THEMES } from '../config.js';
 import { activityLevel } from '../nutrition.js';
 import { dayItems, dayTotals } from '../planner.js';
 import { weightCurve } from '../charts.js';
@@ -117,7 +117,7 @@ function menuTile({ planner, catalog, todayIso, targets }) {
   `;
 }
 
-export function renderDashboard(container, { profile, targets, planner, catalog = null, today = new Date() }) {
+export function renderDashboard(container, { profile, targets, planner, catalog = null, theme = 'auto', installAvailable = false, today = new Date() }) {
   const todayIso = todayISO(today);
   const consumed = catalog ? dayTotals(planner, todayIso, catalog.nutritionById) : null;
   const remaining = consumed ? Math.max(0, targets.dailyPoints - consumed.points) : null;
@@ -276,6 +276,21 @@ export function renderDashboard(container, { profile, targets, planner, catalog 
             <div class="btn-row">
               <a class="btn btn--primary" href="#/profil">Modifier le profil</a>
             </div>
+          </section>
+
+          <section class="tile" aria-labelledby="app-title">
+            <h3 class="tile__title" id="app-title">Application</h3>
+            <div class="field">
+              <span class="field__label" id="theme-label">Apparence</span>
+              <div class="chips" role="group" aria-labelledby="theme-label">
+                ${Object.entries(THEMES).map(
+                  ([id, label]) => html`<button type="button" class="chip" data-action="theme" data-theme="${id}" aria-pressed="${theme === id}">${label}</button>`,
+                )}
+              </div>
+            </div>
+            ${installAvailable
+              ? html`<div class="btn-row"><button type="button" class="btn btn--primary" data-action="install">${icon('download')} Installer sur l'appareil</button></div>`
+              : ''}
           </section>
 
           <section class="tile" aria-labelledby="data-title">

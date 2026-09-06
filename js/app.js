@@ -1,18 +1,22 @@
 /**
- * Point d'entrée : état, routage (#/…), catalogue, planning, actions.
+ * Point d'entrée : état, routage (#/…), catalogue (officiel + recettes perso), planning, actions,
+ * apparence, service worker et installation (PWA).
  */
 import { RECIPE_SERVINGS_MAX, PLANNER_LIMITS } from './config.js';
+import { buildRecipe, newRecipeId, recipeFormValues, removeRecipe, upsertRecipe } from './custom-recipes.js';
 import { parseDateParts } from './nutrition.js';
-import { addDays, addItem, addLeftovers, findItem, removeItem, setPortions, toggleShopping, weekDates, weekStart } from './planner.js';
+import { addDays, addItem, addLeftovers, countRecipeItems, findItem, removeItem, removeRecipeItems, setPortions, toggleShopping, weekDates, weekStart } from './planner.js';
 import { addWeighIn, isProfileValid, newProfile, removeWeighIn, targetsForProfile, todayISO } from './profile.js';
-import { emptyFilters, filterRecipes, loadCatalog, scaleRecipe } from './recipes.js';
+import { buildCatalog, emptyFilters, filterRecipes, loadCatalog, scaleRecipe } from './recipes.js';
 import { parseRoute, routeHash } from './router.js';
 import { clearState, emptyState, exportFileName, exportState, importState, loadState, saveState } from './store.js';
+import { applyTheme, normalizeTheme } from './theme.js';
 import { renderDashboard } from './ui/dashboard.js';
 import { downloadTextFile, readFileAsText, toast } from './ui/dom.js';
 import { renderPicker, renderPlanRecipe, renderPlanner } from './ui/planner.js';
 import { readProfileForm, renderProfileForm, showFormErrors } from './ui/profile-form.js';
 import { renderRecipeMissing, renderRecipeView } from './ui/recipe-detail.js';
+import { readRecipeForm, renderRecipeForm, showRecipeFormErrors } from './ui/recipe-form.js';
 import { renderRecipeResults, renderRecipesView, syncFilterControls } from './ui/recipes-list.js';
 
 /** localStorage, ou une doublure en mémoire si le navigateur le refuse. */
@@ -38,9 +42,13 @@ const views = {
   today: document.getElementById('view-dashboard'),
   recipes: document.getElementById('view-recipes'),
   recipe: document.getElementById('view-recipe'),
+  recipeForm: document.getElementById('view-recipe-form'),
   planner: document.getElementById('view-planner'),
   profile: document.getElementById('view-profile'),
 };
+/** Section affichée pour chaque route. */
+const VIEW_OF_ROUTE = { today: 'today', recipes: 'recipes', recipe: 'recipe', 'recipe-new': 'recipeForm', 'recipe-edit': 'recipeForm', planner: 'planner', profile: 'profile' };
+const RECIPE_ROUTES = new Set(['recipes', 'recipe', 'recipe-new', 'recipe-edit']);
 const importInput = document.getElementById('import-file');
 const sheet = document.getElementById('sheet');
 const main = document.getElementById('main');
@@ -53,12 +61,18 @@ const servingsById = new Map();
 let plannerFocus = null;
 let picker = null;
 let lastRouteKey = '';
+let installPrompt = null;
+let updateOffered = false;
 
 /* ---------- État ---------- */
 
 function commit(nextState) {
   state = saveState(nextState, storage);
   if (storage.volatile) toast('Stockage local indisponible : les données seront perdues à la fermeture.', 'error');
+}
+
+function themeSetting() {
+  return normalizeTheme(state.settings?.theme);
 }
 
 function currentRoute() {
@@ -69,7 +83,7 @@ function currentRoute() {
 function ensureCatalog() {
   if (catalog) return Promise.resolve(catalog);
   if (!catalogPromise) {
-    catalogPromise = loadCatalog()
+    catalogPromise = loadCatalog({ custom: state.recipes })
       .then((loaded) => {
         catalog = loaded;
         return loaded;
@@ -80,6 +94,12 @@ function ensureCatalog() {
       });
   }
   return catalogPromise;
+}
+
+/** Recompose le catalogue (recettes perso modifiées, import, remise à zéro) sans réseau. */
+function rebuildCatalog() {
+  if (!catalog) return;
+  catalog = buildCatalog(catalog.sources.recipesDb, catalog.sources.ingredientsDb, state.recipes);
 }
 
 /** Charge le catalogue puis re-rend la route donnée si elle est toujours active. */
@@ -98,17 +118,18 @@ function whenCatalog(target, routeName, renderFn) {
 
 function renderAll() {
   const route = currentRoute();
-  const routeKey = `${route.name}:${route.id ?? route.date ?? ''}`;
+  const routeKey = `${route.name}:${route.id ?? route.date ?? route.from ?? ''}`;
   const changed = routeKey !== lastRouteKey;
   lastRouteKey = routeKey;
+  const viewName = VIEW_OF_ROUTE[route.name] ?? 'today';
 
   for (const [name, el] of Object.entries(views)) {
-    el.hidden = name !== route.name;
-    if (name !== route.name) el.replaceChildren();
+    el.hidden = name !== viewName;
+    if (name !== viewName) el.replaceChildren();
   }
   document.body.dataset.view = route.name;
   document.querySelectorAll('.tabbar a[data-route]').forEach((link) => {
-    const active = link.dataset.route === route.name || (link.dataset.route === 'recipes' && route.name === 'recipe');
+    const active = link.dataset.route === route.name || (link.dataset.route === 'recipes' && RECIPE_ROUTES.has(route.name));
     if (active) link.setAttribute('aria-current', 'page');
     else link.removeAttribute('aria-current');
   });
@@ -119,6 +140,12 @@ function renderAll() {
       break;
     case 'recipe':
       renderRecipePage(route.id);
+      break;
+    case 'recipe-new':
+      renderRecipeFormPage({ mode: 'new', from: route.from ?? null });
+      break;
+    case 'recipe-edit':
+      renderRecipeFormPage({ mode: 'edit', id: route.id });
       break;
     case 'planner':
       renderPlannerPage(route.date);
@@ -142,6 +169,8 @@ function renderDashboardPage() {
     targets: targetsForProfile(state.profile),
     planner: state.planner,
     catalog,
+    theme: themeSetting(),
+    installAvailable: Boolean(installPrompt),
   });
   if (!catalog) {
     ensureCatalog()
@@ -168,6 +197,7 @@ function renderResults() {
     recipes: filterRecipes(catalog.recipes, filters, catalog.nutritionById, catalog.ingredientIndex),
     nutritionById: catalog.nutritionById,
     grouped: filters.category === 'all',
+    onlyCustom: filters.onlyCustom,
   });
   syncFilterControls(views.recipes, filters);
 }
@@ -188,6 +218,31 @@ function renderRecipePage(id) {
     nutrition: catalog.nutritionById.get(id),
     ingredientIndex: catalog.ingredientIndex,
   });
+}
+
+/** Formulaire de recette perso : création (vierge ou d'après une recette) ou modification. */
+function renderRecipeFormPage({ mode, id = null, from = null }) {
+  const routeName = mode === 'edit' ? 'recipe-edit' : 'recipe-new';
+  if (!catalog) {
+    whenCatalog(views.recipeForm, routeName, () => renderRecipeFormPage({ mode, id, from }));
+    return;
+  }
+  let values;
+  let baseTitle = '';
+  if (mode === 'edit') {
+    const stored = state.recipes.find((r) => r.id === id);
+    if (!stored) {
+      renderRecipeMissing(views.recipeForm, id);
+      return;
+    }
+    values = recipeFormValues(stored, catalog.ingredientIndex);
+  } else {
+    const base = from ? catalog.recipes.find((r) => r.id === from) : null;
+    values = recipeFormValues(base ?? { servings: 2, prepMin: 10, cookMin: 0 }, catalog.ingredientIndex);
+    if (base) baseTitle = base.title;
+  }
+  const ingredients = [...catalog.ingredientIndex.values()].sort((a, b) => a.name.localeCompare(b.name, 'fr'));
+  renderRecipeForm(views.recipeForm, { values, mode, recipeId: mode === 'edit' ? id : null, baseTitle, ingredients, ingredientIndex: catalog.ingredientIndex });
 }
 
 function renderPlannerPage(routeDate) {
@@ -296,19 +351,38 @@ async function onImportFile(file) {
   }
   if (state.profile !== null && !window.confirm('Remplacer les données actuelles par cette sauvegarde ?')) return;
   commit(imported);
+  rebuildCatalog();
+  applyTheme(themeSetting());
   window.location.hash = '#/';
   renderAll();
   toast('Sauvegarde importée.', 'success');
 }
 
 function onReset() {
-  if (!window.confirm('Effacer le profil, l’historique de poids et le planning de cet appareil ?')) return;
+  if (!window.confirm('Effacer le profil, l’historique de poids, le planning et les recettes perso de cet appareil ?')) return;
   clearState(storage);
   state = emptyState();
   servingsById.clear();
   plannerFocus = null;
+  rebuildCatalog();
+  applyTheme(themeSetting());
   window.location.hash = '#/';
   renderAll();
+}
+
+function onTheme(value) {
+  const theme = normalizeTheme(value);
+  commit({ ...state, settings: { ...state.settings, theme } });
+  applyTheme(theme);
+  renderAll();
+}
+
+function onInstall() {
+  if (!installPrompt) return;
+  const prompt = installPrompt;
+  installPrompt = null;
+  prompt.prompt();
+  prompt.userChoice?.finally(() => renderAll());
 }
 
 function onServings(delta) {
@@ -320,6 +394,43 @@ function onServings(delta) {
   servingsById.set(recipe.id, Math.min(RECIPE_SERVINGS_MAX, Math.max(1, current + delta)));
   renderRecipePage(recipe.id);
 }
+
+/* ---------- Recettes perso ---------- */
+
+function onSaveRecipe(form) {
+  if (!catalog) return;
+  const editingId = form.dataset.mode === 'edit' ? form.dataset.recipe : null;
+  const input = readRecipeForm(form);
+  const taken = [...catalog.recipes.map((r) => r.id), ...state.recipes.map((r) => r.id)];
+  const id = editingId ?? newRecipeId(input.title, taken);
+  const { recipe, errors } = buildRecipe(input, catalog.ingredientIndex, { id });
+  showRecipeFormErrors(form, errors);
+  if (errors.length > 0) return;
+  commit({ ...state, recipes: upsertRecipe(state.recipes, recipe) });
+  servingsById.delete(id);
+  rebuildCatalog();
+  toast(editingId ? 'Recette mise à jour.' : 'Recette ajoutée à tes recettes.', 'success');
+  window.location.hash = routeHash({ name: 'recipe', id });
+}
+
+function onDeleteRecipe(id) {
+  const stored = state.recipes.find((r) => r.id === id);
+  if (!stored) return;
+  const planned = countRecipeItems(state.planner, id);
+  const question = planned > 0
+    ? `Supprimer « ${stored.title} » ? Elle sera aussi retirée du planning (${planned} ${planned > 1 ? 'repas' : 'repas'}).`
+    : `Supprimer « ${stored.title} » ?`;
+  if (!window.confirm(question)) return;
+  const { planner } = removeRecipeItems(state.planner, id);
+  commit({ ...state, recipes: removeRecipe(state.recipes, id), planner });
+  servingsById.delete(id);
+  rebuildCatalog();
+  toast('Recette supprimée.', 'success');
+  if (parseRoute(window.location.hash).name === 'recipes') renderAll();
+  else window.location.hash = '#/recettes';
+}
+
+/* ---------- Planning ---------- */
 
 function updatePlanner(next, message) {
   commit({ ...state, planner: next });
@@ -373,6 +484,8 @@ function goToWeek(date) {
   window.location.hash = routeHash(date ? { name: 'planner', date } : { name: 'planner' });
 }
 
+/* ---------- Impression ---------- */
+
 let printStyle = null;
 
 function printView(kind) {
@@ -391,6 +504,29 @@ function printView(kind) {
   window.print();
 }
 
+/* ---------- PWA : service worker, mise à jour, installation ---------- */
+
+function registerServiceWorker() {
+  if (!('serviceWorker' in navigator) || !/^https?:$/.test(window.location.protocol)) return;
+  navigator.serviceWorker.register('sw.js').catch(() => {});
+  navigator.serviceWorker.addEventListener('message', (event) => {
+    if (event.data?.type !== 'updated' || updateOffered) return;
+    updateOffered = true;
+    toast('Nouvelle version disponible.', 'info', { actionLabel: 'Recharger', onAction: () => window.location.reload() });
+  });
+}
+
+window.addEventListener('beforeinstallprompt', (event) => {
+  event.preventDefault();
+  installPrompt = event;
+  if (currentRoute().name === 'today') renderAll();
+});
+
+window.addEventListener('appinstalled', () => {
+  installPrompt = null;
+  if (currentRoute().name === 'today') renderAll();
+});
+
 /* ---------- Câblage ---------- */
 
 document.addEventListener('click', (event) => {
@@ -399,7 +535,7 @@ document.addEventListener('click', (event) => {
     return;
   }
 
-  const chip = event.target.closest('[data-filter-category], [data-filter-tag], [data-picker-all]');
+  const chip = event.target.closest('[data-filter-category], [data-filter-tag], [data-filter-custom], [data-picker-all]');
   if (chip) {
     if (chip.dataset.pickerAll !== undefined && picker) {
       picker.all = chip.dataset.pickerAll === 'true';
@@ -407,6 +543,7 @@ document.addEventListener('click', (event) => {
       return;
     }
     if (chip.dataset.filterCategory) filters.category = chip.dataset.filterCategory;
+    if (chip.dataset.filterCustom !== undefined) filters.onlyCustom = !filters.onlyCustom;
     if (chip.dataset.filterTag) {
       const tag = chip.dataset.filterTag;
       filters.tags = filters.tags.includes(tag) ? filters.tags.filter((t) => t !== tag) : [...filters.tags, tag];
@@ -429,6 +566,12 @@ document.addEventListener('click', (event) => {
     case 'reset':
       onReset();
       break;
+    case 'theme':
+      onTheme(trigger.dataset.theme);
+      break;
+    case 'install':
+      onInstall();
+      break;
     case 'delete-weigh-in':
       onDeleteWeighIn(date);
       break;
@@ -438,6 +581,9 @@ document.addEventListener('click', (event) => {
       break;
     case 'servings':
       onServings(Number(trigger.dataset.delta));
+      break;
+    case 'recipe-delete':
+      onDeleteRecipe(trigger.dataset.recipe);
       break;
     case 'print':
       printView(trigger.dataset.format);
@@ -516,6 +662,9 @@ document.addEventListener('submit', (event) => {
   } else if (event.target.id === 'plan-recipe-form') {
     event.preventDefault();
     onPlanRecipeSubmit(event.target);
+  } else if (event.target.id === 'recipe-form') {
+    event.preventDefault();
+    onSaveRecipe(event.target);
   }
 });
 
@@ -527,4 +676,6 @@ sheet.addEventListener('close', () => {
 importInput.addEventListener('change', () => onImportFile(importInput.files?.[0]));
 window.addEventListener('hashchange', renderAll);
 
+applyTheme(themeSetting());
 renderAll();
+registerServiceWorker();

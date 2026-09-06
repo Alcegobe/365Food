@@ -6,14 +6,16 @@
 import { newProfile, validateProfile } from './profile.js';
 import { formatISODate, parseDateParts } from './nutrition.js';
 import { emptyPlanner, normalizePlanner } from './planner.js';
+import { normalizeCustomRecipes } from './custom-recipes.js';
+import { normalizeTheme } from './theme.js';
 
 export const APP_ID = '365food';
-export const SCHEMA_VERSION = 2;
+export const SCHEMA_VERSION = 3;
 export const STORAGE_KEY = '365food.state';
 
 /** État vide (première ouverture). */
 export function emptyState() {
-  return { schemaVersion: SCHEMA_VERSION, profile: null, settings: {}, planner: emptyPlanner() };
+  return { schemaVersion: SCHEMA_VERSION, profile: null, settings: {}, planner: emptyPlanner(), recipes: [] };
 }
 
 /** Migrations successives de schéma. Chaque étape amène de N à N + 1. */
@@ -22,6 +24,8 @@ const MIGRATIONS = {
   0: (state) => ({ ...state, schemaVersion: 1 }),
   // 1 → 2 : planning (V2).
   1: (state) => ({ ...state, schemaVersion: 2, planner: state.planner ?? emptyPlanner() }),
+  // 2 → 3 : recettes perso (V4).
+  2: (state) => ({ ...state, schemaVersion: 3, recipes: state.recipes ?? [] }),
 };
 
 function isPlainObject(value) {
@@ -40,6 +44,7 @@ export function normalizeState(input) {
     profile: input.profile ?? null,
     settings: isPlainObject(input.settings) ? { ...input.settings } : {},
     planner: input.planner,
+    recipes: input.recipes,
   };
   while (state.schemaVersion < SCHEMA_VERSION) {
     const step = MIGRATIONS[state.schemaVersion];
@@ -54,6 +59,8 @@ export function normalizeState(input) {
     state.profile = newProfile({ ...state.profile, weights: Array.isArray(state.profile.weights) ? state.profile.weights : [] });
   }
   state.planner = normalizePlanner(state.planner);
+  state.recipes = normalizeCustomRecipes(state.recipes);
+  if (state.settings.theme !== undefined) state.settings.theme = normalizeTheme(state.settings.theme);
   return state;
 }
 
@@ -96,6 +103,7 @@ export function exportState(state, now = new Date()) {
       profile: normalized.profile,
       settings: normalized.settings,
       planner: normalized.planner,
+      recipes: normalized.recipes,
     },
     null,
     2,

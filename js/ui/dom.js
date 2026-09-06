@@ -99,14 +99,31 @@ export function gauge({ value, max, label, unit }) {
 
 let toastTimer = 0;
 
-export function toast(message, type = 'info') {
+/**
+ * Message furtif en bas d'écran. Avec `actionLabel`, un bouton est ajouté (« Recharger ») :
+ * le message reste plus longtemps et accepte les clics.
+ */
+export function toast(message, type = 'info', { actionLabel = '', onAction = null } = {}) {
   const el = document.getElementById('toast');
   if (!el) return;
-  el.textContent = message;
+  el.replaceChildren(document.createTextNode(message));
+  if (actionLabel) {
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.className = 'toast__action';
+    button.textContent = actionLabel;
+    button.addEventListener('click', () => {
+      el.classList.remove('toast--visible');
+      onAction?.();
+    });
+    el.append(button);
+  }
+  el.classList.toggle('toast--sticky', Boolean(actionLabel));
   el.dataset.type = type;
   el.classList.add('toast--visible');
   clearTimeout(toastTimer);
-  toastTimer = setTimeout(() => el.classList.remove('toast--visible'), type === 'error' ? 7000 : 3500);
+  const duration = actionLabel ? 15000 : type === 'error' ? 7000 : 3500;
+  toastTimer = setTimeout(() => el.classList.remove('toast--visible'), duration);
 }
 
 /* ---------- Fichiers ---------- */

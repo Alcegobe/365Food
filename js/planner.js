@@ -143,6 +143,31 @@ export function setPortions(planner, { date, itemId, portions }) {
   return withDay(planner, date, day);
 }
 
+/** Nombre de repas planifiés (restes compris) pour une recette. */
+export function countRecipeItems(planner, recipeId) {
+  let count = 0;
+  for (const day of Object.values(planner?.days ?? {})) {
+    for (const slot of SLOT_IDS) count += (day[slot] ?? []).filter((item) => item.recipeId === recipeId).length;
+  }
+  return count;
+}
+
+/** Retire du planning tous les repas d'une recette (recette perso supprimée). Retourne { planner, removed }. */
+export function removeRecipeItems(planner, recipeId) {
+  let next = planner;
+  let removed = 0;
+  for (const [date, day] of Object.entries(planner?.days ?? {})) {
+    for (const slot of SLOT_IDS) {
+      for (const item of day[slot] ?? []) {
+        if (item.recipeId !== recipeId) continue;
+        next = removeItem(next, { date, itemId: item.id });
+        removed += 1;
+      }
+    }
+  }
+  return { planner: next, removed };
+}
+
 /* ---------- Restes du midi (§2.5) ---------- */
 
 /** Dîners de la veille (hors restes eux-mêmes) réutilisables le midi. */

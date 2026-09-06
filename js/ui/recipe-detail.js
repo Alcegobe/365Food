@@ -38,13 +38,16 @@ export function renderRecipeView(container, { recipe, nutrition, ingredientIndex
           <a class="btn" href="#/recettes">${icon('arrowLeft')} Recettes</a>
           <div class="btn-row">
             <button type="button" class="btn btn--primary" data-action="plan-recipe" data-recipe="${recipe.id}">${icon('planner')} Planifier</button>
+            ${recipe.custom
+              ? html`<a class="btn" href="#/recettes/${encodeURIComponent(recipe.id)}/modifier">${icon('pencil')} Modifier</a>`
+              : html`<a class="btn" href="#/recettes/nouvelle/${encodeURIComponent(recipe.id)}" title="Créer ma version de cette recette">${icon('copy')} Ma version</a>`}
             <button type="button" class="btn" data-action="print" data-format="a4">${icon('print')} A4</button>
             <button type="button" class="btn" data-action="print" data-format="a5">${icon('print')} A5</button>
           </div>
         </div>
 
         <header class="fiche__head">
-        <p class="eyebrow">${[RECIPE_CATEGORIES[recipe.category] ?? recipe.category, ...tags].join(' · ')}</p>
+        <p class="eyebrow">${[RECIPE_CATEGORIES[recipe.category] ?? recipe.category, ...tags].join(' · ')}${recipe.custom ? html` <span class="tag">Perso</span>` : ''}</p>
         <h2 class="headline">${recipe.title}</h2>
         <p class="subline">${timeParts.join(' · ')}</p>
 

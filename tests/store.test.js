@@ -38,6 +38,7 @@ function sampleState() {
     }),
     settings: { theme: 'auto' },
     planner: { days: { '2026-09-07': { soir: [{ id: 'a', recipeId: 'smash-burger-light', portions: 1 }] } }, shopping: {} },
+    recipes: [{ id: 'perso-bowl', title: 'Bowl', category: 'matin', tags: [], servings: 1, prepMin: 5, cookMin: 0, ingredients: [{ ref: 'skyr-nature-0', qty: 200, unit: 'g' }], steps: ['Mélange.'], variants: [] }],
   };
 }
 
@@ -77,10 +78,24 @@ describe('normalizeState et migrations', () => {
     assert.deepEqual(state.settings, {});
     assert.deepEqual(state.planner, emptyPlanner());
   });
-  it('schéma 1 (V0/V1) → 2 : le planning vide est ajouté', () => {
+  it('schéma 1 (V0/V1) → 3 : planning vide et recettes perso vides ajoutés', () => {
     const state = normalizeState({ schemaVersion: 1, profile: null, settings: {} });
-    assert.equal(state.schemaVersion, 2);
+    assert.equal(state.schemaVersion, 3);
     assert.deepEqual(state.planner, emptyPlanner());
+    assert.deepEqual(state.recipes, []);
+  });
+  it('schéma 2 (V2/V3) → 3 : les recettes perso vides sont ajoutées, le reste est intact', () => {
+    const planner = { days: { '2026-09-07': { soir: [{ id: 'a', recipeId: 'x', portions: 2 }] } }, shopping: {} };
+    const state = normalizeState({ schemaVersion: 2, profile: null, settings: { theme: 'dark' }, planner });
+    assert.equal(state.schemaVersion, 3);
+    assert.deepEqual(state.planner, planner);
+    assert.deepEqual(state.recipes, []);
+    assert.equal(state.settings.theme, 'dark');
+  });
+  it('les recettes perso invalides sont écartées, le thème inconnu ramené à « auto »', () => {
+    const state = normalizeState({ schemaVersion: 3, profile: null, settings: { theme: 'sépia' }, recipes: [{ id: 'perso-ok', title: 'Ok', servings: 1 }, { title: 'sans id' }, 42] });
+    assert.deepEqual(state.recipes.map((r) => r.id), ['perso-ok']);
+    assert.equal(state.settings.theme, 'auto');
   });
   it('un planning corrompu est nettoyé, pas fatal', () => {
     const state = normalizeState({ schemaVersion: 2, profile: null, settings: {}, planner: { days: { nope: 1 } } });
@@ -136,10 +151,16 @@ describe('export / import JSON', () => {
   it('sauvegarde d’une version plus récente', () => {
     assert.throws(() => importState(JSON.stringify({ app: APP_ID, schemaVersion: 99, profile: null }), TODAY), /plus récente/);
   });
-  it('sauvegarde V1 (schéma 1) importée dans la V2', () => {
+  it('sauvegarde V1 (schéma 1) importée dans la version courante', () => {
     const state = importState(JSON.stringify({ app: APP_ID, schemaVersion: 1, profile: null, settings: {} }), TODAY);
-    assert.equal(state.schemaVersion, 2);
+    assert.equal(state.schemaVersion, SCHEMA_VERSION);
     assert.deepEqual(state.planner, emptyPlanner());
+    assert.deepEqual(state.recipes, []);
+  });
+  it('les recettes perso font partie de la sauvegarde', () => {
+    const data = JSON.parse(exportState(sampleState(), TODAY));
+    assert.deepEqual(data.recipes, sampleState().recipes);
+    assert.deepEqual(importState(exportState(sampleState(), TODAY), TODAY).recipes, sampleState().recipes);
   });
   it('profil invalide dans la sauvegarde : message explicite', () => {
     const bad = { app: APP_ID, schemaVersion: 1, profile: { birthDate: 'hier', sex: 'm', heightCm: 180, weights: [{ date: '2026-09-05', kg: 80 }] } };
