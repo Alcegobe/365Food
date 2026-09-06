@@ -47,15 +47,7 @@ export function renderProfileForm(container, { profile, isFirstRun, today = new 
   render(
     container,
     html`
-      ${isFirstRun
-        ? html`
-            <h2 class="headline">Bienvenue</h2>
-            <p class="lead">Pour calculer tes besoins du jour et ton budget de points, il me faut quelques infos. Tout reste sur cet appareil.</p>
-          `
-        : html`
-            <h2 class="headline">Ton profil</h2>
-            <p class="lead">Les cibles se recalculent automatiquement après chaque modification.</p>
-          `}
+      <h2 class="headline">${isFirstRun ? 'Bienvenue' : 'Ton profil'}</h2>
 
       <form id="profile-form" class="form" novalidate data-goal="${p.goal}">
         <div class="form-summary" id="form-summary" role="alert" aria-live="assertive"></div>
@@ -66,13 +58,11 @@ export function renderProfileForm(container, { profile, isFirstRun, today = new 
             ${field({
               name: 'name',
               label: 'Prénom',
-              hint: 'Facultatif, juste pour te saluer.',
-              control: html`<input class="input" id="f-name" name="name" type="text" value="${p.name ?? ''}" maxlength="40" autocomplete="given-name" aria-describedby="f-name-hint f-name-error">`,
+              control: html`<input class="input" id="f-name" name="name" type="text" value="${p.name ?? ''}" maxlength="40" autocomplete="given-name" placeholder="Facultatif" aria-describedby="f-name-error">`,
             })}
             ${field({
               name: 'birthDate',
               label: 'Date de naissance',
-              hint: "L'âge se calcule tout seul.",
               control: html`<input class="input" id="f-birthDate" name="birthDate" type="date" value="${p.birthDate ?? ''}" max="${todayIso}" aria-describedby="f-birthDate-hint f-birthDate-error">`,
             })}
           </div>
@@ -83,7 +73,6 @@ export function renderProfileForm(container, { profile, isFirstRun, today = new 
                 <label class="choice"><input type="radio" name="sex" value="m" ${p.sex === 'm' ? 'checked' : ''}><span class="choice__title">Homme</span></label>
                 <label class="choice"><input type="radio" name="sex" value="f" ${p.sex === 'f' ? 'checked' : ''}><span class="choice__title">Femme</span></label>
               </div>
-              <p class="field__hint">Nécessaire à la formule de Mifflin-St Jeor.</p>
               <p class="field__error" id="f-sex-error" aria-live="polite"></p>
             </div>
             ${field({
@@ -99,8 +88,7 @@ export function renderProfileForm(container, { profile, isFirstRun, today = new 
           <div class="fields fields--2">
             ${field({
               name: 'weightKg',
-              label: 'Poids',
-              hint: 'Chaque nouvelle date ajoute une pesée à ton historique.',
+              label: 'Poids actuel',
               control: numberInput({ name: 'weightKg', value: current?.kg, unit: 'kg', step: 0.1, min: PROFILE_LIMITS.weightKg.min, max: PROFILE_LIMITS.weightKg.max }),
             })}
             ${field({
@@ -117,7 +105,6 @@ export function renderProfileForm(container, { profile, isFirstRun, today = new 
           ${field({
             name: 'activity',
             label: "Niveau d'activité",
-            hint: 'Sport et activité quotidienne confondus.',
             control: html`
               <select class="input" id="f-activity" name="activity" aria-describedby="f-activity-hint f-activity-error">
                 ${ACTIVITY_LEVELS.map(
@@ -149,13 +136,12 @@ export function renderProfileForm(container, { profile, isFirstRun, today = new 
             ${field({
               name: 'goalAdjustPct',
               label: 'Ajustement de la dépense',
-              hint: `Négatif = déficit, positif = surplus (de ${GOAL_ADJUST_RANGE.min} à +${GOAL_ADJUST_RANGE.max} %). Par défaut ±15 %.`,
+              hint: 'Négatif = déficit, positif = surplus.',
               control: numberInput({ name: 'goalAdjustPct', value: p.goalAdjustPct, unit: '%', step: 1, min: GOAL_ADJUST_RANGE.min, max: GOAL_ADJUST_RANGE.max, inputmode: 'numeric' }),
             })}
             ${field({
               name: 'weighInEveryDays',
               label: 'Rappel de pesée',
-              hint: "Fréquence à laquelle l'app te redemandera ton poids.",
               control: numberInput({ name: 'weighInEveryDays', value: p.weighInEveryDays, unit: 'jours', step: 1, min: PROFILE_LIMITS.weighInEveryDays.min, max: PROFILE_LIMITS.weighInEveryDays.max, inputmode: 'numeric' }),
             })}
           </div>
@@ -167,13 +153,13 @@ export function renderProfileForm(container, { profile, isFirstRun, today = new 
             ${field({
               name: 'proteinPerKg',
               label: 'Protéines',
-              hint: "Laisse vide pour la valeur par défaut de l'objectif.",
+              hint: 'Vide = valeur par défaut.',
               control: numberInput({ name: 'proteinPerKg', value: p.proteinPerKg, unit: 'g/kg', step: 0.1, min: PROFILE_LIMITS.proteinPerKg.min, max: PROFILE_LIMITS.proteinPerKg.max, placeholder: String(goalCfg.proteinPerKg) }),
             })}
             ${field({
               name: 'fatPerKg',
               label: 'Lipides',
-              hint: 'Laisse vide pour la valeur par défaut.',
+              hint: 'Vide = valeur par défaut.',
               control: numberInput({ name: 'fatPerKg', value: p.fatPerKg, unit: 'g/kg', step: 0.1, min: PROFILE_LIMITS.fatPerKg.min, max: PROFILE_LIMITS.fatPerKg.max, placeholder: String(MACROS.fatPerKg) }),
             })}
           </div>
@@ -183,7 +169,7 @@ export function renderProfileForm(container, { profile, isFirstRun, today = new 
 
         <div class="form__actions">
           <button type="submit" class="btn btn--primary">${isFirstRun ? 'Calculer mes cibles' : 'Enregistrer'}</button>
-          ${isFirstRun ? '' : html`<button type="button" class="btn" data-action="cancel-profile">Annuler</button>`}
+          ${isFirstRun ? '' : html`<a class="btn" href="#/">Annuler</a>`}
         </div>
       </form>
     `,

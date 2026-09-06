@@ -125,7 +125,7 @@ export function renderDashboard(container, { profile, targets, today = new Date(
             iconName: 'calendar',
             value: fmt.dec(targets.weeklyPoints),
             unit: 'points',
-            hint: `7 × ${fmt.dec(targets.dailyPoints)} + 10 % de jokers pour un resto ou une soirée. Fibres : ${targets.fiberMinG} à ${targets.fiberMaxG} g par jour.`,
+            hint: `7 × ${fmt.dec(targets.dailyPoints)} + 10 % de jokers.`,
           })}
           <section class="tile" aria-labelledby="weight-title">
             <h3 class="tile__title" id="weight-title">Pesées</h3>
@@ -159,7 +159,6 @@ export function renderDashboard(container, { profile, targets, today = new Date(
                 `;
               })}
             </ol>
-            ${history.length > recent.length ? html`<p class="muted small">${history.length} pesées au total, les ${recent.length} dernières sont affichées.</p>` : ''}
           </section>
         </div>
 
@@ -178,13 +177,12 @@ export function renderDashboard(container, { profile, targets, today = new Date(
               <div><dt>Rappel de pesée</dt><dd>tous les ${profile.weighInEveryDays} jours</dd></div>
             </dl>
             <div class="btn-row">
-              <button type="button" class="btn btn--primary" data-action="edit-profile">Modifier le profil</button>
+              <a class="btn btn--primary" href="#/profil">Modifier le profil</a>
             </div>
           </section>
 
           <section class="tile" aria-labelledby="data-title">
-            <h3 class="tile__title" id="data-title">Tes données</h3>
-            <p class="muted">Tout est stocké dans ce navigateur. Exporte une sauvegarde pour changer d'appareil ou par sécurité.</p>
+            <h3 class="tile__title" id="data-title">Données</h3>
             <div class="btn-row">
               <button type="button" class="btn" data-action="export">${icon('download')} Exporter</button>
               <button type="button" class="btn" data-action="import">${icon('upload')} Importer</button>

@@ -68,3 +68,35 @@ export const PROFILE_LIMITS = Object.freeze({
   proteinPerKg: Object.freeze({ min: 0.8, max: 3 }),
   fatPerKg: Object.freeze({ min: 0.3, max: 2 }),
 });
+
+/** Catégories du catalogue de recettes (§2.4), dans l'ordre d'affichage. */
+export const RECIPE_CATEGORIES = Object.freeze({
+  sauces: 'Sauces',
+  matin: 'Matin',
+  midi: 'Midi',
+  soir: 'Soir',
+  snacks: 'Desserts & snacks',
+});
+
+/** Tags reconnus et leur libellé. */
+export const RECIPE_TAGS = Object.freeze({
+  'haute-proteine': 'Haute protéine',
+  'sans-cuisson': 'Sans cuisson',
+  express: 'Express',
+  batch: 'Batch cooking',
+  'air-fryer': 'Air fryer',
+  'restes-midi': 'Restes pour le midi',
+  vegetarien: 'Végétarien',
+});
+
+/** Unités acceptées dans une ligne d'ingrédient. */
+export const RECIPE_UNITS = Object.freeze(['g', 'ml', 'pce']);
+
+/** Nombre maximum de portions dans l'ajustement d'une fiche. */
+export const RECIPE_SERVINGS_MAX = 12;
+
+/** Bornes des filtres du catalogue. */
+export const RECIPE_FILTERS = Object.freeze({
+  maxPointsChoices: Object.freeze([2, 4, 6, 8, 10]),
+  maxMinutesChoices: Object.freeze([10, 20, 30, 45]),
+});
