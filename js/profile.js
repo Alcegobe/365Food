@@ -55,6 +55,33 @@ export function currentWeightKg(profile) {
   return currentWeighIn(profile)?.kg ?? null;
 }
 
+function utcDay({ y, m, d }) {
+  return Date.UTC(y, m - 1, d) / 86400000;
+}
+
+/**
+ * Rappel de pesée (brief §2.1) : `weighInEveryDays` jours après la dernière pesée, l'application
+ * invite à se peser. Retourne null sans pesée valide.
+ * { lastDate, everyDays, daysSince, daysLeft, nextDate, due }
+ */
+export function weighInStatus(profile, today = new Date()) {
+  const last = currentWeighIn(profile);
+  const t = parseDateParts(today);
+  if (!last || !t) return null;
+  const everyDays = Number.isInteger(profile?.weighInEveryDays) && profile.weighInEveryDays > 0 ? profile.weighInEveryDays : DEFAULT_WEIGH_IN_EVERY_DAYS;
+  const l = parseDateParts(last.date);
+  const daysSince = Math.round(utcDay(t) - utcDay(l));
+  const next = new Date(Date.UTC(l.y, l.m - 1, l.d + everyDays));
+  return {
+    lastDate: last.date,
+    everyDays,
+    daysSince,
+    daysLeft: Math.max(0, everyDays - daysSince),
+    nextDate: formatISODate({ y: next.getUTCFullYear(), m: next.getUTCMonth() + 1, d: next.getUTCDate() }),
+    due: daysSince >= everyDays,
+  };
+}
+
 /**
  * Ajoute une pesée et retourne un nouveau profil (l'original n'est pas modifié).
  * Une pesée existante à la même date est remplacée ; le tableau reste trié par date.

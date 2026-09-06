@@ -72,8 +72,22 @@ export function syncFilterControls(container, filters) {
   if (minutes) minutes.value = filters.maxMinutes === null ? '' : String(filters.maxMinutes);
 }
 
-/** Cartes des recettes filtrées. */
-export function renderRecipeResults(container, { recipes, nutritionById }) {
+function recipeCard(recipe, n) {
+  return html`
+    <a class="recipe-card" href="#/recettes/${encodeURIComponent(recipe.id)}">
+      <span class="recipe-card__cat">${RECIPE_CATEGORIES[recipe.category] ?? recipe.category}</span>
+      <span class="recipe-card__title">${recipe.title}</span>
+      <span class="recipe-card__meta">${totalMinutes(recipe)} min · ${recipe.servings} ${recipe.servings > 1 ? 'portions' : 'portion'}</span>
+      <span class="recipe-card__foot">
+        <span class="recipe-card__macros">${fmt.int(n.perPortion.kcal)} kcal · P ${fmt.int(n.perPortion.protein)} g</span>
+        <span class="badge">${fmt.dec(n.points)} <small>pts</small></span>
+      </span>
+    </a>
+  `;
+}
+
+/** Cartes des recettes filtrées ; `grouped` les range par catégorie (vue « Toutes »). */
+export function renderRecipeResults(container, { recipes, nutritionById, grouped = false }) {
   if (recipes.length === 0) {
     render(
       container,
@@ -86,26 +100,26 @@ export function renderRecipeResults(container, { recipes, nutritionById }) {
     );
     return;
   }
+  const count = html`<p class="results-count">${recipes.length} ${recipes.length > 1 ? 'recettes' : 'recette'}</p>`;
+  if (!grouped) {
+    render(container, html`${count}<div class="cards">${recipes.map((recipe) => recipeCard(recipe, nutritionById.get(recipe.id)))}</div>`);
+    return;
+  }
+  const groups = Object.entries(RECIPE_CATEGORIES)
+    .map(([id, label]) => ({ id, label, recipes: recipes.filter((recipe) => recipe.category === id) }))
+    .filter((group) => group.recipes.length > 0);
   render(
     container,
     html`
-      <p class="results-count">${recipes.length} ${recipes.length > 1 ? 'recettes' : 'recette'}</p>
-      <div class="cards">
-        ${recipes.map((recipe) => {
-          const n = nutritionById.get(recipe.id);
-          return html`
-            <a class="recipe-card" href="#/recettes/${encodeURIComponent(recipe.id)}">
-              <span class="recipe-card__cat">${RECIPE_CATEGORIES[recipe.category] ?? recipe.category}</span>
-              <span class="recipe-card__title">${recipe.title}</span>
-              <span class="recipe-card__meta">${totalMinutes(recipe)} min · ${recipe.servings} ${recipe.servings > 1 ? 'portions' : 'portion'}</span>
-              <span class="recipe-card__foot">
-                <span class="recipe-card__macros">${fmt.int(n.perPortion.kcal)} kcal · P ${fmt.int(n.perPortion.protein)} g</span>
-                <span class="badge">${fmt.dec(n.points)} <small>pts</small></span>
-              </span>
-            </a>
-          `;
-        })}
-      </div>
+      ${count}
+      ${groups.map(
+        (group) => html`
+          <section class="catalogue-group" aria-labelledby="group-${group.id}">
+            <h3 class="catalogue-group__title" id="group-${group.id}">${group.label} <span class="catalogue-group__count">${group.recipes.length}</span></h3>
+            <div class="cards">${group.recipes.map((recipe) => recipeCard(recipe, nutritionById.get(recipe.id)))}</div>
+          </section>
+        `,
+      )}
     `,
   );
 }
