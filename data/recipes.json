@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "recipes": [
     {
       "id": "sauce-blanche-kebab",
@@ -34,6 +34,318 @@
       ]
     },
     {
+      "id": "sauce-burger-secrete",
+      "title": "Sauce burger secrète façon fast-food",
+      "category": "sauces",
+      "tags": ["sans-cuisson", "express", "vegetarien"],
+      "servings": 6,
+      "portionNote": "1 portion ≈ 2 cuillères à soupe, de quoi garnir 1 burger",
+      "prepMin": 5,
+      "cookMin": 0,
+      "ingredients": [
+        { "ref": "skyr-nature-0", "qty": 200, "unit": "g" },
+        { "ref": "mayonnaise-allegee", "qty": 20, "unit": "g", "label": "mayonnaise allégée (1 c. à s. bombée)" },
+        { "ref": "ketchup", "qty": 30, "unit": "g", "label": "ketchup (2 c. à s.)" },
+        { "ref": "moutarde", "qty": 10, "unit": "g", "label": "moutarde (2 c. à c.)" },
+        { "ref": "cornichons", "qty": 40, "unit": "g", "label": "cornichons (4 à 5 petits)" },
+        { "ref": "vinaigre", "qty": 5, "unit": "ml", "label": "vinaigre de cidre (1 c. à c.)" },
+        { "ref": "paprika", "qty": 2, "unit": "g", "label": "paprika doux (1 c. à c.)" },
+        { "ref": "sel", "qty": 1, "unit": "g" },
+        { "ref": "poivre", "qty": 0.5, "unit": "g" }
+      ],
+      "steps": [
+        "Hache les cornichons très fin, presque en purée : c'est eux qui font le côté « secret » de la sauce.",
+        "Mélange le skyr, la mayonnaise, le ketchup et la moutarde dans un bol jusqu'à obtenir une couleur orange pâle uniforme.",
+        "Ajoute les cornichons, le vinaigre et le paprika. Sale, poivre, goûte : elle doit être à la fois douce, acidulée et un peu piquante.",
+        "Laisse reposer 30 min au frigo avant de servir : les saveurs se lient et la sauce épaissit."
+      ],
+      "whyLight": "Le skyr remplace presque toute la mayonnaise de la sauce originale : une seule cuillère de mayo allégée suffit à garder le gras en bouche, et le skyr apporte des protéines à la place.",
+      "leftoverTip": "Se garde 4 jours au frigo dans un pot fermé. Parfaite dans un smash burger, avec des frites à l'air fryer ou en dip pour des nuggets de poulet.",
+      "variants": [
+        "Plus de croquant : ajoute 20 g d'oignon rouge haché très fin.",
+        "Plus fumée : remplace le paprika doux par du paprika fumé et ajoute une pincée de piment en flocons."
+      ]
+    },
+    {
+      "id": "mayo-skyr",
+      "title": "Mayonnaise légère au skyr",
+      "category": "sauces",
+      "tags": ["sans-cuisson", "express", "vegetarien"],
+      "servings": 6,
+      "portionNote": "1 portion ≈ 2 cuillères à soupe",
+      "prepMin": 5,
+      "cookMin": 0,
+      "ingredients": [
+        { "ref": "skyr-nature-0", "qty": 200, "unit": "g" },
+        { "ref": "mayonnaise-allegee", "qty": 15, "unit": "g", "label": "mayonnaise allégée (1 c. à s.)" },
+        { "ref": "moutarde", "qty": 10, "unit": "g", "label": "moutarde (2 c. à c.)" },
+        { "ref": "citron-jus", "qty": 10, "unit": "ml", "label": "jus de citron (2 c. à c.)" },
+        { "ref": "sel", "qty": 1, "unit": "g" },
+        { "ref": "poivre", "qty": 0.5, "unit": "g" }
+      ],
+      "steps": [
+        "Verse le skyr dans un bol et fouette-le 30 secondes à la fourchette pour le détendre.",
+        "Ajoute la mayonnaise, la moutarde et le jus de citron. Mélange jusqu'à ce que la sauce soit lisse, brillante et sans trace blanche.",
+        "Sale, poivre, goûte : elle doit piquer légèrement, comme une vraie mayonnaise. Ajuste avec quelques gouttes de citron.",
+        "Mets au frigo 15 min : le froid la raffermit et lui donne la tenue d'une mayo."
+      ],
+      "whyLight": "Une seule cuillère de mayonnaise allégée pour le goût, et du skyr pour tout le reste : la texture crémeuse d'une mayo, mais avec des protéines à la place de l'huile.",
+      "leftoverTip": "Se garde 4 jours au frigo dans un pot fermé. Tartine-la dans un wrap ou un sandwich, lie une salade de thon ou de poulet, ou sers-la avec des œufs durs.",
+      "variants": [
+        "Version aïoli : ajoute 1 gousse d'ail pressée et 1 c. à c. d'huile d'olive.",
+        "Version tartare : ajoute 20 g de cornichons et 1 c. à s. de ciboulette, hachés fin."
+      ]
+    },
+    {
+      "id": "sauce-samourai-light",
+      "title": "Sauce samouraï façon friterie",
+      "category": "sauces",
+      "tags": ["sans-cuisson", "express", "vegetarien"],
+      "servings": 6,
+      "portionNote": "1 portion ≈ 2 cuillères à soupe",
+      "prepMin": 5,
+      "cookMin": 0,
+      "ingredients": [
+        { "ref": "skyr-nature-0", "qty": 200, "unit": "g" },
+        { "ref": "mayonnaise-allegee", "qty": 15, "unit": "g", "label": "mayonnaise allégée (1 c. à s.)" },
+        { "ref": "harissa", "qty": 20, "unit": "g", "label": "harissa (1 c. à s.)" },
+        { "ref": "ketchup", "qty": 30, "unit": "g", "label": "ketchup (2 c. à s.)" },
+        { "ref": "ail", "qty": 1, "unit": "pce" },
+        { "ref": "paprika", "qty": 2, "unit": "g", "label": "paprika fumé (1 c. à c.)" },
+        { "ref": "sel", "qty": 1, "unit": "g" }
+      ],
+      "steps": [
+        "Presse l'ail, ou hache-le très fin.",
+        "Mélange le skyr, la mayonnaise, le ketchup et la harissa jusqu'à obtenir une sauce orange vif, sans stries.",
+        "Ajoute l'ail et le paprika fumé, sale, goûte : si tu la veux plus forte, ajoute la harissa cuillère par cuillère.",
+        "Laisse reposer 30 min au frigo : le piment diffuse et la sauce prend de la tenue."
+      ],
+      "whyLight": "Une vraie samouraï, c'est de la mayonnaise pimentée. Ici le skyr fait le corps de la sauce et une seule cuillère de mayo allégée garde le côté gras : autant de piquant, beaucoup plus de protéines.",
+      "leftoverTip": "Se garde 4 jours au frigo dans un pot fermé. Avec des frites à l'air fryer, un kebab maison, un burger ou des boulettes de poulet.",
+      "variants": [
+        "Version andalouse : remplace la harissa par 40 g de poivron rouge mixé et 1 c. à c. de concentré de tomate.",
+        "Moins piquante : 1 c. à c. de harissa seulement et 1 c. à c. de ketchup en plus."
+      ]
+    },
+    {
+      "id": "sauce-cesar-proteinee",
+      "title": "Sauce césar crémeuse comme au resto",
+      "category": "sauces",
+      "tags": ["sans-cuisson", "express", "vegetarien"],
+      "servings": 6,
+      "portionNote": "1 portion ≈ 2 cuillères à soupe, pour 1 grande salade",
+      "prepMin": 5,
+      "cookMin": 0,
+      "ingredients": [
+        { "ref": "skyr-nature-0", "qty": 200, "unit": "g" },
+        { "ref": "parmesan", "qty": 30, "unit": "g", "label": "parmesan râpé (3 c. à s.)" },
+        { "ref": "moutarde", "qty": 10, "unit": "g", "label": "moutarde (2 c. à c.)" },
+        { "ref": "citron-jus", "qty": 15, "unit": "ml", "label": "jus de citron (1 c. à s.)" },
+        { "ref": "ail", "qty": 1, "unit": "pce" },
+        { "ref": "sauce-soja", "qty": 5, "unit": "ml", "label": "sauce soja (1 c. à c.)" },
+        { "ref": "poivre", "qty": 1, "unit": "g", "label": "poivre noir du moulin" }
+      ],
+      "steps": [
+        "Presse l'ail. Râpe le parmesan très fin s'il n'est pas déjà râpé.",
+        "Mélange le skyr, la moutarde, le jus de citron, l'ail et la sauce soja jusqu'à obtenir une crème lisse.",
+        "Incorpore le parmesan et poivre généreusement. Goûte : la sauce doit être salée, acidulée et bien poivrée ; ne rajoute du sel qu'après.",
+        "Si elle est trop épaisse pour napper la salade, détends-la avec 1 à 2 c. à s. d'eau froide."
+      ],
+      "whyLight": "Pas de jaune d'œuf ni d'huile : le skyr remplace l'émulsion de la sauce césar classique, et la sauce soja joue le rôle de l'anchois pour l'umami. Le parmesan reste, c'est lui qui fait le goût.",
+      "leftoverTip": "Se garde 3 jours au frigo dans un pot fermé. Sur une romaine croquante avec du poulet grillé, en dip avec des crudités, ou dans un wrap au poulet.",
+      "variants": [
+        "Version anchois : écrase 2 filets d'anchois dans la sauce à la place de la sauce soja.",
+        "Version yaourt : yaourt grec 0 % à la place du skyr, la sauce est un peu plus douce."
+      ]
+    },
+    {
+      "id": "sauce-cacahuete-satay",
+      "title": "Sauce cacahuète façon satay",
+      "category": "sauces",
+      "tags": ["sans-cuisson", "express", "vegetarien"],
+      "servings": 6,
+      "portionNote": "1 portion ≈ 2 cuillères à soupe",
+      "prepMin": 5,
+      "cookMin": 0,
+      "ingredients": [
+        { "ref": "beurre-cacahuete", "qty": 60, "unit": "g", "label": "beurre de cacahuète 100 % (3 c. à s.)" },
+        { "ref": "sauce-soja", "qty": 20, "unit": "ml" },
+        { "ref": "citron-jus", "qty": 15, "unit": "ml", "label": "jus de citron ou de citron vert (1 c. à s.)" },
+        { "ref": "sriracha", "qty": 10, "unit": "g", "label": "sriracha (2 c. à c.)" },
+        { "ref": "miel", "qty": 10, "unit": "g", "label": "miel (1 c. à c. bombée)" },
+        { "ref": "gingembre", "qty": 10, "unit": "g", "label": "gingembre frais (un morceau de 2 cm)" },
+        { "ref": "ail", "qty": 1, "unit": "pce" }
+      ],
+      "steps": [
+        "Râpe le gingembre et l'ail très fin, ou presse-les.",
+        "Dans un bol, mélange le beurre de cacahuète, la sauce soja, le jus de citron, la sriracha et le miel : la pâte épaissit et se resserre, c'est normal.",
+        "Verse 80 ml d'eau chaude en 3 fois en fouettant : la sauce se détend, devient lisse et brillante. Ajuste l'eau pour obtenir la texture d'une crème épaisse.",
+        "Ajoute le gingembre et l'ail, goûte : plus de citron si elle est trop douce, plus de sriracha si tu la veux plus vive."
+      ],
+      "whyLight": "Une sauce satay classique se monte au lait de coco : ici c'est l'eau chaude qui l'allonge, et le beurre de cacahuète 100 % apporte du bon gras et des protéines, sans sucre caché.",
+      "leftoverTip": "Se garde 5 jours au frigo ; elle épaissit en refroidissant, détends-la avec un peu d'eau chaude. Pour des brochettes de poulet, un wok de légumes, des nouilles ou en dip.",
+      "variants": [
+        "Version coco : remplace la moitié de l'eau par 40 ml de lait de coco allégé.",
+        "Version dip crémeux : ajoute 50 g de skyr nature 0 % pour une sauce plus douce."
+      ]
+    },
+    {
+      "id": "tzatziki-yaourt-grec",
+      "title": "Tzatziki bien frais qui ne rend pas d'eau",
+      "category": "sauces",
+      "tags": ["sans-cuisson", "express", "vegetarien"],
+      "servings": 6,
+      "portionNote": "1 portion ≈ 3 cuillères à soupe",
+      "prepMin": 10,
+      "cookMin": 0,
+      "ingredients": [
+        { "ref": "yaourt-grec-0", "qty": 250, "unit": "g" },
+        { "ref": "concombre", "qty": 200, "unit": "g", "label": "concombre (½ concombre)" },
+        { "ref": "ail", "qty": 1, "unit": "pce" },
+        { "ref": "herbes-fraiches", "qty": 10, "unit": "g", "label": "menthe ou aneth frais (un petit bouquet)" },
+        { "ref": "citron-jus", "qty": 10, "unit": "ml", "label": "jus de citron (2 c. à c.)" },
+        { "ref": "huile-olive", "qty": 5, "unit": "ml", "label": "huile d'olive (1 c. à c.)" },
+        { "ref": "sel", "qty": 2, "unit": "g", "label": "sel (dont une pincée pour dégorger le concombre)" },
+        { "ref": "poivre", "qty": 0.5, "unit": "g" }
+      ],
+      "steps": [
+        "Râpe le concombre avec la peau à la grosse râpe. Sale-le d'une pincée dans une passoire et laisse-le rendre son eau 10 min.",
+        "Presse-le fortement entre tes mains ou dans un torchon propre : il doit ressortir presque sec. C'est l'étape qui fait un tzatziki épais.",
+        "Presse l'ail, cisèle les herbes. Mélange-les au yaourt avec le jus de citron et l'huile d'olive.",
+        "Incorpore le concombre, sale, poivre, goûte. Laisse reposer 30 min au frigo pour que l'ail parfume tout."
+      ],
+      "whyLight": "Un yaourt grec 0 % à la place du yaourt entier et une seule cuillère à café d'huile d'olive : le tzatziki garde son onctuosité et sa fraîcheur, avec beaucoup plus de protéines que l'original.",
+      "leftoverTip": "Se garde 3 jours au frigo dans un pot fermé ; s'il rend un peu d'eau, mélange simplement. Avec un kebab, un pita au poulet, des boulettes ou des bâtonnets de légumes.",
+      "variants": [
+        "Version skyr : remplace le yaourt grec par du skyr nature 0 %, plus épais et plus acidulé.",
+        "Version raïta : ajoute 1 c. à c. de cumin moulu et remplace la menthe par de la coriandre."
+      ]
+    },
+    {
+      "id": "sauce-cheddar-coulante",
+      "title": "Sauce cheddar coulante façon nachos",
+      "category": "sauces",
+      "tags": ["express", "vegetarien"],
+      "servings": 6,
+      "portionNote": "1 portion ≈ 3 cuillères à soupe",
+      "prepMin": 3,
+      "cookMin": 7,
+      "ingredients": [
+        { "ref": "lait-demi-ecreme", "qty": 200, "unit": "ml" },
+        { "ref": "maizena", "qty": 10, "unit": "g", "label": "fécule de maïs (1 c. à s.)" },
+        { "ref": "fromage-frais-light", "qty": 40, "unit": "g", "label": "fromage frais light (2 c. à s.)" },
+        { "ref": "cheddar-allege-tranches", "qty": 4, "unit": "pce", "label": "cheddar allégé en tranches, coupé en lanières" },
+        { "ref": "moutarde", "qty": 5, "unit": "g", "label": "moutarde (1 c. à c.)" },
+        { "ref": "paprika", "qty": 1, "unit": "g", "label": "paprika (½ c. à c.)" },
+        { "ref": "poivre", "qty": 0.5, "unit": "g" }
+      ],
+      "steps": [
+        "Délaye la fécule dans 2 c. à s. de lait froid jusqu'à ce qu'il n'y ait plus de grumeaux.",
+        "Chauffe le reste du lait dans une petite casserole à feu moyen. Dès qu'il fume, verse la fécule délayée en fouettant et laisse épaissir 1 à 2 min : le fouet doit laisser une trace.",
+        "Baisse à feu doux. Ajoute le fromage frais, puis le cheddar en lanières en 3 fois, en fouettant jusqu'à ce que tout soit fondu et lisse.",
+        "Hors du feu, incorpore la moutarde et le paprika, poivre. Goûte avant de saler : le cheddar l'est déjà. Sers chaud, elle doit napper la cuillère."
+      ],
+      "whyLight": "Pas de beurre ni de crème : c'est le lait lié à la fécule qui fait la base, et un cheddar allégé qui apporte le goût et les protéines. Le fromage frais light la rend coulante comme au cinéma.",
+      "leftoverTip": "Se garde 3 jours au frigo ; elle fige en refroidissant, réchauffe-la 40 s au micro-ondes avec 1 c. à s. de lait en mélangeant. Sur des nachos, des pâtes, des tacos, du brocoli vapeur ou un burger.",
+      "variants": [
+        "Version jalapeño : ajoute 1 c. à c. de piment en flocons ou quelques rondelles de jalapeños hachées.",
+        "Version macaroni : mélange-la à 150 g de pâtes cuites avec 60 g de jambon dégraissé en dés."
+      ]
+    },
+    {
+      "id": "sauce-tomate-pizza",
+      "title": "Sauce tomate de pizzeria pour pizza et pâtes",
+      "category": "sauces",
+      "tags": ["batch", "vegetarien"],
+      "servings": 8,
+      "portionNote": "1 portion ≈ 3 cuillères à soupe, de quoi napper 1 pizza ou 1 assiette de pâtes",
+      "prepMin": 3,
+      "cookMin": 10,
+      "ingredients": [
+        { "ref": "passata", "qty": 400, "unit": "g" },
+        { "ref": "concentre-tomate", "qty": 30, "unit": "g", "label": "concentré de tomate (2 c. à s.)" },
+        { "ref": "ail", "qty": 2, "unit": "pce" },
+        { "ref": "huile-olive", "qty": 10, "unit": "ml", "label": "huile d'olive (2 c. à c.)" },
+        { "ref": "herbes-sechees", "qty": 3, "unit": "g", "label": "origan séché (1 c. à s.)" },
+        { "ref": "sel", "qty": 2, "unit": "g" },
+        { "ref": "poivre", "qty": 0.5, "unit": "g" }
+      ],
+      "steps": [
+        "Émince l'ail finement. Fais-le revenir 1 min dans l'huile d'olive à feu doux dans une casserole, sans le laisser colorer.",
+        "Ajoute le concentré de tomate et laisse-le cuire 30 secondes en remuant : il fonce légèrement et perd son acidité.",
+        "Verse la passata, ajoute l'origan, sale, poivre. Laisse mijoter 8 min à feu moyen-doux, à découvert, en remuant de temps en temps, jusqu'à ce que la sauce nappe la cuillère.",
+        "Goûte : si elle est trop acide, une pincée d'édulcorant suffit. Laisse tiédir avant de l'étaler sur une pâte à pizza."
+      ],
+      "whyLight": "Deux cuillères à café d'huile d'olive pour toute la casserole, là où une sauce de pizzeria en prend le triple, et pas de sucre ajouté : c'est le concentré de tomate cuit qui apporte la rondeur.",
+      "leftoverTip": "Se garde 5 jours au frigo dans un bocal fermé et se congèle très bien en portions (bac à glaçons). Base pour pizza, pâtes, lasagnes, œufs à la tomate ou boulettes.",
+      "variants": [
+        "Version arrabbiata : ajoute 1 c. à c. de piment en flocons avec l'ail.",
+        "Plus épaisse pour la pizza : laisse mijoter 5 min de plus, elle ne détrempera pas la pâte."
+      ]
+    },
+    {
+      "id": "vinaigrette-legere",
+      "title": "Vinaigrette moutarde-balsamique légère",
+      "category": "sauces",
+      "tags": ["sans-cuisson", "express", "vegetarien"],
+      "servings": 8,
+      "portionNote": "1 portion ≈ 1 cuillère à soupe, pour 1 salade individuelle",
+      "prepMin": 5,
+      "cookMin": 0,
+      "ingredients": [
+        { "ref": "moutarde", "qty": 20, "unit": "g", "label": "moutarde (1 c. à s. bombée)" },
+        { "ref": "vinaigre-balsamique", "qty": 30, "unit": "ml", "label": "vinaigre balsamique (2 c. à s.)" },
+        { "ref": "huile-olive", "qty": 20, "unit": "ml" },
+        { "ref": "miel", "qty": 5, "unit": "g", "label": "miel (1 c. à c.)" },
+        { "ref": "sel", "qty": 1, "unit": "g" },
+        { "ref": "poivre", "qty": 0.5, "unit": "g" }
+      ],
+      "steps": [
+        "Dans un bocal à couvercle, mets la moutarde, le vinaigre balsamique, le miel, le sel et le poivre. Mélange à la fourchette jusqu'à ce que le miel soit dissous.",
+        "Ajoute l'huile d'olive, ferme le bocal et secoue 20 secondes : la moutarde émulsionne, la vinaigrette devient épaisse et homogène.",
+        "Ajoute 50 ml d'eau froide et secoue de nouveau : elle redevient fluide sans se séparer. Ajuste l'eau selon l'épaisseur voulue.",
+        "Goûte sur une feuille de salade plutôt qu'à la cuillère : elle doit être bien relevée, c'est la salade qui l'adoucit ensuite."
+      ],
+      "whyLight": "Une vinaigrette classique, c'est trois volumes d'huile pour un de vinaigre. Ici la moutarde émulsionne et l'eau prend la place des deux tiers de l'huile : même goût, même nappage, bien moins de gras.",
+      "leftoverTip": "Se garde 2 semaines au frigo dans son bocal ; secoue avant chaque usage, l'huile d'olive fige au froid et redevient liquide en quelques minutes à température ambiante.",
+      "variants": [
+        "Version crémeuse : ajoute 2 c. à s. de skyr nature 0 % et secoue.",
+        "Version asiatique : vinaigre de cidre à la place du balsamique, 1 c. à c. de sauce soja et 1 c. à c. d'huile de sésame à la place d'une partie de l'huile d'olive."
+      ]
+    },
+    {
+      "id": "sauce-bbq-maison",
+      "title": "Sauce barbecue maison fumée et collante",
+      "category": "sauces",
+      "tags": ["express", "batch", "vegetarien"],
+      "servings": 8,
+      "portionNote": "1 portion ≈ 2 cuillères à soupe",
+      "prepMin": 5,
+      "cookMin": 5,
+      "ingredients": [
+        { "ref": "ketchup", "qty": 150, "unit": "g" },
+        { "ref": "vinaigre", "qty": 30, "unit": "ml", "label": "vinaigre de cidre (2 c. à s.)" },
+        { "ref": "miel", "qty": 20, "unit": "g", "label": "miel (1 c. à s.)" },
+        { "ref": "sauce-soja", "qty": 15, "unit": "ml", "label": "sauce soja (1 c. à s.)" },
+        { "ref": "moutarde", "qty": 15, "unit": "g", "label": "moutarde (1 c. à s.)" },
+        { "ref": "paprika", "qty": 3, "unit": "g", "label": "paprika fumé (1 c. à c. bombée)" },
+        { "ref": "ail", "qty": 2, "unit": "pce" },
+        { "ref": "poivre", "qty": 1, "unit": "g" }
+      ],
+      "steps": [
+        "Presse l'ail. Mets tous les ingrédients dans une petite casserole avec 60 ml d'eau et mélange au fouet.",
+        "Porte à frémissement à feu moyen, puis baisse à feu doux et laisse mijoter 5 min en remuant : la sauce fonce, épaissit et sent le fumé.",
+        "Coupe le feu quand elle nappe la cuillère en laissant une trace nette ; elle épaissira encore en refroidissant.",
+        "Goûte : plus de vinaigre pour l'acidité, une pincée de piment pour la chaleur. Laisse refroidir avant de mettre en bocal."
+      ],
+      "whyLight": "Une sauce barbecue du commerce, c'est surtout du sucre : ici le ketchup fait la base, une seule cuillère de miel suffit, et le paprika fumé donne le goût de braise sans passer par un fumoir.",
+      "leftoverTip": "Se garde 2 semaines au frigo dans un bocal fermé. Pour laquer du poulet ou des travers au four, napper un burger, ou en dip pour des frites de patate douce.",
+      "variants": [
+        "Plus piquante : ajoute 1 c. à c. de sriracha ou une pincée de piment en flocons pendant la cuisson.",
+        "Version café : remplace 30 ml d'eau par du café fort, pour une sauce plus sombre et plus profonde."
+      ]
+    },
+    {
       "id": "pancakes-proteines-banane",
       "title": "Pancakes protéinés à la banane",
       "category": "matin",
@@ -63,6 +375,833 @@
       "variants": [
         "Version chocolat : 10 g de cacao non sucré dans la pâte.",
         "Sans banane : 100 g de compote sans sucres ajoutés."
+      ]
+    },
+    {
+      "id": "overnight-oats-choco-cacahuete",
+      "title": "Overnight oats choco-cacahuète",
+      "category": "matin",
+      "tags": ["haute-proteine", "sans-cuisson", "vegetarien", "batch"],
+      "servings": 1,
+      "portionNote": "1 bocal bien rempli",
+      "prepMin": 5,
+      "cookMin": 0,
+      "ingredients": [
+        { "ref": "flocons-avoine", "qty": 40, "unit": "g" },
+        { "ref": "graines-chia", "qty": 10, "unit": "g", "label": "graines de chia (1 c. à s.)" },
+        { "ref": "cacao-non-sucre", "qty": 5, "unit": "g", "label": "cacao non sucré (2 c. à c.)" },
+        { "ref": "whey-proteine", "qty": 15, "unit": "g", "label": "whey chocolat (½ dose)" },
+        { "ref": "skyr-nature-0", "qty": 100, "unit": "g" },
+        { "ref": "lait-demi-ecreme", "qty": 100, "unit": "ml" },
+        { "ref": "beurre-cacahuete", "qty": 15, "unit": "g", "label": "beurre de cacahuète (1 c. à s.)" },
+        { "ref": "banane", "qty": 0.5, "unit": "pce", "label": "banane (½, en rondelles)" }
+      ],
+      "steps": [
+        "Dans un bocal ou un bol, mélange à sec les flocons d'avoine, les graines de chia, le cacao et la whey : le cacao ne fera pas de grumeaux.",
+        "Ajoute le skyr et le lait, remue jusqu'à ce qu'il ne reste aucune trace de poudre. Racle les bords.",
+        "Ferme et laisse au frigo toute la nuit, au moins 4 h : les flocons et le chia gonflent, la texture devient crémeuse.",
+        "Le matin, détends avec une cuillère de lait si c'est trop épais. Chauffe le beurre de cacahuète 10 s au micro-ondes pour qu'il coule, verse-le sur les oats avec la banane en rondelles."
+      ],
+      "whyLight": "Le cacao non sucré, la whey et le skyr donnent le goût de dessert au chocolat sans sucre ni crème, avec près de 40 g de protéines qui tiennent toute la matinée. Une seule cuillère de beurre de cacahuète suffit pour le côté gourmand.",
+      "leftoverTip": "Se garde 3 jours au frigo dans un bocal fermé : prépare-en deux ou trois d'un coup, et ajoute la banane et le beurre de cacahuète seulement au moment de manger.",
+      "variants": [
+        "Version crunchy : remplace le beurre de cacahuète par 15 g de cacahuètes concassées, grillées 2 min à sec dans une poêle.",
+        "Sans whey : double le skyr (200 g) et sucre avec un peu d'édulcorant."
+      ]
+    },
+    {
+      "id": "bowl-skyr-granola-maison",
+      "title": "Bowl de skyr au granola maison et fruits rouges",
+      "category": "matin",
+      "tags": ["haute-proteine", "vegetarien"],
+      "servings": 1,
+      "portionNote": "1 grand bol",
+      "prepMin": 5,
+      "cookMin": 12,
+      "ingredients": [
+        { "ref": "flocons-avoine", "qty": 40, "unit": "g" },
+        { "ref": "amandes", "qty": 15, "unit": "g", "label": "amandes effilées ou concassées" },
+        { "ref": "blanc-oeuf", "qty": 30, "unit": "ml", "label": "blanc d'œuf (1 blanc, pour lier)" },
+        { "ref": "miel", "qty": 8, "unit": "g", "label": "miel (1 c. à c.)" },
+        { "ref": "cannelle", "qty": 1, "unit": "g", "label": "cannelle (½ c. à c.)" },
+        { "ref": "skyr-nature-0", "qty": 200, "unit": "g" },
+        { "ref": "fraises", "qty": 80, "unit": "g" },
+        { "ref": "myrtilles", "qty": 50, "unit": "g" }
+      ],
+      "steps": [
+        "Préchauffe le four à 170 °C. Dans un bol, mélange les flocons, les amandes, le blanc d'œuf, le miel et la cannelle jusqu'à ce que tout soit enrobé et un peu collant.",
+        "Étale en couche fine sur une plaque couverte de papier cuisson, en laissant quelques petits amas : ce seront les morceaux croquants.",
+        "Enfourne 10 à 12 min, en remuant à mi-cuisson, jusqu'à ce que le granola soit bien doré. Laisse refroidir 3 min sur la plaque : il durcit en refroidissant.",
+        "Pendant ce temps, coupe les fraises en quatre. Verse le skyr dans un bol, dispose les fruits, puis le granola au dernier moment pour qu'il reste croquant."
+      ],
+      "whyLight": "Le granola maison remplace celui du commerce, souvent chargé en huile et en sucre : ici les flocons sont liés avec un blanc d'œuf et une seule cuillère de miel. Le skyr apporte les protéines d'un vrai repas, pas d'un yaourt.",
+      "leftoverTip": "Multiplie les quantités de granola par 5 et cuis 20 min : il se garde 2 semaines dans un bocal hermétique, à l'abri de l'humidité.",
+      "variants": [
+        "Version choco : 5 g de cacao non sucré dans le granola et 10 g de chocolat noir haché sur le bol.",
+        "Fruits surgelés : 100 g de fruits rouges surgelés, décongelés 1 min au micro-ondes, avec leur jus versé sur le skyr."
+      ]
+    },
+    {
+      "id": "oeufs-brouilles-saumon-fume",
+      "title": "Œufs brouillés crémeux, toasts et saumon fumé",
+      "category": "matin",
+      "tags": ["haute-proteine", "express"],
+      "servings": 1,
+      "portionNote": "2 toasts garnis",
+      "prepMin": 5,
+      "cookMin": 5,
+      "ingredients": [
+        { "ref": "oeuf", "qty": 2, "unit": "pce" },
+        { "ref": "blanc-oeuf", "qty": 60, "unit": "ml", "label": "blancs d'œufs (2 blancs, ou 60 ml en brique)" },
+        { "ref": "fromage-frais-light", "qty": 20, "unit": "g", "label": "fromage frais light (1 c. à s.)" },
+        { "ref": "pain-complet", "qty": 2, "unit": "pce" },
+        { "ref": "saumon-fume", "qty": 2, "unit": "pce" },
+        { "ref": "herbes-fraiches", "qty": 5, "unit": "g", "label": "ciboulette ciselée" },
+        { "ref": "citron-jus", "qty": 5, "unit": "ml", "label": "jus de citron (1 c. à c.)" },
+        { "ref": "poivre", "qty": 0.5, "unit": "g" }
+      ],
+      "steps": [
+        "Lance les toasts. Bats les œufs et les blancs à la fourchette avec le poivre, sans les faire mousser.",
+        "Verse dans une poêle antiadhésive froide, puis chauffe à feu doux. Remue en continu avec une spatule souple en raclant le fond, 3 à 4 min : les œufs doivent former de petits grains crémeux.",
+        "Quand ils sont pris mais encore brillants, coupe le feu et incorpore le fromage frais hors du feu : il arrête la cuisson et lisse la texture.",
+        "Pose les œufs sur les toasts, drape le saumon par-dessus, arrose de citron et parsème de ciboulette. Sers tout de suite."
+      ],
+      "whyLight": "Des blancs d'œufs en plus des œufs entiers, et une cuillère de fromage frais light à la place du beurre et de la crème : les œufs restent onctueux, le saumon fumé apporte du bon gras et des protéines, et le pain complet cale jusqu'à midi.",
+      "leftoverTip": "Le saumon fumé entamé se garde 2 jours au frigo, bien emballé dans son film.",
+      "variants": [
+        "Version jambon : remplace le saumon par 2 tranches de jambon dégraissé et ajoute une pointe de moutarde dans les œufs.",
+        "Sans pain : sers les œufs sur 150 g de pousses d'épinards juste tombées 1 min à la poêle."
+      ]
+    },
+    {
+      "id": "wrap-omelette-croque",
+      "title": "Wrap omelette façon croque-monsieur",
+      "category": "matin",
+      "tags": ["haute-proteine"],
+      "servings": 1,
+      "portionNote": "1 wrap plié, bien doré",
+      "prepMin": 5,
+      "cookMin": 8,
+      "ingredients": [
+        { "ref": "oeuf", "qty": 2, "unit": "pce" },
+        { "ref": "wrap-proteine", "qty": 1, "unit": "pce" },
+        { "ref": "jambon-blanc-degraisse", "qty": 2, "unit": "pce" },
+        { "ref": "fromage-rape-allege", "qty": 20, "unit": "g" },
+        { "ref": "epinards", "qty": 30, "unit": "g", "label": "pousses d'épinards (1 grosse poignée)" },
+        { "ref": "moutarde", "qty": 5, "unit": "g", "label": "moutarde (1 c. à c.)" },
+        { "ref": "poivre", "qty": 0.5, "unit": "g" }
+      ],
+      "steps": [
+        "Bats les œufs avec le poivre. Chauffe une poêle antiadhésive de la taille du wrap (24 cm environ) à feu moyen.",
+        "Verse les œufs et incline la poêle pour couvrir tout le fond. Dès que le dessus commence à prendre, après 1 min, pose le wrap dessus et appuie légèrement : il colle à l'omelette.",
+        "Laisse 1 min, puis retourne l'ensemble d'un coup de spatule : le wrap est maintenant dessous, l'omelette dessus.",
+        "Tartine la moutarde sur l'omelette, répartis le jambon, le fromage râpé et les épinards sur une moitié.",
+        "Plie en deux, puis encore en deux pour un triangle. Laisse dorer 1 à 2 min par face en appuyant avec la spatule, jusqu'à ce que le fromage fonde et que le wrap croustille."
+      ],
+      "whyLight": "Le wrap protéiné et l'omelette remplacent les deux tranches de pain de mie beurrées, le jambon dégraissé et le fromage râpé allégé font le reste : le croque garde son fondant, avec beaucoup moins de gras, plus de fibres et plus de protéines.",
+      "leftoverTip": "Se mange tout de suite. Pour l'emporter, enveloppe-le dans du papier cuisson : il reste bon tiède, une heure plus tard.",
+      "variants": [
+        "Version poulet : 3 tranches de blanc de poulet à la place du jambon.",
+        "Version pizza : 15 g de concentré de tomate à la place de la moutarde, 20 g de mozzarella light et une pincée d'origan."
+      ]
+    },
+    {
+      "id": "gaufres-proteinees",
+      "title": "Gaufres protéinées à la vanille",
+      "category": "matin",
+      "tags": ["haute-proteine", "vegetarien"],
+      "servings": 1,
+      "portionNote": "2 gaufres avec leur garniture",
+      "prepMin": 5,
+      "cookMin": 10,
+      "ingredients": [
+        { "ref": "flocons-avoine", "qty": 40, "unit": "g" },
+        { "ref": "whey-proteine", "qty": 15, "unit": "g", "label": "whey vanille (½ dose)" },
+        { "ref": "levure-chimique", "qty": 3, "unit": "g", "label": "levure chimique (½ c. à c.)" },
+        { "ref": "oeuf", "qty": 1, "unit": "pce" },
+        { "ref": "skyr-nature-0", "qty": 150, "unit": "g", "label": "skyr nature 0 % (80 g dans la pâte, le reste pour servir)" },
+        { "ref": "lait-demi-ecreme", "qty": 40, "unit": "ml" },
+        { "ref": "vanille", "qty": 2, "unit": "ml", "label": "extrait de vanille (½ c. à c.)" },
+        { "ref": "fraises", "qty": 100, "unit": "g" }
+      ],
+      "steps": [
+        "Préchauffe le gaufrier. Mixe les flocons d'avoine en farine fine, puis ajoute la whey, la levure, l'œuf, 80 g de skyr, le lait et la vanille. Mixe encore jusqu'à obtenir une pâte lisse, un peu plus épaisse qu'une pâte à crêpes.",
+        "Laisse reposer 3 min : la pâte gonfle légèrement. Si elle est trop épaisse pour couler, ajoute une cuillère de lait.",
+        "Si ton gaufrier n'est pas antiadhésif, frotte les plaques avec un papier essuie-tout à peine huilé. Verse la moitié de la pâte, ferme et laisse cuire 4 à 5 min, jusqu'à ce que la vapeur cesse de s'échapper et que la gaufre soit dorée.",
+        "Recommence avec le reste de la pâte. Sers avec le skyr restant et les fraises coupées en deux."
+      ],
+      "whyLight": "La farine, le beurre et le sucre de la pâte à gaufres classique sont remplacés par de l'avoine mixée, du skyr et une demi-dose de whey vanille : les gaufres restent moelleuses et dorées, mais apportent les protéines d'un vrai petit-déjeuner.",
+      "leftoverTip": "Les gaufres se gardent 2 jours au frigo ou 1 mois au congélateur : réchauffe-les 2 min au grille-pain, elles redeviennent croustillantes.",
+      "variants": [
+        "Sans gaufrier : cuis la pâte en 4 pancakes dans une poêle antiadhésive à feu moyen, 2 min par face.",
+        "Version choco-banane : 5 g de cacao non sucré dans la pâte et une demi-banane en rondelles à la place des fraises."
+      ]
+    },
+    {
+      "id": "croque-monsieur-light",
+      "title": "Croque-monsieur qui trompe tout le monde",
+      "category": "matin",
+      "tags": ["haute-proteine"],
+      "servings": 1,
+      "portionNote": "1 croque avec ses tomates cerises",
+      "prepMin": 5,
+      "cookMin": 8,
+      "ingredients": [
+        { "ref": "pain-complet", "qty": 2, "unit": "pce" },
+        { "ref": "jambon-blanc-degraisse", "qty": 2, "unit": "pce" },
+        { "ref": "fromage-rape-allege", "qty": 30, "unit": "g", "label": "fromage râpé allégé (10 g dans la béchamel, 20 g dans le croque)" },
+        { "ref": "fromage-blanc-0", "qty": 40, "unit": "g", "label": "fromage blanc 0 % (pour la béchamel minute)" },
+        { "ref": "moutarde", "qty": 5, "unit": "g", "label": "moutarde (1 c. à c.)" },
+        { "ref": "tomates-cerises", "qty": 80, "unit": "g" },
+        { "ref": "poivre", "qty": 0.5, "unit": "g" }
+      ],
+      "steps": [
+        "Prépare la béchamel minute : mélange le fromage blanc, la moutarde, 10 g de fromage râpé et le poivre.",
+        "Tartine une tranche de pain avec la moitié du mélange, pose le jambon plié en deux, 20 g de fromage râpé, puis referme avec la deuxième tranche.",
+        "Au four : étale le reste de béchamel sur le dessus du croque, jusqu'aux bords, et enfourne 8 min à 200 °C sur une plaque, jusqu'à ce que le dessus soit doré et gratiné.",
+        "À la poêle : garde tout le mélange à l'intérieur et fais dorer 3 min par face à feu moyen, sous un couvercle, en appuyant avec la spatule.",
+        "Coupe en deux en diagonale et sers avec les tomates cerises."
+      ],
+      "whyLight": "La béchamel au beurre et à la farine est remplacée par du fromage blanc 0 % relevé de moutarde ; le fromage râpé allégé et le jambon dégraissé gardent le gratiné. Même goût, mais du pain complet et des protéines qui calent vraiment.",
+      "variants": [
+        "Croque-madame : ajoute un œuf au plat par-dessus, cuit 2 min dans la poêle pendant que le croque gratine.",
+        "Version poulet-curry : 2 tranches de blanc de poulet à la place du jambon et ½ c. à c. de curry dans la béchamel."
+      ]
+    },
+    {
+      "id": "smoothie-bowl-fruits-rouges",
+      "title": "Smoothie bowl protéiné aux fruits rouges",
+      "category": "matin",
+      "tags": ["haute-proteine", "sans-cuisson", "express", "vegetarien"],
+      "servings": 1,
+      "portionNote": "1 grand bol",
+      "prepMin": 5,
+      "cookMin": 0,
+      "ingredients": [
+        { "ref": "fruits-rouges-surgeles", "qty": 150, "unit": "g" },
+        { "ref": "banane", "qty": 1, "unit": "pce", "label": "banane (idéalement congelée en rondelles la veille)" },
+        { "ref": "skyr-nature-0", "qty": 150, "unit": "g" },
+        { "ref": "whey-proteine", "qty": 15, "unit": "g", "label": "whey vanille (½ dose)" },
+        { "ref": "lait-amande", "qty": 50, "unit": "ml" },
+        { "ref": "graines-chia", "qty": 10, "unit": "g", "label": "graines de chia (1 c. à s.)" },
+        { "ref": "amandes", "qty": 10, "unit": "g", "label": "amandes effilées" }
+      ],
+      "steps": [
+        "Mets les fruits rouges surgelés, la banane, le skyr, la whey et le lait d'amande dans le blender.",
+        "Mixe par à-coups en raclant les bords, jusqu'à obtenir une texture épaisse comme une glace à l'italienne. N'ajoute du lait qu'une cuillère à la fois : trop liquide, le bowl ne tient pas.",
+        "Verse dans un bol froid et lisse le dessus avec le dos d'une cuillère.",
+        "Parsème de graines de chia et d'amandes effilées. Mange tout de suite, à la cuillère, avant que ça fonde."
+      ],
+      "whyLight": "Le skyr et la demi-dose de whey remplacent le jus de fruits et le yaourt sucré des smoothie bowls habituels : la texture reste glacée et crémeuse grâce aux fruits surgelés, avec les protéines d'un repas complet et beaucoup de fibres.",
+      "variants": [
+        "Version tropicale : 150 g de mangue surgelée à la place des fruits rouges et lait de coco allégé à la place du lait d'amande.",
+        "Plus croquant : ajoute 15 g de granola maison ou 10 g de cacahuètes concassées sur le dessus."
+      ]
+    },
+    {
+      "id": "pain-perdu-proteine",
+      "title": "Pain perdu protéiné à la cannelle",
+      "category": "matin",
+      "tags": ["haute-proteine", "vegetarien"],
+      "servings": 1,
+      "portionNote": "2 tranches avec leur garniture",
+      "prepMin": 5,
+      "cookMin": 8,
+      "ingredients": [
+        { "ref": "pain-complet", "qty": 2, "unit": "pce", "label": "pain complet (tranches épaisses, de la veille si possible)" },
+        { "ref": "oeuf", "qty": 1, "unit": "pce" },
+        { "ref": "lait-demi-ecreme", "qty": 60, "unit": "ml" },
+        { "ref": "whey-proteine", "qty": 15, "unit": "g", "label": "whey vanille (½ dose)" },
+        { "ref": "cannelle", "qty": 2, "unit": "g", "label": "cannelle (1 c. à c.)" },
+        { "ref": "beurre", "qty": 5, "unit": "g" },
+        { "ref": "skyr-nature-0", "qty": 100, "unit": "g" },
+        { "ref": "fraises", "qty": 100, "unit": "g" },
+        { "ref": "sirop-erable", "qty": 10, "unit": "g", "label": "sirop d'érable (1 c. à c.)" }
+      ],
+      "steps": [
+        "Dans une assiette creuse, fouette l'œuf, le lait, la whey et la cannelle jusqu'à ce qu'il n'y ait plus de grumeaux.",
+        "Trempe les tranches de pain 30 s par face : elles doivent être imbibées jusqu'au cœur sans se déchirer.",
+        "Fais fondre le beurre dans une poêle antiadhésive à feu moyen. Pose les tranches et laisse cuire 3 min par face sans les bouger, jusqu'à ce qu'elles soient dorées et que le centre soit pris.",
+        "Coupe les fraises en deux. Sers le pain perdu avec le skyr, les fraises et le filet de sirop d'érable."
+      ],
+      "whyLight": "Une demi-dose de whey dans l'appareil à la place du sucre, du pain complet et 5 g de beurre au lieu d'une grosse noix : le pain perdu reste doré et caramélisé, mais il apporte les protéines d'un petit-déjeuner qui cale, et le skyr remplace la crème.",
+      "variants": [
+        "Version pomme : remplace les fraises par ½ pomme en lamelles, poêlée 3 min avec une pincée de cannelle.",
+        "Version salée : sans whey, sirop ni cannelle ; poivre l'appareil et sers avec 2 tranches de jambon dégraissé."
+      ]
+    },
+    {
+      "id": "chia-pudding-vanille-mangue",
+      "title": "Chia pudding vanille-mangue",
+      "category": "matin",
+      "tags": ["haute-proteine", "sans-cuisson", "vegetarien", "batch"],
+      "servings": 2,
+      "portionNote": "1 bocal bien rempli",
+      "prepMin": 10,
+      "cookMin": 0,
+      "ingredients": [
+        { "ref": "skyr-nature-0", "qty": 250, "unit": "g" },
+        { "ref": "whey-proteine", "qty": 1, "unit": "pce", "label": "whey vanille (1 dose)" },
+        { "ref": "lait-amande", "qty": 300, "unit": "ml" },
+        { "ref": "vanille", "qty": 4, "unit": "ml", "label": "extrait de vanille (1 c. à c.)" },
+        { "ref": "graines-chia", "qty": 60, "unit": "g" },
+        { "ref": "mangue", "qty": 200, "unit": "g", "label": "mangue bien mûre (1 petite mangue)" }
+      ],
+      "steps": [
+        "Dans un bol, fouette le skyr, la whey, le lait d'amande et la vanille jusqu'à obtenir un mélange lisse.",
+        "Ajoute les graines de chia, mélange bien. Attends 10 min et remélange une deuxième fois pour casser les paquets de graines qui se forment au fond.",
+        "Répartis dans 2 bocaux, ferme et laisse au frigo toute la nuit, au moins 4 h : le chia gonfle et le pudding prend une texture de crème dessert.",
+        "Coupe la mangue en petits cubes et pose-les sur le pudding au moment de servir."
+      ],
+      "whyLight": "Pas de sucre ni de lait de coco entier : le skyr et une dose de whey vanille donnent le crémeux et la douceur, les graines de chia apportent leurs fibres. Un pudding qui cale comme un vrai petit-déjeuner.",
+      "leftoverTip": "Se garde 4 jours au frigo dans des bocaux fermés, mangue à part : prépare-en 4 le dimanche pour la semaine.",
+      "variants": [
+        "Version choco : 10 g de cacao non sucré dans le mélange, whey chocolat, et des fruits rouges à la place de la mangue.",
+        "Sans whey : remplace-la par 100 g de skyr en plus et un peu d'édulcorant."
+      ]
+    },
+    {
+      "id": "toast-avocat-oeuf-cottage",
+      "title": "Toast avocat, œuf et cottage cheese",
+      "category": "matin",
+      "tags": ["haute-proteine", "express", "vegetarien"],
+      "servings": 1,
+      "portionNote": "2 toasts garnis",
+      "prepMin": 5,
+      "cookMin": 5,
+      "ingredients": [
+        { "ref": "pain-complet", "qty": 2, "unit": "pce" },
+        { "ref": "avocat", "qty": 0.5, "unit": "pce", "label": "avocat bien mûr (½)" },
+        { "ref": "oeuf", "qty": 1, "unit": "pce" },
+        { "ref": "cottage-cheese", "qty": 100, "unit": "g" },
+        { "ref": "citron-jus", "qty": 5, "unit": "ml", "label": "jus de citron (1 c. à c.)" },
+        { "ref": "piment-flocons", "qty": 1, "unit": "g", "label": "piment en flocons (½ c. à c.)" },
+        { "ref": "sel", "qty": 0.5, "unit": "g" },
+        { "ref": "poivre", "qty": 0.5, "unit": "g" }
+      ],
+      "steps": [
+        "Lance les toasts. Pendant ce temps, écrase l'avocat à la fourchette avec le jus de citron, sale, poivre, en gardant quelques morceaux.",
+        "Œuf poché : porte une petite casserole d'eau à frémissement, crée un tourbillon avec une cuillère et glisse l'œuf, cassé d'abord dans un ramequin, au centre. Laisse 3 min, puis égoutte sur un papier essuie-tout.",
+        "Œuf au plat : 2 à 3 min dans une poêle antiadhésive à feu moyen, jusqu'à ce que le blanc soit pris et le jaune encore coulant.",
+        "Tartine l'avocat sur les deux toasts, répartis le cottage cheese par-dessus.",
+        "Pose l'œuf sur un toast, parsème le tout de piment en flocons et d'un tour de poivre."
+      ],
+      "whyLight": "Le cottage cheese remplace le fromage frais ou le saumon des toasts avocat classiques : il double les protéines pour très peu de gras, tandis que le demi-avocat et le pain complet apportent de bonnes graisses et des fibres qui calent.",
+      "leftoverTip": "L'autre moitié d'avocat se garde 1 jour au frigo avec son noyau, arrosée de citron et filmée.",
+      "variants": [
+        "Plus protéiné : ajoute un deuxième œuf, ou 2 tranches de saumon fumé.",
+        "Version mexicaine : ½ c. à c. d'épices tacos dans l'avocat et quelques tomates cerises coupées en deux."
+      ]
+    },
+    {
+      "id": "wrap-poulet-cesar",
+      "title": "Wrap poulet césar, sauce minute au skyr",
+      "category": "midi",
+      "tags": ["haute-proteine", "sans-cuisson", "express"],
+      "servings": 1,
+      "portionNote": "2 wraps bien garnis",
+      "prepMin": 8,
+      "cookMin": 0,
+      "ingredients": [
+        { "ref": "wrap-proteine", "qty": 2, "unit": "pce" },
+        { "ref": "blanc-poulet-tranches", "qty": 4, "unit": "pce" },
+        { "ref": "romaine", "qty": 80, "unit": "g" },
+        { "ref": "parmesan", "qty": 20, "unit": "g", "label": "parmesan râpé (la moitié dans la sauce, le reste sur la salade)" },
+        { "ref": "skyr-nature-0", "qty": 60, "unit": "g", "label": "skyr nature 0 % (pour la sauce)" },
+        { "ref": "moutarde", "qty": 5, "unit": "g", "label": "moutarde (1 c. à c.)" },
+        { "ref": "citron-jus", "qty": 5, "unit": "ml", "label": "jus de citron (1 c. à c.)" },
+        { "ref": "ail", "qty": 1, "unit": "pce" },
+        { "ref": "poivre", "qty": 0.5, "unit": "g" }
+      ],
+      "steps": [
+        "Prépare la sauce césar : mélange le skyr, la moutarde, le jus de citron, l'ail pressé et la moitié du parmesan. Poivre généreusement.",
+        "Coupe la romaine en lanières de 1 cm, lave-la et essore-la bien : une salade mouillée détrempe le wrap.",
+        "Passe les wraps 20 s au micro-ondes, ou 30 s dans une poêle sèche, pour les assouplir.",
+        "Étale la sauce sur chaque wrap en laissant 2 cm de bord. Ajoute la romaine, les tranches de poulet et le reste du parmesan.",
+        "Rabats les côtés, roule serré en partant du bas et coupe chaque wrap en deux, en biais."
+      ],
+      "whyLight": "La sauce césar classique, c'est de la mayonnaise, du jaune d'œuf et de l'huile : ici c'est du skyr, de la moutarde et un peu de parmesan pour le goût. Le wrap protéiné remplace la tortilla de blé et double la part de fibres.",
+      "leftoverTip": "Emballé serré dans du papier alu, il tient jusqu'au soir au frigo. Si tu le prépares la veille, garde la sauce à part.",
+      "variants": [
+        "Version thon : remplace le poulet par 100 g de thon au naturel égoutté.",
+        "Version croquante : ajoute 1 tranche de pain complet coupée en dés et toastée 3 min à la poêle, comme des croûtons."
+      ]
+    },
+    {
+      "id": "salade-thon-haricots-blancs",
+      "title": "Salade toscane thon et haricots blancs",
+      "category": "midi",
+      "tags": ["haute-proteine", "sans-cuisson", "express"],
+      "servings": 1,
+      "portionNote": "1 grand bol",
+      "prepMin": 8,
+      "cookMin": 0,
+      "ingredients": [
+        { "ref": "thon-naturel", "qty": 120, "unit": "g", "label": "thon au naturel égoutté (1 boîte)" },
+        { "ref": "haricots-blancs-boite", "qty": 150, "unit": "g", "label": "haricots blancs égouttés et rincés" },
+        { "ref": "tomates-cerises", "qty": 100, "unit": "g" },
+        { "ref": "oignon-rouge", "qty": 0.5, "unit": "pce" },
+        { "ref": "huile-olive", "qty": 10, "unit": "ml", "label": "huile d'olive (2 c. à c.)" },
+        { "ref": "citron-jus", "qty": 15, "unit": "ml", "label": "jus de citron (1 c. à s.)" },
+        { "ref": "herbes-fraiches", "qty": 10, "unit": "g", "label": "persil plat ou basilic" },
+        { "ref": "sel", "qty": 1, "unit": "g" },
+        { "ref": "poivre", "qty": 0.5, "unit": "g" }
+      ],
+      "steps": [
+        "Émince l'oignon rouge très fin et laisse-le tremper 5 min dans un bol d'eau froide : il perd son piquant.",
+        "Rince et égoutte les haricots. Coupe les tomates cerises en deux, hache les herbes.",
+        "Fouette l'huile, le jus de citron, le sel et le poivre au fond d'un saladier.",
+        "Ajoute les haricots, les tomates, l'oignon égoutté et le thon émietté grossièrement. Mélange sans écraser les haricots.",
+        "Parsème d'herbes, goûte et ajuste le citron. Se mange frais ou à température ambiante."
+      ],
+      "whyLight": "Les haricots blancs remplacent les pâtes ou le pain de la salade de thon habituelle : plus de fibres, plus de protéines, et une satiété qui dure tout l'après-midi. Deux cuillères d'huile d'olive suffisent à lier le tout.",
+      "leftoverTip": "Se garde 2 jours au frigo dans une boîte fermée, les saveurs se développent même. Ajoute les herbes au dernier moment.",
+      "variants": [
+        "Plus rassasiant : ajoute 1 tranche de pain complet grillée et frottée à l'ail.",
+        "Version méditerranéenne : ajoute 15 g d'olives noires et 50 g de concombre en dés."
+      ]
+    },
+    {
+      "id": "pita-kebab-express",
+      "title": "Pita kebab express, sauce blanche maison",
+      "category": "midi",
+      "tags": ["haute-proteine", "express"],
+      "servings": 1,
+      "portionNote": "1 pita bien garnie",
+      "prepMin": 6,
+      "cookMin": 3,
+      "ingredients": [
+        { "ref": "pain-pita-complet", "qty": 1, "unit": "pce" },
+        { "ref": "blanc-poulet-tranches", "qty": 5, "unit": "pce" },
+        { "ref": "paprika", "qty": 2, "unit": "g", "label": "paprika fumé (1 c. à c.)" },
+        { "ref": "cumin", "qty": 1, "unit": "g", "label": "cumin moulu (½ c. à c.)" },
+        { "ref": "huile-olive", "qty": 5, "unit": "ml", "label": "huile d'olive (1 c. à c.)" },
+        { "ref": "chou-blanc", "qty": 40, "unit": "g", "label": "chou blanc émincé très fin" },
+        { "ref": "tomate", "qty": 0.5, "unit": "pce" },
+        { "ref": "oignon-rouge", "qty": 30, "unit": "g", "label": "oignon rouge (¼ d'oignon)" },
+        { "ref": "skyr-nature-0", "qty": 60, "unit": "g", "label": "skyr nature 0 % (pour la sauce)" },
+        { "ref": "ail", "qty": 1, "unit": "pce" },
+        { "ref": "citron-jus", "qty": 5, "unit": "ml", "label": "jus de citron (1 c. à c.)" },
+        { "ref": "herbes-sechees", "qty": 1, "unit": "g", "label": "menthe séchée (½ c. à c.)" },
+        { "ref": "sel", "qty": 0.5, "unit": "g" },
+        { "ref": "poivre", "qty": 0.5, "unit": "g" }
+      ],
+      "steps": [
+        "Prépare la sauce : mélange le skyr, l'ail pressé, le jus de citron, la menthe, le sel et le poivre. Réserve au frigo.",
+        "Émince le chou et l'oignon rouge très fin, coupe la tomate en dés.",
+        "Coupe les tranches de poulet en lanières de 1 cm. Chauffe l'huile dans une poêle antiadhésive à feu vif, ajoute le poulet, le paprika et le cumin. Fais sauter 2 min en remuant : les bords doivent colorer et croustiller.",
+        "Pendant ce temps, passe la pita 30 s au grille-pain ou 20 s au micro-ondes pour l'assouplir, puis ouvre-la en poche.",
+        "Tartine l'intérieur de sauce, ajoute le chou, l'oignon et la tomate, puis le poulet chaud. Termine par le reste de sauce."
+      ],
+      "whyLight": "Le poulet en tranches remplace la viande à kebab grasse, la pita complète remplace le pain blanc et le skyr remplace la sauce blanche à la mayonnaise : tout le goût du kebab, sans le gras et avec bien plus de protéines.",
+      "variants": [
+        "Version samouraï : ajoute 1 c. à c. de harissa dans la sauce.",
+        "Version kebab-frites : glisse dans la pita 100 g de frites au four passées 12 min à l'air fryer à 200 °C."
+      ]
+    },
+    {
+      "id": "bowl-cottage-avocat-oeuf",
+      "title": "Bowl cottage, avocat et œuf au plat",
+      "category": "midi",
+      "tags": ["haute-proteine", "express", "vegetarien"],
+      "servings": 1,
+      "portionNote": "1 bol + 1 tartine",
+      "prepMin": 5,
+      "cookMin": 3,
+      "ingredients": [
+        { "ref": "cottage-cheese", "qty": 200, "unit": "g", "label": "cottage cheese (1 pot)" },
+        { "ref": "avocat", "qty": 0.5, "unit": "pce", "label": "avocat bien mûr" },
+        { "ref": "oeuf", "qty": 1, "unit": "pce" },
+        { "ref": "tomates-cerises", "qty": 100, "unit": "g" },
+        { "ref": "pain-complet", "qty": 1, "unit": "pce" },
+        { "ref": "citron-jus", "qty": 5, "unit": "ml", "label": "jus de citron (1 c. à c.)" },
+        { "ref": "herbes-fraiches", "qty": 5, "unit": "g", "label": "ciboulette ciselée" },
+        { "ref": "piment-flocons", "qty": 1, "unit": "g", "label": "piment en flocons (½ c. à c.)" },
+        { "ref": "sel", "qty": 0.5, "unit": "g" },
+        { "ref": "poivre", "qty": 0.5, "unit": "g" }
+      ],
+      "steps": [
+        "Mets le pain à griller. Chauffe une poêle antiadhésive à feu moyen, sans matière grasse.",
+        "Casse l'œuf dans la poêle, sale, couvre et laisse 3 min : le blanc est pris, le jaune encore coulant.",
+        "Pendant ce temps, coupe l'avocat en tranches et arrose-le de jus de citron. Coupe les tomates cerises en deux.",
+        "Verse le cottage cheese dans un bol, dispose l'avocat et les tomates par-dessus, puis l'œuf au centre.",
+        "Poivre, parsème de ciboulette et de piment. Sers avec la tartine pour saucer le jaune."
+      ],
+      "whyLight": "Le cottage cheese remplace la burrata ou la crème des bowls à la mode : la même onctuosité pour une fraction du gras, et une vraie dose de protéines. L'avocat apporte le bon gras et les fibres qui calent.",
+      "variants": [
+        "Version sans cuisson : remplace l'œuf au plat par un œuf dur préparé la veille.",
+        "Version saumon : ajoute 2 tranches de saumon fumé et oublie le sel."
+      ]
+    },
+    {
+      "id": "quesadilla-jambon-fromage",
+      "title": "Quesadilla jambon-fromage au wrap protéiné",
+      "category": "midi",
+      "tags": ["haute-proteine", "express"],
+      "servings": 1,
+      "portionNote": "1 quesadilla (2 wraps), coupée en 4",
+      "prepMin": 4,
+      "cookMin": 5,
+      "ingredients": [
+        { "ref": "wrap-proteine", "qty": 2, "unit": "pce" },
+        { "ref": "jambon-blanc-degraisse", "qty": 2, "unit": "pce" },
+        { "ref": "fromage-rape-allege", "qty": 50, "unit": "g" },
+        { "ref": "poivron", "qty": 0.5, "unit": "pce", "label": "poivron rouge (½ poivron)" },
+        { "ref": "mais-boite", "qty": 50, "unit": "g" },
+        { "ref": "epices-tacos", "qty": 1, "unit": "g", "label": "épices mexicaines (½ c. à c.)" },
+        { "ref": "skyr-nature-0", "qty": 40, "unit": "g", "label": "skyr nature 0 % (pour tremper)" },
+        { "ref": "sriracha", "qty": 5, "unit": "g", "label": "sriracha (1 c. à c.)" }
+      ],
+      "steps": [
+        "Coupe le poivron en petits dés et le jambon en lanières. Mélange-les au maïs égoutté et aux épices.",
+        "Chauffe une poêle antiadhésive à feu moyen, à sec. Pose un wrap, couvre-le de la moitié du fromage, de la garniture, puis du reste du fromage. Referme avec le second wrap et presse avec une spatule.",
+        "Laisse 2 à 3 min : le dessous est doré et croustillant. Retourne d'un coup avec une grande spatule, ou aide-toi d'une assiette, et laisse encore 2 min, jusqu'à ce que le fromage file.",
+        "Mélange le skyr et la sriracha. Coupe la quesadilla en 4 et trempe."
+      ],
+      "whyLight": "Le wrap protéiné remplace la tortilla de blé et apporte à lui seul autant de protéines qu'un œuf, le fromage râpé allégé et le jambon dégraissé font le reste. Le skyr pimenté remplace la crème aigre.",
+      "variants": [
+        "Version poulet : 100 g de blanc de poulet en tranches à la place du jambon.",
+        "Version végé : remplace le jambon par 80 g de haricots noirs égouttés, écrasés à la fourchette."
+      ]
+    },
+    {
+      "id": "pad-thai-crevettes-express",
+      "title": "Pad thaï aux crevettes en 10 minutes",
+      "category": "midi",
+      "tags": ["haute-proteine", "express"],
+      "servings": 1,
+      "portionNote": "1 grande assiette",
+      "prepMin": 4,
+      "cookMin": 6,
+      "ingredients": [
+        { "ref": "nouilles-riz", "qty": 50, "unit": "g", "label": "vermicelles ou nouilles de riz" },
+        { "ref": "crevettes", "qty": 125, "unit": "g", "label": "crevettes décortiquées cuites" },
+        { "ref": "oeuf", "qty": 1, "unit": "pce" },
+        { "ref": "legumes-wok", "qty": 150, "unit": "g", "label": "légumes pour wok surgelés" },
+        { "ref": "ail", "qty": 1, "unit": "pce" },
+        { "ref": "huile-sesame", "qty": 5, "unit": "ml", "label": "huile de sésame (1 c. à c.)" },
+        { "ref": "sauce-soja", "qty": 10, "unit": "ml", "label": "sauce soja (2 c. à c.)" },
+        { "ref": "citron-jus", "qty": 10, "unit": "ml", "label": "jus de citron vert ou jaune (2 c. à c.)" },
+        { "ref": "sriracha", "qty": 10, "unit": "g", "label": "sriracha (2 c. à c.)" },
+        { "ref": "cacahuetes", "qty": 10, "unit": "g", "label": "cacahuètes concassées" }
+      ],
+      "steps": [
+        "Fais bouillir de l'eau à la bouilloire, verse-la sur les nouilles de riz dans un saladier et laisse tremper 3 min. Égoutte.",
+        "Pendant ce temps, mélange la sauce soja, le jus de citron et la sriracha dans un bol. Hache l'ail.",
+        "Chauffe l'huile de sésame dans un wok ou une grande poêle à feu vif. Fais sauter les légumes 3 min : ils doivent rester croquants.",
+        "Pousse les légumes sur un côté, casse l'œuf de l'autre et brouille-le 30 s à la spatule.",
+        "Ajoute les crevettes, l'ail, les nouilles égouttées et la sauce. Mélange 1 min à feu vif pour que tout soit chaud et enrobé.",
+        "Sers avec les cacahuètes concassées et un quartier de citron."
+      ],
+      "whyLight": "Un pad thaï de restaurant baigne dans l'huile et le sucre de palme : ici une seule cuillère d'huile de sésame pour le parfum, et des crevettes déjà cuites qui apportent les protéines en une minute de wok.",
+      "variants": [
+        "Version poulet : 120 g de blanc de poulet en tranches coupé en lanières à la place des crevettes.",
+        "Version végé : 120 g de tofu ferme en dés, sauté 3 min avant les légumes."
+      ]
+    },
+    {
+      "id": "tartines-saumon-fume-concombre",
+      "title": "Tartines nordiques au saumon fumé",
+      "category": "midi",
+      "tags": ["haute-proteine", "sans-cuisson", "express"],
+      "servings": 1,
+      "portionNote": "2 grandes tartines",
+      "prepMin": 6,
+      "cookMin": 0,
+      "ingredients": [
+        { "ref": "pain-complet", "qty": 2, "unit": "pce" },
+        { "ref": "fromage-frais-light", "qty": 40, "unit": "g" },
+        { "ref": "skyr-nature-0", "qty": 60, "unit": "g", "label": "skyr nature 0 % (mélangé au fromage frais)" },
+        { "ref": "saumon-fume", "qty": 3, "unit": "pce" },
+        { "ref": "concombre", "qty": 80, "unit": "g", "label": "concombre (¼ de concombre)" },
+        { "ref": "citron-jus", "qty": 5, "unit": "ml", "label": "jus de citron (1 c. à c.)" },
+        { "ref": "herbes-fraiches", "qty": 10, "unit": "g", "label": "aneth ou ciboulette" },
+        { "ref": "poivre", "qty": 0.5, "unit": "g" }
+      ],
+      "steps": [
+        "Mélange le fromage frais, le skyr, la moitié des herbes hachées, le jus de citron et le poivre : la tartinade doit être bien lisse.",
+        "Coupe le concombre en rondelles très fines, à la mandoline ou au couteau, sans l'éplucher.",
+        "Toaste le pain si tu l'aimes croustillant. Tartine généreusement.",
+        "Dispose les rondelles de concombre en les chevauchant, puis les tranches de saumon roulées ou pliées.",
+        "Termine par le reste des herbes et un tour de moulin à poivre."
+      ],
+      "whyLight": "Le fromage frais light est allongé avec du skyr : la tartinade reste crémeuse mais gagne des protéines et perd la moitié de son gras. Le saumon fumé apporte les oméga-3, le pain complet les fibres.",
+      "leftoverTip": "Prépare la tartinade la veille, elle se garde 3 jours au frigo. Monte les tartines au dernier moment pour que le pain reste ferme.",
+      "variants": [
+        "Version truite : la truite fumée, moins salée, remplace le saumon à poids égal.",
+        "Plus copieux : ajoute 1 œuf dur écrasé sur la tartinade."
+      ]
+    },
+    {
+      "id": "salade-riz-thon-express",
+      "title": "Salade de riz au thon, sauce moutarde-skyr",
+      "category": "midi",
+      "tags": ["haute-proteine", "express"],
+      "servings": 1,
+      "portionNote": "1 grand bol",
+      "prepMin": 8,
+      "cookMin": 2,
+      "ingredients": [
+        { "ref": "riz-cuit-micro", "qty": 125, "unit": "g", "label": "riz cuit micro-ondes (½ sachet)" },
+        { "ref": "thon-naturel", "qty": 120, "unit": "g", "label": "thon au naturel égoutté (1 boîte)" },
+        { "ref": "oeuf", "qty": 1, "unit": "pce", "label": "œuf dur (cuit d'avance)" },
+        { "ref": "mais-boite", "qty": 50, "unit": "g" },
+        { "ref": "poivron", "qty": 0.5, "unit": "pce", "label": "poivron (½ poivron)" },
+        { "ref": "cornichons", "qty": 30, "unit": "g" },
+        { "ref": "skyr-nature-0", "qty": 60, "unit": "g", "label": "skyr nature 0 % (pour la sauce)" },
+        { "ref": "moutarde", "qty": 10, "unit": "g", "label": "moutarde (2 c. à c.)" },
+        { "ref": "vinaigre", "qty": 5, "unit": "ml", "label": "vinaigre de cidre (1 c. à c.)" },
+        { "ref": "herbes-fraiches", "qty": 10, "unit": "g", "label": "ciboulette ou persil" },
+        { "ref": "poivre", "qty": 0.5, "unit": "g" }
+      ],
+      "steps": [
+        "Chauffe le riz 2 min au micro-ondes selon le sachet, puis étale-le sur une assiette pour qu'il refroidisse vite.",
+        "Prépare la sauce : fouette le skyr, la moutarde, le vinaigre, la ciboulette ciselée et le poivre.",
+        "Coupe le poivron en petits dés, les cornichons en rondelles, l'œuf dur en quartiers. Égoutte le maïs et le thon.",
+        "Mélange le riz tiède, le thon émietté, le maïs, le poivron et les cornichons avec la sauce.",
+        "Pose les quartiers d'œuf dessus. Se mange tiède ou froid."
+      ],
+      "whyLight": "La sauce est un skyr moutardé au lieu d'une mayonnaise : la salade de riz reste crémeuse, sans le gras. Le thon et l'œuf en font un vrai repas qui tient l'après-midi.",
+      "leftoverTip": "Se garde 2 jours au frigo dans une boîte fermée : parfaite pour la lunchbox du lendemain.",
+      "variants": [
+        "Version saumon : 100 g de saumon fumé en lanières à la place du thon.",
+        "Version poulet-curry : 100 g de blanc de poulet en tranches et ½ c. à c. de curry dans la sauce."
+      ]
+    },
+    {
+      "id": "bowl-mexicain-express",
+      "title": "Bowl mexicain poulet, haricots et avocat",
+      "category": "midi",
+      "tags": ["haute-proteine", "express"],
+      "servings": 1,
+      "portionNote": "1 grand bol",
+      "prepMin": 7,
+      "cookMin": 3,
+      "ingredients": [
+        { "ref": "haricots-rouges-boite", "qty": 120, "unit": "g", "label": "haricots rouges égouttés et rincés" },
+        { "ref": "mais-boite", "qty": 60, "unit": "g" },
+        { "ref": "blanc-poulet-tranches", "qty": 4, "unit": "pce" },
+        { "ref": "epices-tacos", "qty": 2, "unit": "g", "label": "épices mexicaines (1 c. à c.)" },
+        { "ref": "tomate", "qty": 1, "unit": "pce" },
+        { "ref": "oignon-rouge", "qty": 30, "unit": "g", "label": "oignon rouge (¼ d'oignon)" },
+        { "ref": "avocat", "qty": 0.5, "unit": "pce", "label": "avocat bien mûr" },
+        { "ref": "yaourt-grec-0", "qty": 60, "unit": "g" },
+        { "ref": "citron-jus", "qty": 10, "unit": "ml", "label": "jus de citron vert (2 c. à c.)" },
+        { "ref": "herbes-fraiches", "qty": 10, "unit": "g", "label": "coriandre fraîche" },
+        { "ref": "tortilla-chips", "qty": 20, "unit": "g", "label": "tortilla chips (une poignée)" }
+      ],
+      "steps": [
+        "Coupe le poulet en lanières. Dans une poêle antiadhésive à feu moyen, chauffe les haricots rincés, le maïs, le poulet et les épices avec 2 c. à s. d'eau. Laisse 3 min en remuant, garde une pincée d'épices pour la sauce.",
+        "Pendant ce temps, coupe la tomate en dés, émince l'oignon rouge, hache la coriandre. Tranche l'avocat et arrose-le de la moitié du citron.",
+        "Mélange le yaourt grec avec le reste du citron et la pincée d'épices.",
+        "Verse le mélange chaud dans un bol. Dispose la tomate, l'oignon, l'avocat et le yaourt par-dessus.",
+        "Termine par la coriandre et les tortilla chips émiettées pour le croquant."
+      ],
+      "whyLight": "Le yaourt grec remplace la crème aigre et le fromage râpé, et une petite poignée de tortilla chips suffit pour le croquant, à la place du paquet entier. Les haricots rouges et le poulet en tranches apportent protéines et fibres sans cuisson longue.",
+      "variants": [
+        "Version bœuf : 120 g de bœuf haché 5 % sauté 4 min avec les épices à la place du poulet.",
+        "Version végé : double les haricots et ajoute 30 g de fromage râpé allégé."
+      ]
+    },
+    {
+      "id": "omelette-jambon-champignons",
+      "title": "Omelette gonflée jambon-champignons-fromage",
+      "category": "midi",
+      "tags": ["haute-proteine", "express"],
+      "servings": 1,
+      "portionNote": "1 omelette + 1 tartine",
+      "prepMin": 3,
+      "cookMin": 7,
+      "ingredients": [
+        { "ref": "oeuf", "qty": 2, "unit": "pce" },
+        { "ref": "blanc-oeuf", "qty": 100, "unit": "ml", "label": "blancs d'œufs (en bouteille, ou 3 blancs)" },
+        { "ref": "jambon-blanc-degraisse", "qty": 2, "unit": "pce" },
+        { "ref": "champignons", "qty": 100, "unit": "g", "label": "champignons de Paris émincés" },
+        { "ref": "fromage-rape-allege", "qty": 30, "unit": "g" },
+        { "ref": "huile-olive", "qty": 5, "unit": "ml", "label": "huile d'olive (1 c. à c.)" },
+        { "ref": "herbes-fraiches", "qty": 5, "unit": "g", "label": "persil ou ciboulette" },
+        { "ref": "pain-complet", "qty": 1, "unit": "pce" },
+        { "ref": "sel", "qty": 0.5, "unit": "g" },
+        { "ref": "poivre", "qty": 0.5, "unit": "g" }
+      ],
+      "steps": [
+        "Chauffe l'huile dans une poêle antiadhésive de 24 cm à feu vif. Fais sauter les champignons 3 min, jusqu'à ce qu'ils soient dorés et que leur eau soit évaporée.",
+        "Pendant ce temps, fouette les œufs et les blancs avec le sel, le poivre et les herbes. Coupe le jambon en lanières. Mets le pain à griller.",
+        "Baisse à feu moyen, ajoute le jambon, puis verse les œufs. Ramène les bords vers le centre à la spatule pendant 1 min, pour que l'omelette reste épaisse.",
+        "Quand le dessus est encore légèrement baveux, parsème le fromage, plie l'omelette en deux et laisse 1 min pour qu'il fonde.",
+        "Fais glisser sur l'assiette et sers avec la tartine grillée."
+      ],
+      "whyLight": "Deux œufs entiers pour le goût, des blancs d'œufs pour le volume : une omelette bien épaisse qui apporte plus de protéines qu'une omelette à trois jaunes, avec moitié moins de gras. Le fromage râpé allégé fond aussi bien.",
+      "variants": [
+        "Version italienne : 80 g de tomates cerises et 60 g de mozzarella light à la place du jambon et du râpé.",
+        "Version épinards : ajoute 50 g de pousses d'épinards avec le jambon, elles tombent en 30 s."
+      ]
+    },
+    {
+      "id": "club-sandwich-poulet-avocat",
+      "title": "Club sandwich poulet-avocat, mayo au skyr",
+      "category": "midi",
+      "tags": ["haute-proteine", "express"],
+      "servings": 1,
+      "portionNote": "1 club (3 tranches), coupé en 2 triangles",
+      "prepMin": 7,
+      "cookMin": 3,
+      "ingredients": [
+        { "ref": "pain-complet", "qty": 3, "unit": "pce" },
+        { "ref": "blanc-poulet-tranches", "qty": 4, "unit": "pce" },
+        { "ref": "avocat", "qty": 0.5, "unit": "pce", "label": "avocat bien mûr" },
+        { "ref": "tomate", "qty": 0.5, "unit": "pce", "label": "tomate (3 rondelles)" },
+        { "ref": "romaine", "qty": 30, "unit": "g", "label": "laitue romaine (2 feuilles)" },
+        { "ref": "skyr-nature-0", "qty": 50, "unit": "g", "label": "skyr nature 0 % (pour la mayo)" },
+        { "ref": "mayonnaise-allegee", "qty": 10, "unit": "g", "label": "mayonnaise allégée (2 c. à c.)" },
+        { "ref": "moutarde", "qty": 5, "unit": "g", "label": "moutarde (1 c. à c.)" },
+        { "ref": "citron-jus", "qty": 5, "unit": "ml", "label": "jus de citron (1 c. à c.)" },
+        { "ref": "poivre", "qty": 0.5, "unit": "g" }
+      ],
+      "steps": [
+        "Toaste les 3 tranches de pain, bien dorées, pour qu'elles tiennent.",
+        "Mélange le skyr, la mayonnaise, la moutarde et le poivre. Écrase l'avocat à la fourchette avec le jus de citron.",
+        "Tartine la première tranche de mayo au skyr, pose la moitié du poulet et les rondelles de tomate.",
+        "Pose la deuxième tranche, étale l'avocat écrasé, ajoute la romaine et le reste du poulet.",
+        "Referme avec la troisième tranche tartinée de mayo au skyr. Presse, coupe en deux triangles et pique un cure-dent dans chacun."
+      ],
+      "whyLight": "La mayonnaise est remplacée par du skyr relevé d'une pointe de mayo allégée et de moutarde, le bacon par du blanc de poulet en tranches, le pain de mie par du pain complet grillé. L'avocat apporte le crémeux qui manque au poulet.",
+      "variants": [
+        "Version œuf : remplace la moitié du poulet par 1 œuf dur en rondelles.",
+        "Version cheddar : glisse 1 tranche de cheddar allégé entre le poulet et la tomate."
+      ]
+    },
+    {
+      "id": "ramen-express-poulet",
+      "title": "Ramen express poulet et œuf mollet",
+      "category": "midi",
+      "tags": ["haute-proteine", "express"],
+      "servings": 1,
+      "portionNote": "1 grand bol",
+      "prepMin": 3,
+      "cookMin": 7,
+      "ingredients": [
+        { "ref": "nouilles-ble", "qty": 70, "unit": "g", "label": "nouilles de blé asiatiques" },
+        { "ref": "bouillon-cube", "qty": 2, "unit": "g", "label": "bouillon de volaille en cube (un petit quart de cube)" },
+        { "ref": "gingembre", "qty": 5, "unit": "g", "label": "gingembre frais râpé" },
+        { "ref": "ail", "qty": 1, "unit": "pce" },
+        { "ref": "sauce-soja", "qty": 5, "unit": "ml", "label": "sauce soja (1 c. à c.)" },
+        { "ref": "oeuf", "qty": 1, "unit": "pce" },
+        { "ref": "blanc-poulet-tranches", "qty": 2, "unit": "pce" },
+        { "ref": "edamame", "qty": 50, "unit": "g", "label": "edamame écossés surgelés" },
+        { "ref": "mais-boite", "qty": 40, "unit": "g" },
+        { "ref": "epinards", "qty": 40, "unit": "g", "label": "pousses d'épinards (une poignée)" },
+        { "ref": "sriracha", "qty": 5, "unit": "g", "label": "sriracha (1 c. à c.)" }
+      ],
+      "steps": [
+        "Fais bouillir 400 ml d'eau à la bouilloire. Plonge l'œuf dans une petite casserole d'eau bouillante pour 6 min, puis passe-le sous l'eau froide et écale-le.",
+        "Verse l'eau bouillante dans une casserole avec le bouillon émietté, le gingembre, l'ail écrasé et la sauce soja. Ajoute les nouilles et les edamame, laisse cuire 3 min à feu vif.",
+        "Ajoute le maïs et le poulet coupé en lanières, laisse 1 min pour les réchauffer.",
+        "Retire du feu et ajoute les pousses d'épinards : elles tombent dans le bouillon chaud.",
+        "Verse dans un grand bol, pose l'œuf coupé en deux et termine par la sriracha."
+      ],
+      "whyLight": "Un ramen instantané, c'est des nouilles frites et un sachet de sel : ici des nouilles de blé nature, un bouillon parfumé au gingembre et à l'ail, et trois sources de protéines (œuf, poulet, edamame) qui en font un vrai repas.",
+      "variants": [
+        "Version poulet frais : 120 g de filet de poulet en lamelles fines, pochées 4 min dans le bouillon.",
+        "Version thaï : 1 c. à c. de pâte de curry rouge dissoute dans le bouillon."
+      ]
+    },
+    {
+      "id": "salade-grecque-pois-chiches",
+      "title": "Salade grecque aux pois chiches et feta",
+      "category": "midi",
+      "tags": ["haute-proteine", "sans-cuisson", "express", "vegetarien"],
+      "servings": 1,
+      "portionNote": "1 grand bol",
+      "prepMin": 8,
+      "cookMin": 0,
+      "ingredients": [
+        { "ref": "pois-chiches-boite", "qty": 200, "unit": "g", "label": "pois chiches égouttés et rincés (1 petit bocal)" },
+        { "ref": "concombre", "qty": 120, "unit": "g", "label": "concombre (⅓ de concombre)" },
+        { "ref": "tomates-cerises", "qty": 120, "unit": "g" },
+        { "ref": "oignon-rouge", "qty": 0.5, "unit": "pce" },
+        { "ref": "olives-noires", "qty": 15, "unit": "g", "label": "olives noires (6 olives)" },
+        { "ref": "feta-light", "qty": 90, "unit": "g" },
+        { "ref": "huile-olive", "qty": 5, "unit": "ml", "label": "huile d'olive (1 c. à c.)" },
+        { "ref": "citron-jus", "qty": 10, "unit": "ml", "label": "jus de citron (2 c. à c.)" },
+        { "ref": "herbes-sechees", "qty": 2, "unit": "g", "label": "origan séché (1 c. à c.)" },
+        { "ref": "poivre", "qty": 0.5, "unit": "g" }
+      ],
+      "steps": [
+        "Émince l'oignon rouge très fin, coupe le concombre en demi-rondelles épaisses et les tomates cerises en deux.",
+        "Rince les pois chiches à l'eau froide et égoutte-les bien.",
+        "Dans un saladier, fouette l'huile, le jus de citron, l'origan et le poivre. Ajoute les pois chiches, le concombre, les tomates, l'oignon et les olives. Mélange.",
+        "Émiette la feta par-dessus au dernier moment, sans mélanger, et termine par une pincée d'origan."
+      ],
+      "whyLight": "Les pois chiches remplacent le pain ou les pâtes qui accompagnent d'habitude la salade grecque et apportent protéines et fibres, la feta allégée garde le goût salé avec un tiers de gras en moins. Une seule cuillère d'huile suffit : le citron fait le reste.",
+      "leftoverTip": "Sans la feta, la base se garde 2 jours au frigo. Ajoute la feta au moment de servir.",
+      "variants": [
+        "Version poulet : ajoute 100 g de blanc de poulet en tranches et réduis la feta à 50 g.",
+        "Version pita : sers dans 1 pita complète tiède, avec 2 c. à s. de skyr à l'ail."
+      ]
+    },
+    {
+      "id": "pita-pizza-express",
+      "title": "Pita pizza jambon-champignons à la poêle",
+      "category": "midi",
+      "tags": ["haute-proteine", "express"],
+      "servings": 1,
+      "portionNote": "1 pita pizza",
+      "prepMin": 3,
+      "cookMin": 7,
+      "ingredients": [
+        { "ref": "pain-pita-complet", "qty": 1, "unit": "pce" },
+        { "ref": "passata", "qty": 50, "unit": "g", "label": "passata (3 c. à s.)" },
+        { "ref": "mozzarella-light", "qty": 80, "unit": "g", "label": "mozzarella light, bien égouttée" },
+        { "ref": "jambon-blanc-degraisse", "qty": 2, "unit": "pce" },
+        { "ref": "champignons", "qty": 60, "unit": "g", "label": "champignons de Paris (4 champignons)" },
+        { "ref": "herbes-sechees", "qty": 1, "unit": "g", "label": "origan séché (½ c. à c.)" },
+        { "ref": "epinards", "qty": 20, "unit": "g", "label": "pousses d'épinards (une poignée, pour servir)" },
+        { "ref": "piment-flocons", "qty": 0.5, "unit": "g" }
+      ],
+      "steps": [
+        "Émince les champignons très fin, coupe le jambon en lanières, déchire la mozzarella en petits morceaux et presse-la dans du papier absorbant.",
+        "Étale la passata sur la pita en laissant 1 cm de bord. Répartis la mozzarella, le jambon, les champignons et l'origan.",
+        "Pose la pita dans une poêle antiadhésive froide, à sec. Chauffe à feu moyen-doux, couvre et laisse 6 à 7 min : le dessous croustille et le fromage est fondu. À l'air fryer : 6 min à 190 °C.",
+        "Fais glisser sur une planche, ajoute les pousses d'épinards et le piment. Coupe en 4 parts."
+      ],
+      "whyLight": "La pita complète remplace la pâte à pizza, la mozzarella light et le jambon dégraissé remplacent le fromage entier et le salami : une pizza qui apporte autant de protéines qu'un steak, sans allumer le four.",
+      "variants": [
+        "Version végé : remplace le jambon par 60 g de poivron et 30 g d'olives noires.",
+        "Version poulet : 100 g de blanc de poulet en tranches et 30 g d'oignon rouge à la place du jambon."
+      ]
+    },
+    {
+      "id": "salade-lentilles-saumon-fume",
+      "title": "Salade de lentilles au saumon fumé",
+      "category": "midi",
+      "tags": ["haute-proteine", "sans-cuisson", "express"],
+      "servings": 1,
+      "portionNote": "1 grand bol",
+      "prepMin": 8,
+      "cookMin": 0,
+      "ingredients": [
+        { "ref": "lentilles-boite", "qty": 200, "unit": "g", "label": "lentilles cuites égouttées et rincées" },
+        { "ref": "saumon-fume", "qty": 3, "unit": "pce" },
+        { "ref": "concombre", "qty": 100, "unit": "g", "label": "concombre (⅓ de concombre)" },
+        { "ref": "oignon-rouge", "qty": 30, "unit": "g", "label": "oignon rouge (¼ d'oignon)" },
+        { "ref": "moutarde", "qty": 5, "unit": "g", "label": "moutarde (1 c. à c.)" },
+        { "ref": "huile-olive", "qty": 5, "unit": "ml", "label": "huile d'olive (1 c. à c.)" },
+        { "ref": "vinaigre", "qty": 10, "unit": "ml", "label": "vinaigre de cidre (2 c. à c.)" },
+        { "ref": "herbes-fraiches", "qty": 10, "unit": "g", "label": "aneth, ciboulette ou persil" },
+        { "ref": "poivre", "qty": 0.5, "unit": "g" }
+      ],
+      "steps": [
+        "Fouette la moutarde, le vinaigre, l'huile et le poivre dans un saladier jusqu'à obtenir une vinaigrette liée.",
+        "Émince l'oignon rouge très fin, coupe le concombre en petits dés, hache les herbes.",
+        "Rince les lentilles à l'eau froide, égoutte-les bien et mélange-les à la vinaigrette avec l'oignon, le concombre et la moitié des herbes.",
+        "Coupe le saumon en lanières et dépose-les sur la salade. Termine par le reste des herbes."
+      ],
+      "whyLight": "Les lentilles apportent des protéines végétales et une bonne dose de fibres qui calent pour l'après-midi, le saumon fumé apporte le reste, sans cuisson. Une seule cuillère d'huile : la moutarde lie la vinaigrette à elle seule.",
+      "leftoverTip": "Se garde 2 jours au frigo. Ajoute le saumon au dernier moment.",
+      "variants": [
+        "Version œuf : ajoute 1 œuf dur en quartiers.",
+        "Version végé : remplace le saumon par 80 g de feta allégée émiettée."
       ]
     },
     {
@@ -101,6 +1240,1490 @@
       "variants": [
         "Version poulet : 250 g de haché de poulet, cuisson 1 min 30 par face.",
         "Version menu : ajoute 150 g de frites au four passées 15 min à l'air fryer à 200 °C."
+      ]
+    },
+    {
+      "id": "kebab-poulet-maison",
+      "title": "Kebab maison au poulet mariné",
+      "category": "soir",
+      "tags": ["haute-proteine", "restes-midi"],
+      "servings": 2,
+      "portionNote": "1 pita bien garnie",
+      "prepMin": 15,
+      "cookMin": 10,
+      "ingredients": [
+        { "ref": "poulet-filet", "qty": 350, "unit": "g" },
+        { "ref": "yaourt-grec-0", "qty": 60, "unit": "g", "label": "yaourt grec 0 % (pour la marinade)" },
+        { "ref": "paprika", "qty": 3, "unit": "g", "label": "paprika fumé (1 c. à c. bombée)" },
+        { "ref": "cumin", "qty": 2, "unit": "g", "label": "cumin moulu (1 c. à c.)" },
+        { "ref": "ail", "qty": 2, "unit": "pce", "label": "ail (1 gousse pour la marinade, 1 pour la sauce)" },
+        { "ref": "citron-jus", "qty": 20, "unit": "ml", "label": "jus de citron (moitié marinade, moitié sauce)" },
+        { "ref": "huile-olive", "qty": 10, "unit": "ml", "label": "huile d'olive (2 c. à c., pour la marinade)" },
+        { "ref": "pain-pita-complet", "qty": 2, "unit": "pce" },
+        { "ref": "salade-iceberg", "qty": 80, "unit": "g" },
+        { "ref": "tomate", "qty": 1, "unit": "pce" },
+        { "ref": "oignon-rouge", "qty": 50, "unit": "g", "label": "oignon rouge (½ oignon)" },
+        { "ref": "skyr-nature-0", "qty": 120, "unit": "g", "label": "skyr nature 0 % (pour la sauce blanche)" },
+        { "ref": "herbes-sechees", "qty": 2, "unit": "g", "label": "menthe séchée (1 c. à c.)" },
+        { "ref": "sel", "qty": 2, "unit": "g" }
+      ],
+      "steps": [
+        "Coupe le poulet en lanières de 1 cm. Mélange-les avec le yaourt grec, l'huile, le paprika, le cumin, 1 gousse d'ail pressée, la moitié du jus de citron et la moitié du sel. Laisse mariner 15 min (ou la veille au frigo).",
+        "Prépare la sauce blanche : mélange le skyr, la menthe, l'autre gousse d'ail pressée, le reste du citron et une pincée de sel. Réserve au frais.",
+        "Émince l'oignon rouge en fines lamelles, coupe la tomate en dés, cisèle l'iceberg.",
+        "Chauffe une poêle antiadhésive à feu vif, à sec. Étale le poulet égoutté en une seule couche et laisse-le 3 min sans toucher, jusqu'à ce qu'il soit bien doré. Mélange et poursuis 4 à 5 min, jusqu'à ce que les bords grillent.",
+        "Réchauffe les pitas 1 min au grille-pain ou 30 s dans la poêle, puis ouvre-les en poche.",
+        "Garnis : sauce blanche au fond, poulet, oignon, tomate, salade, et une dernière cuillère de sauce par-dessus."
+      ],
+      "whyLight": "Le poulet mariné au yaourt remplace la viande de kebab pressée et grasse, la sauce blanche est au skyr et non à la mayonnaise, la pita est complète : tu gardes le goût du snack, avec bien plus de protéines et de fibres.",
+      "leftoverTip": "Le lendemain : garde le poulet, la sauce et les crudités dans trois boîtes séparées. Réchauffe le poulet 1 min au micro-ondes (ou mange-le froid), toaste la pita et garnis au dernier moment pour qu'elle reste croustillante.",
+      "variants": [
+        "Version dinde : 350 g d'escalope de dinde coupée en lanières, même marinade, cuisson identique.",
+        "Version assiette : sans pita, sers le poulet sur 150 g de riz basmati cuit avec les crudités et la sauce."
+      ]
+    },
+    {
+      "id": "pizza-pate-skyr",
+      "title": "Pizza jambon-champignons à la pâte au skyr",
+      "category": "soir",
+      "tags": ["haute-proteine", "restes-midi"],
+      "servings": 2,
+      "portionNote": "1 pizza de 25 cm",
+      "prepMin": 15,
+      "cookMin": 15,
+      "ingredients": [
+        { "ref": "farine-complete", "qty": 200, "unit": "g" },
+        { "ref": "skyr-nature-0", "qty": 200, "unit": "g", "label": "skyr nature 0 % (pour la pâte)" },
+        { "ref": "levure-chimique", "qty": 6, "unit": "g", "label": "levure chimique (1 c. à c. bombée)" },
+        { "ref": "sel", "qty": 1, "unit": "g" },
+        { "ref": "passata", "qty": 150, "unit": "g" },
+        { "ref": "ail", "qty": 1, "unit": "pce" },
+        { "ref": "herbes-sechees", "qty": 3, "unit": "g", "label": "origan séché (1 c. à s.)" },
+        { "ref": "poivre", "qty": 1, "unit": "g" },
+        { "ref": "mozzarella-light", "qty": 125, "unit": "g", "label": "mozzarella light (1 boule), bien égouttée" },
+        { "ref": "jambon-blanc-degraisse", "qty": 3, "unit": "pce" },
+        { "ref": "champignons", "qty": 150, "unit": "g" }
+      ],
+      "steps": [
+        "Préchauffe le four à 240 °C avec la plaque dedans. Mélange la farine, la levure et le sel, ajoute le skyr et pétris 2 min à la main jusqu'à obtenir une boule souple qui ne colle plus. Pas de repos nécessaire.",
+        "Divise la pâte en deux. Étale chaque moitié sur une feuille de papier cuisson farinée, en un disque fin de 25 cm environ.",
+        "Mélange la passata avec l'ail pressé, l'origan et le poivre. Étale-la sur les deux disques en laissant un bord de 1 cm.",
+        "Émince les champignons, déchire la mozzarella en petits morceaux en la pressant bien pour enlever l'eau, coupe le jambon en lanières. Répartis le tout.",
+        "Fais glisser les pizzas avec leur papier sur la plaque brûlante. Enfourne 12 à 14 min, jusqu'à ce que le bord soit doré et croustillant et que la mozzarella grésille. Si les deux ne tiennent pas sur la plaque, cuis-les l'une après l'autre."
+      ],
+      "whyLight": "La pâte farine complète + skyr remplace la pâte à l'huile et la mozzarella light le fromage entier : la pizza garde son croquant et sa gourmandise, avec le double de protéines et beaucoup de fibres.",
+      "leftoverTip": "Le lendemain : garde la deuxième pizza entière au frigo dans du papier alu. Réchauffe-la 4 à 5 min dans une poêle sèche à couvert (la base redevient croustillante), ou mange-la froide, pliée en deux, avec une salade.",
+      "variants": [
+        "Version feta-épinards : remplace le jambon par 100 g de feta allégée émiettée et 60 g de pousses d'épinards.",
+        "Version piquante : ajoute 1 g de piment en flocons et 50 g d'oignon rouge émincé avant cuisson."
+      ]
+    },
+    {
+      "id": "tacos-gratines-poulet",
+      "title": "Tacos gratinés au poulet, sauce fromagère",
+      "category": "soir",
+      "tags": ["haute-proteine", "restes-midi", "air-fryer"],
+      "servings": 2,
+      "portionNote": "1 tacos XL",
+      "prepMin": 15,
+      "cookMin": 25,
+      "ingredients": [
+        { "ref": "tortilla-ble", "qty": 2, "unit": "pce" },
+        { "ref": "poulet-filet", "qty": 300, "unit": "g" },
+        { "ref": "epices-tacos", "qty": 6, "unit": "g", "label": "épices mexicaines (1 c. à s.)" },
+        { "ref": "frites-four", "qty": 200, "unit": "g" },
+        { "ref": "lait-demi-ecreme", "qty": 100, "unit": "ml", "label": "lait demi-écrémé (pour la sauce fromagère)" },
+        { "ref": "maizena", "qty": 5, "unit": "g", "label": "fécule de maïs (1 c. à c.)" },
+        { "ref": "fromage-frais-light", "qty": 40, "unit": "g", "label": "fromage frais light (pour la sauce fromagère)" },
+        { "ref": "cheddar-allege-tranches", "qty": 2, "unit": "pce", "label": "cheddar allégé (pour la sauce fromagère)" },
+        { "ref": "skyr-nature-0", "qty": 80, "unit": "g", "label": "skyr nature 0 % (pour la sauce algérienne)" },
+        { "ref": "harissa", "qty": 10, "unit": "g", "label": "harissa (2 c. à c.)" },
+        { "ref": "ketchup", "qty": 15, "unit": "g", "label": "ketchup (1 c. à s.)" },
+        { "ref": "oignon", "qty": 50, "unit": "g", "label": "oignon (½ oignon, pour la sauce algérienne)" },
+        { "ref": "sel", "qty": 1, "unit": "g" },
+        { "ref": "poivre", "qty": 1, "unit": "g" }
+      ],
+      "steps": [
+        "Préchauffe le four à 220 °C. Étale les frites sur une plaque et enfourne 20 min en les retournant à mi-cuisson (ou 14 min à l'air fryer à 200 °C).",
+        "Coupe le poulet en dés de 2 cm, mélange-le avec les épices et le sel. Saisis-le 6 à 7 min dans une poêle antiadhésive à feu vif, jusqu'à ce qu'il soit doré. Réserve.",
+        "Sauce algérienne : fais revenir l'oignon haché fin 3 min dans la même poêle, puis mélange-le hors du feu avec le skyr, la harissa et le ketchup.",
+        "Sauce fromagère : délaie la fécule dans le lait froid dans une petite casserole, chauffe à feu moyen en remuant jusqu'à ce que ça épaississe, puis ajoute le fromage frais et le cheddar en morceaux hors du feu. Remue jusqu'à ce que la sauce soit lisse. Poivre.",
+        "Chauffe les tortillas 20 s au micro-ondes pour les assouplir. Au centre de chacune, dépose la moitié du poulet, des frites, de la sauce fromagère et de la sauce algérienne.",
+        "Replie les côtés puis le haut et le bas pour former un rectangle bien fermé. Dore chaque tacos 2 min par face dans la poêle sèche, pliure dessous d'abord, en appuyant avec une spatule."
+      ],
+      "whyLight": "Poulet saisi sans friture, frites au four, sauce fromagère montée au lait et au fromage frais light, sauce algérienne au skyr : la grosse dose de gras de la version snack disparaît, les protéines restent.",
+      "leftoverTip": "Le lendemain : emballe le deuxième tacos déjà plié dans du papier alu au frigo. Réchauffe-le 3 min par face dans une poêle sèche à feu moyen pour retrouver le croustillant, ou 2 min au micro-ondes si tu es pressé.",
+      "variants": [
+        "Version bœuf : 300 g de bœuf haché 5 % saisi avec les mêmes épices.",
+        "Version patate douce : remplace les frites par 200 g de patate douce en frites au four, et glisse 40 g d'iceberg ciselé dans le tacos."
+      ]
+    },
+    {
+      "id": "tenders-poulet-frites-patate-douce",
+      "title": "Tenders croustillants et frites de patate douce",
+      "category": "soir",
+      "tags": ["haute-proteine", "restes-midi", "air-fryer"],
+      "servings": 2,
+      "portionNote": "5 tenders, des frites et la sauce barbecue",
+      "prepMin": 15,
+      "cookMin": 25,
+      "ingredients": [
+        { "ref": "poulet-filet", "qty": 350, "unit": "g" },
+        { "ref": "oeuf", "qty": 1, "unit": "pce" },
+        { "ref": "chapelure", "qty": 50, "unit": "g", "label": "chapelure ou panko" },
+        { "ref": "paprika", "qty": 4, "unit": "g", "label": "paprika fumé (2 c. à c. : moitié panure, moitié sauce)" },
+        { "ref": "patate-douce", "qty": 2, "unit": "pce", "label": "patate douce (2 moyennes)" },
+        { "ref": "huile-olive", "qty": 10, "unit": "ml", "label": "huile d'olive (2 c. à c., pour les frites)" },
+        { "ref": "ketchup", "qty": 40, "unit": "g", "label": "ketchup (pour la sauce barbecue)" },
+        { "ref": "miel", "qty": 10, "unit": "g", "label": "miel (2 c. à c.)" },
+        { "ref": "vinaigre", "qty": 10, "unit": "ml", "label": "vinaigre de cidre (2 c. à c.)" },
+        { "ref": "moutarde", "qty": 5, "unit": "g", "label": "moutarde (1 c. à c.)" },
+        { "ref": "sauce-soja", "qty": 10, "unit": "ml", "label": "sauce soja (2 c. à c.)" },
+        { "ref": "sel", "qty": 2, "unit": "g" },
+        { "ref": "poivre", "qty": 1, "unit": "g" }
+      ],
+      "steps": [
+        "Préchauffe le four à 220 °C. Épluche les patates douces, coupe-les en frites de 1 cm, mélange-les avec l'huile, la moitié du sel et le poivre. Étale-les sur une plaque sans qu'elles se touchent.",
+        "Coupe le poulet en 10 lanières. Bats l'œuf dans une assiette creuse ; dans une autre, mélange la chapelure, la moitié du paprika et le reste du sel. Passe chaque lanière dans l'œuf, puis dans la chapelure en appuyant bien.",
+        "Dépose les tenders sur une deuxième plaque recouverte de papier cuisson. Enfourne frites et tenders 25 min en retournant tout à mi-cuisson ; à l'air fryer, 12 min à 200 °C pour les tenders et 18 min pour les frites. La panure doit être dorée et sèche au toucher.",
+        "Pendant ce temps, prépare la sauce barbecue : fais chauffer 3 min à feu doux le ketchup, le miel, le vinaigre, la moutarde, la sauce soja et le reste du paprika, jusqu'à ce que la sauce nappe la cuillère.",
+        "Sers les tenders avec les frites et la sauce à part, pour tremper."
+      ],
+      "whyLight": "La panure passe au four au lieu de la friture, la patate douce remplace les frites de fast-food et la sauce barbecue est faite maison, avec très peu de sucre : tu manges croustillant et le poulet te cale pour la soirée.",
+      "leftoverTip": "Le lendemain : réchauffe tenders et frites 8 min au four à 200 °C ou 5 min à l'air fryer pour qu'ils redeviennent croustillants (pas de micro-ondes, la panure ramollit). La sauce se garde 3 jours au frigo.",
+      "variants": [
+        "Version épicée : ajoute 1 g de piment en flocons dans la chapelure et 1 c. à c. de sriracha dans la sauce.",
+        "Version wrap : le lendemain, glisse les tenders froids dans un wrap protéiné avec de l'iceberg et une cuillère de sauce."
+      ]
+    },
+    {
+      "id": "nuggets-maison-coleslaw",
+      "title": "Nuggets maison, frites et coleslaw",
+      "category": "soir",
+      "tags": ["haute-proteine", "restes-midi", "air-fryer"],
+      "servings": 2,
+      "portionNote": "8 nuggets, des frites et un bol de coleslaw",
+      "prepMin": 20,
+      "cookMin": 18,
+      "ingredients": [
+        { "ref": "poulet-hache", "qty": 350, "unit": "g" },
+        { "ref": "oeuf", "qty": 1, "unit": "pce" },
+        { "ref": "chapelure", "qty": 60, "unit": "g", "label": "chapelure ou panko (15 g dans la farce, le reste pour paner)" },
+        { "ref": "paprika", "qty": 2, "unit": "g", "label": "paprika (1 c. à c.)" },
+        { "ref": "ail", "qty": 1, "unit": "pce" },
+        { "ref": "frites-four", "qty": 150, "unit": "g" },
+        { "ref": "chou-blanc", "qty": 250, "unit": "g", "label": "chou blanc (¼ de chou)" },
+        { "ref": "carotte", "qty": 1, "unit": "pce" },
+        { "ref": "skyr-nature-0", "qty": 100, "unit": "g", "label": "skyr nature 0 % (pour le coleslaw)" },
+        { "ref": "mayonnaise-allegee", "qty": 15, "unit": "g", "label": "mayonnaise allégée (1 c. à s.)" },
+        { "ref": "vinaigre", "qty": 10, "unit": "ml", "label": "vinaigre de cidre (2 c. à c.)" },
+        { "ref": "moutarde", "qty": 10, "unit": "g", "label": "moutarde (2 c. à c.)" },
+        { "ref": "sel", "qty": 2, "unit": "g" },
+        { "ref": "poivre", "qty": 1, "unit": "g" }
+      ],
+      "steps": [
+        "Préchauffe le four à 200 °C. Coleslaw : émince le chou très fin, râpe la carotte. Mélange le skyr, la mayonnaise, le vinaigre, la moutarde, une pincée de sel et du poivre, puis enrobe les légumes. Laisse reposer au frigo, le chou s'attendrit.",
+        "Mélange le haché de poulet avec l'ail pressé, le paprika, 15 g de chapelure, le reste du sel et du poivre. Forme 16 petites galettes ovales de la taille d'un nugget, avec les mains mouillées.",
+        "Bats l'œuf dans une assiette creuse, verse le reste de la chapelure dans une autre. Passe chaque nugget dans l'œuf puis dans la chapelure en appuyant bien.",
+        "Dépose les nuggets sur une plaque avec du papier cuisson, les frites sur une autre. Enfourne 18 min en retournant à mi-cuisson, jusqu'à ce que la panure soit dorée ; à l'air fryer, 10 min à 190 °C pour les nuggets et 14 min à 200 °C pour les frites.",
+        "Sers avec le coleslaw bien frais et, pour tremper, du ketchup ou une sauce au skyr."
+      ],
+      "whyLight": "Haché de poulet et panure dorée au four à la place de la friture, coleslaw au skyr avec une seule cuillère de mayonnaise allégée : tout le plaisir d'un menu nuggets, avec bien plus de protéines et beaucoup moins de gras.",
+      "leftoverTip": "Le lendemain : réchauffe nuggets et frites 6 min au four à 200 °C ou 4 min à l'air fryer, ou mange les nuggets froids, trempés dans le coleslaw qui est encore meilleur après une nuit au frigo.",
+      "variants": [
+        "Version dinde : 350 g de dinde hachée, cuisson identique.",
+        "Version sandwich : le lendemain, glisse 8 nuggets et le coleslaw dans un pain burger complet toasté."
+      ]
+    },
+    {
+      "id": "burger-poulet-crispy",
+      "title": "Burger poulet crispy comme au drive",
+      "category": "soir",
+      "tags": ["haute-proteine", "restes-midi", "air-fryer"],
+      "servings": 2,
+      "portionNote": "1 burger bien garni",
+      "prepMin": 15,
+      "cookMin": 18,
+      "ingredients": [
+        { "ref": "poulet-filet", "qty": 300, "unit": "g", "label": "filet de poulet (2 filets de 150 g)" },
+        { "ref": "oeuf", "qty": 1, "unit": "pce" },
+        { "ref": "chapelure", "qty": 40, "unit": "g", "label": "chapelure ou panko" },
+        { "ref": "paprika", "qty": 2, "unit": "g", "label": "paprika fumé (1 c. à c.)" },
+        { "ref": "pain-burger-complet", "qty": 2, "unit": "pce" },
+        { "ref": "cheddar-allege-tranches", "qty": 2, "unit": "pce" },
+        { "ref": "salade-iceberg", "qty": 60, "unit": "g" },
+        { "ref": "tomate", "qty": 1, "unit": "pce", "label": "tomate (4 tranches)" },
+        { "ref": "oignon-rouge", "qty": 40, "unit": "g", "label": "oignon rouge (quelques rondelles)" },
+        { "ref": "cornichons", "qty": 30, "unit": "g" },
+        { "ref": "skyr-nature-0", "qty": 80, "unit": "g", "label": "skyr nature 0 % (pour la sauce)" },
+        { "ref": "sriracha", "qty": 15, "unit": "g", "label": "sriracha (1 c. à s., pour la sauce)" },
+        { "ref": "sel", "qty": 1, "unit": "g" },
+        { "ref": "poivre", "qty": 1, "unit": "g" }
+      ],
+      "steps": [
+        "Préchauffe le four à 200 °C. Aplatis chaque filet au rouleau à 1,5 cm d'épaisseur entre deux feuilles de papier cuisson, pour qu'il déborde un peu du pain. Sale, poivre.",
+        "Bats l'œuf dans une assiette creuse ; mélange la chapelure et le paprika dans une autre. Passe les filets dans l'œuf puis dans la chapelure en appuyant bien pour qu'elle accroche partout.",
+        "Dépose-les sur une plaque avec du papier cuisson. Enfourne 18 min en retournant à mi-cuisson (ou 12 min à l'air fryer à 190 °C), jusqu'à ce que la panure soit dorée et que le poulet ne soit plus rosé au centre. Pose le cheddar dessus 1 min avant la fin.",
+        "Pendant ce temps, mélange le skyr et la sriracha. Tranche la tomate, l'oignon et les cornichons, cisèle l'iceberg.",
+        "Toaste les pains coupés en deux 1 min dans une poêle sèche, côté mie.",
+        "Monte le burger : sauce sur les deux faces du pain, salade, poulet au cheddar, cornichons, oignon, tomate. Sers aussitôt."
+      ],
+      "whyLight": "Le filet pané cuit au four ou à l'air fryer au lieu d'être frit, le cheddar est allégé, le pain complet, et la sauce skyr-sriracha remplace la mayonnaise : le burger crispy du drive, avec plus de protéines et deux fois moins de gras.",
+      "leftoverTip": "Le lendemain : garde le filet pané, le pain et les crudités séparément. Réchauffe le poulet 6 min au four à 200 °C ou 4 min à l'air fryer pour qu'il recroustille, toaste le pain et remonte le burger avec la sauce et des crudités fraîches.",
+      "variants": [
+        "Version dinde : 2 escalopes de dinde de 150 g, même panure, 15 min au four.",
+        "Version sans pain : sers le filet pané avec un coleslaw au skyr et 150 g de frites au four."
+      ]
+    },
+    {
+      "id": "kefta-boeuf-pita-yaourt",
+      "title": "Kefta de bœuf, pita et sauce yaourt-menthe",
+      "category": "soir",
+      "tags": ["haute-proteine", "restes-midi"],
+      "servings": 2,
+      "portionNote": "4 kefta, 1 pita, crudités et sauce",
+      "prepMin": 15,
+      "cookMin": 10,
+      "ingredients": [
+        { "ref": "boeuf-hache-5", "qty": 350, "unit": "g" },
+        { "ref": "oignon", "qty": 1, "unit": "pce", "label": "oignon (½ râpé dans la viande, ½ émincé pour garnir)" },
+        { "ref": "herbes-fraiches", "qty": 30, "unit": "g", "label": "herbes fraîches (20 g de persil et coriandre pour la viande, 10 g de menthe pour la sauce)" },
+        { "ref": "cumin", "qty": 3, "unit": "g", "label": "cumin moulu (1 c. à c. bombée)" },
+        { "ref": "paprika", "qty": 3, "unit": "g", "label": "paprika (1 c. à c. bombée)" },
+        { "ref": "ail", "qty": 2, "unit": "pce", "label": "ail (1 gousse dans la viande, 1 dans la sauce)" },
+        { "ref": "pain-pita-complet", "qty": 2, "unit": "pce" },
+        { "ref": "concombre", "qty": 150, "unit": "g", "label": "concombre (½ concombre)" },
+        { "ref": "tomate", "qty": 1, "unit": "pce" },
+        { "ref": "yaourt-grec-0", "qty": 150, "unit": "g", "label": "yaourt grec 0 % (pour la sauce)" },
+        { "ref": "citron-jus", "qty": 10, "unit": "ml", "label": "jus de citron (2 c. à c., pour la sauce)" },
+        { "ref": "sel", "qty": 2, "unit": "g" },
+        { "ref": "poivre", "qty": 1, "unit": "g" }
+      ],
+      "steps": [
+        "Râpe la moitié de l'oignon et presse-la dans ta main pour enlever le jus. Hache le persil et la coriandre. Mélange le bœuf avec l'oignon râpé, les herbes hachées, 1 gousse d'ail pressée, le cumin, le paprika, le sel et le poivre. Pétris 1 min, jusqu'à ce que la viande devienne collante.",
+        "Forme 8 kefta allongées de la taille d'un pouce, ou 8 boulettes aplaties. Réserve 10 min au frigo pour qu'elles se tiennent.",
+        "Sauce : mélange le yaourt grec, la menthe ciselée, la deuxième gousse d'ail pressée, le jus de citron et une pincée de sel.",
+        "Coupe le concombre en bâtonnets, la tomate en quartiers, émince le reste de l'oignon.",
+        "Chauffe une poêle antiadhésive à feu vif, à sec. Cuis les kefta 3 min par face sans les bouger entre-temps, jusqu'à ce qu'elles soient bien brunes dehors et juste cuites dedans.",
+        "Réchauffe les pitas 30 s dans la poêle. Garnis-les avec les kefta, les crudités et une grosse cuillère de sauce, ou sers tout à plat, à composer à table."
+      ],
+      "whyLight": "Bœuf 5 % à la place du haché gras classique, cuisson sans matière grasse et sauce au yaourt grec 0 % plutôt qu'à l'huile : le goût du kefta grillé, bien protéiné, avec une pita complète qui cale.",
+      "leftoverTip": "Le lendemain : réchauffe les kefta 1 min au micro-ondes, ou mange-les froides, coupées en deux dans une pita avec les crudités et la sauce (garde la sauce dans un pot à part, elle tient 3 jours).",
+      "variants": [
+        "Version poulet : 350 g de haché de poulet, même assaisonnement, 4 min par face.",
+        "Version bol : sans pita, sers les kefta sur 150 g de riz basmati cuit avec les crudités et la sauce."
+      ]
+    },
+    {
+      "id": "pates-carbonara-light",
+      "title": "Pâtes carbonara crémeuses qui trompent tout le monde",
+      "category": "soir",
+      "tags": ["haute-proteine", "restes-midi"],
+      "servings": 2,
+      "portionNote": "1 grande assiette",
+      "prepMin": 10,
+      "cookMin": 15,
+      "ingredients": [
+        { "ref": "pates-completes-crues", "qty": 160, "unit": "g", "label": "pâtes complètes (spaghetti ou rigatoni)" },
+        { "ref": "lardons-volaille", "qty": 200, "unit": "g", "label": "allumettes de volaille" },
+        { "ref": "oeuf", "qty": 2, "unit": "pce" },
+        { "ref": "parmesan", "qty": 40, "unit": "g", "label": "parmesan râpé" },
+        { "ref": "fromage-blanc-0", "qty": 100, "unit": "g" },
+        { "ref": "ail", "qty": 1, "unit": "pce" },
+        { "ref": "poivre", "qty": 2, "unit": "g", "label": "poivre noir du moulin (1 c. à c.)" },
+        { "ref": "sel", "qty": 1, "unit": "g", "label": "sel (pour l'eau des pâtes)" }
+      ],
+      "steps": [
+        "Porte une grande casserole d'eau salée à ébullition. Cuis les pâtes le temps indiqué sur le paquet, moins 1 min. Garde une tasse d'eau de cuisson avant d'égoutter.",
+        "Pendant ce temps, fais dorer les allumettes de volaille 4 à 5 min à feu moyen-vif dans une poêle antiadhésive, à sec, avec l'ail écrasé. Retire l'ail dès qu'il est doré.",
+        "Dans un bol, bats les œufs avec le fromage blanc, le parmesan et le poivre jusqu'à obtenir une crème lisse.",
+        "Hors du feu, verse les pâtes égouttées dans la poêle avec les allumettes, ajoute la crème aux œufs et 3 c. à s. d'eau de cuisson. Mélange vivement 1 min : la chaleur des pâtes cuit les œufs sans les brouiller et la sauce devient brillante et nappante.",
+        "Ajoute un peu d'eau de cuisson si la sauce épaissit trop. Sers aussitôt avec un tour de moulin à poivre."
+      ],
+      "whyLight": "Allumettes de volaille à la place des lardons, fromage blanc 0 % à la place de la crème et pâtes complètes : la carbonara reste soyeuse et généreuse, avec deux fois moins de gras et une bonne dose de protéines.",
+      "leftoverTip": "Le lendemain : ajoute 1 c. à s. d'eau ou de lait sur la portion et réchauffe 1 min 30 au micro-ondes à puissance moyenne, en mélangeant à mi-temps, pour que les œufs ne se brouillent pas. Ou mange-la froide, en salade, avec des tomates cerises.",
+      "variants": [
+        "Version verte : ajoute 100 g de petits pois surgelés dans l'eau des pâtes 3 min avant la fin.",
+        "Version champignons : fais sauter 150 g de champignons émincés avec les allumettes."
+      ]
+    },
+    {
+      "id": "lasagnes-legeres",
+      "title": "Lasagnes légères à la béchamel sans beurre",
+      "category": "soir",
+      "tags": ["haute-proteine", "restes-midi", "batch"],
+      "servings": 2,
+      "portionNote": "1 gros carré de lasagnes",
+      "prepMin": 10,
+      "cookMin": 35,
+      "ingredients": [
+        { "ref": "boeuf-hache-5", "qty": 300, "unit": "g" },
+        { "ref": "oignon", "qty": 1, "unit": "pce" },
+        { "ref": "ail", "qty": 2, "unit": "pce" },
+        { "ref": "tomates-concassees", "qty": 400, "unit": "g", "label": "tomates concassées (1 boîte)" },
+        { "ref": "concentre-tomate", "qty": 20, "unit": "g", "label": "concentré de tomate (1 c. à s.)" },
+        { "ref": "herbes-sechees", "qty": 4, "unit": "g", "label": "origan et basilic séchés (2 c. à c.)" },
+        { "ref": "courgette", "qty": 1, "unit": "pce" },
+        { "ref": "lasagnes-feuilles", "qty": 6, "unit": "pce" },
+        { "ref": "lait-demi-ecreme", "qty": 250, "unit": "ml", "label": "lait demi-écrémé (pour la béchamel)" },
+        { "ref": "maizena", "qty": 15, "unit": "g", "label": "fécule de maïs (1 c. à s. bombée)" },
+        { "ref": "fromage-blanc-0", "qty": 100, "unit": "g", "label": "fromage blanc 0 % (pour la béchamel)" },
+        { "ref": "fromage-rape-allege", "qty": 50, "unit": "g" },
+        { "ref": "sel", "qty": 2, "unit": "g" },
+        { "ref": "poivre", "qty": 1, "unit": "g" }
+      ],
+      "steps": [
+        "Préchauffe le four à 200 °C. Hache l'oignon et l'ail. Fais-les revenir 3 min dans une sauteuse antiadhésive à feu moyen avec 2 c. à s. d'eau, puis ajoute le bœuf et fais-le dorer 4 min en l'émiettant à la spatule.",
+        "Ajoute les tomates concassées, le concentré, les herbes, le sel et le poivre. Laisse mijoter 6 min à feu vif, sans couvercle, jusqu'à ce que la sauce soit épaisse.",
+        "Pendant ce temps, la béchamel : délaie la fécule dans le lait froid dans une casserole, chauffe à feu moyen en fouettant jusqu'à ce que ça épaississe (3 à 4 min), puis retire du feu et incorpore le fromage blanc.",
+        "Coupe la courgette en fines rondelles de 3 mm. Dans un petit plat (20 × 15 cm environ), alterne : un tiers de la viande, 2 feuilles de lasagne, la moitié des rondelles de courgette, un tiers de la béchamel, et recommence. Termine par la viande, la béchamel et le fromage râpé.",
+        "Couvre d'une feuille d'alu et enfourne 12 min, puis retire l'alu et poursuis 8 min, jusqu'à ce que le dessus soit doré et qu'un couteau s'enfonce sans résistance dans les pâtes. Laisse reposer 5 min avant de couper."
+      ],
+      "whyLight": "Bœuf 5 %, béchamel liée à la fécule et au fromage blanc plutôt qu'au beurre et à la farine, fromage râpé allégé et une couche de courgette : des lasagnes fondantes, riches en protéines, avec bien moins de gras.",
+      "leftoverTip": "Le lendemain : réchauffe le carré de lasagnes 2 min 30 au micro-ondes à couvert (ou 15 min au four à 180 °C dans son plat), avec une salade verte vinaigrée pour contraster.",
+      "variants": [
+        "Version dinde : 300 g de dinde hachée, même sauce.",
+        "Version épinards : remplace la courgette par 150 g de pousses d'épinards juste tombées à la poêle et bien essorées."
+      ]
+    },
+    {
+      "id": "bolognaise-boeuf-lentilles",
+      "title": "Spaghetti bolognaise bœuf et lentilles",
+      "category": "soir",
+      "tags": ["haute-proteine", "restes-midi", "batch"],
+      "servings": 2,
+      "portionNote": "1 grande assiette de spaghetti",
+      "prepMin": 10,
+      "cookMin": 30,
+      "ingredients": [
+        { "ref": "pates-completes-crues", "qty": 140, "unit": "g", "label": "spaghetti complets" },
+        { "ref": "boeuf-hache-5", "qty": 250, "unit": "g" },
+        { "ref": "lentilles-boite", "qty": 150, "unit": "g", "label": "lentilles cuites (bocal, égouttées)" },
+        { "ref": "carotte", "qty": 1, "unit": "pce" },
+        { "ref": "oignon", "qty": 1, "unit": "pce" },
+        { "ref": "ail", "qty": 2, "unit": "pce" },
+        { "ref": "huile-olive", "qty": 5, "unit": "ml", "label": "huile d'olive (1 c. à c.)" },
+        { "ref": "tomates-concassees", "qty": 400, "unit": "g", "label": "tomates concassées (1 boîte)" },
+        { "ref": "concentre-tomate", "qty": 20, "unit": "g", "label": "concentré de tomate (1 c. à s.)" },
+        { "ref": "herbes-sechees", "qty": 3, "unit": "g", "label": "origan ou herbes italiennes (1 c. à c. bombée)" },
+        { "ref": "parmesan", "qty": 30, "unit": "g", "label": "parmesan râpé (pour servir)" },
+        { "ref": "sel", "qty": 2, "unit": "g" },
+        { "ref": "poivre", "qty": 1, "unit": "g" }
+      ],
+      "steps": [
+        "Hache l'oignon et l'ail, coupe la carotte en tout petits dés. Fais-les revenir 4 min dans l'huile à feu moyen dans une sauteuse, jusqu'à ce que l'oignon soit translucide.",
+        "Monte le feu, ajoute le bœuf et fais-le dorer 5 min en l'émiettant à la spatule, jusqu'à ce qu'il n'y ait plus de jus rosé.",
+        "Ajoute les tomates concassées, le concentré, les herbes, le sel et le poivre. Laisse mijoter 15 min à feu doux, à demi couvert. Ajoute les lentilles pour les 5 dernières minutes.",
+        "Pendant ce temps, cuis les spaghetti dans une grande casserole d'eau salée, le temps indiqué sur le paquet. Garde une louche d'eau de cuisson.",
+        "Mélange les spaghetti égouttés à la sauce avec un peu d'eau de cuisson pour qu'elle nappe bien. Sers avec le parmesan."
+      ],
+      "whyLight": "Le bœuf 5 % est allongé avec des lentilles : même texture et même volume de sauce qu'une bolognaise classique, plus de fibres et de protéines, moins de gras, et des spaghetti complets qui tiennent au corps.",
+      "leftoverTip": "Le lendemain : réchauffe la portion 2 min au micro-ondes à couvert avec 1 c. à s. d'eau, ou passe-la 3 min à la poêle. La sauce seule se congèle très bien, prépare-la en double.",
+      "variants": [
+        "Version gratinée : verse le reste dans un plat, couvre de 30 g de fromage râpé allégé et passe 10 min sous le gril.",
+        "Version végé : remplace le bœuf par 250 g de lentilles supplémentaires et 150 g de champignons hachés."
+      ]
+    },
+    {
+      "id": "mac-and-cheese-proteine",
+      "title": "Mac and cheese gratiné aux pâtes de lentilles",
+      "category": "soir",
+      "tags": ["haute-proteine", "restes-midi", "vegetarien"],
+      "servings": 2,
+      "portionNote": "1 grande portion gratinée",
+      "prepMin": 10,
+      "cookMin": 20,
+      "ingredients": [
+        { "ref": "pates-lentilles", "qty": 160, "unit": "g", "label": "pâtes de lentilles corail (coquillettes ou penne)" },
+        { "ref": "brocoli", "qty": 250, "unit": "g", "label": "brocoli (1 petite tête, en fleurettes)" },
+        { "ref": "lait-demi-ecreme", "qty": 250, "unit": "ml" },
+        { "ref": "maizena", "qty": 10, "unit": "g", "label": "fécule de maïs (2 c. à c.)" },
+        { "ref": "fromage-frais-light", "qty": 50, "unit": "g" },
+        { "ref": "cheddar-allege-tranches", "qty": 3, "unit": "pce", "label": "cheddar allégé (pour la sauce)" },
+        { "ref": "fromage-rape-allege", "qty": 40, "unit": "g", "label": "fromage râpé allégé (pour gratiner)" },
+        { "ref": "moutarde", "qty": 10, "unit": "g", "label": "moutarde (2 c. à c.)" },
+        { "ref": "paprika", "qty": 2, "unit": "g", "label": "paprika fumé (1 c. à c.)" },
+        { "ref": "sel", "qty": 1, "unit": "g" },
+        { "ref": "poivre", "qty": 1, "unit": "g" }
+      ],
+      "steps": [
+        "Préchauffe le gril du four. Cuis les pâtes de lentilles dans une grande casserole d'eau salée, 2 min de moins que le temps indiqué. Ajoute les fleurettes de brocoli 3 min avant la fin. Égoutte.",
+        "Pendant ce temps, délaie la fécule dans le lait froid dans une casserole. Chauffe à feu moyen en fouettant sans arrêt, jusqu'à ce que la sauce épaississe, 3 à 4 min.",
+        "Hors du feu, ajoute le fromage frais, le cheddar en morceaux, la moutarde, le paprika et le poivre. Remue jusqu'à ce que la sauce soit lisse et bien orange. Goûte, sale si besoin.",
+        "Mélange les pâtes et le brocoli à la sauce, verse dans un plat à gratin, couvre du fromage râpé.",
+        "Passe 5 min sous le gril, jusqu'à ce que le dessus soit doré et bouillonnant."
+      ],
+      "whyLight": "Pâtes de lentilles au lieu des macaronis, sauce fromagère liée à la fécule et montée au fromage frais light et au cheddar allégé, sans beurre ni crème : le mac and cheese reste ultra crémeux et apporte autant de protéines qu'une viande.",
+      "leftoverTip": "Le lendemain : réchauffe la portion 2 min au micro-ondes à couvert avec 1 c. à s. de lait pour redonner du crémeux, ou 10 min au four à 180 °C pour un dessus qui croustille.",
+      "variants": [
+        "Version poulet : ajoute 150 g de dés de poulet dorés à la poêle avant de gratiner.",
+        "Version bacon : parsème 80 g d'allumettes de volaille grillées sur le dessus avant de gratiner."
+      ]
+    },
+    {
+      "id": "gratin-pommes-de-terre-poulet",
+      "title": "Gratin de pommes de terre au poulet façon dauphinois",
+      "category": "soir",
+      "tags": ["haute-proteine", "restes-midi"],
+      "servings": 2,
+      "portionNote": "1 grosse part de gratin et des haricots verts",
+      "prepMin": 12,
+      "cookMin": 30,
+      "ingredients": [
+        { "ref": "pomme-de-terre", "qty": 500, "unit": "g", "label": "pommes de terre à chair ferme" },
+        { "ref": "poulet-filet", "qty": 350, "unit": "g" },
+        { "ref": "oignon", "qty": 1, "unit": "pce" },
+        { "ref": "ail", "qty": 2, "unit": "pce" },
+        { "ref": "lait-demi-ecreme", "qty": 150, "unit": "ml" },
+        { "ref": "fromage-blanc-0", "qty": 200, "unit": "g" },
+        { "ref": "fromage-rape-allege", "qty": 60, "unit": "g" },
+        { "ref": "herbes-sechees", "qty": 2, "unit": "g", "label": "thym séché (1 c. à c.)" },
+        { "ref": "haricots-verts", "qty": 250, "unit": "g", "label": "haricots verts (en accompagnement)" },
+        { "ref": "sel", "qty": 2, "unit": "g" },
+        { "ref": "poivre", "qty": 1, "unit": "g" }
+      ],
+      "steps": [
+        "Préchauffe le four à 200 °C. Épluche les pommes de terre et coupe-les en rondelles de 2 mm (à la mandoline si tu en as une), sans les rincer : leur amidon lie le gratin.",
+        "Mets les rondelles dans une casserole avec le lait, l'ail pressé, le thym, le sel et le poivre. Porte à frémissement et laisse cuire 5 min à feu doux en remuant doucement, jusqu'à ce que le lait épaississe. Hors du feu, incorpore le fromage blanc.",
+        "Pendant ce temps, coupe le poulet en dés de 2 cm et émince l'oignon. Fais-les dorer 5 min à feu vif dans une poêle antiadhésive, à sec, jusqu'à ce que le poulet soit coloré (il finit de cuire au four).",
+        "Dans un plat à gratin, dispose la moitié des pommes de terre avec leur crème, le poulet et l'oignon, puis le reste des pommes de terre. Couvre de fromage râpé.",
+        "Enfourne 25 min, jusqu'à ce que le dessus soit bien doré et qu'un couteau traverse les pommes de terre sans résistance.",
+        "Pendant les 10 dernières minutes, cuis les haricots verts 8 min à l'eau bouillante salée ou 5 min à la vapeur. Sers-les avec le gratin."
+      ],
+      "whyLight": "L'appareil du gratin est au fromage blanc 0 % et au lait à la place de la crème entière, le fromage râpé est allégé et le poulet transforme l'accompagnement en plat complet : le fondant du dauphinois, avec le triple de protéines.",
+      "leftoverTip": "Le lendemain : réchauffe la part de gratin 3 min au micro-ondes à couvert ou 15 min au four à 180 °C, avec les haricots verts froids en salade (un filet de citron, du poivre).",
+      "variants": [
+        "Version reblochon : remplace 20 g de fromage râpé par 40 g de reblochon en lamelles sur le dessus, pour un air de tartiflette.",
+        "Version patate douce : remplace la moitié des pommes de terre par 250 g de patate douce en rondelles."
+      ]
+    },
+    {
+      "id": "chili-con-carne-riz",
+      "title": "Chili con carne et riz basmati",
+      "category": "soir",
+      "tags": ["haute-proteine", "restes-midi", "batch"],
+      "servings": 2,
+      "portionNote": "1 bol de chili, du riz et une cuillère de yaourt",
+      "prepMin": 10,
+      "cookMin": 30,
+      "ingredients": [
+        { "ref": "boeuf-hache-5", "qty": 300, "unit": "g" },
+        { "ref": "haricots-rouges-boite", "qty": 200, "unit": "g", "label": "haricots rouges (1 petite boîte, égouttés)" },
+        { "ref": "oignon", "qty": 1, "unit": "pce" },
+        { "ref": "ail", "qty": 2, "unit": "pce" },
+        { "ref": "poivron", "qty": 1, "unit": "pce", "label": "poivron rouge" },
+        { "ref": "huile-olive", "qty": 5, "unit": "ml", "label": "huile d'olive (1 c. à c.)" },
+        { "ref": "tomates-concassees", "qty": 400, "unit": "g", "label": "tomates concassées (1 boîte)" },
+        { "ref": "concentre-tomate", "qty": 20, "unit": "g", "label": "concentré de tomate (1 c. à s.)" },
+        { "ref": "epices-tacos", "qty": 8, "unit": "g", "label": "épices mexicaines (1 c. à s. bombée)" },
+        { "ref": "cumin", "qty": 2, "unit": "g", "label": "cumin moulu (1 c. à c.)" },
+        { "ref": "riz-basmati-cru", "qty": 100, "unit": "g" },
+        { "ref": "yaourt-grec-0", "qty": 100, "unit": "g", "label": "yaourt grec 0 % (pour servir)" },
+        { "ref": "sel", "qty": 2, "unit": "g" },
+        { "ref": "poivre", "qty": 1, "unit": "g" }
+      ],
+      "steps": [
+        "Hache l'oignon et l'ail, coupe le poivron en dés de 1 cm. Fais-les revenir 4 min dans l'huile à feu moyen dans une sauteuse, jusqu'à ce que l'oignon soit tendre.",
+        "Monte le feu, ajoute le bœuf et fais-le dorer 5 min en l'émiettant. Ajoute les épices mexicaines et le cumin, mélange 30 s pour les torréfier.",
+        "Verse les tomates concassées, le concentré, le sel et le poivre. Laisse mijoter 15 min à feu doux à demi couvert, puis ajoute les haricots rouges égouttés pour les 5 dernières minutes. Le chili doit être épais, pas liquide.",
+        "Pendant ce temps, rince le riz et cuis-le 11 min à couvert dans 1,5 fois son volume d'eau salée, puis laisse-le reposer 5 min hors du feu.",
+        "Sers le chili sur le riz, avec une grosse cuillère de yaourt grec à la place de la crème."
+      ],
+      "whyLight": "Bœuf 5 %, une boîte entière de haricots rouges pour le volume et les fibres, et du yaourt grec 0 % à la place de la crème aigre et du cheddar : un chili qui cale pour des heures, riche en protéines, sans le gras du plat de resto.",
+      "leftoverTip": "Le lendemain : réchauffe chili et riz ensemble 2 min 30 au micro-ondes à couvert, ou transforme le chili froid en garniture de wrap protéiné avec de l'iceberg et le yaourt. Le chili se congèle très bien.",
+      "variants": [
+        "Version dinde : 300 g de dinde hachée, cuisson identique.",
+        "Version plus piquante : ajoute 1 g de piment en flocons et 1 c. à c. de harissa avec les épices."
+      ]
+    },
+    {
+      "id": "fajitas-poulet-poivrons",
+      "title": "Fajitas de poulet aux poivrons grillés",
+      "category": "soir",
+      "tags": ["haute-proteine", "restes-midi"],
+      "servings": 2,
+      "portionNote": "2 wraps garnis",
+      "prepMin": 12,
+      "cookMin": 15,
+      "ingredients": [
+        { "ref": "poulet-filet", "qty": 350, "unit": "g" },
+        { "ref": "poivron", "qty": 2, "unit": "pce", "label": "poivrons (1 rouge, 1 jaune)" },
+        { "ref": "oignon", "qty": 1, "unit": "pce" },
+        { "ref": "ail", "qty": 1, "unit": "pce" },
+        { "ref": "epices-tacos", "qty": 10, "unit": "g", "label": "épices mexicaines (1 c. à s. bombée)" },
+        { "ref": "huile-olive", "qty": 5, "unit": "ml", "label": "huile d'olive (1 c. à c.)" },
+        { "ref": "citron-jus", "qty": 15, "unit": "ml", "label": "jus de citron (1 c. à s.)" },
+        { "ref": "wrap-proteine", "qty": 4, "unit": "pce" },
+        { "ref": "yaourt-grec-0", "qty": 120, "unit": "g", "label": "yaourt grec 0 % (pour servir)" },
+        { "ref": "salade-iceberg", "qty": 80, "unit": "g" },
+        { "ref": "tomate", "qty": 1, "unit": "pce" },
+        { "ref": "herbes-fraiches", "qty": 10, "unit": "g", "label": "coriandre fraîche" },
+        { "ref": "sel", "qty": 1, "unit": "g" },
+        { "ref": "poivre", "qty": 1, "unit": "g" }
+      ],
+      "steps": [
+        "Coupe le poulet en lanières de 1 cm, les poivrons en lanières, l'oignon en demi-rondelles. Mélange le poulet avec les épices, l'ail pressé, le sel et le poivre.",
+        "Chauffe l'huile dans une grande poêle à feu vif. Fais sauter les poivrons et l'oignon 5 min, jusqu'à ce qu'ils soient tendres et grillés par endroits. Réserve dans un bol.",
+        "Dans la même poêle, saisis le poulet 6 à 7 min en une seule couche, sans trop remuer, jusqu'à ce qu'il soit doré. Remets les légumes, ajoute le jus de citron, mélange 1 min.",
+        "Chauffe les wraps 20 s au micro-ondes ou 30 s par face dans une poêle sèche. Coupe la tomate en dés, cisèle l'iceberg et la coriandre.",
+        "Sers tout à table : chacun garnit ses wraps avec le poulet aux poivrons, la salade, la tomate, la coriandre et une cuillère de yaourt grec."
+      ],
+      "whyLight": "Wraps protéinés à la place des tortillas de blé, poulet sauté avec une seule cuillère d'huile et yaourt grec 0 % à la place de la crème et du guacamole : des fajitas qui restent bien garnies, très riches en protéines et en fibres.",
+      "leftoverTip": "Le lendemain : réchauffe le poulet aux poivrons 1 min 30 au micro-ondes ou mange-le froid, roulé dans les wraps avec l'iceberg et le yaourt. Garde les wraps à part et chauffe-les au dernier moment pour qu'ils restent souples.",
+      "variants": [
+        "Version bœuf : 350 g d'émincé de bœuf maigre, saisi 3 min seulement à feu très vif.",
+        "Version bol : sans wraps, sers le poulet aux poivrons sur 150 g de riz cuit avec 60 g de haricots noirs."
+      ]
+    },
+    {
+      "id": "fish-and-chips-four",
+      "title": "Fish and chips au four, sauce tartare au skyr",
+      "category": "soir",
+      "tags": ["haute-proteine", "restes-midi", "air-fryer"],
+      "servings": 2,
+      "portionNote": "1 pavé pané, des frites, des petits pois et la sauce",
+      "prepMin": 15,
+      "cookMin": 22,
+      "ingredients": [
+        { "ref": "cabillaud", "qty": 350, "unit": "g", "label": "dos de cabillaud (2 pavés)" },
+        { "ref": "farine-complete", "qty": 30, "unit": "g", "label": "farine complète (2 c. à s. bombées)" },
+        { "ref": "oeuf", "qty": 1, "unit": "pce" },
+        { "ref": "chapelure", "qty": 50, "unit": "g", "label": "chapelure ou panko" },
+        { "ref": "huile-olive", "qty": 5, "unit": "ml", "label": "huile d'olive (1 c. à c., pour la panure)" },
+        { "ref": "frites-four", "qty": 250, "unit": "g" },
+        { "ref": "petits-pois", "qty": 200, "unit": "g" },
+        { "ref": "skyr-nature-0", "qty": 100, "unit": "g", "label": "skyr nature 0 % (pour la sauce tartare)" },
+        { "ref": "cornichons", "qty": 30, "unit": "g", "label": "cornichons (4 petits, hachés)" },
+        { "ref": "herbes-fraiches", "qty": 10, "unit": "g", "label": "persil et ciboulette" },
+        { "ref": "citron-jus", "qty": 10, "unit": "ml", "label": "jus de citron (2 c. à c.)" },
+        { "ref": "moutarde", "qty": 5, "unit": "g", "label": "moutarde (1 c. à c.)" },
+        { "ref": "sel", "qty": 2, "unit": "g" },
+        { "ref": "poivre", "qty": 1, "unit": "g" }
+      ],
+      "steps": [
+        "Préchauffe le four à 220 °C. Étale les frites sur une plaque et enfourne-les 20 min, en les retournant à mi-cuisson (ou 14 min à l'air fryer à 200 °C).",
+        "Sèche bien le cabillaud avec de l'essuie-tout, sale, poivre. Prépare trois assiettes creuses : la farine, l'œuf battu, la chapelure mélangée à l'huile. Passe chaque pavé dans la farine, puis l'œuf, puis la chapelure en appuyant bien.",
+        "Dépose le poisson sur une plaque avec du papier cuisson et enfourne 14 min avec les frites (ou 10 min à l'air fryer à 200 °C), jusqu'à ce que la panure soit dorée et que la chair se détache en feuillets sous la fourchette.",
+        "Sauce tartare : mélange le skyr, les cornichons hachés, les herbes ciselées, le jus de citron, la moutarde, une pincée de sel et du poivre.",
+        "Cuis les petits pois 3 min à l'eau bouillante salée, égoutte-les. Sers le poisson avec les frites, les petits pois et la sauce."
+      ],
+      "whyLight": "Le cabillaud est pané puis cuit au four ou à l'air fryer au lieu d'être frit en pâte à bière, les frites sont au four et la sauce tartare au skyr remplace la mayonnaise : le plat du pub, croustillant et généreux, avec beaucoup de protéines et peu de gras.",
+      "leftoverTip": "Le lendemain : réchauffe poisson et frites 8 min au four à 200 °C ou 5 min à l'air fryer pour retrouver le croustillant (au micro-ondes, la panure ramollit), ou émiette le cabillaud froid dans un wrap avec la sauce tartare et de l'iceberg.",
+      "variants": [
+        "Version saumon : 2 pavés de saumon de 150 g, même panure, 12 min au four.",
+        "Version purée de pois : mixe les petits pois cuits avec 2 c. à s. de skyr et un peu de menthe, façon mushy peas."
+      ]
+    },
+    {
+      "id": "butter-chicken-light",
+      "title": "Butter chicken crémeux, sans le beurre",
+      "category": "soir",
+      "tags": ["haute-proteine", "restes-midi", "batch"],
+      "servings": 2,
+      "portionNote": "1 grand bol de poulet en sauce avec son riz",
+      "prepMin": 15,
+      "cookMin": 25,
+      "ingredients": [
+        { "ref": "poulet-filet", "qty": 350, "unit": "g", "label": "filets de poulet, en cubes de 3 cm" },
+        { "ref": "yaourt-grec-0", "qty": 100, "unit": "g", "label": "yaourt grec 0 % (pour la marinade)" },
+        { "ref": "curry-poudre", "qty": 8, "unit": "g", "label": "curry ou garam masala (2 c. à c.)" },
+        { "ref": "paprika", "qty": 3, "unit": "g", "label": "paprika fumé (1 c. à c.)" },
+        { "ref": "gingembre", "qty": 15, "unit": "g", "label": "gingembre frais, râpé" },
+        { "ref": "ail", "qty": 3, "unit": "pce" },
+        { "ref": "oignon", "qty": 1, "unit": "pce" },
+        { "ref": "tomates-concassees", "qty": 400, "unit": "g", "label": "tomates concassées (1 boîte)" },
+        { "ref": "concentre-tomate", "qty": 30, "unit": "g", "label": "concentré de tomate (2 c. à s.)" },
+        { "ref": "lait-coco-light", "qty": 100, "unit": "ml" },
+        { "ref": "huile-olive", "qty": 5, "unit": "ml", "label": "huile d'olive (1 c. à c.)" },
+        { "ref": "riz-basmati-cru", "qty": 120, "unit": "g" },
+        { "ref": "herbes-fraiches", "qty": 10, "unit": "g", "label": "coriandre fraîche" },
+        { "ref": "sel", "qty": 2, "unit": "g" }
+      ],
+      "steps": [
+        "Mélange le poulet avec le yaourt, la moitié du curry, la moitié du gingembre et 1 gousse d'ail pressée. Laisse mariner 10 min pendant que tu prépares la sauce (ou la veille, c'est encore mieux).",
+        "Lance le riz : rince-le, couvre-le de 1,5 fois son volume d'eau, porte à ébullition puis 10 min à couvert à feu doux. Laisse reposer hors du feu.",
+        "Émince l'oignon et fais-le fondre 4 min à feu moyen dans l'huile. Ajoute le reste d'ail haché, de gingembre et de curry, le paprika et le concentré : 1 min en remuant, ça doit embaumer.",
+        "Verse les tomates concassées, sale et laisse mijoter 8 min à feu doux. Mixe la sauce au mixeur plongeant pour la rendre lisse comme au resto.",
+        "Chauffe une poêle antiadhésive à feu vif et saisis le poulet mariné 4 min en le retournant, jusqu'à ce qu'il soit doré par endroits.",
+        "Ajoute le poulet dans la sauce avec le lait de coco et laisse frémir 6 min : la sauce épaissit et le poulet finit de cuire. Sers sur le riz, coriandre ciselée par-dessus."
+      ],
+      "whyLight": "La marinade au yaourt grec 0 % attendrit le poulet sans matière grasse, et le lait de coco allégé remplace le duo beurre-crème : la sauce reste onctueuse et l'assiette dépasse les 50 g de protéines.",
+      "leftoverTip": "Le lendemain : garde le poulet en sauce et le riz dans deux boîtes. Réchauffe le tout 2 min 30 au micro-ondes à couvert, avec 1 c. à s. d'eau sur le riz, et ajoute la coriandre au moment de servir. Froid, le poulet en sauce se roule aussi très bien dans un wrap.",
+      "variants": [
+        "Version crevettes : 350 g de crevettes décortiquées, marinées 10 min, ajoutées dans la sauce 3 min seulement.",
+        "Plus de légumes : 200 g de pousses d'épinards jetées dans la sauce 1 min avant de servir."
+      ]
+    },
+    {
+      "id": "curry-vert-crevettes",
+      "title": "Curry vert de crevettes comme en Thaïlande",
+      "category": "soir",
+      "tags": ["haute-proteine", "restes-midi"],
+      "servings": 2,
+      "portionNote": "1 bol de curry et son riz",
+      "prepMin": 10,
+      "cookMin": 20,
+      "ingredients": [
+        { "ref": "crevettes", "qty": 350, "unit": "g", "label": "crevettes décortiquées (fraîches ou décongelées)" },
+        { "ref": "pate-curry", "qty": 30, "unit": "g", "label": "pâte de curry verte (2 c. à s.)" },
+        { "ref": "lait-coco-light", "qty": 200, "unit": "ml" },
+        { "ref": "legumes-wok", "qty": 300, "unit": "g", "label": "mélange de légumes pour wok" },
+        { "ref": "poivron", "qty": 1, "unit": "pce", "label": "poivron rouge, en lanières" },
+        { "ref": "ail", "qty": 2, "unit": "pce" },
+        { "ref": "gingembre", "qty": 10, "unit": "g", "label": "gingembre frais, râpé" },
+        { "ref": "citron-jus", "qty": 15, "unit": "ml", "label": "jus de citron vert ou jaune" },
+        { "ref": "huile-olive", "qty": 5, "unit": "ml", "label": "huile d'olive (1 c. à c.)" },
+        { "ref": "riz-basmati-cru", "qty": 120, "unit": "g" },
+        { "ref": "herbes-fraiches", "qty": 10, "unit": "g", "label": "coriandre ou basilic thaï" }
+      ],
+      "steps": [
+        "Lance le riz : rince-le, couvre-le de 1,5 fois son volume d'eau, porte à ébullition puis 10 min à couvert à feu doux.",
+        "Sèche les crevettes dans du papier absorbant. Émince l'ail, râpe le gingembre, coupe le poivron en lanières.",
+        "Dans un wok ou une grande poêle, chauffe l'huile à feu moyen et fais revenir la pâte de curry 1 min avec l'ail et le gingembre, en remuant : elle doit sentir fort.",
+        "Verse le lait de coco, ajoute le poivron et les légumes wok encore surgelés. Laisse frémir 6 min à couvert, puis 3 min à découvert pour que la sauce réduise un peu.",
+        "Ajoute les crevettes : 3 min, jusqu'à ce qu'elles soient roses et bien recourbées. Pas plus, elles durciraient.",
+        "Hors du feu, ajoute le jus de citron et goûte. Sers sur le riz, coriandre ciselée par-dessus."
+      ],
+      "whyLight": "Le lait de coco allégé donne la même sauce parfumée avec trois fois moins de gras que le lait de coco classique, et les crevettes sont presque de la protéine pure : un curry généreux qui reste léger.",
+      "leftoverTip": "Le lendemain : réchauffe le curry 2 min au micro-ondes à couvert et le riz à part avec un filet d'eau. Ne le laisse pas bouillir, les crevettes deviendraient caoutchouteuses. Un trait de citron réveille le tout.",
+      "variants": [
+        "Version poulet : 350 g de filet de poulet en cubes, saisis 4 min dans le wok avant la pâte de curry.",
+        "Version nouilles : remplace le riz par 120 g de nouilles de riz, trempées 5 min dans l'eau chaude et finies 1 min dans le curry."
+      ]
+    },
+    {
+      "id": "poulet-teriyaki-riz-brocoli",
+      "title": "Poulet teriyaki laqué, riz et brocoli",
+      "category": "soir",
+      "tags": ["haute-proteine", "restes-midi", "batch"],
+      "servings": 2,
+      "portionNote": "1 bol riz-brocoli et son poulet laqué",
+      "prepMin": 10,
+      "cookMin": 20,
+      "ingredients": [
+        { "ref": "poulet-filet", "qty": 350, "unit": "g", "label": "filets de poulet, en morceaux de 3 cm" },
+        { "ref": "sauce-soja", "qty": 40, "unit": "ml" },
+        { "ref": "miel", "qty": 20, "unit": "g", "label": "miel (1 c. à s.)" },
+        { "ref": "vinaigre", "qty": 10, "unit": "ml", "label": "vinaigre de cidre (ou de riz)" },
+        { "ref": "ail", "qty": 2, "unit": "pce" },
+        { "ref": "gingembre", "qty": 10, "unit": "g", "label": "gingembre frais, râpé" },
+        { "ref": "maizena", "qty": 5, "unit": "g", "label": "Maïzena (1 c. à c.)" },
+        { "ref": "huile-sesame", "qty": 5, "unit": "ml", "label": "huile de sésame (1 c. à c.)" },
+        { "ref": "riz-basmati-cru", "qty": 130, "unit": "g" },
+        { "ref": "brocoli", "qty": 400, "unit": "g", "label": "brocoli, en petits bouquets" },
+        { "ref": "graines-sesame", "qty": 10, "unit": "g" }
+      ],
+      "steps": [
+        "Lance le riz : rince-le, couvre-le de 1,5 fois son volume d'eau, porte à ébullition puis 10 min à couvert à feu doux. Laisse reposer.",
+        "Prépare la sauce : mélange la sauce soja, le miel, le vinaigre, l'ail pressé, le gingembre, la Maïzena et 50 ml d'eau.",
+        "Cuis les bouquets de brocoli 4 min à la vapeur ou dans l'eau bouillante : ils doivent rester vert vif et croquants. Égoutte.",
+        "Chauffe l'huile de sésame dans une grande poêle antiadhésive à feu vif. Saisis le poulet 5 min sans trop remuer, jusqu'à ce qu'il soit doré sur toutes les faces.",
+        "Baisse à feu moyen, verse la sauce et laisse épaissir 2 min en enrobant les morceaux : elle doit napper et briller.",
+        "Sers le riz, le brocoli et le poulet laqué, avec le reste de sauce et les graines de sésame par-dessus."
+      ],
+      "whyLight": "Le teriyaki maison se lie avec une cuillère de Maïzena au lieu de baigner dans l'huile et le sucre : une seule cuillère de miel suffit pour le laquage. Le brocoli en grande quantité remplit le bol pour presque rien.",
+      "leftoverTip": "Le lendemain : réchauffe poulet et riz 2 min au micro-ondes à couvert avec 1 c. à s. d'eau, ajoute le brocoli les 30 dernières secondes pour qu'il reste croquant. Sésame au moment de servir.",
+      "variants": [
+        "Version saumon : 300 g de saumon en cubes, saisis 3 min seulement avant d'ajouter la sauce.",
+        "Plus piquant : 1 c. à c. de sriracha ou une pincée de piment en flocons dans la sauce."
+      ]
+    },
+    {
+      "id": "wok-boeuf-nouilles",
+      "title": "Wok de bœuf aux nouilles façon street food",
+      "category": "soir",
+      "tags": ["haute-proteine", "restes-midi"],
+      "servings": 2,
+      "portionNote": "1 grand bol de wok",
+      "prepMin": 15,
+      "cookMin": 12,
+      "ingredients": [
+        { "ref": "boeuf-emince", "qty": 350, "unit": "g", "label": "émincé de bœuf maigre" },
+        { "ref": "maizena", "qty": 5, "unit": "g", "label": "Maïzena (1 c. à c., pour enrober la viande)" },
+        { "ref": "nouilles-ble", "qty": 120, "unit": "g", "label": "nouilles de blé asiatiques" },
+        { "ref": "poivron", "qty": 1, "unit": "pce", "label": "poivron rouge, en lanières" },
+        { "ref": "legumes-wok", "qty": 300, "unit": "g", "label": "mélange de légumes pour wok" },
+        { "ref": "ail", "qty": 2, "unit": "pce" },
+        { "ref": "gingembre", "qty": 15, "unit": "g", "label": "gingembre frais, râpé" },
+        { "ref": "sauce-soja", "qty": 30, "unit": "ml" },
+        { "ref": "sriracha", "qty": 15, "unit": "g", "label": "sriracha (1 c. à s.)" },
+        { "ref": "huile-olive", "qty": 5, "unit": "ml", "label": "huile d'olive (1 c. à c., pour saisir)" },
+        { "ref": "huile-sesame", "qty": 5, "unit": "ml", "label": "huile de sésame (1 c. à c., pour finir)" }
+      ],
+      "steps": [
+        "Mélange l'émincé de bœuf avec la Maïzena et 1 c. à s. de la sauce soja. Laisse reposer pendant que tu prépares le reste : c'est le secret d'une viande tendre au wok.",
+        "Cuis les nouilles 3 min dans une grande casserole d'eau bouillante (ou selon le paquet), égoutte et passe-les sous l'eau froide pour qu'elles ne collent pas.",
+        "Chauffe l'huile d'olive dans un wok à feu très vif. Saisis le bœuf 2 min en une seule couche, sans remuer au début, puis retire-le dans une assiette : il doit être à peine rosé.",
+        "Dans le même wok, fais sauter le poivron et les légumes wok 4 min à feu vif avec l'ail émincé et le gingembre, en remuant sans arrêt.",
+        "Remets le bœuf, ajoute les nouilles, le reste de sauce soja, la sriracha et l'huile de sésame. Mélange 1 min à feu vif pour tout enrober et sers brûlant."
+      ],
+      "whyLight": "Le bœuf maigre enrobé de Maïzena reste juteux sans friture, et une seule cuillère à café d'huile de sésame parfume tout le wok. Autant de légumes que de nouilles et une viande maigre : ça cale comme au resto, sans le fond d'huile.",
+      "leftoverTip": "Le lendemain : réchauffe 2 min au micro-ondes à couvert avec 1 c. à s. d'eau, ou 3 min dans une poêle bien chaude. Version froide : un trait de citron et de sauce soja, et ça devient une salade de nouilles.",
+      "variants": [
+        "Version poulet : 350 g de filet de poulet en lanières, saisi 4 min.",
+        "Sans gluten : 120 g de nouilles de riz trempées 5 min dans l'eau chaude, et du tamari à la place de la sauce soja."
+      ]
+    },
+    {
+      "id": "poke-bowl-saumon",
+      "title": "Poké bowl saumon-mangue comme au comptoir",
+      "category": "soir",
+      "tags": ["haute-proteine", "restes-midi"],
+      "servings": 2,
+      "portionNote": "1 grand bol",
+      "prepMin": 20,
+      "cookMin": 12,
+      "ingredients": [
+        { "ref": "saumon", "qty": 300, "unit": "g", "label": "saumon très frais, sans peau, en dés de 2 cm" },
+        { "ref": "sauce-soja", "qty": 30, "unit": "ml" },
+        { "ref": "citron-jus", "qty": 15, "unit": "ml", "label": "jus de citron vert" },
+        { "ref": "gingembre", "qty": 5, "unit": "g", "label": "gingembre frais, râpé" },
+        { "ref": "riz-basmati-cru", "qty": 100, "unit": "g" },
+        { "ref": "vinaigre", "qty": 10, "unit": "ml", "label": "vinaigre de cidre ou de riz (pour le riz)" },
+        { "ref": "edamame", "qty": 150, "unit": "g", "label": "edamame écossés (surgelés)" },
+        { "ref": "concombre", "qty": 150, "unit": "g", "label": "concombre, en demi-rondelles" },
+        { "ref": "avocat", "qty": 0.5, "unit": "pce", "label": "avocat, en lamelles" },
+        { "ref": "mangue", "qty": 100, "unit": "g", "label": "mangue, en dés" },
+        { "ref": "graines-sesame", "qty": 8, "unit": "g" },
+        { "ref": "herbes-fraiches", "qty": 5, "unit": "g", "label": "coriandre" }
+      ],
+      "steps": [
+        "Lance le riz : rince-le, couvre-le de 1,5 fois son volume d'eau, porte à ébullition puis 10 min à couvert. Assaisonne-le encore chaud avec le vinaigre et laisse tiédir.",
+        "Mélange les dés de saumon avec la sauce soja, le jus de citron vert et le gingembre. Laisse mariner 10 min au frigo, pas plus : le citron « cuit » le poisson.",
+        "Plonge les edamame 3 min dans l'eau bouillante, égoutte. Coupe le concombre, l'avocat et la mangue.",
+        "Monte les bols : riz au fond, puis le saumon, les edamame, le concombre, la mangue et l'avocat rangés par quartiers.",
+        "Verse le reste de marinade dessus, parsème de graines de sésame et de coriandre. Sers frais."
+      ],
+      "whyLight": "Pas de mayonnaise épicée ni de sauce sucrée : la marinade soja-citron-gingembre assaisonne tout le bol. Les edamame doublent les protéines du saumon, et le demi-avocat suffit pour le côté crémeux.",
+      "leftoverTip": "Le lendemain : le saumon cru ne se garde pas 24 h, alors le soir même, saisis les dés de la deuxième portion 2 min à la poêle bien chaude avant de les mettre au frigo. Le bol se mange froid, avec l'avocat coupé et citronné au dernier moment.",
+      "variants": [
+        "Version thon : 2 boîtes de thon au naturel égoutté à la place du saumon, mélangé à la marinade.",
+        "Sans riz : 250 g de chou blanc émincé fin et assaisonné avec le vinaigre."
+      ]
+    },
+    {
+      "id": "riz-cantonais-proteine",
+      "title": "Riz cantonais qui cale vraiment",
+      "category": "soir",
+      "tags": ["haute-proteine", "restes-midi", "batch"],
+      "servings": 2,
+      "portionNote": "1 grand bol de riz sauté",
+      "prepMin": 10,
+      "cookMin": 15,
+      "ingredients": [
+        { "ref": "riz-basmati-cru", "qty": 130, "unit": "g", "label": "riz basmati, cuit la veille et bien refroidi" },
+        { "ref": "oeuf", "qty": 3, "unit": "pce" },
+        { "ref": "crevettes", "qty": 150, "unit": "g", "label": "crevettes décortiquées" },
+        { "ref": "jambon-blanc-degraisse", "qty": 2, "unit": "pce", "label": "jambon dégraissé, en dés" },
+        { "ref": "petits-pois", "qty": 150, "unit": "g" },
+        { "ref": "oignon", "qty": 1, "unit": "pce" },
+        { "ref": "ail", "qty": 2, "unit": "pce" },
+        { "ref": "gingembre", "qty": 10, "unit": "g", "label": "gingembre frais, râpé" },
+        { "ref": "sauce-soja", "qty": 20, "unit": "ml" },
+        { "ref": "huile-olive", "qty": 10, "unit": "ml", "label": "huile d'olive (2 c. à c.)" },
+        { "ref": "huile-sesame", "qty": 5, "unit": "ml", "label": "huile de sésame (1 c. à c.)" },
+        { "ref": "herbes-fraiches", "qty": 10, "unit": "g", "label": "ciboulette" },
+        { "ref": "poivre", "qty": 1, "unit": "g" }
+      ],
+      "steps": [
+        "La veille ou le matin : cuis le riz 10 min, égrène-le et mets-le au frigo à découvert. Un riz froid et sec, c'est ce qui donne un riz sauté qui ne colle pas.",
+        "Bats les œufs avec le poivre. Coupe le jambon en dés, émince l'oignon, hache l'ail. Passe les petits pois 2 min à l'eau bouillante.",
+        "Chauffe la moitié de l'huile d'olive dans un wok à feu vif, verse les œufs et brouille-les 1 min : ils doivent rester moelleux. Réserve dans une assiette.",
+        "Remets le reste d'huile, fais sauter l'oignon, l'ail et le gingembre 2 min, puis les crevettes 2 min jusqu'à ce qu'elles rosissent.",
+        "Ajoute le riz froid et le jambon, étale et laisse griller 2 min sans remuer, puis mélange. Recommence une fois : les grains doivent crépiter.",
+        "Ajoute les petits pois, les œufs, la sauce soja et l'huile de sésame. Mélange 1 min à feu vif et finis avec la ciboulette ciselée."
+      ],
+      "whyLight": "Trois œufs, des crevettes et du jambon dégraissé à la place de la seule omelette : le riz sauté devient un plat complet, avec deux cuillères d'huile en tout au lieu d'un fond de wok gras.",
+      "leftoverTip": "Le lendemain : réchauffe 2 min au micro-ondes à couvert avec 1 c. à s. d'eau, ou 3 min dans une poêle bien chaude pour retrouver le grain croustillant. Un trait de sauce soja et c'est reparti.",
+      "variants": [
+        "Version poulet : 200 g de filet de poulet en petits dés à la place des crevettes, saisis 4 min.",
+        "Version végé : sans crevettes ni jambon, avec 150 g d'edamame et un quatrième œuf."
+      ]
+    },
+    {
+      "id": "saumon-papillote-patate-douce",
+      "title": "Saumon en papillote, patate douce rôtie",
+      "category": "soir",
+      "tags": ["haute-proteine", "restes-midi"],
+      "servings": 2,
+      "portionNote": "1 papillote, 1 patate douce, haricots et sauce",
+      "prepMin": 10,
+      "cookMin": 30,
+      "ingredients": [
+        { "ref": "saumon", "qty": 300, "unit": "g", "label": "2 pavés de saumon de 150 g" },
+        { "ref": "citron-jus", "qty": 20, "unit": "ml" },
+        { "ref": "ail", "qty": 2, "unit": "pce" },
+        { "ref": "herbes-fraiches", "qty": 15, "unit": "g", "label": "aneth ou persil" },
+        { "ref": "huile-olive", "qty": 10, "unit": "ml", "label": "huile d'olive (2 c. à c.)" },
+        { "ref": "patate-douce", "qty": 2, "unit": "pce", "label": "patates douces moyennes" },
+        { "ref": "paprika", "qty": 2, "unit": "g", "label": "paprika fumé" },
+        { "ref": "haricots-verts", "qty": 300, "unit": "g" },
+        { "ref": "skyr-nature-0", "qty": 100, "unit": "g", "label": "skyr nature 0 % (pour la sauce)" },
+        { "ref": "moutarde", "qty": 5, "unit": "g", "label": "moutarde (1 c. à c., pour la sauce)" },
+        { "ref": "sel", "qty": 2, "unit": "g" },
+        { "ref": "poivre", "qty": 1, "unit": "g" }
+      ],
+      "steps": [
+        "Préchauffe le four à 200 °C. Coupe les patates douces en quartiers avec la peau, mélange-les avec la moitié de l'huile, le paprika et la moitié du sel. Étale sur une plaque et enfourne 25 min, en les retournant à mi-cuisson.",
+        "Pendant ce temps, prépare deux grandes feuilles de papier cuisson. Pose un pavé de saumon sur chacune, arrose de la moitié du jus de citron et du reste d'huile, ajoute l'ail émincé et la moitié des herbes, sale, poivre.",
+        "Referme les papillotes en pliant les bords deux fois pour que la vapeur reste dedans. Enfourne-les à côté des patates douces pour les 14 dernières minutes.",
+        "Cuis les haricots verts 6 min dans l'eau bouillante salée, égoutte.",
+        "Mélange le skyr, la moutarde, le reste des herbes ciselées et le reste de jus de citron : c'est la sauce.",
+        "Ouvre les papillotes à table : le saumon doit se détacher en feuillets nacrés. Sers avec les patates douces, les haricots et la sauce au skyr."
+      ],
+      "whyLight": "Le saumon cuit dans sa vapeur sans matière grasse ajoutée, la patate douce est rôtie avec une cuillère d'huile au lieu d'être frite, et la sauce au skyr remplace le beurre citronné.",
+      "leftoverTip": "Le lendemain : émiette le saumon froid sur les patates douces et les haricots avec la sauce au skyr, c'est une salade complète. Ou réchauffe tout 2 min au micro-ondes à puissance moyenne, saumon à couvert pour qu'il reste moelleux.",
+      "variants": [
+        "Version cabillaud : 2 dos de cabillaud de 180 g, même cuisson, plus léger encore.",
+        "Air fryer : patates douces 18 min à 190 °C, papillotes 10 min à 180 °C."
+      ]
+    },
+    {
+      "id": "poulet-roti-grenaille-air-fryer",
+      "title": "Poulet rôti aux herbes et grenailles croustillantes",
+      "category": "soir",
+      "tags": ["haute-proteine", "restes-midi", "air-fryer"],
+      "servings": 2,
+      "portionNote": "1 filet, une poignée de grenailles, salade et sauce",
+      "prepMin": 10,
+      "cookMin": 30,
+      "ingredients": [
+        { "ref": "poulet-filet", "qty": 350, "unit": "g", "label": "2 filets de poulet" },
+        { "ref": "pomme-de-terre", "qty": 400, "unit": "g", "label": "grenailles (petites pommes de terre)" },
+        { "ref": "huile-olive", "qty": 15, "unit": "ml", "label": "huile d'olive (1 c. à s.)" },
+        { "ref": "paprika", "qty": 4, "unit": "g", "label": "paprika fumé (2 c. à c.)" },
+        { "ref": "herbes-sechees", "qty": 3, "unit": "g", "label": "thym ou origan" },
+        { "ref": "ail", "qty": 3, "unit": "pce" },
+        { "ref": "romaine", "qty": 150, "unit": "g", "label": "laitue romaine" },
+        { "ref": "tomates-cerises", "qty": 150, "unit": "g" },
+        { "ref": "yaourt-grec-0", "qty": 120, "unit": "g", "label": "yaourt grec 0 % (pour la sauce)" },
+        { "ref": "herbes-fraiches", "qty": 15, "unit": "g", "label": "ciboulette et persil (pour la sauce)" },
+        { "ref": "citron-jus", "qty": 10, "unit": "ml" },
+        { "ref": "sel", "qty": 2, "unit": "g" },
+        { "ref": "poivre", "qty": 1, "unit": "g" }
+      ],
+      "steps": [
+        "Préchauffe le four à 220 °C (ou l'air fryer à 200 °C). Coupe les grenailles en deux, mélange-les avec les deux tiers de l'huile, la moitié du paprika, 1 gousse d'ail écrasée et la moitié du sel.",
+        "Enfourne les grenailles côté coupé vers le bas 30 min au four, ou 18 min à l'air fryer en secouant à mi-cuisson : elles doivent être dorées et craquantes.",
+        "Ouvre les filets de poulet en deux dans l'épaisseur pour obtenir 4 escalopes. Frotte-les avec le reste d'huile, de paprika et de sel, les herbes séchées, l'ail pressé, poivre.",
+        "Ajoute le poulet sur la plaque pour les 12 dernières minutes (ou 8 min à l'air fryer à 200 °C), jusqu'à ce qu'il soit doré et que le jus soit clair.",
+        "Mélange le yaourt grec, les herbes fraîches ciselées et le jus de citron : la sauce est prête. Coupe la romaine en lanières et les tomates cerises en deux.",
+        "Sers le poulet tranché sur les grenailles, la salade à côté, la sauce généreusement dessus."
+      ],
+      "whyLight": "Les grenailles rôtissent dans une cuillère d'huile au lieu de frire, le poulet est ouvert en escalopes fines pour cuire vite sans sécher, et la sauce yaourt-herbes remplace la mayonnaise du poulet-frites.",
+      "leftoverTip": "Le lendemain : réchauffe grenailles et poulet 8 min au four à 200 °C ou 5 min à l'air fryer pour retrouver le croustillant (le micro-ondes les ramollit). La salade et la sauce restent froides, à part.",
+      "variants": [
+        "Version frites : 300 g de frites au four surgelées à la place des grenailles, 15 min à l'air fryer à 200 °C.",
+        "Version épicée : remplace le paprika par 2 c. à c. de mélange d'épices mexicain."
+      ]
+    },
+    {
+      "id": "escalope-milanaise-spaghetti",
+      "title": "Escalope milanaise dorée et spaghetti à la tomate",
+      "category": "soir",
+      "tags": ["haute-proteine", "restes-midi", "air-fryer"],
+      "servings": 2,
+      "portionNote": "1 escalope panée et son assiette de spaghetti",
+      "prepMin": 15,
+      "cookMin": 20,
+      "ingredients": [
+        { "ref": "dinde-escalope", "qty": 320, "unit": "g", "label": "2 escalopes de dinde de 160 g" },
+        { "ref": "farine-complete", "qty": 15, "unit": "g", "label": "farine (1 c. à s.)" },
+        { "ref": "oeuf", "qty": 1, "unit": "pce" },
+        { "ref": "chapelure", "qty": 40, "unit": "g", "label": "chapelure ou panko" },
+        { "ref": "parmesan", "qty": 20, "unit": "g", "label": "parmesan râpé (la moitié dans la panure, le reste pour servir)" },
+        { "ref": "huile-olive", "qty": 15, "unit": "ml", "label": "huile d'olive (2 c. à c. pour dorer, 1 c. à c. pour la sauce)" },
+        { "ref": "pates-completes-crues", "qty": 120, "unit": "g", "label": "spaghetti complets" },
+        { "ref": "passata", "qty": 300, "unit": "g" },
+        { "ref": "ail", "qty": 2, "unit": "pce" },
+        { "ref": "herbes-sechees", "qty": 2, "unit": "g", "label": "origan" },
+        { "ref": "citron-jus", "qty": 10, "unit": "ml", "label": "jus de citron (pour servir)" },
+        { "ref": "sel", "qty": 2, "unit": "g" },
+        { "ref": "poivre", "qty": 1, "unit": "g" }
+      ],
+      "steps": [
+        "Aplatis les escalopes entre deux feuilles de papier cuisson avec le fond d'une casserole, jusqu'à 1 cm d'épaisseur. Sale, poivre.",
+        "Prépare trois assiettes : la farine, l'œuf battu, la chapelure mélangée à la moitié du parmesan et à l'origan. Passe chaque escalope dans les trois, en pressant bien la panure.",
+        "Lance les spaghetti dans une grande casserole d'eau bouillante salée, le temps indiqué sur le paquet. Pendant ce temps, chauffe 1 c. à c. d'huile avec l'ail émincé dans une casserole, verse la passata et laisse mijoter 8 min.",
+        "Dore les escalopes 3 min par face dans une poêle antiadhésive avec le reste d'huile à feu moyen-vif, ou 10 min à l'air fryer à 200 °C en les retournant à mi-cuisson, après un filet d'huile sur la panure. La chapelure doit être dorée et craquante.",
+        "Égoutte les spaghetti, mélange-les à la sauce. Sers avec l'escalope, le reste de parmesan et un trait de citron sur la panure."
+      ],
+      "whyLight": "Une panure fine dorée dans deux cuillères à café d'huile (ou à l'air fryer) au lieu d'un bain de friture, de la dinde plutôt que du veau, et des spaghetti complets qui calent plus longtemps.",
+      "leftoverTip": "Le lendemain : repasse l'escalope 5 min à l'air fryer à 180 °C ou 8 min au four pour qu'elle recroustille, et réchauffe les spaghetti 2 min au micro-ondes avec 1 c. à s. d'eau. Froide, l'escalope tranchée fait un super sandwich dans un pain complet avec un peu de sauce.",
+      "variants": [
+        "Version poulet : 2 filets de poulet ouverts en deux et aplatis, même panure.",
+        "Sans gluten : chapelure de flocons d'avoine mixés et pâtes de lentilles corail."
+      ]
+    },
+    {
+      "id": "boulettes-dinde-spaghetti",
+      "title": "Spaghetti aux boulettes comme chez Mamma",
+      "category": "soir",
+      "tags": ["haute-proteine", "restes-midi", "batch"],
+      "servings": 2,
+      "portionNote": "Une assiette de spaghetti avec 6 boulettes",
+      "prepMin": 15,
+      "cookMin": 25,
+      "ingredients": [
+        { "ref": "dinde-hachee", "qty": 350, "unit": "g" },
+        { "ref": "oeuf", "qty": 1, "unit": "pce" },
+        { "ref": "chapelure", "qty": 25, "unit": "g", "label": "chapelure (3 c. à s.)" },
+        { "ref": "oignon", "qty": 1, "unit": "pce", "label": "oignon (la moitié dans les boulettes, le reste dans la sauce)" },
+        { "ref": "ail", "qty": 3, "unit": "pce" },
+        { "ref": "herbes-sechees", "qty": 3, "unit": "g", "label": "origan ou herbes italiennes" },
+        { "ref": "huile-olive", "qty": 10, "unit": "ml", "label": "huile d'olive (2 c. à c.)" },
+        { "ref": "passata", "qty": 400, "unit": "g" },
+        { "ref": "pates-completes-crues", "qty": 120, "unit": "g", "label": "spaghetti complets" },
+        { "ref": "parmesan", "qty": 20, "unit": "g", "label": "parmesan râpé" },
+        { "ref": "herbes-fraiches", "qty": 10, "unit": "g", "label": "basilic" },
+        { "ref": "sel", "qty": 2, "unit": "g" },
+        { "ref": "poivre", "qty": 1, "unit": "g" }
+      ],
+      "steps": [
+        "Hache l'oignon très fin. Mélange la dinde hachée avec l'œuf, la chapelure, la moitié de l'oignon, 1 gousse d'ail pressée, les herbes séchées, le sel et le poivre. Forme 12 boulettes de la taille d'une balle de ping-pong, sans trop serrer.",
+        "Chauffe l'huile dans une grande poêle à feu moyen-vif et dore les boulettes 5 min en les roulant : elles doivent être colorées sur toutes les faces, pas forcément cuites à cœur.",
+        "Pousse-les sur le côté, fais revenir le reste d'oignon et d'ail 2 min, puis verse la passata. Couvre et laisse mijoter 15 min à feu doux : les boulettes finissent de cuire dans la sauce.",
+        "Pendant ce temps, cuis les spaghetti dans une grande casserole d'eau bouillante salée, le temps du paquet. Garde une louche d'eau de cuisson.",
+        "Égoutte les spaghetti, mélange-les à la sauce avec un peu d'eau de cuisson si elle est trop épaisse. Sers avec les boulettes, le parmesan et le basilic déchiré."
+      ],
+      "whyLight": "De la dinde hachée à la place du mélange bœuf-porc, des boulettes dorées à la poêle puis pochées dans la sauce plutôt que frites, et des spaghetti complets : le plat du dimanche, sans la lourdeur.",
+      "leftoverTip": "Le lendemain : boulettes et sauce se réchauffent 2 min 30 au micro-ondes ou 5 min à la casserole, les spaghetti 1 min à part avec 1 c. à s. d'eau. Les boulettes sont aussi excellentes froides, coupées en deux dans un pain complet avec un peu de sauce.",
+      "variants": [
+        "Version bœuf : 350 g de bœuf haché 5 %, mêmes proportions.",
+        "Grande fournée : double les boulettes et congèle la moitié crues sur une plaque, elles cuisent directement dans la sauce en 20 min."
+      ]
+    },
+    {
+      "id": "shakshuka-pois-chiches-feta",
+      "title": "Shakshuka aux pois chiches et feta",
+      "category": "soir",
+      "tags": ["haute-proteine", "restes-midi", "vegetarien"],
+      "servings": 2,
+      "portionNote": "2 œufs, la moitié de la poêlée et 1 pita",
+      "prepMin": 10,
+      "cookMin": 25,
+      "ingredients": [
+        { "ref": "oignon", "qty": 1, "unit": "pce" },
+        { "ref": "poivron", "qty": 1, "unit": "pce", "label": "poivron rouge" },
+        { "ref": "ail", "qty": 2, "unit": "pce" },
+        { "ref": "huile-olive", "qty": 5, "unit": "ml", "label": "huile d'olive (1 c. à c.)" },
+        { "ref": "cumin", "qty": 3, "unit": "g", "label": "cumin moulu (1 c. à c.)" },
+        { "ref": "paprika", "qty": 4, "unit": "g", "label": "paprika fumé (2 c. à c.)" },
+        { "ref": "concentre-tomate", "qty": 20, "unit": "g", "label": "concentré de tomate (1 c. à s.)" },
+        { "ref": "tomates-concassees", "qty": 400, "unit": "g", "label": "tomates concassées (1 boîte)" },
+        { "ref": "pois-chiches-boite", "qty": 200, "unit": "g", "label": "pois chiches égouttés (un demi-bocal)" },
+        { "ref": "oeuf", "qty": 4, "unit": "pce" },
+        { "ref": "feta-light", "qty": 100, "unit": "g" },
+        { "ref": "herbes-fraiches", "qty": 10, "unit": "g", "label": "coriandre ou persil" },
+        { "ref": "pain-pita-complet", "qty": 2, "unit": "pce" },
+        { "ref": "sel", "qty": 1, "unit": "g" }
+      ],
+      "steps": [
+        "Émince l'oignon et le poivron en fines lanières, hache l'ail. Fais-les revenir 6 min à feu moyen dans l'huile, dans une grande poêle avec couvercle, jusqu'à ce que le poivron soit tendre.",
+        "Ajoute le cumin, le paprika et le concentré, remue 1 min. Verse les tomates concassées et les pois chiches, sale, et laisse mijoter 8 min à découvert : la sauce doit épaissir.",
+        "Creuse 4 puits dans la sauce avec le dos d'une cuillère et casse un œuf dans chacun. Couvre et laisse cuire 5 à 7 min à feu doux : blancs pris, jaunes encore coulants.",
+        "Pendant ce temps, passe les pitas 2 min au grille-pain ou dans une poêle sèche.",
+        "Émiette la feta sur la poêlée, parsème d'herbes fraîches et pose la poêle au milieu de la table : chacun sauce avec son pita."
+      ],
+      "whyLight": "Les pois chiches ajoutent des protéines et des fibres à la sauce tomate, la feta allégée apporte le sel et le crémeux, et une seule cuillère à café d'huile suffit : un plat végétarien qui cale autant qu'un plat de viande.",
+      "leftoverTip": "Le lendemain : la portion réservée se réchauffe 2 min au micro-ondes à puissance moyenne, à couvert, pour que les jaunes ne durcissent pas trop. Ou froide, écrasée à la fourchette et fourrée dans le pita comme un sandwich.",
+      "variants": [
+        "Version verte : ajoute 100 g de pousses d'épinards dans la sauce juste avant les œufs.",
+        "Plus de protéines : 100 g d'allumettes de volaille dorées avec l'oignon (la recette n'est alors plus végétarienne)."
+      ]
+    },
+    {
+      "id": "quiche-sans-pate-jambon-brocoli",
+      "title": "Quiche sans pâte jambon-brocoli, bien gonflée",
+      "category": "soir",
+      "tags": ["haute-proteine", "restes-midi", "batch"],
+      "servings": 2,
+      "portionNote": "La moitié de la quiche et sa salade",
+      "prepMin": 10,
+      "cookMin": 30,
+      "ingredients": [
+        { "ref": "brocoli", "qty": 300, "unit": "g", "label": "brocoli, en petits bouquets" },
+        { "ref": "oignon", "qty": 1, "unit": "pce" },
+        { "ref": "jambon-blanc-degraisse", "qty": 4, "unit": "pce", "label": "jambon dégraissé, en dés" },
+        { "ref": "oeuf", "qty": 4, "unit": "pce" },
+        { "ref": "blanc-oeuf", "qty": 100, "unit": "ml", "label": "blancs d'œufs (environ 3)" },
+        { "ref": "fromage-blanc-0", "qty": 200, "unit": "g" },
+        { "ref": "lait-demi-ecreme", "qty": 100, "unit": "ml" },
+        { "ref": "maizena", "qty": 20, "unit": "g", "label": "Maïzena (2 c. à s.)" },
+        { "ref": "moutarde", "qty": 10, "unit": "g", "label": "moutarde (2 c. à c.)" },
+        { "ref": "fromage-rape-allege", "qty": 60, "unit": "g" },
+        { "ref": "romaine", "qty": 150, "unit": "g", "label": "laitue romaine (pour la salade)" },
+        { "ref": "huile-olive", "qty": 10, "unit": "ml", "label": "huile d'olive (pour la vinaigrette)" },
+        { "ref": "vinaigre", "qty": 10, "unit": "ml", "label": "vinaigre (pour la vinaigrette)" },
+        { "ref": "poivre", "qty": 1, "unit": "g" }
+      ],
+      "steps": [
+        "Préchauffe le four à 180 °C. Cuis les bouquets de brocoli 4 min à l'eau bouillante, égoutte-les bien et sèche-les dans un torchon : c'est ce qui évite une quiche qui rend de l'eau.",
+        "Émince l'oignon et fais-le fondre 4 min dans une poêle antiadhésive à sec, à feu moyen, avec les dés de jambon.",
+        "Fouette les œufs, les blancs, le fromage blanc, le lait, la Maïzena, la moutarde et le poivre jusqu'à ce que l'appareil soit lisse.",
+        "Répartis le brocoli, l'oignon et le jambon dans un moule de 24 cm chemisé de papier cuisson. Verse l'appareil, parsème de fromage râpé.",
+        "Enfourne 30 min : la quiche doit être gonflée, dorée et à peine tremblotante au centre. Laisse reposer 5 min avant de couper.",
+        "Pendant la cuisson, mélange l'huile, le vinaigre et un tour de poivre, et assaisonne la romaine au dernier moment."
+      ],
+      "whyLight": "Pas de pâte feuilletée ni de crème : le fromage blanc 0 % et les blancs d'œufs font une garniture gonflée et crémeuse, le jambon dégraissé et le râpé allégé donnent le goût, et la Maïzena tient le tout sans pâte.",
+      "leftoverTip": "Le lendemain : la quiche est aussi bonne froide, coupée en parts dans une boîte avec de la salade. Réchauffée, 1 min 30 au micro-ondes ou 10 min au four à 160 °C pour retrouver le dessus doré.",
+      "variants": [
+        "Version saumon : 2 tranches de saumon fumé en lanières et 150 g de pousses d'épinards à la place du jambon et du brocoli.",
+        "Version feta-courgette : 1 courgette râpée et bien essorée, 60 g de feta allégée émiettée à la place du fromage râpé."
+      ]
+    },
+    {
+      "id": "poulet-creme-champignons-puree",
+      "title": "Poulet à la crème de champignons et purée maison",
+      "category": "soir",
+      "tags": ["haute-proteine", "restes-midi"],
+      "servings": 2,
+      "portionNote": "1 filet en sauce et une belle louche de purée",
+      "prepMin": 15,
+      "cookMin": 25,
+      "ingredients": [
+        { "ref": "poulet-filet", "qty": 350, "unit": "g", "label": "2 filets de poulet" },
+        { "ref": "champignons", "qty": 300, "unit": "g", "label": "champignons de Paris, émincés" },
+        { "ref": "oignon", "qty": 1, "unit": "pce" },
+        { "ref": "ail", "qty": 2, "unit": "pce" },
+        { "ref": "huile-olive", "qty": 10, "unit": "ml", "label": "huile d'olive (2 c. à c.)" },
+        { "ref": "bouillon-cube", "qty": 0.5, "unit": "pce", "label": "cube de bouillon de volaille" },
+        { "ref": "fromage-frais-light", "qty": 80, "unit": "g" },
+        { "ref": "moutarde", "qty": 10, "unit": "g", "label": "moutarde (2 c. à c.)" },
+        { "ref": "maizena", "qty": 5, "unit": "g", "label": "Maïzena (1 c. à c.)" },
+        { "ref": "pomme-de-terre", "qty": 500, "unit": "g", "label": "pommes de terre farineuses" },
+        { "ref": "lait-demi-ecreme", "qty": 100, "unit": "ml", "label": "lait demi-écrémé (pour la purée)" },
+        { "ref": "herbes-fraiches", "qty": 10, "unit": "g", "label": "persil" },
+        { "ref": "sel", "qty": 1, "unit": "g" },
+        { "ref": "poivre", "qty": 1, "unit": "g" }
+      ],
+      "steps": [
+        "Épluche les pommes de terre, coupe-les en morceaux et cuis-les 20 min dans l'eau bouillante salée, jusqu'à ce qu'un couteau les traverse sans résistance.",
+        "Ouvre les filets de poulet en deux dans l'épaisseur, sale, poivre. Dore-les 3 min par face à feu vif dans la moitié de l'huile, dans une grande poêle. Réserve dans une assiette.",
+        "Dans la même poêle, fais sauter les champignons 5 min à feu vif avec le reste d'huile, jusqu'à ce qu'ils soient dorés et qu'ils n'aient plus d'eau. Ajoute l'oignon émincé et l'ail haché, 3 min de plus.",
+        "Émiette le demi-cube dans 200 ml d'eau chaude et verse dans la poêle avec la Maïzena délayée dans 1 c. à s. d'eau froide. Ajoute le fromage frais et la moutarde, mélange jusqu'à obtenir une sauce lisse.",
+        "Remets le poulet dans la sauce et laisse mijoter 5 min à feu doux, à couvert, le temps qu'il finisse de cuire et que la sauce nappe.",
+        "Égoutte les pommes de terre, écrase-les au presse-purée avec le lait chaud, poivre. Sers la purée avec le poulet, la sauce et le persil ciselé."
+      ],
+      "whyLight": "Le fromage frais light et un demi-cube de bouillon remplacent la crème entière et le beurre de la sauce, et la purée se fait au lait demi-écrémé, sans beurre : le même plat réconfortant, en beaucoup plus léger.",
+      "leftoverTip": "Le lendemain : réchauffe poulet et sauce 2 min 30 au micro-ondes à couvert, la purée 2 min à part avec 1 c. à s. de lait pour la détendre. Un tour de poivre et du persil frais au moment de servir.",
+      "variants": [
+        "Version dinde : 2 escalopes de dinde, dorées 2 min par face.",
+        "Purée plus verte : remplace 200 g de pommes de terre par 200 g de brocoli cuit, écrasé avec le reste."
+      ]
+    },
+    {
+      "id": "tartiflette-light",
+      "title": "Tartiflette qui trompe tout le monde",
+      "category": "soir",
+      "tags": ["haute-proteine", "restes-midi", "batch"],
+      "servings": 2,
+      "portionNote": "Une grosse part de gratin et sa salade",
+      "prepMin": 10,
+      "cookMin": 35,
+      "ingredients": [
+        { "ref": "pomme-de-terre", "qty": 550, "unit": "g", "label": "pommes de terre à chair ferme" },
+        { "ref": "oignon", "qty": 1, "unit": "pce" },
+        { "ref": "lardons-volaille", "qty": 250, "unit": "g", "label": "allumettes de volaille" },
+        { "ref": "ail", "qty": 2, "unit": "pce" },
+        { "ref": "fromage-frais-light", "qty": 100, "unit": "g" },
+        { "ref": "lait-demi-ecreme", "qty": 50, "unit": "ml" },
+        { "ref": "reblochon", "qty": 60, "unit": "g", "label": "reblochon (un quart de petit reblochon), en fines tranches" },
+        { "ref": "herbes-sechees", "qty": 1, "unit": "g", "label": "thym" },
+        { "ref": "poivre", "qty": 1, "unit": "g" },
+        { "ref": "romaine", "qty": 150, "unit": "g", "label": "laitue romaine" },
+        { "ref": "huile-olive", "qty": 5, "unit": "ml", "label": "huile d'olive (1 c. à c., pour la vinaigrette)" },
+        { "ref": "vinaigre", "qty": 10, "unit": "ml", "label": "vinaigre (pour la vinaigrette)" },
+        { "ref": "moutarde", "qty": 5, "unit": "g", "label": "moutarde (1 c. à c., pour la vinaigrette)" }
+      ],
+      "steps": [
+        "Cuis les pommes de terre avec la peau 20 min dans l'eau bouillante, jusqu'à ce qu'elles soient tendres. Laisse tiédir, pèle-les et coupe-les en rondelles de 1 cm.",
+        "Préchauffe le four à 200 °C. Dore les allumettes de volaille 4 min dans une poêle antiadhésive à sec, ajoute l'oignon émincé et l'ail haché, et laisse fondre 4 min de plus à feu moyen.",
+        "Détends le fromage frais avec le lait, le thym et le poivre jusqu'à obtenir une crème lisse.",
+        "Dans un plat à gratin, alterne rondelles de pommes de terre, mélange volaille-oignon et crème, en terminant par la crème. Pose les tranches de reblochon sur le dessus, croûte vers le haut.",
+        "Enfourne 15 min à 200 °C, puis 3 min sous le gril : le reblochon doit être fondu et bien doré. Sers avec la romaine assaisonnée de l'huile, du vinaigre et de la moutarde."
+      ],
+      "whyLight": "Le fromage frais light remplace la crème, les allumettes de volaille remplacent les lardons de porc, et le reblochon est réduit à une petite dose posée sur le dessus, là où on le sent vraiment : le goût de la tartiflette, sans la sieste obligatoire ensuite.",
+      "leftoverTip": "Le lendemain : réchauffe la part 10 min au four à 180 °C (ou 5 min à l'air fryer) pour que le dessus regratine, ou 2 min 30 au micro-ondes si tu es pressé. Salade fraîche à côté.",
+      "variants": [
+        "Version végétarienne : 250 g de champignons dorés à la place des allumettes, et 100 g de fromage blanc 0 % en plus dans la crème.",
+        "Plus de croûte : 20 g de fromage râpé allégé sur le reblochon avant le gril."
+      ]
+    },
+    {
+      "id": "tofu-croustillant-sesame",
+      "title": "Tofu croustillant au sésame, riz et brocoli",
+      "category": "soir",
+      "tags": ["haute-proteine", "restes-midi", "vegetarien", "air-fryer"],
+      "servings": 2,
+      "portionNote": "1 bol riz-brocoli-edamame et la moitié du tofu",
+      "prepMin": 15,
+      "cookMin": 25,
+      "ingredients": [
+        { "ref": "tofu", "qty": 400, "unit": "g", "label": "tofu ferme, bien pressé, en cubes de 2 cm" },
+        { "ref": "maizena", "qty": 15, "unit": "g", "label": "Maïzena (1 c. à s. bombée)" },
+        { "ref": "huile-sesame", "qty": 5, "unit": "ml", "label": "huile de sésame (1 c. à c.)" },
+        { "ref": "sauce-soja", "qty": 40, "unit": "ml" },
+        { "ref": "miel", "qty": 15, "unit": "g", "label": "miel (2 c. à c.)" },
+        { "ref": "vinaigre", "qty": 10, "unit": "ml", "label": "vinaigre de cidre (ou de riz)" },
+        { "ref": "ail", "qty": 2, "unit": "pce" },
+        { "ref": "gingembre", "qty": 10, "unit": "g", "label": "gingembre frais, râpé" },
+        { "ref": "piment-flocons", "qty": 1, "unit": "g" },
+        { "ref": "graines-sesame", "qty": 10, "unit": "g" },
+        { "ref": "riz-basmati-cru", "qty": 100, "unit": "g" },
+        { "ref": "brocoli", "qty": 300, "unit": "g", "label": "brocoli, en petits bouquets" },
+        { "ref": "edamame", "qty": 100, "unit": "g", "label": "edamame écossés (surgelés)" }
+      ],
+      "steps": [
+        "Presse le tofu 10 min entre deux assiettes avec un poids dessus, essuie-le et coupe-le en cubes de 2 cm. Mélange-les délicatement avec la Maïzena et 1 c. à s. de sauce soja pour bien les enrober.",
+        "Préchauffe le four à 220 °C (ou l'air fryer à 200 °C). Étale les cubes sur une plaque avec du papier cuisson, sans qu'ils se touchent, et enfourne 25 min en les retournant à mi-cuisson, ou 15 min à l'air fryer : ils doivent être dorés et craquants.",
+        "Pendant ce temps, lance le riz : rince-le, couvre-le de 1,5 fois son volume d'eau, porte à ébullition puis 10 min à couvert à feu doux.",
+        "Prépare la sauce : mélange le reste de sauce soja, le miel, le vinaigre, l'ail pressé, le gingembre, le piment et l'huile de sésame.",
+        "Cuis le brocoli et les edamame 4 min à l'eau bouillante, égoutte.",
+        "À la sortie du four, verse la sauce sur le tofu brûlant dans un saladier et mélange : elle accroche et caramélise aussitôt. Sers sur le riz avec le brocoli, les edamame et les graines de sésame."
+      ],
+      "whyLight": "Le tofu croustille au four ou à l'air fryer grâce à la Maïzena, sans bain de friture, et la sauce se fait avec deux cuillères à café de miel au lieu du sucre des sauces toutes prêtes. Les edamame complètent les protéines du tofu.",
+      "leftoverTip": "Le lendemain : repasse le tofu 5 min à l'air fryer à 180 °C ou 8 min au four pour qu'il recroustille (au micro-ondes il ramollit mais reste bon), et réchauffe le riz 1 min 30 avec un peu d'eau. Froid, le tout se mange en salade avec un trait de citron.",
+      "variants": [
+        "Version poulet : 350 g de filet de poulet en cubes enrobés de la même façon, 20 min au four.",
+        "Plus piquant : 1 c. à s. de sriracha dans la sauce."
+      ]
+    },
+    {
+      "id": "mousse-chocolat-proteinee",
+      "title": "Mousse au chocolat qui trompe tout le monde",
+      "category": "snacks",
+      "tags": ["haute-proteine", "sans-cuisson", "vegetarien"],
+      "servings": 2,
+      "portionNote": "1 ramequin bien rempli",
+      "prepMin": 15,
+      "cookMin": 0,
+      "ingredients": [
+        { "ref": "fromage-blanc-0", "qty": 200, "unit": "g" },
+        { "ref": "whey-proteine", "qty": 30, "unit": "g", "label": "whey chocolat (1 dose)" },
+        { "ref": "cacao-non-sucre", "qty": 15, "unit": "g", "label": "cacao non sucré (2 c. à s.)" },
+        { "ref": "lait-demi-ecreme", "qty": 30, "unit": "ml", "label": "lait demi-écrémé (2 c. à s.)" },
+        { "ref": "edulcorant", "qty": 10, "unit": "g", "label": "édulcorant en poudre (1 c. à s.)" },
+        { "ref": "blanc-oeuf", "qty": 100, "unit": "ml", "label": "blancs d'œufs liquides pasteurisés (≈ 3 blancs)" },
+        { "ref": "citron-jus", "qty": 5, "unit": "ml", "label": "jus de citron (quelques gouttes, pour monter les blancs)" },
+        { "ref": "chocolat-noir-70", "qty": 10, "unit": "g", "label": "chocolat noir 70 % (pour les copeaux)" }
+      ],
+      "steps": [
+        "Fouette le fromage blanc avec la whey, le cacao, le lait et l'édulcorant jusqu'à obtenir une crème lisse et brillante, sans grumeaux.",
+        "Verse les blancs d'œufs et le jus de citron dans un saladier bien propre. Monte-les au batteur en neige ferme : le bec d'oiseau tient quand tu soulèves les fouets.",
+        "Incorpore un tiers des blancs à la crème au chocolat en mélangeant franchement pour la détendre, puis le reste délicatement à la spatule, de bas en haut, jusqu'à ce qu'il n'y ait plus de traces blanches.",
+        "Répartis dans 2 ramequins. Laisse prendre 2 h au frigo : la mousse se raffermit et le cacao perd son amertume.",
+        "Râpe le chocolat noir sur le dessus juste avant de servir."
+      ],
+      "whyLight": "Le fromage blanc 0 % et la whey remplacent le chocolat fondu, le beurre et les jaunes d'œufs : le cacao pur donne le goût intense, les blancs montés donnent l'aération d'une vraie mousse, et chaque ramequin apporte près de 30 g de protéines.",
+      "leftoverTip": "Se garde 2 jours au frigo, filmée : la mousse se tasse un peu mais reste aérienne. Ne se congèle pas.",
+      "variants": [
+        "Version skyr : 200 g de skyr à la place du fromage blanc, pour une mousse plus dense façon crème au chocolat.",
+        "Version moka : remplace le lait par 30 ml de café expresso bien serré."
+      ]
+    },
+    {
+      "id": "muffins-proteines-myrtilles",
+      "title": "Muffins aux myrtilles façon coffee shop",
+      "category": "snacks",
+      "tags": ["batch", "vegetarien"],
+      "servings": 6,
+      "portionNote": "1 muffin",
+      "prepMin": 10,
+      "cookMin": 20,
+      "ingredients": [
+        { "ref": "flocons-avoine", "qty": 120, "unit": "g" },
+        { "ref": "whey-proteine", "qty": 60, "unit": "g", "label": "whey vanille (2 doses)" },
+        { "ref": "levure-chimique", "qty": 6, "unit": "g", "label": "levure chimique (1 c. à c. bombée)" },
+        { "ref": "sel", "qty": 1, "unit": "g", "label": "sel (1 pincée)" },
+        { "ref": "oeuf", "qty": 2, "unit": "pce" },
+        { "ref": "skyr-nature-0", "qty": 150, "unit": "g" },
+        { "ref": "lait-demi-ecreme", "qty": 50, "unit": "ml" },
+        { "ref": "edulcorant", "qty": 20, "unit": "g", "label": "édulcorant en poudre (2 c. à s.)" },
+        { "ref": "vanille", "qty": 5, "unit": "ml", "label": "extrait de vanille (1 c. à c.)" },
+        { "ref": "myrtilles", "qty": 120, "unit": "g", "label": "myrtilles fraîches ou surgelées" }
+      ],
+      "steps": [
+        "Préchauffe le four à 180 °C. Garnis un moule à muffins de 6 caissettes en papier.",
+        "Mixe les flocons d'avoine 20 s pour obtenir une farine grossière. Mélange-la dans un saladier avec la whey, la levure et le sel.",
+        "Dans un autre bol, fouette les œufs, le skyr, le lait, l'édulcorant et la vanille. Verse sur la farine et mélange juste assez pour ne plus voir de sec : une pâte épaisse, un peu grumeleuse, c'est normal.",
+        "Incorpore les myrtilles à la spatule sans les écraser (surgelées : sans les décongeler, pour ne pas colorer la pâte).",
+        "Répartis dans les caissettes, jusqu'à 1 cm du bord. Enfourne 20 min : le dessus est doré et une pointe de couteau ressort sèche.",
+        "Laisse tiédir 10 min dans le moule avant de démouler : chauds, les muffins protéinés sont fragiles."
+      ],
+      "whyLight": "Pas de farine blanche, pas de beurre, pas de sucre : l'avoine mixée et la whey font la mie, le skyr et les œufs gardent le moelleux. Chaque muffin apporte 16 g de protéines, quatre fois plus qu'un muffin de coffee shop.",
+      "leftoverTip": "Se gardent 3 jours dans une boîte hermétique au frigo, ou 2 mois au congélateur : 30 s au micro-ondes et le muffin redevient moelleux.",
+      "variants": [
+        "Version pépites : remplace les myrtilles par 40 g de chocolat noir 70 % concassé et la vanille par 10 g de cacao non sucré.",
+        "Version pomme-cannelle : 1 pomme en petits dés et 2 g de cannelle à la place des myrtilles."
+      ]
+    },
+    {
+      "id": "cookies-beurre-cacahuete",
+      "title": "Cookies beurre de cacahuète et chocolat",
+      "category": "snacks",
+      "tags": ["batch", "vegetarien"],
+      "servings": 8,
+      "portionNote": "1 cookie",
+      "prepMin": 10,
+      "cookMin": 12,
+      "ingredients": [
+        { "ref": "flocons-avoine", "qty": 100, "unit": "g" },
+        { "ref": "whey-proteine", "qty": 60, "unit": "g", "label": "whey vanille (2 doses)" },
+        { "ref": "levure-chimique", "qty": 3, "unit": "g", "label": "levure chimique (½ c. à c.)" },
+        { "ref": "sel", "qty": 1, "unit": "g", "label": "sel (1 pincée)" },
+        { "ref": "beurre-cacahuete", "qty": 60, "unit": "g", "label": "beurre de cacahuète 100 % (3 c. à s.)" },
+        { "ref": "compote-sans-sucre", "qty": 100, "unit": "g" },
+        { "ref": "oeuf", "qty": 1, "unit": "pce" },
+        { "ref": "edulcorant", "qty": 15, "unit": "g", "label": "édulcorant en poudre (1 c. à s. bombée)" },
+        { "ref": "vanille", "qty": 3, "unit": "ml", "label": "extrait de vanille (½ c. à c.)" },
+        { "ref": "chocolat-noir-70", "qty": 30, "unit": "g", "label": "chocolat noir 70 % (concassé au couteau)" }
+      ],
+      "steps": [
+        "Préchauffe le four à 180 °C et couvre une plaque de papier cuisson.",
+        "Mixe les flocons d'avoine en farine grossière. Mélange-les avec la whey, la levure et le sel.",
+        "Fouette le beurre de cacahuète, la compote, l'œuf, l'édulcorant et la vanille jusqu'à obtenir une crème homogène. Verse sur les poudres et mélange à la spatule : la pâte est collante mais se tient.",
+        "Ajoute les deux tiers du chocolat concassé. Forme 8 boules avec les mains humides, pose-les sur la plaque bien espacées et aplatis-les en disques de 1 cm : ils ne s'étalent pas à la cuisson.",
+        "Enfonce le reste du chocolat sur le dessus. Enfourne 12 min : les bords sont dorés, le centre encore souple.",
+        "Laisse refroidir 10 min sur la plaque sans y toucher : les cookies durcissent en refroidissant."
+      ],
+      "whyLight": "La compote sans sucre remplace le beurre et le sucre, le beurre de cacahuète 100 % apporte juste le gras qui fait le fondant, la whey et l'avoine remplacent la farine : un cookie qui cale vraiment, avec trois fois plus de protéines qu'un cookie du commerce.",
+      "leftoverTip": "Se gardent 5 jours dans une boîte hermétique (ils ramollissent un peu, c'est le bon moment) ou 2 mois au congélateur, à sortir 15 min avant.",
+      "variants": [
+        "Version banane : 1 banane bien mûre écrasée à la place de la compote, pour un cookie plus sucré.",
+        "Version croquante : ajoute 20 g de cacahuètes non salées concassées avec le chocolat."
+      ]
+    },
+    {
+      "id": "nice-cream-banane-chocolat",
+      "title": "Nice cream banane-chocolat en 5 minutes",
+      "category": "snacks",
+      "tags": ["haute-proteine", "sans-cuisson", "express", "vegetarien"],
+      "servings": 1,
+      "portionNote": "1 grand bol de glace",
+      "prepMin": 5,
+      "cookMin": 0,
+      "ingredients": [
+        { "ref": "banane", "qty": 1, "unit": "pce", "label": "banane bien mûre, en rondelles congelées" },
+        { "ref": "skyr-nature-0", "qty": 100, "unit": "g" },
+        { "ref": "whey-proteine", "qty": 15, "unit": "g", "label": "whey chocolat (½ dose)" },
+        { "ref": "cacao-non-sucre", "qty": 8, "unit": "g", "label": "cacao non sucré (1 c. à s.)" },
+        { "ref": "beurre-cacahuete", "qty": 10, "unit": "g", "label": "beurre de cacahuète 100 % (1 c. à c. bombée)" },
+        { "ref": "lait-demi-ecreme", "qty": 30, "unit": "ml", "label": "lait demi-écrémé (2 c. à s., pour aider le mixeur)" }
+      ],
+      "steps": [
+        "La veille, ou 4 h avant, coupe la banane en rondelles de 1 cm, étale-les sur une assiette et mets-les au congélateur.",
+        "Sors la banane 5 min avant de mixer, pour que les lames accrochent.",
+        "Mixe les rondelles, le skyr, la whey, le cacao, le beurre de cacahuète et le lait au blender ou au mixeur plongeant. Racle les bords deux ou trois fois : en 1 min, la texture passe de granuleuse à une glace lisse et onctueuse.",
+        "Sers aussitôt, comme une glace italienne, ou mets 20 min au congélateur pour une texture plus ferme, à la cuillère."
+      ],
+      "whyLight": "La banane congelée fait la texture crémeuse, sans crème ni sucre : le skyr et la whey transforment un dessert de fruit en collation à près de 30 g de protéines, le cacao et le beurre de cacahuète donnent le goût d'un sundae.",
+      "leftoverTip": "À manger dans l'heure. Au-delà, elle se congèle en bloc : sors-la 15 min avant et remixe-la pour retrouver le crémeux.",
+      "variants": [
+        "Version fruits rouges : 100 g de fruits rouges surgelés à la place du cacao et du beurre de cacahuète, avec de la whey vanille.",
+        "Version stracciatella : ajoute 10 g de chocolat noir 70 % haché après le mixage."
+      ]
+    },
+    {
+      "id": "creme-dessert-vanille",
+      "title": "Crème dessert vanille comme celle du commerce",
+      "category": "snacks",
+      "tags": ["haute-proteine", "vegetarien"],
+      "servings": 2,
+      "portionNote": "1 ramequin",
+      "prepMin": 5,
+      "cookMin": 10,
+      "ingredients": [
+        { "ref": "lait-demi-ecreme", "qty": 300, "unit": "ml" },
+        { "ref": "whey-proteine", "qty": 45, "unit": "g", "label": "whey vanille (1 dose ½)" },
+        { "ref": "maizena", "qty": 15, "unit": "g", "label": "fécule de maïs (1 c. à s. bombée)" },
+        { "ref": "vanille", "qty": 5, "unit": "ml", "label": "extrait de vanille (1 c. à c.)" },
+        { "ref": "edulcorant", "qty": 10, "unit": "g", "label": "édulcorant en poudre (1 c. à s.)" }
+      ],
+      "steps": [
+        "Prélève 50 ml de lait froid dans un bol et fouette-le avec la whey jusqu'à obtenir une pâte lisse. Réserve.",
+        "Dans une petite casserole, délaye la fécule dans le reste du lait froid, puis chauffe à feu moyen en fouettant sans arrêt.",
+        "Dès que la crème épaissit et nappe le fouet, après 4 à 5 min, laisse bouillonner 30 s puis retire du feu.",
+        "Attends 2 min hors du feu, puis incorpore la whey délayée, la vanille et l'édulcorant en fouettant vivement : la whey ne doit jamais bouillir, sinon elle devient granuleuse.",
+        "Verse dans 2 ramequins, filme au contact pour éviter la peau et laisse prendre 2 h au frigo."
+      ],
+      "whyLight": "Ni crème, ni jaunes d'œufs, ni sucre : la fécule épaissit le lait demi-écrémé comme dans les crèmes du commerce, et la whey vanille apporte le goût, l'onctuosité et plus de 20 g de protéines par ramequin.",
+      "leftoverTip": "Se garde 3 jours au frigo, filmée. Fouette-la 10 s avant de la manger si elle a trop pris.",
+      "variants": [
+        "Version chocolat : whey chocolat et 10 g de cacao non sucré délayés avec la fécule.",
+        "Version café : remplace 50 ml de lait par un expresso bien serré."
+      ]
+    },
+    {
+      "id": "tiramisu-light",
+      "title": "Tiramisu léger comme à la trattoria",
+      "category": "snacks",
+      "tags": ["haute-proteine", "sans-cuisson", "vegetarien"],
+      "servings": 4,
+      "portionNote": "1 verrine",
+      "prepMin": 15,
+      "cookMin": 0,
+      "ingredients": [
+        { "ref": "cafe", "qty": 100, "unit": "ml", "label": "café expresso ou filtre, refroidi" },
+        { "ref": "skyr-nature-0", "qty": 300, "unit": "g" },
+        { "ref": "fromage-frais-light", "qty": 100, "unit": "g" },
+        { "ref": "whey-proteine", "qty": 60, "unit": "g", "label": "whey vanille (2 doses)" },
+        { "ref": "edulcorant", "qty": 20, "unit": "g", "label": "édulcorant en poudre (2 c. à s.)" },
+        { "ref": "boudoirs", "qty": 12, "unit": "pce" },
+        { "ref": "cacao-non-sucre", "qty": 8, "unit": "g", "label": "cacao non sucré (pour saupoudrer)" }
+      ],
+      "steps": [
+        "Prépare le café et laisse-le refroidir dans une assiette creuse.",
+        "Fouette le skyr, le fromage frais, la whey et l'édulcorant 1 min au batteur : la crème devient lisse et épaisse, comme un mascarpone monté.",
+        "Casse chaque boudoir en deux. Trempe les morceaux 1 s par face dans le café, pas plus : ils doivent rester fermes au cœur.",
+        "Dans 4 verrines, dépose 3 demi-boudoirs, une couche de crème, 3 demi-boudoirs, puis le reste de crème. Lisse le dessus.",
+        "Filme et laisse reposer au moins 4 h au frigo, idéalement une nuit : les biscuits s'imbibent et la crème prend.",
+        "Saupoudre de cacao à travers une passoire fine juste avant de servir."
+      ],
+      "whyLight": "Le duo skyr et fromage frais light remplace le mascarpone et les jaunes d'œufs, la whey vanille remplace le sucre et donne le goût crémeux : la même cuillère fondante, avec une fraction du gras et 23 g de protéines par verrine.",
+      "leftoverTip": "Se garde 3 jours au frigo, filmé : il est encore meilleur le deuxième jour. Ne se congèle pas.",
+      "variants": [
+        "Version ricotta : 100 g de ricotta à la place du fromage frais, pour un goût plus doux et plus proche de l'original.",
+        "Version fruits rouges : boudoirs trempés dans du lait à la place du café, 150 g de fruits rouges entre les couches, sans cacao."
+      ]
+    },
+    {
+      "id": "cheesecake-skyr-speculoos",
+      "title": "Cheesecake spéculoos au skyr",
+      "category": "snacks",
+      "tags": ["batch", "vegetarien"],
+      "servings": 8,
+      "portionNote": "1 part (⅛ du gâteau)",
+      "prepMin": 10,
+      "cookMin": 30,
+      "ingredients": [
+        { "ref": "speculoos", "qty": 10, "unit": "pce" },
+        { "ref": "beurre", "qty": 25, "unit": "g", "label": "beurre fondu" },
+        { "ref": "skyr-nature-0", "qty": 500, "unit": "g" },
+        { "ref": "fromage-frais-light", "qty": 200, "unit": "g" },
+        { "ref": "edulcorant", "qty": 40, "unit": "g", "label": "édulcorant en poudre (4 c. à s.)" },
+        { "ref": "vanille", "qty": 5, "unit": "ml", "label": "extrait de vanille (1 c. à c.)" },
+        { "ref": "citron-jus", "qty": 15, "unit": "ml", "label": "jus de citron (1 c. à s.)" },
+        { "ref": "maizena", "qty": 20, "unit": "g", "label": "fécule de maïs (2 c. à s.)" },
+        { "ref": "oeuf", "qty": 2, "unit": "pce" }
+      ],
+      "steps": [
+        "Préchauffe le four à 170 °C. Tapisse le fond d'un moule à charnière de 22 à 24 cm de papier cuisson.",
+        "Réduis les spéculoos en poudre, au mixeur ou dans un sac avec un rouleau. Mélange avec le beurre fondu et tasse fermement au fond du moule avec le dos d'une cuillère.",
+        "Fouette le skyr, le fromage frais, l'édulcorant, la vanille, le jus de citron et la fécule jusqu'à obtenir une crème lisse. Ajoute les œufs un à un en fouettant juste assez pour les incorporer : trop d'air fait craquer le gâteau.",
+        "Verse l'appareil sur la base et lisse. Enfourne 30 min : les bords sont pris, le centre tremble encore comme un flan.",
+        "Éteins le four et laisse le cheesecake dedans, porte entrouverte, 15 min. Puis 4 h au frigo, idéalement une nuit, avant de démouler et de couper en 8."
+      ],
+      "whyLight": "Le skyr et le fromage frais light remplacent le cream cheese entier et la crème, l'édulcorant remplace le sucre : la base de spéculoos reste, mais réduite à un biscuit par part, et chaque part apporte 11 g de protéines.",
+      "leftoverTip": "Se garde 4 jours au frigo, filmé ou sous cloche. Les parts se congèlent 2 mois, à décongeler une nuit au frigo.",
+      "variants": [
+        "Version citron : ajoute le zeste d'un citron dans l'appareil et sers avec 50 g de fruits rouges par part.",
+        "Version chocolat : 20 g de cacao non sucré dans l'appareil et des copeaux de chocolat noir 70 % sur le dessus."
+      ]
+    },
+    {
+      "id": "barres-proteinees-maison",
+      "title": "Barres protéinées maison sans cuisson",
+      "category": "snacks",
+      "tags": ["sans-cuisson", "batch", "vegetarien"],
+      "servings": 8,
+      "portionNote": "1 barre",
+      "prepMin": 15,
+      "cookMin": 0,
+      "ingredients": [
+        { "ref": "flocons-avoine", "qty": 120, "unit": "g" },
+        { "ref": "whey-proteine", "qty": 90, "unit": "g", "label": "whey vanille ou chocolat (3 doses)" },
+        { "ref": "sel", "qty": 1, "unit": "g", "label": "sel (1 pincée)" },
+        { "ref": "beurre-cacahuete", "qty": 80, "unit": "g", "label": "beurre de cacahuète 100 % (4 c. à s.)" },
+        { "ref": "miel", "qty": 30, "unit": "g", "label": "miel (1 c. à s. et demie)" },
+        { "ref": "lait-demi-ecreme", "qty": 80, "unit": "ml" },
+        { "ref": "chocolat-noir-70", "qty": 30, "unit": "g", "label": "chocolat noir 70 % (pour le filet)" }
+      ],
+      "steps": [
+        "Tapisse un petit plat rectangulaire, environ 20 × 15 cm, de papier cuisson, en le laissant dépasser pour démouler.",
+        "Mixe la moitié des flocons en farine et garde l'autre moitié entière pour le croquant. Mélange-les dans un saladier avec la whey et le sel.",
+        "Chauffe le beurre de cacahuète et le miel 30 s au micro-ondes et mélange : le tout devient fluide. Verse sur les poudres avec le lait et pétris à la spatule, puis à la main, jusqu'à obtenir une pâte dense et collante qui se tient en boule.",
+        "Tasse la pâte dans le plat avec le dos d'une cuillère, très fermement : c'est ce qui empêche les barres de s'émietter.",
+        "Fais fondre le chocolat 40 s au micro-ondes, mélange, et verse-le en filet sur le dessus avec une petite cuillère.",
+        "Mets 1 h au frigo, démoule et coupe en 8 barres avec un grand couteau."
+      ],
+      "whyLight": "Une barre du commerce cache du sirop de glucose et de l'huile de palme : ici l'avoine et la whey font la base, le beurre de cacahuète 100 % lie le tout, et le miel se limite à une petite cuillère par barre, avec 14 g de protéines à la clé.",
+      "leftoverTip": "Se gardent 1 semaine au frigo dans une boîte hermétique (elles ramollissent à température ambiante) ou 2 mois au congélateur, emballées une par une.",
+      "variants": [
+        "Version choco-amande : whey chocolat, 10 g de cacao non sucré dans les poudres et 20 g d'amandes concassées.",
+        "Version dattes : remplace le miel par 3 dattes Medjool mixées avec le lait."
+      ]
+    },
+    {
+      "id": "brownie-haricots-noirs",
+      "title": "Brownie fondant qui cache des haricots noirs",
+      "category": "snacks",
+      "tags": ["batch", "vegetarien"],
+      "servings": 8,
+      "portionNote": "1 part (rectangle de 10 × 5 cm)",
+      "prepMin": 10,
+      "cookMin": 22,
+      "ingredients": [
+        { "ref": "haricots-noirs-boite", "qty": 240, "unit": "g", "label": "haricots noirs en boîte, rincés et égouttés (1 boîte de 400 g)" },
+        { "ref": "oeuf", "qty": 2, "unit": "pce" },
+        { "ref": "beurre-cacahuete", "qty": 40, "unit": "g", "label": "beurre de cacahuète 100 % (2 c. à s.)" },
+        { "ref": "miel", "qty": 30, "unit": "g", "label": "miel (1 c. à s. et demie)" },
+        { "ref": "edulcorant", "qty": 20, "unit": "g", "label": "édulcorant en poudre (2 c. à s.)" },
+        { "ref": "vanille", "qty": 5, "unit": "ml", "label": "extrait de vanille (1 c. à c.)" },
+        { "ref": "cacao-non-sucre", "qty": 30, "unit": "g", "label": "cacao non sucré (4 c. à s.)" },
+        { "ref": "whey-proteine", "qty": 60, "unit": "g", "label": "whey chocolat (2 doses)" },
+        { "ref": "levure-chimique", "qty": 4, "unit": "g", "label": "levure chimique (1 c. à c.)" },
+        { "ref": "sel", "qty": 1, "unit": "g", "label": "sel (1 pincée)" },
+        { "ref": "chocolat-noir-70", "qty": 30, "unit": "g", "label": "chocolat noir 70 % (concassé)" }
+      ],
+      "steps": [
+        "Préchauffe le four à 180 °C et tapisse un moule carré de 20 cm de papier cuisson.",
+        "Mixe les haricots bien rincés avec les œufs, le beurre de cacahuète, le miel, l'édulcorant et la vanille pendant 1 min, jusqu'à une purée parfaitement lisse : plus aucun morceau, c'est le secret pour ne pas sentir le haricot.",
+        "Ajoute le cacao, la whey, la levure et le sel, mixe encore 20 s. La pâte est épaisse comme une pâte à gâteau classique.",
+        "Incorpore les deux tiers du chocolat concassé à la spatule, verse dans le moule, lisse et parsème du reste de chocolat.",
+        "Enfourne 22 min : les bords sont pris, le centre juste ferme au toucher, et une pointe de couteau ressort avec des miettes humides. Pas plus, il sécherait.",
+        "Laisse refroidir complètement dans le moule, au moins 1 h : il se raffermit en refroidissant. Coupe en 8 rectangles."
+      ],
+      "whyLight": "Les haricots noirs mixés remplacent la farine et le beurre : ils donnent le fondant et les fibres, sans aucun goût une fois mixés avec le cacao. La whey chocolat remplace le sucre et apporte 12 g de protéines par part.",
+      "leftoverTip": "Se garde 4 jours au frigo dans une boîte fermée, encore plus fondant le lendemain. 10 s au micro-ondes le ramène à la texture tout juste sorti du four. Se congèle 2 mois.",
+      "variants": [
+        "Version fudge : remplace la levure par 30 ml de café expresso, pour un brownie plus dense au goût de cacao plus profond.",
+        "Version amandes : 20 g d'amandes effilées sur le dessus avant d'enfourner."
+      ]
+    },
+    {
+      "id": "chips-de-wrap-epicees",
+      "title": "Chips de wrap épicées et sauce fromagère",
+      "category": "snacks",
+      "tags": ["haute-proteine", "air-fryer", "vegetarien"],
+      "servings": 1,
+      "portionNote": "16 chips et leur bol de sauce",
+      "prepMin": 5,
+      "cookMin": 8,
+      "ingredients": [
+        { "ref": "wrap-proteine", "qty": 1, "unit": "pce" },
+        { "ref": "huile-olive", "qty": 3, "unit": "ml", "label": "huile d'olive (½ c. à c.)" },
+        { "ref": "paprika", "qty": 2, "unit": "g", "label": "paprika fumé (1 c. à c.)" },
+        { "ref": "piment-flocons", "qty": 0.5, "unit": "g", "label": "piment en flocons (1 pincée)" },
+        { "ref": "sel", "qty": 0.5, "unit": "g" },
+        { "ref": "cheddar-allege-tranches", "qty": 1, "unit": "pce", "label": "cheddar allégé (pour la sauce)" },
+        { "ref": "fromage-frais-light", "qty": 20, "unit": "g", "label": "fromage frais light (pour la sauce)" },
+        { "ref": "lait-demi-ecreme", "qty": 20, "unit": "ml", "label": "lait demi-écrémé (pour la sauce)" },
+        { "ref": "skyr-nature-0", "qty": 60, "unit": "g", "label": "skyr nature 0 % (pour la sauce)" },
+        { "ref": "poivre", "qty": 0.5, "unit": "g" }
+      ],
+      "steps": [
+        "Préchauffe le four à 200 °C, ou l'air fryer à 190 °C.",
+        "Badigeonne une face du wrap d'huile au pinceau, saupoudre de paprika, de piment et de sel. Coupe-le en 8 triangles, puis chaque triangle en deux : 16 chips.",
+        "Étale-les sans les superposer. Au four : 8 min sur une plaque, en les retournant à mi-cuisson. À l'air fryer : 5 min, en secouant le panier à mi-cuisson. Elles doivent être dorées et sèches : elles croustillent en refroidissant.",
+        "Pendant ce temps, mets le cheddar déchiré en morceaux, le fromage frais et le lait dans un bol. Chauffe 40 s au micro-ondes et mélange jusqu'à ce que la sauce soit lisse.",
+        "Hors du micro-ondes, incorpore le skyr et le poivre : la sauce devient onctueuse, tiède et nappante. Sers les chips dressées autour du bol."
+      ],
+      "whyLight": "Un wrap protéiné passé au four remplace le paquet de chips frites, avec une demi-cuillère d'huile pour tout le sachet. La sauce fromagère est montée au skyr et au cheddar allégé plutôt qu'à la crème : le même dip coulant, deux fois moins gras et bien plus rassasiant.",
+      "leftoverTip": "Les chips se gardent 3 jours dans une boîte hermétique à température ambiante. La sauce se garde 2 jours au frigo : 20 s au micro-ondes en mélangeant pour la réchauffer.",
+      "variants": [
+        "Version nachos : garnis les chips de 100 g de haché de poulet cuit aux épices tacos, nappe de sauce et passe 2 min sous le gril.",
+        "Version sucrée : cannelle et édulcorant à la place des épices, avec un dip skyr et vanille."
       ]
     }
   ]

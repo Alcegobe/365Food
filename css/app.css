@@ -169,6 +169,10 @@ svg {
   flex: 1;
 }
 
+.container:focus {
+  outline: none;
+}
+
 .muted {
   color: var(--muted);
 }

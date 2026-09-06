@@ -204,6 +204,14 @@ points(recette / portion) = kcal / 50  −  protéines(g) / 10  +  bonus_malus
 - Photos : les miennes (dossier `img/`) ou fiches sans photo avec un design typographique.
 - Nombre de recettes visé par catégorie.
 
+Hypothèses retenues pour la V3, faute de réponse (à corriger dans une prochaine session si besoin) :
+
+- Aucune exclusion alimentaire : le catalogue mélange volaille, bœuf 5 %, poisson, œufs, laitages et quelques plats végétariens (tag `vegetarien`) ; pas de porc en dehors du jambon dégraissé, les lardons sont remplacés par des allumettes de volaille.
+- Desserts & snacks : oui (catégorie `snacks`), c'est ce qui alimente le créneau « snack » du planning.
+- Le soir : 20 à 35 min, 45 max ; matériel supposé : poêle, four, casserole, mixeur ; l'air fryer est proposé en alternative (tag `air-fryer`) avec la version four dans les étapes.
+- Fiches sans photo (design typographique) ; le champ `image` reste facultatif.
+- Catalogue V3 : 11 sauces, 11 matins, 15 midis express, 31 dîners, 10 desserts & snacks (78 recettes), base de 132 ingrédients.
+
 ---
 
 ## 9. État d'avancement (à tenir à jour à chaque version)
@@ -213,7 +221,7 @@ points(recette / portion) = kcal / 50  −  protéines(g) / 10  +  bonus_malus
 | **V0 — Socle** | ✅ livrée | profil, cibles, budget de points, localStorage, export/import JSON, tests des formules (`npm test`) |
 | **V1 — Recettes** | ✅ livrée | `data/ingredients.json`, `data/recipes.json` (3 recettes de référence rédigées par Claude : sauce blanche kebab, pancakes protéinés, smash burger), catalogue + filtres, fiche avec portions ajustables, impression A4/A5, routes `#/…` |
 | **V2 — Planning** | ✅ livrée | `js/planner.js`, vue semaine (`#/planning`), créneaux matin/midi/soir/snack, restes d'hier soir, jauges jour/semaine, liste de courses par rayon, impression semaine + liste, menu du jour sur l'accueil, schéma de stockage v2 |
-| V3 — Contenu | ⏳ à faire | répondre d'abord au §8 |
+| **V3 — Contenu** | ✅ livrée | catalogue de 78 recettes (11 sauces, 11 matins, 15 midis express, 31 dîners, 10 desserts & snacks) et 132 ingrédients, catalogue groupé par catégorie, rappel de pesée à l'échéance (invite « Quel est ton poids aujourd'hui ? » sur l'accueil), courbe de l'historique de poids (`js/charts.js`), hypothèses du §8 documentées, bornes éditoriales testées (`tests/recipes.test.js`) |
 | V4 — Finitions | ⏳ à faire | |
 
 Règles de travail pour les prochaines sessions :

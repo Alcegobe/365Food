@@ -90,7 +90,9 @@ export function renderPlanner(container, { planner, dates, today, catalog, targe
           <p class="tile__value">${fmt.dec(totals.points)} <small>/ ${fmt.dec(targets.weeklyPoints)} pts</small></p>
         </div>
         ${gauge({ value: totals.points, max: targets.weeklyPoints, label: 'Points', unit: 'pts' })}
-        <p class="tile__hint">${totals.items} ${totals.items > 1 ? 'repas planifiés' : 'repas planifié'} sur ${totals.plannedDays} ${totals.plannedDays > 1 ? 'jours' : 'jour'}.</p>
+        <p class="tile__hint">${totals.items === 0
+          ? 'Rien de planifié cette semaine.'
+          : `${totals.items} ${totals.items > 1 ? 'repas planifiés' : 'repas planifié'} sur ${totals.plannedDays} ${totals.plannedDays > 1 ? 'jours' : 'jour'}.`}</p>
       </section>
 
       <div class="week">
