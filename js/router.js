@@ -9,6 +9,7 @@ export function parseRoute(hash) {
   if (!head) return { name: 'today' };
   if (head === 'recettes') return rest[0] ? { name: 'recipe', id: rest[0] } : { name: 'recipes' };
   if (head === 'profil') return { name: 'profile' };
+  if (head === 'planning') return rest[0] ? { name: 'planner', date: rest[0] } : { name: 'planner' };
   return { name: 'today' };
 }
 
@@ -21,6 +22,8 @@ export function routeHash(route) {
       return `#/recettes/${encodeURIComponent(route.id)}`;
     case 'profile':
       return '#/profil';
+    case 'planner':
+      return route.date ? `#/planning/${encodeURIComponent(route.date)}` : '#/planning';
     default:
       return '#/';
   }

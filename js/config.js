@@ -100,3 +100,17 @@ export const RECIPE_FILTERS = Object.freeze({
   maxPointsChoices: Object.freeze([2, 4, 6, 8, 10]),
   maxMinutesChoices: Object.freeze([10, 20, 30, 45]),
 });
+
+/** Premier jour de la semaine (0 = dimanche, 1 = lundi). */
+export const WEEK_STARTS_ON = 1;
+
+/** Créneaux du planning (§2.5) et catégories proposées par défaut pour chacun. */
+export const PLANNER_SLOTS = Object.freeze([
+  { id: 'matin', label: 'Matin', categories: Object.freeze(['matin']) },
+  { id: 'midi', label: 'Midi', categories: Object.freeze(['midi', 'soir']) },
+  { id: 'soir', label: 'Soir', categories: Object.freeze(['soir', 'midi']) },
+  { id: 'snack', label: 'Snack', categories: Object.freeze(['snacks']) },
+]);
+
+/** Bornes du planning. */
+export const PLANNER_LIMITS = Object.freeze({ maxPortions: 6, maxItemsPerSlot: 6 });

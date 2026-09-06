@@ -1,10 +1,11 @@
 /**
  * Tableau de bord : identité, titre du jour, tuiles (poids, macros, semaine), pesées, profil, données.
  */
-import { GOALS, PROFILE_LIMITS } from '../config.js';
+import { GOALS, PLANNER_SLOTS, PROFILE_LIMITS } from '../config.js';
 import { activityLevel } from '../nutrition.js';
+import { dayItems, dayTotals } from '../planner.js';
 import { currentWeighIn, todayISO } from '../profile.js';
-import { fmt, html, render } from './dom.js';
+import { fmt, gauge, html, render } from './dom.js';
 import { icon } from './icons.js';
 
 const PILL_SLOTS = 7;
@@ -54,8 +55,50 @@ function statTile({ key, label, iconName, value, unit, wide = false, hint = '' }
   `;
 }
 
-export function renderDashboard(container, { profile, targets, today = new Date() }) {
+/** Tuile « Au menu aujourd'hui » : repas planifiés et jauges du jour. */
+function menuTile({ planner, catalog, todayIso, targets }) {
+  if (!catalog) {
+    return html`<article class="tile tile--full" data-stat="menu"><p class="tile__label">${icon('planner')} Au menu</p><p class="muted">Chargement…</p></article>`;
+  }
+  const items = dayItems(planner, todayIso);
+  const totals = dayTotals(planner, todayIso, catalog.nutritionById);
+  const byId = new Map(catalog.recipes.map((r) => [r.id, r]));
+  const slotLabel = Object.fromEntries(PLANNER_SLOTS.map((s) => [s.id, s.label]));
+  return html`
+    <article class="tile tile--full tile--white" data-stat="menu">
+      <div class="tile__head">
+        <p class="tile__label">${icon('planner')} Au menu aujourd'hui</p>
+        <a class="btn" href="#/planning">Planning</a>
+      </div>
+      ${items.length === 0
+        ? html`<p class="muted">Rien de planifié.</p>`
+        : html`
+            <ul class="menu-list">
+              ${items.map((item) => {
+                const recipe = byId.get(item.recipeId);
+                const n = catalog.nutritionById.get(item.recipeId);
+                return html`
+                  <li>
+                    <span class="slot-tag">${slotLabel[item.slot] ?? item.slot}</span>
+                    ${recipe ? html`<a href="#/recettes/${encodeURIComponent(recipe.id)}">${recipe.title}${item.portions > 1 ? ` × ${item.portions}` : ''}${item.leftoverOf ? ' (restes)' : ''}</a>` : html`<span>${item.recipeId}</span>`}
+                    <span class="pts">${n ? `${fmt.dec(n.points * item.portions)} pts` : ''}</span>
+                  </li>
+                `;
+              })}
+            </ul>
+          `}
+      <div class="menu-gauges">
+        ${gauge({ value: totals.points, max: targets.dailyPoints, label: 'Points', unit: 'pts' })}
+        ${gauge({ value: totals.protein, max: targets.proteinG, label: 'Protéines', unit: 'g' })}
+      </div>
+    </article>
+  `;
+}
+
+export function renderDashboard(container, { profile, targets, planner, catalog = null, today = new Date() }) {
   const todayIso = todayISO(today);
+  const consumed = catalog ? dayTotals(planner, todayIso, catalog.nutritionById) : null;
+  const remaining = consumed ? Math.max(0, targets.dailyPoints - consumed.points) : null;
   const current = currentWeighIn(profile);
   const goal = GOALS[targets.goal];
   const level = activityLevel(targets.activityFactor);
@@ -63,7 +106,8 @@ export function renderDashboard(container, { profile, targets, today = new Date(
   const recent = history.slice(0, 6);
   const chart = weightPills(profile.weights);
   const name = String(profile.name ?? '').trim();
-  const pointsWord = targets.dailyPoints >= 2 ? 'points' : 'point';
+  const headlinePoints = consumed && consumed.items > 0 ? remaining : targets.dailyPoints;
+  const pointsWord = headlinePoints >= 2 ? 'points' : 'point';
 
   render(
     container,
@@ -76,7 +120,9 @@ export function renderDashboard(container, { profile, targets, today = new Date(
         </div>
       </header>
 
-      <h2 class="headline">Aujourd'hui, tu as <span class="headline__num">${fmt.dec(targets.dailyPoints)}</span> ${pointsWord} à savourer</h2>
+      <h2 class="headline">${consumed && consumed.items > 0
+        ? html`Aujourd'hui, il te reste <span class="headline__num">${fmt.dec(remaining)}</span> ${pointsWord}`
+        : html`Aujourd'hui, tu as <span class="headline__num">${fmt.dec(targets.dailyPoints)}</span> ${pointsWord} à savourer`}</h2>
       <p class="subline">
         <span class="subline__date">${fmt.weekdayDate(todayIso)}</span> · ${fmt.int(targets.kcal)} kcal · P ${fmt.int(targets.proteinG)} g ·
         L ${fmt.int(targets.fatG)} g · G ${fmt.int(targets.carbsG)} g
@@ -103,6 +149,7 @@ export function renderDashboard(container, { profile, targets, today = new Date(
         : ''}
 
       <div class="tiles">
+        ${menuTile({ planner, catalog, todayIso, targets })}
         <article class="tile tile--wide tile--tall tile--white" aria-labelledby="weight-chart-title">
           <div class="tile__head">
             <p class="tile__label" id="weight-chart-title">${icon('scale')} Poids</p>

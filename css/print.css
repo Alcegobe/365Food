@@ -22,10 +22,16 @@ body {
 .toast,
 .btn,
 .icon-btn,
+.chip,
 .inline-form,
 .alert,
 .fiche__top,
-.stepper button {
+.stepper button,
+.sheet,
+.planner__nav,
+.slot__actions,
+.plan-item__controls,
+.day__today {
   display: none !important;
 }
 
@@ -160,4 +166,64 @@ body[data-print="a5"] .tiles--macros {
 body[data-print="a5"] .fiche__body {
   column-count: auto;
   margin-top: 0;
+}
+
+/* Semaine + liste de courses */
+.day,
+.plan-item,
+.slot {
+  background: #fff !important;
+  border: 1px solid #bbb !important;
+  box-shadow: none !important;
+}
+
+.day {
+  break-inside: avoid;
+  display: grid !important;
+  grid-template-columns: 9rem 1fr;
+  gap: 4mm;
+  padding: 0.6rem 0.8rem !important;
+  margin-bottom: 3mm;
+}
+
+.day__head {
+  margin: 0 !important;
+}
+
+.day__gauges {
+  grid-template-columns: 1fr !important;
+}
+
+.slots {
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+}
+
+.gauge__track {
+  border: 1px solid #bbb;
+  background: #fff !important;
+}
+
+.gauge__bar {
+  background: #000 !important;
+}
+
+.week-summary {
+  break-inside: avoid;
+}
+
+.shopping {
+  break-before: page;
+}
+
+.shopping__list {
+  column-count: 2;
+  column-gap: 10mm;
+}
+
+.shopping__list li {
+  break-inside: avoid;
+}
+
+.check__box {
+  border-color: #000 !important;
 }
